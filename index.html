@@ -478,6 +478,45 @@
   <!-- top end -->
   
 
+  <a href="/cn/git远程仓库同步关系/">
+    <h2 class="post-title">
+      git三类分支详解
+    </h2>
+    <h3 class="post-subtitle">
+      三类分支解混淆
+    </h3>
+    <div class="post-content-preview">
+      
+本文区分了三个比较容易混淆的分支
+
+1 远程分支
+远程分支指的是Github或者Gitlab这种基于git做版本管理的远程仓库中的项目的分支。
+2 远程跟踪分支
+《progit》中提出的概念，虽然叫远程跟踪，但实际在本地。当使用 git fetch命令时，git比较远程仓库和本地仓库的差异，并且将远程仓库的分支拉取下来，保存为形如origin/master的本地只读分支（这就是远程跟踪分支......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Cloud on
+    2022-08-16
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#git" title="git">git</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/cn/docker_multnode/">
     <h2 class="post-title">
       docker配置多节点集群
@@ -542,45 +581,6 @@
     <a href="/tags/#docker" title="docker">docker</a>
     
     <a href="/tags/#hpl" title="hpl">hpl</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/git远程仓库同步关系/">
-    <h2 class="post-title">
-      git三类分支详解
-    </h2>
-    <h3 class="post-subtitle">
-      三类分支解混淆
-    </h3>
-    <div class="post-content-preview">
-      
-本文区分了三个比较容易混淆的分支
-
-1 远程分支
-远程分支指的是Github或者Gitlab这种基于git做版本管理的远程仓库中的项目的分支。
-2 远程跟踪分支
-《progit》中提出的概念，虽然叫远程跟踪，但实际在本地。当使用 git fetch命令时，git比较远程仓库和本地仓库的差异，并且将远程仓库的分支拉取下来，保存为形如origin/master的本地只读分支（这就是远程跟踪分支......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Cloud on
-    2020-08-17
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#git" title="git">git</a>
     
   </div>
   
@@ -725,16 +725,16 @@
 <div class="widget">
   <ul>
     
+    <a href="cn/git%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5%E5%85%B3%E7%B3%BB/">
+      <li>git三类分支详解</li>
+    </a>
+    
     <a href="cn/docker_multnode/">
       <li>docker配置多节点集群</li>
     </a>
     
     <a href="cn/%E5%A4%9A%E8%8A%82%E7%82%B9%E9%85%8D%E7%BD%AEHPL%E6%B5%8B%E8%AF%95/">
       <li>多节点配置HPL测试</li>
-    </a>
-    
-    <a href="cn/git%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5%E5%85%B3%E7%B3%BB/">
-      <li>git三类分支详解</li>
     </a>
     
   </ul>
@@ -763,7 +763,7 @@
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/08/">August 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/08/">August 2022</a><span class="archive-list-count">3</span></li></ul>
 </div>
 
 
@@ -1290,20 +1290,5 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+	</body>
 </html>
