@@ -244,16 +244,16 @@
 
           
           
+          
+          
           <li>
-            <a href="/about/">
+            <a href="/categories/">
               
-              关于
+              分类
               
               
             </a>
           </li>
-          
-          
           
           
           
@@ -269,9 +269,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/about/">
               
-              分类
+              关于
               
               
             </a>
@@ -391,6 +391,10 @@
     }
 
     
+      #signature {/*signature*/
+        background-image: url('/img/signature/cloud.png');
+      }
+    
   </style>
 
 
@@ -474,29 +478,109 @@
   <!-- top end -->
   
 
-  <a href="/cn/Hexo-Theme-LiveMyLife/">
+  <a href="/cn/docker_multnode/">
     <h2 class="post-title">
-      Hexo-Theme-LiveMyLife
+      docker配置多节点集群
     </h2>
     <h3 class="post-subtitle">
-      A succinct hexo theme...
+      基于docker模拟集群配置
     </h3>
     <div class="post-content-preview">
       
-移植 Hux Blog 的主题，感谢 Huxpro 设计了如此完美的主题。
-由 Vincent 创建的 LiveMyLife 的主题修改来源 YenYuHsuan，参考主题 dusign、Utone，感谢 dusign、Utone。
+本文详细介绍了如何利用docker容器配置节点，模拟集群情况
 
-仓库
-Github 仓库地址：https://github.com/V-Vincen/hexo-theme-livemylife
-Gitee 仓库地址：ht......
+1 镜像下载+配置
+12345678910111213$ sudo docker pull centos:centos7$ sudo run -it --name cen centos:centos7# yum需要换源(centos8才需要)$ cd /etc/yum.repos.d$ sed -i &#x27;s/mirro......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Cloud on
-    2020-04-17
+    2022-08-16
   </p>
   <div class="tags">
+    
+    <a href="/tags/#docker" title="docker">docker</a>
+    
+    <a href="/tags/#集群" title="集群">集群</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/多节点配置HPL测试/">
+    <h2 class="post-title">
+      多节点配置HPL测试
+    </h2>
+    <h3 class="post-subtitle">
+      基于docker模拟集群hpl测试
+    </h3>
+    <div class="post-content-preview">
+      
+接上文通过docker容易配置多节点模拟集群，本文进一步进行HPL测试
+
+1 安装MPICH
+123456789101112131415# 下载mpich的源码$ wget --no-check-certificate https://www.mpich.org/static/downloads/3.3rc1/mpich-3.3rc1.tar.gz$ tar zxvf mpich-3.3r......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Cloud on
+    2022-08-16
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#docker" title="docker">docker</a>
+    
+    <a href="/tags/#hpl" title="hpl">hpl</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/git远程仓库同步关系/">
+    <h2 class="post-title">
+      git三类分支详解
+    </h2>
+    <h3 class="post-subtitle">
+      三类分支解混淆
+    </h3>
+    <div class="post-content-preview">
+      
+本文区分了三个比较容易混淆的分支
+
+1 远程分支
+远程分支指的是Github或者Gitlab这种基于git做版本管理的远程仓库中的项目的分支。
+2 远程跟踪分支
+《progit》中提出的概念，虽然叫远程跟踪，但实际在本地。当使用 git fetch命令时，git比较远程仓库和本地仓库的差异，并且将远程仓库的分支拉取下来，保存为形如origin/master的本地只读分支（这就是远程跟踪分支......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Cloud on
+    2020-08-17
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#git" title="git">git</a>
     
   </div>
   
@@ -546,6 +630,22 @@ Gitee 仓库地址：ht......
 <section>
   <h5><a href="/tags/">特色标签</a></h5>
   <div class="tags">
+    
+    
+    <a href="/tags/#docker" title="docker" rel="2">docker</a>
+    
+    
+    
+    <a href="/tags/#集群" title="集群" rel="1">集群</a>
+    
+    
+    
+    <a href="/tags/#hpl" title="hpl" rel="1">hpl</a>
+    
+    
+    
+    <a href="/tags/#git" title="git" rel="1">git</a>
+    
     
   </div>
 </section>
@@ -625,8 +725,16 @@ Gitee 仓库地址：ht......
 <div class="widget">
   <ul>
     
-    <a href="Hexo-Theme-LiveMyLife/">
-      <li>Hexo-Theme-LiveMyLife</li>
+    <a href="docker_multnode/">
+      <li>docker配置多节点集群</li>
+    </a>
+    
+    <a href="%E5%A4%9A%E8%8A%82%E7%82%B9%E9%85%8D%E7%BD%AEHPL%E6%B5%8B%E8%AF%95/">
+      <li>多节点配置HPL测试</li>
+    </a>
+    
+    <a href="git%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5%E5%85%B3%E7%B3%BB/">
+      <li>git三类分支详解</li>
     </a>
     
   </ul>
@@ -655,13 +763,28 @@ Gitee 仓库地址：ht......
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2022/08/">August 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li></ul>
 </div>
 
 
         <hr>
     
         <!-- Categories -->
+
+<h5><a href="/categories/">categories</a></h5>
+<div class="widget">
+  <ul>
+    
+    <a href="/categories/#集群配置">
+      <li>集群配置</li>
+    </a>
+    
+    <a href="/categories/#git">
+      <li>git</li>
+    </a>
+    
+  </ul>
+</div>
 
 
         <hr>

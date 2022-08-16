@@ -139,7 +139,7 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/">
+  <link rel="canonical" href="http://yoursite-url/categories/集群配置/">
   <title>
     
       Ccloud&#39;s
@@ -307,7 +307,7 @@
     <span>
       English
     </span>
-    <select id="lang-select" data-canonical="index.html">
+    <select id="lang-select" data-canonical="categories/集群配置/index.html">
       
       
       <option value="en"  selected >
@@ -384,9 +384,9 @@
     }
 
     header.intro-header {
-       /*config*/
-        background-image: var(--intro-header-background-image-url-home);
-        /* background-image: url('/img/header_img/newhome_bg.jpg'); */
+       /*page*/
+        background-image: var(--intro-header-background-image-url-page);
+        /* background-image: url('/img/header_img/archive_bg2.jpg'); */
       
     }
 
@@ -468,132 +468,75 @@
             ">
 
       <!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
+      <!-- 归档列表 -->
 
-
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/docker_multnode/">
-    <h2 class="post-title">
-      docker配置多节点集群
-    </h2>
-    <h3 class="post-subtitle">
-      基于docker模拟集群配置
-    </h3>
-    <div class="post-content-preview">
       
-本文详细介绍了如何利用docker容器配置节点，模拟集群情况
 
-1 镜像下载+配置
-12345678910111213$ sudo docker pull centos:centos7$ sudo run -it --name cen centos:centos7# yum需要换源(centos8才需要)$ cd /etc/yum.repos.d$ sed -i &#x27;s/mirro......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Cloud on
-    2022-08-16
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#docker" title="docker">docker</a>
-    
-    <a href="/tags/#集群" title="集群">集群</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/多节点配置HPL测试/">
-    <h2 class="post-title">
-      多节点配置HPL测试
-    </h2>
-    <h3 class="post-subtitle">
-      基于docker模拟集群hpl测试
-    </h3>
-    <div class="post-content-preview">
+      <!-- 归档列表 -->
       
-接上文通过docker容易配置多节点模拟集群，本文进一步进行HPL测试
-
-1 安装MPICH
-123456789101112131415# 下载mpich的源码$ wget --no-check-certificate https://www.mpich.org/static/downloads/3.3rc1/mpich-3.3rc1.tar.gz$ tar zxvf mpich-3.3r......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Cloud on
-    2022-08-16
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#docker" title="docker">docker</a>
-    
-    <a href="/tags/#hpl" title="hpl">hpl</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/git远程仓库同步关系/">
-    <h2 class="post-title">
-      git三类分支详解
-    </h2>
-    <h3 class="post-subtitle">
-      三类分支解混淆
-    </h3>
-    <div class="post-content-preview">
+      <div class="one-tag-list">
+        <span class="fa fa-calendar-times-o listing-seperator" id="2022">
+          <span class="tag-text">2022</span>
+        </span>
+        <ul>
+          
+          <li>
+            08-16
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/多节点配置HPL测试/" style="color: #0085a1">
+              <span>
+                多节点配置HPL测试
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            08-16
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/docker_multnode/" style="color: #0085a1">
+              <span>
+                docker配置多节点集群
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
       
-本文区分了三个比较容易混淆的分支
-
-1 远程分支
-远程分支指的是Github或者Gitlab这种基于git做版本管理的远程仓库中的项目的分支。
-2 远程跟踪分支
-《progit》中提出的概念，虽然叫远程跟踪，但实际在本地。当使用 git fetch命令时，git比较远程仓库和本地仓库的差异，并且将远程仓库的分支拉取下来，保存为形如origin/master的本地只读分支（这就是远程跟踪分支......
+      <div class="one-tag-list">
+        <span class="fa fa-calendar-times-o listing-seperator" id="2020">
+          <span class="tag-text">2020</span>
+        </span>
+        <ul>
+          
+          <li>
+            08-17
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/git远程仓库同步关系/" style="color: #0085a1">
+              <span>
+                git三类分支详解
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      
     </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Cloud on
-    2020-08-17
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#git" title="git">git</a>
-    
   </div>
-  
-
 </div>
-<hr>
-
-
-  <!-- Pager -->
-  <ul class="pager">
-    
-    
-  </ul>
 
 
       <!-- 如果开启评论功能 -->
@@ -725,15 +668,15 @@
 <div class="widget">
   <ul>
     
-    <a href="cn/docker_multnode/">
+    <a href="../../cn/docker_multnode/">
       <li>docker配置多节点集群</li>
     </a>
     
-    <a href="cn/%E5%A4%9A%E8%8A%82%E7%82%B9%E9%85%8D%E7%BD%AEHPL%E6%B5%8B%E8%AF%95/">
+    <a href="../../cn/%E5%A4%9A%E8%8A%82%E7%82%B9%E9%85%8D%E7%BD%AEHPL%E6%B5%8B%E8%AF%95/">
       <li>多节点配置HPL测试</li>
     </a>
     
-    <a href="cn/git%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5%E5%85%B3%E7%B3%BB/">
+    <a href="../../cn/git%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5%E5%85%B3%E7%B3%BB/">
       <li>git三类分支详解</li>
     </a>
     
@@ -763,7 +706,7 @@
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/08/">August 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2022/08/">August 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li></ul>
 </div>
 
 

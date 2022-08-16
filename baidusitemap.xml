@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://yoursite-url/cn/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2020-04-16</lastmod>
+    <loc>http://yoursite-url/cn/docker_multnode/</loc>
+    <lastmod>2022-08-15</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite-url/cn/%E5%A4%9A%E8%8A%82%E7%82%B9%E9%85%8D%E7%BD%AEHPL%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2022-08-15</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite-url/cn/git%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5%E5%85%B3%E7%B3%BB/</loc>
+    <lastmod>2020-08-16</lastmod>
   </url>
 </urlset> 
