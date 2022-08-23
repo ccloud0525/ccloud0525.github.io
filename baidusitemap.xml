@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite-url/cn/config/</loc>
+    <lastmod>2022-08-23</lastmod>
+  </url>
+  <url>
     <loc>http://yoursite-url/cn/git%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5%E5%85%B3%E7%B3%BB/</loc>
     <lastmod>2022-08-16</lastmod>
   </url>

@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/cn/">
+  <link rel="canonical" href="http://yoursite-url/cn/config/">
   <title>
     
-      Ccloud&#39;s
+      docker配置TensorFlow训练环境 - Ccloud&#39;s
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -300,29 +300,7 @@
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      简体中文
-    </span>
-    <select id="lang-select" data-canonical="cn/index.html">
-      
-      
-      <option value="en" >
-        English
-      </option>
-      
-      <option value="cn"  selected >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -374,19 +352,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
     }
 
     header.intro-header {
-       /*config*/
-        background-image: var(--intro-header-background-image-url-home);
-        /* background-image: url('/img/header_img/newhome_bg.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/lml_bg.jpg'); */
       
     }
 
@@ -408,10 +386,44 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>Ccloud&#39;s</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">Difficult doesn&#39;t mean Impossible</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#docker" title="docker">docker</a>
+              
+              <a class="tag" href="/tags/#深度学习" title="深度学习">深度学习</a>
+              
+            </div>
+            <h1>docker配置TensorFlow训练环境</h1>
+            <h2 class="subheading">神经网络</h2>
+            <span class="meta">
+              Posted by Cloud on
+              2022-08-23
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">2</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">413</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -452,396 +464,277 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <blockquote>
+<p>本文详细介绍了如何直接拉取、配置适用于深度神经网络训练的环境</p>
+</blockquote>
+<h2 id="docker环境配置">docker环境配置</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">给docker安装nvidia-container-runtime，让container能使用宿主机的nvidia显卡</span></span><br><span class="line">教程网址：http://www.manongjc.com/detail/24-qcliirtikyklgea.html</span><br><span class="line">配置nvidia仓库：</span><br><span class="line">curl -s -L https://nvidia.github.io/nvidia-container-runtime/gpgkey | \</span><br><span class="line">  sudo apt-key add -</span><br><span class="line">distribution=$(. /etc/os-release;echo $ID$VERSION_ID)</span><br><span class="line">curl -s -L https://nvidia.github.io/nvidia-container-runtime/$distribution/nvidia-container-runtime.list | \</span><br><span class="line">  sudo tee /etc/apt/sources.list.d/nvidia-container-runtime.list</span><br><span class="line">sudo apt-get update</span><br><span class="line">安装运行时</span><br><span class="line"></span><br><span class="line">sudo apt-get install nvidia-container-runtime</span><br><span class="line">停止docker</span><br><span class="line"></span><br><span class="line">systemctl stop docker</span><br><span class="line">把运行时添加到docker中：</span><br><span class="line">dockerd --add-runtime=nvidia=/usr/bin/nvidia-container-runtime</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> repalce [your name] by your name</span></span><br><span class="line">docker run --gpus=all -dit -v /home/henry/asc:/home/asc --name [your name] tensorflow/tensorflow:2.6.1-gpu /bin/bash</span><br><span class="line">docker exec -it [container id] /bin/bash</span><br><span class="line"><span class="meta">#</span><span class="bash"> 配置环境</span></span><br><span class="line">apt update</span><br><span class="line">apt upgrade</span><br><span class="line">apt install git cmake vim</span><br><span class="line">cd /your_deepmd-kit_path</span><br><span class="line"><span class="meta">#</span><span class="bash"> 切换分支</span></span><br><span class="line">git clone --recursive https://github.com/deepmodeling/deepmd-kit.git deepmd-kit</span><br><span class="line">git checkout -b asc22 remotes/origin/asc-2022</span><br><span class="line">export DP_VARIANT=&quot;cuda&quot;</span><br><span class="line">pip install .</span><br><span class="line"><span class="meta">#</span><span class="bash">可以采用开发者模式安装</span></span><br><span class="line">export DP_VARIANT=&quot;cuda&quot;</span><br><span class="line">python setup.py develop</span><br><span class="line">or pip install -v -e .</span><br><span class="line"><span class="meta">#</span><span class="bash"> 配置训练环境</span></span><br><span class="line">dpkg -i nccl-local-repo-ubuntu2004-2.8.4-cuda11.2_1.0-1_amd64.deb </span><br><span class="line">apt install libnccl2=2.8.4-1+cuda11.2 libnccl-dev=2.8.4-1+cuda11.2</span><br><span class="line">apt install libopenmpi-dev</span><br><span class="line">HOROVOD_WITHOUT_GLOO=1 HOROVOD_WITH_TENSORFLOW=1 HOROVOD_GPU_OPERATIONS=NCCL  pip install horovod mpi4py</span><br><span class="line"><span class="meta">#</span><span class="bash"> 训练</span></span><br><span class="line">cd /your_data_path</span><br><span class="line">CUDA_VISIBLE_DEVICES=0 horovodrun -np 1 dp train --mpi-log=workers input.json</span><br></pre></td></tr></table></figure>
+<h2 id="代理">代理</h2>
+<h3 id="pip">pip</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">  ~/.pip/pip.conf</span></span><br><span class="line">[global]</span><br><span class="line">index-url = https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">proxy     = http://58.199.160.174:3128</span><br><span class="line">[install]</span><br><span class="line">trusted-host=pypi.tuna.tsinghua.edu.cn</span><br></pre></td></tr></table></figure>
+<h3 id="git">git</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">~/.gitconfig</span></span><br><span class="line">Acquire::http::Proxy &quot;http://58.199.160.174:3128&quot;;</span><br></pre></td></tr></table></figure>
+<h3 id="apt">apt</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> /etc/apt/apt.conf</span></span><br><span class="line">Acquire::http::Proxy &quot;http://58.199.160.174:3128&quot;;</span><br></pre></td></tr></table></figure>
+<h4 id="wget">wget</h4>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">～/.wgetrc</span></span><br><span class="line">https_proxy = http://10.0.65.18:8888/</span><br><span class="line">http_proxy = http://10.0.65.18:8888/</span><br><span class="line">ftp_proxy = http://10.0.65.18:8888/</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> If you <span class="keyword">do</span> not want to use proxy at all, <span class="built_in">set</span> this to off.</span></span><br><span class="line">use_proxy = on</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/git远程仓库同步关系/" data-toggle="tooltip" data-placement="top" title="git三类分支详解">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=docker配置TensorFlow训练环境&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/config/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '04b857744df6aca41a4b',
+      clientSecret: '46345ef524913d79f188d03d10e82693a1b90cbe',
+      repo: 'blogcomment',
+      owner: 'ccloud0525',
+      admin: 'ccloud0525',
+      id: 'Tue Aug 23 2022 18:26:17 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'zh-CN',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#docker%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">docker环境配置</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BB%A3%E7%90%86"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">代理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#pip"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">pip</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#git"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">git</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#apt"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">apt</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#wget"><span class="toc-nav-number">2.3.1.</span> <span class="toc-nav-text">wget</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
     
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
+
+
+      <!-- Sidebar Container -->
+      <div class="
                 col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-      <!-- Main Content -->
-
-
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/config/">
-    <h2 class="post-title">
-      docker配置TensorFlow训练环境
-    </h2>
-    <h3 class="post-subtitle">
-      神经网络
-    </h3>
-    <div class="post-content-preview">
-      
-本文详细介绍了如何直接拉取、配置适用于深度神经网络训练的环境
-
-docker环境配置
-12345678910111213141516171819202122232425262728293031323334353637383940414243#给docker安装nvidia-container-runtime，让container能使用宿主机的nvidia显卡教程网址：http://www.......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Cloud on
-    2022-08-23
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#docker" title="docker">docker</a>
-    
-    <a href="/tags/#深度学习" title="深度学习">深度学习</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/git远程仓库同步关系/">
-    <h2 class="post-title">
-      git三类分支详解
-    </h2>
-    <h3 class="post-subtitle">
-      三类分支解混淆
-    </h3>
-    <div class="post-content-preview">
-      
-本文区分了三个比较容易混淆的分支
-
-1 远程分支
-远程分支指的是Github或者Gitlab这种基于git做版本管理的远程仓库中的项目的分支。
-2 远程跟踪分支
-《progit》中提出的概念，虽然叫远程跟踪，但实际在本地。当使用 git fetch命令时，git比较远程仓库和本地仓库的差异，并且将远程仓库的分支拉取下来，保存为形如origin/master的本地只读分支（这就是远程跟踪分支......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Cloud on
-    2022-08-16
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#git" title="git">git</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/docker_multnode/">
-    <h2 class="post-title">
-      docker配置多节点集群
-    </h2>
-    <h3 class="post-subtitle">
-      基于docker模拟集群配置
-    </h3>
-    <div class="post-content-preview">
-      
-本文详细介绍了如何利用docker容器配置节点，模拟集群情况
-
-1 镜像下载+配置
-12345678910111213$ sudo docker pull centos:centos7$ sudo run -it --name cen centos:centos7# yum需要换源(centos8才需要)$ cd /etc/yum.repos.d$ sed -i &#x27;s/mirro......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Cloud on
-    2022-08-16
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#docker" title="docker">docker</a>
-    
-    <a href="/tags/#集群" title="集群">集群</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/多节点配置HPL测试/">
-    <h2 class="post-title">
-      多节点配置HPL测试
-    </h2>
-    <h3 class="post-subtitle">
-      基于docker模拟集群hpl测试
-    </h3>
-    <div class="post-content-preview">
-      
-接上文通过docker容易配置多节点模拟集群，本文进一步进行HPL测试
-
-1 安装MPICH
-123456789101112131415# 下载mpich的源码$ wget --no-check-certificate https://www.mpich.org/static/downloads/3.3rc1/mpich-3.3rc1.tar.gz$ tar zxvf mpich-3.3r......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Cloud on
-    2022-08-16
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#docker" title="docker">docker</a>
-    
-    <a href="/tags/#hpl" title="hpl">hpl</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-
-  <!-- Pager -->
-  <ul class="pager">
-    
-    
-  </ul>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">来访者</a></h5>
-
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
-        <hr>
-    
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#docker" title="docker">docker</a>
+            
+            <a class="tag" href="/tags/#深度学习" title="深度学习">深度学习</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">特色标签</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#docker" title="docker" rel="3">docker</a>
-    
-    
-    
-    <a href="/tags/#集群" title="集群" rel="1">集群</a>
-    
-    
-    
-    <a href="/tags/#hpl" title="hpl" rel="1">hpl</a>
-    
-    
-    
-    <a href="/tags/#git" title="git" rel="1">git</a>
-    
-    
-    
-    <a href="/tags/#深度学习" title="深度学习" rel="1">深度学习</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">关于自己</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/Barcelona.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>The world open itself before those with noble hearts</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/ccloud0525">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-      <li>
-        <a target="_blank" href="https://www.zhihu.com/people/tian-xing-jian-82-19">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa  fa-stack-1x fa-inverse">知</i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-      <li>
-        <a target="_blank" href="http://weibo.com/6386058030">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">最近博文</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="config/">
-      <li>docker配置TensorFlow训练环境</li>
-    </a>
-    
-    <a href="git%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5%E5%85%B3%E7%B3%BB/">
-      <li>git三类分支详解</li>
-    </a>
-    
-    <a href="docker_multnode/">
-      <li>docker配置多节点集群</li>
-    </a>
-    
-    <a href="%E5%A4%9A%E8%8A%82%E7%82%B9%E9%85%8D%E7%BD%AEHPL%E6%B5%8B%E8%AF%95/">
-      <li>多节点配置HPL测试</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<h5><a href="/">链友</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://github.com/Cyria7" target="_blank">Cyria7</a></li>
-  
-  <li><a href="https://github.com/ameki77" target="_blank">ameki77</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
-</ul>
-
-
+        
         <hr>
-    
-        <!-- Archives -->
+        <h5>链友</h5>
+        <ul class="list-inline">
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2022/08/">August 2022</a><span class="archive-list-count">4</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#集群配置">
-      <li>集群配置</li>
-    </a>
-    
-    <a href="/categories/#git">
-      <li>git</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+          <li>
+            <a href="https://github.com/Cyria7" target="_blank">Cyria7</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/ameki77" target="_blank">ameki77</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
