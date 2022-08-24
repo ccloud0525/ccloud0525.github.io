@@ -408,7 +408,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">635</span> In Total
+              Words <span class="post-count">632</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -473,11 +473,11 @@
         <blockquote>
 <p>本文区分了三个比较容易混淆的分支</p>
 </blockquote>
-<h2 id="1-远程分支">1 远程分支</h2>
+<h2 id="远程分支">远程分支</h2>
 <p>远程分支指的是Github或者Gitlab这种基于git做版本管理的远程仓库中的项目的分支。</p>
-<h2 id="2-远程跟踪分支">2 远程跟踪分支</h2>
+<h2 id="远程跟踪分支">远程跟踪分支</h2>
 <p>《progit》中提出的概念，虽然叫远程跟踪，但实际在本地。当使用 git fetch命令时，git比较远程仓库和本地仓库的差异，并且将远程仓库的分支拉取下来，保存为形如origin/master的本地只读分支（这就是远程跟踪分支）。所谓只读，就是只起到标识最后一次通信时远程仓库的分支情况（相当于在本地的拷贝上标识），这些跟踪分支的只读性体现在他们并不能修改和产生新的提交（因为只用作标识远程的情况）。</p>
-<h2 id="3-跟踪分支">3 跟踪分支</h2>
+<h2 id="跟踪分支">跟踪分支</h2>
 <p>跟踪分支和远程跟踪分支一起使用，远程跟踪分支才能被最大化利用。因为远程跟踪分支只是本地只读分支，而fetch只是更新远程跟踪分支，所以要把最新一次通信后远程的更改和本地的分支合并，就必须配合merge命令，例如将远程分支上master最新的更改合并到本地master的流程为：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">先fetch，将更新同步到本地远程跟踪分支origin/master</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git fetch origin</span></span><br><span class="line"><span class="meta">#</span><span class="bash">然后合并</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git checkout master</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git merge origin/master</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">这是一般的做法，如果要实现自动化，则引入跟踪分支</span></span><br></pre></td></tr></table></figure>
 <p>跟踪分支从远程跟踪分支上创建而出，由于git的数据模型近似于链表，创建新分支相当于创建新指针，所以基于远程跟踪分支创建跟踪分支性价比很高，并不会增加额外的空间，只是在origin/test当前指向的提交上再创建一根指针，且该分支是可写的（因为就是纯粹的可读写本地分支）。</p>
@@ -631,7 +631,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">1 远程分支</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-%E8%BF%9C%E7%A8%8B%E8%B7%9F%E8%B8%AA%E5%88%86%E6%94%AF"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">2 远程跟踪分支</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-%E8%B7%9F%E8%B8%AA%E5%88%86%E6%94%AF"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">3 跟踪分支</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">远程分支</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%BF%9C%E7%A8%8B%E8%B7%9F%E8%B8%AA%E5%88%86%E6%94%AF"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">远程跟踪分支</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%B7%9F%E8%B8%AA%E5%88%86%E6%94%AF"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">跟踪分支</span></a></li></ol>
         
         </div>
       </aside>

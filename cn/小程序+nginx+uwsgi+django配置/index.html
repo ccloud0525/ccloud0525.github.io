@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an Personal blog about almost everything of me"/>
+  <meta name="keyword" content="cloud  blog,Blog"/>
+  <link rel="shortcut icon" href="/img/avatar/Barcelona.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="http://yoursite-url/cn/小程序+nginx+uwsgi+django配置/">
+  <title>
+    
+      从零开始配置Django+uWSGI+Nginx负载均衡 - Ccloud&#39;s
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'ccloud0525/blogchat'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Ccloud&#39;s</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/lml_bg.jpg'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/cloud.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
+              
+              <a class="tag" href="/tags/#Nginx" title="Nginx">Nginx</a>
+              
+            </div>
+            <h1>从零开始配置Django+uWSGI+Nginx负载均衡</h1>
+            <h2 class="subheading">微信小程序项目部署</h2>
+            <span class="meta">
+              Posted by Cloud on
+              2022-08-24
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">10</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">2.2k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <blockquote>
+<p>本文详细叙述了前端基于微信小程序，后端基于Django框架的web项目部署过程。</p>
+</blockquote>
+<h2 id="引言">引言</h2>
+<p>小程序开发已经衍化出了一套十分固定的流程，而腾讯也希望开发者们在未经上线（商用化）前，只在本地调试，为了安全性设置了必须拥有合法域名才能上线的硬性要求。而作为学生项目而言，想要免费体验在服务器上部署后端，用前端访问的完整流程，小程序显然并不是特别适合。为了不购买域名，将Nginx部署在本地进行“前向代理”就成了折中之法。</p>
+<p>而Nginx作为一款高并发web服务器，也能显著改善使用Django框架项目的处理效能。由于Django的内置web服务器并不能和Nginx合用，所以需要另一款web服务器作为Django和Nginx的桥梁，uWSGI作为一款支持WSGI传输协议且能和Nginx交互的web服务器，自然就成了不二之选。</p>
+<p>以下是工作原理：</p>
+<p><img src="0jzzcjvn22.png" alt="0jzzcjvn22"></p>
+<h2 id="硬件准备">硬件准备</h2>
+<p>一台代理机（本地），配置为AMD R7 5800H，16核心32线程，内存32G，Deepin 20.06。</p>
+<p>两台华为云服务器，2vGPU，Intel Skylake架构，内存4G，Centos 7.6。</p>
+<h2 id="服务器环境配置">服务器环境配置</h2>
+<h3 id="基本包安装">基本包安装</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">主要安装一些基本包，防止后面python编译漏模块</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yum update -y</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yum -y install gcc gcc-c++ zlib-devel bzip2-devel  ncurses-devel sqlite-devel readline-devel tk-devel libffi-devel  expat-devel gdbm-devel  make openssl openssl-devel</span> </span><br></pre></td></tr></table></figure>
+<h3 id="手动安装Python3-9">手动安装Python3.9</h3>
+<p>由于采用高版本Django，所以需要3.9的python，由于yum库的维护一言难尽，所以选择自己手动安装。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">从官网下载好源码包后</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> tar -xf Python-3.9.0.tar</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> Python-3.9.0</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./configure --prefix=/usr/<span class="built_in">local</span>/python3.9</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 编译并安装 altinstall 不自动创建链接，需要手动创建，建议使用，保障多个版本共存。</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> make -j4 &amp;&amp; make altinsatll</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> make clean</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> make distclean</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">建立软链接变相实现别名效果</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ln -s /usr/<span class="built_in">local</span>/python3.9/bin/python3.9 /usr/<span class="built_in">local</span>/bin/</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ln -s /usr/<span class="built_in">local</span>/python3.9/bin/pip3.9 /usr/<span class="built_in">local</span>/bin/pip</span></span><br><span class="line"><span class="meta">#</span><span class="bash">pip换源</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> mkdir ~/.pip</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> vim ~/.pip/pip.conf</span></span><br><span class="line">	[global]</span><br><span class="line">	timeout = 6000  </span><br><span class="line">	index-url = https://pypi.douban.com/simple </span><br><span class="line">	trusted-host = pypi.douban.com</span><br></pre></td></tr></table></figure>
+<h3 id="快速安装uWSGI">快速安装uWSGI</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> pip install uwsgi</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> vim ~/.bashrc</span></span><br><span class="line">	alias uwsgi=/usr/local/python3.9/bin/uwsgi</span><br></pre></td></tr></table></figure>
+<h3 id="安裝MySQL服务">安裝MySQL服务</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">下载并安装MySQL官方的Yum Repository</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yum -y install mysql57-community-release-el7-10.noarch.rpm</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yum -y install mysql-community-server --nogpgcheck</span></span><br></pre></td></tr></table></figure>
+<p>安装好后只需要在其中一台服务器上创建schema即可，其余服务器只需安装服务，通过远程连接连接到一台中即可，实际情况下购买的服务器大概率在同一个子网中，内网传输速度很快。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">配置MySQL</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl start  mysqld.service</span></span><br><span class="line"><span class="meta">#</span><span class="bash">从日志中抓取初始密码</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> grep <span class="string">&quot;password&quot;</span> /var/<span class="built_in">log</span>/mysqld.log</span></span><br><span class="line"><span class="meta">#</span><span class="bash">输入密码进入数据库</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> mysql -uroot -p</span></span><br><span class="line"></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> ALTER USER <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> IDENTIFIED BY <span class="string">&#x27;new password&#x27;</span>;</span></span><br><span class="line"><span class="meta">#</span><span class="bash">设置远程登录访问限制,注意：下面命令开启的IP是 192.168.0.1，如要开启所有的，用%代替IP):</span></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> grant all privileges on *.* to <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;192.168.0.1&#x27;</span> identified by <span class="string">&#x27;password&#x27;</span> with grant option;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> flush privileges;</span></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> <span class="built_in">exit</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="配置Django环境">配置Django环境</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> pip install django==3.2</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> pip install djangorestframework==3.13.1</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> pip install pandas</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> pip install Pillow</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> pip install datedays</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> pip install pymysql</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yum install mysql-devel --nogpgcheck</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> pip install mysqlclient</span></span><br></pre></td></tr></table></figure>
+<p>在项目的settings.py中作如下两个模块的设置:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DEBUG = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">ALLOWED_HOSTS = [<span class="string">&#x27;*&#x27;</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#数据库所在服务器</span></span><br><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">&#x27;default&#x27;</span>:&#123;</span><br><span class="line">        <span class="string">&#x27;ENGINE&#x27;</span>:<span class="string">&#x27;django.db.backends.mysql&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;NAME&#x27;</span>:<span class="string">&#x27;shucovid&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;USER&#x27;</span>:<span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;PASSWORD&#x27;</span>:<span class="string">&#x27;*******&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;HOST&#x27;</span>:<span class="string">&#x27;127.0.0.1&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;POST&#x27;</span>:<span class="string">&#x27;3306&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">其他分支节点</span></span><br><span class="line">DATABASES = &#123;</span><br><span class="line">    &#x27;default&#x27;:&#123;</span><br><span class="line">        &#x27;ENGINE&#x27;:&#x27;django.db.backends.mysql&#x27;,</span><br><span class="line">        &#x27;NAME&#x27;:&#x27;shucovid&#x27;,</span><br><span class="line">        &#x27;USER&#x27;:&#x27;root&#x27;,</span><br><span class="line">        &#x27;PASSWORD&#x27;:&#x27;*******&#x27;,</span><br><span class="line">        &#x27;HOST&#x27;:&#x27;数据库所在服务器内网ip&#x27;,</span><br><span class="line">        &#x27;POST&#x27;:&#x27;3306&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>配置好后在数据库所在服务器项目目录下执行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> python manage.py makemigrations</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> python manage.py migrate</span></span><br></pre></td></tr></table></figure>
+<p>在左右服务器项目目录下执行以下命令测试项目是否正常运行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">即只采用Django内置web服务器做测试</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> python manage.py runserver</span></span><br></pre></td></tr></table></figure>
+<h3 id="服务器安全组配置">服务器安全组配置</h3>
+<p><img src="%E5%BC%B9%E6%80%A7%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8.png" alt="弹性云服务器"></p>
+<p><img src="%E5%AE%89%E5%85%A8%E7%BB%84.png" alt="安全组"></p>
+<p>如上开放一些常用端口，9001端口为Nginx和uWSGI进行Socket通信的端口，3306为MySQL服务，22位ssh，80为Http。</p>
+<h2 id="本机环境配置">本机环境配置</h2>
+<h3 id="前端安装">前端安装</h3>
+<p>微信小程序开发工具安装即可</p>
+<h3 id="Nginx安装">Nginx安装</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">由于本机是基于Debian的Deepin系统，apt较为强大，采取直接安装的方法</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo apt install Nginx</span></span><br></pre></td></tr></table></figure>
+<p>安装完后发现已经自动添加环境变量，可直接使用命令Nginx。</p>
+<h3 id="Navicat安装">* Navicat安装</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">采用打包方法破解Navicat15</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> wget https://download.navicat.com.cn/download/navicat15-premium-cs.AppImage</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> mkdir navicat15-premium-cs</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo mount -o loop navicat15-premium-cs.AppImage  navicat15-premium-cs</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> cp -r navicat15-premium-cs navicat15-premium-cs-bak</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo umount navicat15-premium-cs</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> rm -rf navicat15-premium-cs</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">安装依赖</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo apt install libcapstone-dev cmake rapidjson-dev  openssl git</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">安装keystone</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/keystone-engine/keystone.git</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> keystone</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> mkdir build</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> build</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ../make-share.sh</span></span><br><span class="line"><span class="meta">$</span><span class="bash">  sudo make install</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo ldconfig</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">安装navicat-keygen</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> -b linux --single-branch https://gitee.com/andisolo/navicat-keygen.git</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> navicat-keygen</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> make all</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">通过navicat-patcher命令来修改原公钥</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./bin/navicat-patcher ../navicat15-premium-cs-bak/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">下载打包工具</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> chmod +x appimagetool-x86_64.AppImage</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">打包成新的app</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./appimagetool-x86_64.AppImage navicat15-premium-cs-bak/ navicat15-premium-cs-2.AppImage</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">运行新的app</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo chmod +x ~/Desktop/navicat15-premium-cs-2.AppImage</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./navicat15-premium-cs-2.AppImag</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">注册，使用 navicat-keygen 来生成序列号和JH码</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> navicat-keygen</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./bin/navicat-keygen --text ./RegPrivateKey.pem</span></span><br></pre></td></tr></table></figure>
+<p>按提示选择Navicat产品类别（1.Premium）、Navicat语言版本（1.）和填写主版本号（15），随后生成一个序列号，输入用户名和组织，出现Input request code in Base64: (Double press ENTER to end) 保留界面。</p>
+<p>断开网络，输入上一步生成的Serial number，点击激活，提示激活失败,选择手动激活。</p>
+<p>复制请求码到之前的界面。</p>
+<p>回车两次生成激活码。</p>
+<p>复制navicat-keygen生成的激活码,在软件对话框里的激活码输入框里输入激活码完成激活。</p>
+<h2 id="部署Nginx-uWSGI-Django负载均衡策略">部署Nginx+uWSGI+Django负载均衡策略</h2>
+<h3 id="本机Nginx配置文件更改">本机Nginx配置文件更改</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">选择增量式添加</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> /etc/nginx/sites-available</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> vim django.conf</span></span><br><span class="line">upstream django&#123;</span><br><span class="line">   server 124.71.202.87:9001;#nginx socket uwsgi</span><br><span class="line">   server 124.71.201.76:9001;#两个服务器的公网ip，端口用于和服务器上uWSGI进行socket通信</span><br><span class="line">&#125;</span><br><span class="line">server&#123;</span><br><span class="line">   listen 80;</span><br><span class="line">   server_name 127.0.0.1;#这两行表明Nginx监听本地80端口，也是前端需要访问的端口</span><br><span class="line">   charset utf-8;</span><br><span class="line">   location / &#123;</span><br><span class="line">   	uwsgi_pass django;#表明将动态请求转发给uWSGI服务器处理</span><br><span class="line">	include /etc/nginx/uwsgi_params;#传递固定参数</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>安装好后建立软链接</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo ln -s /etc/nginx/site-available/django.conf /etc/nginx/site-enabled/django.conf</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo Nginx -s reload</span></span><br></pre></td></tr></table></figure>
+<p>如果要使用负载均衡策略，共有如下几种可供选择:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">默认：轮询</span></span><br><span class="line">upstream django&#123;</span><br><span class="line">   server 124.71.202.87:9001;</span><br><span class="line">   server 124.71.201.76:9001;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#</span><span class="bash">iphash，基于ip的负载均衡</span></span><br><span class="line">upstream django&#123;</span><br><span class="line">   ip_hash;</span><br><span class="line">   server 124.71.202.87:9001;</span><br><span class="line">   server 124.71.201.76:9001;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#</span><span class="bash">权重轮询</span></span><br><span class="line">upstream django&#123;</span><br><span class="line">   server 124.71.202.87:9001 weight=1;</span><br><span class="line">   server 124.71.201.76:9001 weight=2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#</span><span class="bash">最小连接数</span></span><br><span class="line">upstream django&#123;</span><br><span class="line">   least_conn;</span><br><span class="line">   server 124.71.202.87:9001;</span><br><span class="line">   server 124.71.201.76:9001;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>大致物理结构如下：</p>
+<p><img src="%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1.png" alt="负载均衡"></p>
+<h3 id="服务器uWSGI配置文件更改">服务器uWSGI配置文件更改</h3>
+<p>个人习惯在Django项目文件夹下添加uWSGI配置文件。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vim uwsgi.ini</span></span><br><span class="line">[uwsgi]</span><br><span class="line"><span class="meta">#</span><span class="bash">uwsgi服务器访问地址,为当前服务器内网地址：124.71.201.76-&gt;192.168.0.140</span> </span><br><span class="line">http = 192.168.0.140:9000 server </span><br><span class="line"><span class="meta">#</span><span class="bash">uwsgi和nginx通信的port，为当前服务器内网地址</span></span><br><span class="line">socket=192.168.0.140:9001 </span><br><span class="line"><span class="meta">#</span><span class="bash">项目所在目录</span></span><br><span class="line">chdir=/home/configurations/backend</span><br><span class="line"><span class="meta">#</span><span class="bash">基于项目目录的相对路径</span></span><br><span class="line">wsgi-file=backend/wsgi.py</span><br><span class="line"><span class="meta">#</span><span class="bash">worker进程最大数</span></span><br><span class="line">processes=2</span><br><span class="line"><span class="meta">#</span><span class="bash">每个进程最大线程数</span></span><br><span class="line">threads=1</span><br><span class="line"><span class="meta">#</span><span class="bash">监控</span></span><br><span class="line">stats=192.168.0.140:9002</span><br><span class="line"></span><br><span class="line">vacuum=true</span><br><span class="line"><span class="meta">#</span><span class="bash">进程文件存放路径，可快捷开关</span></span><br><span class="line">pidfile=/home/configurations/backend/uwsgi.pid</span><br><span class="line"><span class="meta">#</span><span class="bash">后台启动模式，日志文件</span></span><br><span class="line">daemonize=/home/configurations/backend/uwsgi.log</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="启动！">启动！</h3>
+<p>将以上文件设置好后即可打开MySQL服务，运行Nginx和uWSGI服务器，后端就部署完毕了。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">uWSGI命令</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> uwsgi --ini uwsgi.ini       <span class="comment">#启动uwsgi， 一定要在django实际使用的conda环境下，否则会报错</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> uwsgi --stop uwsgi.pid      <span class="comment">#停止uwsgi</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> uwsgi --reload uwsgi.pid    <span class="comment">#重启uwsgi</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">Nginx命令</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo service nginx start    <span class="comment">#启动</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo service nginx stop   <span class="comment">#停止</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo service nginx restart  <span class="comment">#重启nginx</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo nginx -s reload <span class="comment">#重载配置文件</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo nginx -s quit <span class="comment">#优雅的停止nginx</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo nginx -s term <span class="comment">#停止nginx</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo nginx -s reopen <span class="comment">#打开一份新的日志</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">MySQL启动命令</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl start  mysqld.service</span></span><br></pre></td></tr></table></figure>
+<h2 id="借鉴以下优秀blog：">借鉴以下优秀blog：</h2>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/dayongge/p/13493167.html">https://www.cnblogs.com/dayongge/p/13493167.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/navysummer/p/16263742.html">https://www.cnblogs.com/navysummer/p/16263742.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2130b6a6a397">https://www.jianshu.com/p/2130b6a6a397</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36582604/article/details/80526287">https://blog.csdn.net/qq_36582604/article/details/80526287</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42575601/article/details/125805728">https://blog.csdn.net/weixin_42575601/article/details/125805728</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/shijin741231/article/details/110196975">https://blog.csdn.net/shijin741231/article/details/110196975</a></p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/config/" data-toggle="tooltip" data-placement="top" title="docker配置TensorFlow训练环境">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=从零开始配置Django+uWSGI+Nginx负载均衡&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/小程序+nginx+uwsgi+django配置/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '04b857744df6aca41a4b',
+      clientSecret: '46345ef524913d79f188d03d10e82693a1b90cbe',
+      repo: 'blogcomment',
+      owner: 'ccloud0525',
+      admin: 'ccloud0525',
+      id: 'Wed Aug 24 2022 22:26:17 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'zh-CN',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">引言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A1%AC%E4%BB%B6%E5%87%86%E5%A4%87"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">硬件准备</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">服务器环境配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8C%85%E5%AE%89%E8%A3%85"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">基本包安装</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85Python3-9"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">手动安装Python3.9</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85uWSGI"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">快速安装uWSGI</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AE%89%E8%A3%9DMySQL%E6%9C%8D%E5%8A%A1"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">安裝MySQL服务</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%85%8D%E7%BD%AEDjango%E7%8E%AF%E5%A2%83"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">配置Django环境</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E7%BB%84%E9%85%8D%E7%BD%AE"><span class="toc-nav-number">3.6.</span> <span class="toc-nav-text">服务器安全组配置</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9C%AC%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">本机环境配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%89%8D%E7%AB%AF%E5%AE%89%E8%A3%85"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">前端安装</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Nginx%E5%AE%89%E8%A3%85"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">Nginx安装</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Navicat%E5%AE%89%E8%A3%85"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">* Navicat安装</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%83%A8%E7%BD%B2Nginx-uWSGI-Django%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%AD%96%E7%95%A5"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">部署Nginx+uWSGI+Django负载均衡策略</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9C%AC%E6%9C%BANginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%9B%B4%E6%94%B9"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">本机Nginx配置文件更改</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8uWSGI%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%9B%B4%E6%94%B9"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">服务器uWSGI配置文件更改</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%90%AF%E5%8A%A8%EF%BC%81"><span class="toc-nav-number">5.3.</span> <span class="toc-nav-text">启动！</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%80%9F%E9%89%B4%E4%BB%A5%E4%B8%8B%E4%BC%98%E7%A7%80blog%EF%BC%9A"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">借鉴以下优秀blog：</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
+            
+            <a class="tag" href="/tags/#Nginx" title="Nginx">Nginx</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://github.com/Cyria7" target="_blank">Cyria7</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/ameki77" target="_blank">ameki77</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/ccloud0525">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.zhihu.com/people/tian-xing-jian-82-19">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa  fa-stack-1x fa-inverse">知</i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a target="_blank" href="http://weibo.com/6386058030">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Cloud
+          2022
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='The first step is as good as half over...,Laugh and grow fat...,Man proposes God disposes...,When all else is lost the future still remains...,Wasting time is robbing oneself...,Sharp tools make good work...,Cease to struggle and you cease to live...,A friend in need is a friend indeed...,Faith can move mountains...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("http://yoursite-url/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
