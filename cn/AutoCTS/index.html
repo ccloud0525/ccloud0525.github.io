@@ -147,6 +147,8 @@
   </title>
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
 
 
@@ -260,6 +262,17 @@
           
           
           <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/archive/">
               
               归档
@@ -274,17 +287,6 @@
             <a href="/tags/">
               
               标签
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/about/">
-              
-              关于
               
               
             </a>
@@ -561,16 +563,15 @@
 <p>Correlated Time Series Forecasting。根据已经给定的P步，同时考虑单步预测和多步预测。</p>
 <ul>
 <li>
-<p>单步预测预测未来的第Q步，可以描述为$$\hat{X}<em>{t+P+Q}=F_w(X</em>{t+1},X_{t+2},…,X_{t+P};G)$$，其中$$F_w$$是预测模型，w是可学习参数，$$\hat{X}$$是预测数值。</p>
+<p>单步预测预测未来的第Q步，可以描述为$$\hat{X}_{t+P+Q}=F_w(X_{t+1},X_{t+2},…,X_{t+P};G)$$，其中$F_w$是预测模型，w是可学习参数，$\hat{X}$是预测数值。</p>
 </li>
 <li>
-<p>多步预测预测未来的Q步，可以描述为</p>
-<p>$${\hat{X}<em>{t+P+1},\hat{X}</em>{t+P+2},…\hat{X}<em>{t+P+Q}}=F_w(X</em>{t+1},X_{t+2},…,X_{t+P};G)$$</p>
+<p>多步预测预测未来的Q步，可以描述为$${\hat{X}_{t+P+1},\hat{X}_{t+P+2},…\hat{X}_{t+P+Q}}=F_w(X_{t+1},X_{t+2},…,X_{t+P};G)$$</p>
 </li>
 </ul>
 </li>
 <li>
-<p>本文的目的在于自动构建一个精确的预测模型$$F_w$$，需要考虑的参数为描述模型$$F_w$$的参数θ——用于描述ST-Backbone中的ST块以及连接情况；以及参数w——被用于不同ST块中算子、卷积算子核心部分以及注意力算子的预测矩阵。目标函数如下：$$argmin_{θ,w}=ErrorMetric(F_w,D)$$，其中D是数据集，目标是找出使误差函数最小的参数。</p>
+<p>本文的目的在于自动构建一个精确的预测模型$F_w$，需要考虑的参数为描述模型$F_w$的参数θ——用于描述ST-Backbone中的ST块以及连接情况；以及参数w——被用于不同ST块中算子、卷积算子核心部分以及注意力算子的预测矩阵。目标函数如下：$$argmin_{θ,w}=ErrorMetric(F_w,D)$$，其中D是数据集，目标是找出使误差函数最小的参数。</p>
 </li>
 </ul>
 <h2 id="自动CTS预测">自动CTS预测</h2>
