@@ -145,7 +145,9 @@
       About - Ccloud&#39;s
     
   </title>
-<meta name="generator" content="Hexo 5.4.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
 
 
 <!-- hack iOS CSS :active style -->
@@ -269,9 +271,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/tags/">
               
-              ABOUT
+              TAGS
               
               
             </a>
@@ -280,9 +282,9 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/about/">
               
-              TAGS
+              ABOUT
               
               
             </a>
@@ -467,19 +469,24 @@
                 post-container
             ">
 
-      <h2 id="About-Me"><a href="#About-Me" class="headerlink" title="About Me"></a>About Me</h2><p><img src="/img/scenery/about_bg2.jpg" width="350" alt="about_bg2"></img></p>
+      <h2 id="About-Me">About Me</h2>
+<p><img src="/img/scenery/about_bg2.jpg" width="350" alt="about_bg2"></img></p>
 <blockquote>
 <p>毕业于复旦大学附属中学</p>
 <p>上海大学计算机科学与技术专业本科在读生</p>
 <p>华东师范大学大数据技术与工程研零</p>
 </blockquote>
-<h2 id="Contact-me"><a href="#Contact-me" class="headerlink" title="Contact me"></a>Contact me</h2><blockquote>
-<p>Email：ccloud613@gmail.com<br>QQ : 1793410861</p>
+<h2 id="Contact-me">Contact me</h2>
+<blockquote>
+<p>Email：ccloud613@gmail.com<br>
+QQ : 1793410861</p>
 </blockquote>
-<h2 id="Treat-me-to-coffee"><a href="#Treat-me-to-coffee" class="headerlink" title="Treat me to coffee"></a>Treat me to coffee</h2><blockquote>
-<p> If you feel that what I have written is of some value to you, I am glad that you are willing to invite me to drink coffee…</p>
+<h2 id="Treat-me-to-coffee">Treat me to coffee</h2>
+<blockquote>
+<p>If you feel that what I have written is of some value to you, I am glad that you are willing to invite me to drink coffee…</p>
 </blockquote>
-<p><img src="/img/scenery/vx.jpg" width="350" alt="vx.jpg">&lt;/img&gt;<br><img src="/img/scenery/zfb.jpg" width="350" alt="zfb.jpg"></img></p>
+<p><img src="/img/scenery/vx.jpg" width="350" alt="vx.jpg"></img><br>
+<img src="/img/scenery/zfb.jpg" width="350" alt="zfb.jpg"></img></p>
 
 
       <!-- 如果开启评论功能 -->
@@ -524,7 +531,15 @@
   <div class="tags">
     
     
-    <a href="/tags/#docker" title="docker" rel="3">docker</a>
+    <a href="/tags/#docker" title="docker" rel="4">docker</a>
+    
+    
+    
+    <a href="/tags/#深度学习" title="深度学习" rel="2">深度学习</a>
+    
+    
+    
+    <a href="/tags/#自动机器学习" title="自动机器学习" rel="1">自动机器学习</a>
     
     
     
@@ -532,15 +547,11 @@
     
     
     
-    <a href="/tags/#hpl" title="hpl" rel="1">hpl</a>
-    
-    
-    
     <a href="/tags/#git" title="git" rel="1">git</a>
     
     
     
-    <a href="/tags/#深度学习" title="深度学习" rel="1">深度学习</a>
+    <a href="/tags/#hpl" title="hpl" rel="1">hpl</a>
     
     
     
@@ -633,6 +644,10 @@
       <li>从零开始配置Django+uWSGI+Nginx负载均衡</li>
     </a>
     
+    <a href="../cn/AutoCTS/">
+      <li>Auto CTS Forecasting方法介绍</li>
+    </a>
+    
     <a href="../cn/config/">
       <li>docker配置TensorFlow训练环境</li>
     </a>
@@ -643,10 +658,6 @@
     
     <a href="../cn/docker_multnode/">
       <li>docker配置多节点集群</li>
-    </a>
-    
-    <a href="../cn/%E5%A4%9A%E8%8A%82%E7%82%B9%E9%85%8D%E7%BD%AEHPL%E6%B5%8B%E8%AF%95/">
-      <li>多节点配置HPL测试</li>
     </a>
     
   </ul>
@@ -677,7 +688,7 @@
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2022/08/">August 2022</a><span class="archive-list-count">5</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2022/08/">August 2022</a><span class="archive-list-count">6</span></li></ul>
 </div>
 
 
@@ -688,6 +699,10 @@
 <h5><a href="/categories/">categories</a></h5>
 <div class="widget">
   <ul>
+    
+    <a href="/categories/#深度学习">
+      <li>深度学习</li>
+    </a>
     
     <a href="/categories/#集群配置">
       <li>集群配置</li>
@@ -1204,5 +1219,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>

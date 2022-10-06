@@ -145,7 +145,9 @@
       Ccloud&#39;s
     
   </title>
-<meta name="generator" content="Hexo 5.4.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
 
 
 <!-- hack iOS CSS :active style -->
@@ -269,9 +271,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/tags/">
               
-              ABOUT
+              TAGS
               
               
             </a>
@@ -280,9 +282,9 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/about/">
               
-              TAGS
+              ABOUT
               
               
             </a>
@@ -510,6 +512,19 @@
           </li>
           
           <li>
+            08-23
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/AutoCTS/" style="color: #0085a1">
+              <span>
+                Auto CTS Forecasting方法介绍
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
             08-16
             <i class="fa fa-angle-double-right" aria-hidden="true"></i>
             <a href="/cn/git远程仓库同步关系/" style="color: #0085a1">
@@ -592,7 +607,15 @@
   <div class="tags">
     
     
-    <a href="/tags/#docker" title="docker" rel="3">docker</a>
+    <a href="/tags/#docker" title="docker" rel="4">docker</a>
+    
+    
+    
+    <a href="/tags/#深度学习" title="深度学习" rel="2">深度学习</a>
+    
+    
+    
+    <a href="/tags/#自动机器学习" title="自动机器学习" rel="1">自动机器学习</a>
     
     
     
@@ -600,15 +623,11 @@
     
     
     
-    <a href="/tags/#hpl" title="hpl" rel="1">hpl</a>
-    
-    
-    
     <a href="/tags/#git" title="git" rel="1">git</a>
     
     
     
-    <a href="/tags/#深度学习" title="深度学习" rel="1">深度学习</a>
+    <a href="/tags/#hpl" title="hpl" rel="1">hpl</a>
     
     
     
@@ -701,6 +720,10 @@
       <li>从零开始配置Django+uWSGI+Nginx负载均衡</li>
     </a>
     
+    <a href="../../cn/AutoCTS/">
+      <li>Auto CTS Forecasting方法介绍</li>
+    </a>
+    
     <a href="../../cn/config/">
       <li>docker配置TensorFlow训练环境</li>
     </a>
@@ -711,10 +734,6 @@
     
     <a href="../../cn/docker_multnode/">
       <li>docker配置多节点集群</li>
-    </a>
-    
-    <a href="../../cn/%E5%A4%9A%E8%8A%82%E7%82%B9%E9%85%8D%E7%BD%AEHPL%E6%B5%8B%E8%AF%95/">
-      <li>多节点配置HPL测试</li>
     </a>
     
   </ul>
@@ -745,7 +764,7 @@
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="08/">August 2022</a><span class="archive-list-count">5</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="08/">August 2022</a><span class="archive-list-count">6</span></li></ul>
 </div>
 
 
@@ -756,6 +775,10 @@
 <h5><a href="/categories/">categories</a></h5>
 <div class="widget">
   <ul>
+    
+    <a href="/categories/#深度学习">
+      <li>深度学习</li>
+    </a>
     
     <a href="/categories/#集群配置">
       <li>集群配置</li>
@@ -1272,5 +1295,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
