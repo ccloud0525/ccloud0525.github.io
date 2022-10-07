@@ -644,7 +644,7 @@ $$:=∑_{i&lt;j}\frac{exp(β^{(j)}[i])}{∑_{i&lt;j}exp(β^{(j)}[i])}\sum_{o∈O
 <p><img src="macro_search_space.png" alt="macro_search_space"></p>
 <ul>
 <li>定义结构参数γ，令$e_{in}^{(j)}$和$e_{out}^{(j)}$为ST-block $b_j$的输入和输出表达式，$γ^{(i,j)}$表示edge $(b_i,b_j)$的权重，并定义$$e_{in}^{(j)}:=∑_{i&lt;j}\frac{exp(γ^{(i,j)})}{Σ_{i&lt;j}exp(γ^{(i,j)})}e_{out}^{(i)}$$，经过学习后，找出最大的$γ^{i,j}$，从而确定拓扑结构。</li>
-<li>联合搜索空间为$Θ=({α_i,β_i},γ)$</li>
+<li>联合搜索空间为$Θ=((α_i,β_i),γ)$</li>
 </ul>
 <h3 id="Search-Strategy">Search Strategy</h3>
 <ul>
