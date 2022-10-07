@@ -477,67 +477,102 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <blockquote>
-<p>本文详细介绍了论文<a target="_blank" rel="noopener" href="https://www.vldb.org/pvldb/vol15/p971-wu.pdf的研究内容和成果">https://www.vldb.org/pvldb/vol15/p971-wu.pdf的研究内容和成果</a></p>
+<p>本文详细介绍了论文https://www.vldb.org/pvldb/vol15/p971-wu.pdf的研究内容和成果</p>
 </blockquote>
-<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><ul>
-<li>相关时序预测（CTS forecasting）在信息物理系统中非常重要</li>
-<li>基于深度学习的CTS预测方法已经能够通过时空模块（ST blocks）根据时间序列的时间依赖性和空间关联性建模</li>
-<li>ST-Blocks用于提炼原始数据的时间和空间特征</li>
-<li><p>还存在两个挑战性难题</p>
+<h2 id="引言">引言</h2>
+<ul>
+<li>
+<p>相关时序预测（CTS forecasting）在信息物理系统中非常重要</p>
+</li>
+<li>
+<p>基于深度学习的CTS预测方法已经能够通过时空模块（ST blocks）根据时间序列的时间依赖性和空间关联性建模</p>
+</li>
+<li>
+<p>ST-Blocks用于提炼原始数据的时间和空间特征</p>
+</li>
+<li>
+<p>还存在两个挑战性难题</p>
 <ul>
 <li>ST-blocks手动构建，耗费成本高</li>
 <li>现有的预测模型简单堆叠相同的ST-blocks，这么做限制了模型的潜力</li>
 </ul>
 </li>
-<li><p>采用自动化（AutoCTS）解决以上两个问题，可以自动识别具有高竞争力的ST块以及搭建具备成分复杂、拓扑结构复杂的ST块的模型</p>
+<li>
+<p>采用自动化（AutoCTS）解决以上两个问题，可以自动识别具有高竞争力的ST块以及搭建具备成分复杂、拓扑结构复杂的ST块的模型</p>
 </li>
-<li>设计上而言，分别采用一个微观和宏观的搜索空间来构建可能的ST块结构以及不同成分的ST块之间的连接，然后采取一个搜索策略联合搜索出最佳预测模型</li>
-<li>通过在8个广泛应用了CTS预测基准的数据集上进行实验，论证了设计的合理性以及AutoCTS自动搜索的预测模型比人工CTS找到的最佳模型还要好</li>
+<li>
+<p>设计上而言，分别采用一个微观和宏观的搜索空间来构建可能的ST块结构以及不同成分的ST块之间的连接，然后采取一个搜索策略联合搜索出最佳预测模型</p>
+</li>
+<li>
+<p>通过在8个广泛应用了CTS预测基准的数据集上进行实验，论证了设计的合理性以及AutoCTS自动搜索的预测模型比人工CTS找到的最佳模型还要好</p>
+</li>
 </ul>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
-<li>时间依赖性揭示了过去数据和未来数据的关联</li>
-<li>空间关联性表明了不同传感器产生的时间序列的差异性来源于传感器的部署位置差异</li>
-<li>用ST-graph建模方式构建时空关联性</li>
-<li>基于ST-graph建模方式，有很多不同的模型可以被用于预测。现行模型的结构大致为嵌入层——用以处理原始输入的时间序列数据；ST-Backbone层——通过一一堆叠式的ST-blocks提炼时空特征；输出层——根据提取出的特征提供最终预测</li>
-<li>而许多研究建议在ST-backbone层提供独立的ST-blocks，例如STGCN采用的三明治式——两个时序卷积层建模时间依赖性，一个图卷积层用于捕获空间关联性；Graph Wavenet采用了更简单的ST块，部署门控时序卷积构建时间依赖性，用图卷积层捕获空间关联性</li>
-<li><p>还存在两个挑战性难题</p>
+<h2 id="介绍">介绍</h2>
+<ul>
+<li>
+<p>时间依赖性揭示了过去数据和未来数据的关联</p>
+</li>
+<li>
+<p>空间关联性表明了不同传感器产生的时间序列的差异性来源于传感器的部署位置差异</p>
+</li>
+<li>
+<p>用ST-graph建模方式构建时空关联性</p>
+</li>
+<li>
+<p>基于ST-graph建模方式，有很多不同的模型可以被用于预测。现行模型的结构大致为嵌入层——用以处理原始输入的时间序列数据；ST-Backbone层——通过一一堆叠式的ST-blocks提炼时空特征；输出层——根据提取出的特征提供最终预测</p>
+</li>
+<li>
+<p>而许多研究建议在ST-backbone层提供独立的ST-blocks，例如STGCN采用的三明治式——两个时序卷积层建模时间依赖性，一个图卷积层用于捕获空间关联性；Graph Wavenet采用了更简单的ST块，部署门控时序卷积构建时间依赖性，用图卷积层捕获空间关联性</p>
+</li>
+<li>
+<p>还存在两个挑战性难题</p>
 <ul>
 <li>ST-blocks手动构建，耗费成本高</li>
 <li>现有的预测模型简单堆叠相同的ST-blocks，这么做限制了模型的潜力</li>
 </ul>
 </li>
-<li><p>需要采用自动化来解决</p>
+<li>
+<p>需要采用自动化来解决</p>
 </li>
-<li><p>传统NAS没法解决上述两个问题</p>
+<li>
+<p>传统NAS没法解决上述两个问题</p>
 <ul>
 <li>没有给时间序列预测提供良定的搜索空间，而直接用其他领域（cv，nlp）的搜索空间并不能捕获最好的ST块。用所有现存文献内的ST算子作为搜索空间又会导致其过大，复杂度过高。</li>
 <li>现存NAS搜索的是特定拓扑结构下的最优元胞，所以类似于层层堆叠相同ST块</li>
 </ul>
 </li>
-<li><p>希望AutoCTS能自动设计ST-block和具备复杂拓扑结构的ST-backbones</p>
+<li>
+<p>希望AutoCTS能自动设计ST-block和具备复杂拓扑结构的ST-backbones</p>
 </li>
-<li>设计上而言，分别采用一个微观和宏观的搜索空间来构建可能的ST块结构以及不同成分的ST块之间的连接（ST-backbone），然后采取一个搜索策略联合搜索出最佳预测模型<ul>
+<li>
+<p>设计上而言，分别采用一个微观和宏观的搜索空间来构建可能的ST块结构以及不同成分的ST块之间的连接（ST-backbone），然后采取一个搜索策略联合搜索出最佳预测模型</p>
+<ul>
 <li>微观的搜索空间选用精简的基于人工设计的ST块曾用到的T-operators和S-operators集。在这里面高效搜索高竞争力的ST块，从而解决第一个问题。</li>
 <li>宏观的搜索空间采取联合搜索的策略搜索一个ST块成分复杂的拓扑结构，解决第二个问题</li>
 </ul>
 </li>
 </ul>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li><p>Correlated Time Series。例如100个摄像头再一天内每五分钟检测一次，一次检测两个特征——交通流量和交通速度。一天内将产生多元时间序列<script type="math/tex">R^{100*288*2}</script>。采用图的方式表述关系，G(V,E,A)，V中每个节点对应一个时间序列（一个摄像头），边代表两个摄像头（时间序列）的空间关系，邻接矩阵A则蕴含了边的权值——反映了时间序列间的关系强弱，是根据传感器距离预先定义或者提前学习出来的。</p>
-</li>
-<li><p>Correlated Time Series Forecasting。根据已经给定的P步，同时考虑单步预测和多步预测。</p>
+<h2 id="准备工作">准备工作</h2>
 <ul>
-<li><p>单步预测预测未来的第Q步，可以描述为$\hat{X}_{t+P+Q}=F_w(X_{t+1},X_{t+2},…,X_{t+P};G)$，其中$F_w$是预测模型，w是可学习参数，$\hat{X}$是预测数值。</p>
+<li>
+<p>Correlated Time Series。例如100个摄像头再一天内每五分钟检测一次，一次检测两个特征——交通流量和交通速度。一天内将产生多元时间序列$$R^{100<em>288</em>2}$$。采用图的方式表述关系，G(V,E,A)，V中每个节点对应一个时间序列（一个摄像头），边代表两个摄像头（时间序列）的空间关系，邻接矩阵A则蕴含了边的权值——反映了时间序列间的关系强弱，是根据传感器距离预先定义或者提前学习出来的。</p>
 </li>
-<li><p>多步预测预测未来的Q步，可以描述为$\{\hat{X}_{t+P+1},\hat{X}_{t+P+2},…\hat{X}_{t+P+Q}\}=F_w(X_{t+1},X_{t+2},…,X_{t+P};G)$</p>
-</li>
-</ul>
-</li>
-</ul>
+<li>
+<p>Correlated Time Series Forecasting。根据已经给定的P步，同时考虑单步预测和多步预测。</p>
 <ul>
-<li>本文的目的在于自动构建一个精确的预测模型$F_w$，需要考虑的参数为描述模型$F_w$的参数θ——用于描述ST-Backbone中的ST块以及连接情况；以及参数w——被用于不同ST块中算子、卷积算子核心部分以及注意力算子的预测矩阵。目标函数如下：<script type="math/tex">argmin_{θ,w}=ErrorMetric(F_w,D)</script>，其中D是数据集，目标是找出使误差函数最小的参数。</li>
+<li>
+<p>单步预测预测未来的第Q步，可以描述为$\hat{X}_{t+P+Q}=F_w(X_{t+1},X_{t+2},…,X_{t+P};G)$，其中$F_w$是预测模型，w是可学习参数，$\hat{X}$是预测数值。</p>
+</li>
+<li>
+<p>多步预测预测未来的Q步，可以描述为${\hat{X}_{t+P+1},\hat{X}_{t+P+2},…\hat{X}_{t+P+Q}}=F_w(X_{t+1},X_{t+2},…,X_{t+P};G)$</p>
+</li>
 </ul>
-<h2 id="自动CTS预测"><a href="#自动CTS预测" class="headerlink" title="自动CTS预测"></a>自动CTS预测</h2>
+</li>
+<li>
+<p>本文的目的在于自动构建一个精确的预测模型$F_w$，需要考虑的参数为描述模型$F_w$的参数θ——用于描述ST-Backbone中的ST块以及连接情况；以及参数w——被用于不同ST块中算子、卷积算子核心部分以及注意力算子的预测矩阵。目标函数如下：$$argmin_{θ,w}=ErrorMetric(F_w,D)$$，其中D是数据集，目标是找出使误差函数最小的参数。</p>
+</li>
+</ul>
+
 
         <hr>
         <!-- Pager -->
@@ -686,7 +721,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">引言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">介绍</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">准备工作</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%87%AA%E5%8A%A8CTS%E9%A2%84%E6%B5%8B"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">自动CTS预测</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">引言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">介绍</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">准备工作</span></a></li></ol>
         
         </div>
       </aside>
