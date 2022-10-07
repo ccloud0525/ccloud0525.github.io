@@ -406,11 +406,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">4</span> Minutes
+              Estimated Reading Time <span class="post-count">11</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">1.3k</span> In Total
+              Words <span class="post-count">3k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -568,6 +568,95 @@
 <p>本文的目的在于自动构建一个精确的预测模型$F_w$，需要考虑的参数为描述模型$F_w$的参数θ——用于描述ST-Backbone中的ST块以及连接情况；以及参数w——被用于不同ST块中算子、卷积算子核心部分以及注意力算子的预测矩阵。目标函数如下：$$argmin_{θ,w}=ErrorMetric(F_w,D)$$，其中D是数据集，目标是找出使误差函数最小的参数。</p>
 </li>
 </ul>
+<h2 id="自动CTS预测">自动CTS预测</h2>
+<p><img src="frame_work.png" alt="frame_work"></p>
+<ul>
+<li>核心部分是ST-backbone learning层，可以自动设计ST-backbone和其中的ST块</li>
+<li>搜索ST-backbone时，用γ参数化了$b_1$,$b_2$和$b_3$连接到$b_4$的方式。当搜索ST块时，用$α_2$表示隐藏表达式$h_0$和$h_3$之间的算子的参数，用$β_2$参数表示隐藏表达式$h_0$,$h_1$和$h_2$连接到$h_3$的方式。故而用一个参数对{$α_i$,$β_i$}可以表达一个成分复杂的ST块</li>
+</ul>
+<h3 id="搜索粒度">搜索粒度</h3>
+<ul>
+<li>搜索空间可以由不同粒度的算子构成，如果这些算子的粒度都是良定的，那么会有更大的机会搜索出好的神经网络结构，但是这样往往会产生一个很大的搜索空间，需要花费很长的时间和庞大的计算资源。相比而言，一个基于粗粒度算子的搜索空间会比较小，且不耗时，不需要很多计算资源，但是这样会引入人工偏差，导致无法找到更优秀的架构。</li>
+<li>三种粒度，从粗到细，分别为ST-blocks，S/T operators和basic computations。如下图所示，</li>
+</ul>
+<p><img src="STGCN.png" alt="STGCN"></p>
+<ul>
+<li>最粗糙的搜索粒度是使用人工设计的ST块作为搜索单元构成搜索空间，在其中搜索寻找新颖的ST-backbone（复杂而非单一的拓扑结构）</li>
+<li>稍微精细一点的搜索粒度是将人工设计的S/T算子作为搜索单元构成搜索空间，在其中搜寻更新颖的ST块内部结构。</li>
+<li>最精细的搜索粒度，是以基础运算为搜索单元构成的搜索空间，在其中搜索出合适的参数从而找到更新颖的算子</li>
+<li>设计时将第一种定义为Macro Search Space，将第二种定义为Micro Search Space</li>
+</ul>
+<h3 id="Micro-Search-Space">Micro Search Space</h3>
+<ul>
+<li>Micro-DAG，是每个ST-block中的隐藏结构，$h_0$用于接受上一层的输出。每个节点$h_i$代表一个隐含表达式，两个隐含表达式之间的边代表一个算子，所以如果考虑一个算子集合O，每两个节点之间就有|O|条边</li>
+</ul>
+<p><img src="Micro_Search_Space.png" alt="Micro_Search_Space"></p>
+<ul>
+<li>
+<p>最终目的是让每个节点最多只能有两个前置节点，这样可以构造相对内部结构较为复杂的ST块，同时避免引入太多参数</p>
+</li>
+<li>
+<p>micro-DAG揭示了具备M个隐含表达式的ST块的所有可能的内部结构，结构总数为$|O|^{\frac{M(M-1)}{2}}$个</p>
+</li>
+<li>
+<p>参数化过程中用$α^{(i,j)}∈R^{|O|}$表示从$h_i$到$h_j$的各个算子的权重（待学习），随即用所有算子的权重比定义从 $h_i$到$h_j$的变换（有点类似softmax）$$f^{(i,j)}:=\sum_{o∈O}{\frac{exp(α_0^{(i,j)})}{\sum_{o’∈O}{exp(α_{0’}^{(i,j)})}}}o(h_i)$$</p>
+</li>
+<li>
+<p>对于每个节点$h_j$，根据其j条入射边做参数化处理。用参数$β^{(j)}∈R^j$(待学习)衡量j条边的权重，每个节点的隐含表达式可以给出如下计算公式$$h_j:=∑_{i&lt;j}\frac{exp(β^{(j)}[i])}{∑_{i&lt;j}exp(β^{(j)}[i])}f^{(i,j)}$$<br>
+$$:=∑_{i&lt;j}\frac{exp(β^{(j)}[i])}{∑_{i&lt;j}exp(β^{(j)}[i])}\sum_{o∈O}{\frac{exp(α_0^{(i,j)})}{\sum_{o’∈O}{exp(α_{0’}^{(i,j)})}}}o(h_i)$$</p>
+</li>
+<li>
+<p>在这种建模下，给定第一个节点$h_0$就可以算出每个节点的表达式，用反向传播炼出α和β后，即可找到最终的ST块内部结构（每个节点$h_j$只保留两个算子，一个来自于$h_{j-1}$另一个则通过定义权重来挑选）。定义如下权重$$w_0^{(i,j)}:=\frac{exp(β^{(j)}[i])}{∑_{i&lt;j}exp(β^{(i,j)}[i])}\frac{exp(α_0^{i,j})}{∑_{o’∈O}exp(α_{o’}^{i,j})}$$找到这样的算子o：$argmax_{o∈O’}w_o^{(i,j)}$</p>
+</li>
+<li>
+<p>然而derived ST-block可能会与原先的micro-DAG有比较大的差距，这是因为简单比较得到的权重向量会让如下两种情况结果一样：<img src="gap_between_micro_Dag_and_st_block.png" alt="gap_between_micro_Dag_and_st_block"></p>
+</li>
+<li>
+<p>为了降低derived ST-block和micro-DAG间的差异，在标准化参数α时引入参数τ，即替换$\frac{exp(α_0^{(i,j)})}{\sum_{o’∈O}{exp(α_{0’}^{(i,j)})}}$为$\frac{exp(α_0^{(i,j)}/τ)}{\sum_{o’∈O}{exp(α_{0’}^{(i,j)}/τ)}}$，从而$h_j$的计算也跟着变化：$$h_j:=∑_{i&lt;j}\frac{exp(β^{(j)}[i])}{∑_{i&lt;j}exp(β^{(j)}[i])}\sum_{o∈O}{\frac{exp(α_0^{(i,j)}/τ)}{\sum_{o’∈O}{exp(α_{0’}^{(i,j)}/τ)}}}o(h_i)$$，相当于进一步放大softmax后的向量信息间的差异，当τ——&gt;0时，softmax的输出结果已经很接近one-hot向量了。这样定义，对于每个节点对$(h_i,h_j)$，最大的$α_o^{i,j}$会非常显著，从而权重$w_0^{i,j}$也会很显著，derived ST-block和micro-DAG间的差异也会变小。</p>
+</li>
+<li>
+<p>算子集的范围也可以缩小。可以制定两个原则来选择一个精简的S/T算子集来提高效率。首先是要选择捕获不同视角的S/T算子，对他们进行范畴划分；其次是对于每个范畴的S/T算子，选择其中效率最高的。可以分为如下三个family：</p>
+</li>
+</ul>
+<p><img src="%E7%AE%97%E5%AD%90%E8%8C%83%E7%95%B4%E5%88%92%E5%88%86.png" alt="算子范畴划分"></p>
+<ul>
+<li>根据两个评判标准最终选出6类算子DGCC,INF-T,DGCN,INF-S,zero,identity
+<ul>
+<li>考虑不同算子family的差异性
+<ol>
+<li>模型长期的时序依赖性</li>
+<li>效率</li>
+</ol>
+</li>
+<li>从每个family中选出效率最高的变量</li>
+</ul>
+</li>
+</ul>
+<h3 id="Macro-Search-Space">Macro Search Space</h3>
+<ul>
+<li>
+<p>同样采用图的形式，macro-DAG，每个节点$b_i$代表一个ST-block，每条边代表有向信息流，eg：edge$(b_i,b_j)$代表从$b_i$流向$b_j$的信息流</p>
+</li>
+<li>
+<p>显然，最终学习得到的ST-backbone用图表示是macro-DAG的一个子图，在其结构中，每个ST-block节点只保留一个输入边</p>
+</li>
+</ul>
+<p><img src="macro_search_space.png" alt="macro_search_space"></p>
+<ul>
+<li>定义结构参数γ，令$e_{in}^{(j)}$和$e_{out}^{(j)}$为ST-block $b_j$的输入和输出表达式，$γ^{(i,j)}$表示edge $(b_i,b_j)$的权重，并定义$$e_{in}^{(j)}:=∑_{i&lt;j}\frac{exp(γ^{(i,j)})}{Σ_{i&lt;j}exp(γ^{(i,j)})}e_{out}^{(i)}$$，经过学习后，找出最大的$γ^{i,j}$，从而确定拓扑结构。</li>
+<li>联合搜索空间为$Θ=({α_i,β_i},γ)$</li>
+</ul>
+<h3 id="Search-Strategy">Search Strategy</h3>
+<ul>
+<li>AutoCTS采用二阶段搜索策略
+<ul>
+<li>架构搜索——找到最优ST-Backbone。通过划分训练数据为伪训练集和伪验证集，用来训练Θ和网络权重w（如CNN和GCN的核心,Attention的projection矩阵）。采用双层优化算法找到最优Θ和w：$$min_{Θ} L_{val}(w’,Θ)$$ s.t. $$w’=argmin_wL_{train}(w,Θ)$$<br>
+<img src="Jonit_search.png" alt="Jonit_search"></li>
+<li>架构演化<br>
+仅仅保留架构参数Θ而丢弃网络权重w，在原始数据集上训练验证出新的网络参数w‘</li>
+</ul>
+</li>
+</ul>
 
 
         <hr>
@@ -713,7 +802,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">引言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">介绍</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">准备工作</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">引言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">介绍</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">准备工作</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%87%AA%E5%8A%A8CTS%E9%A2%84%E6%B5%8B"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">自动CTS预测</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%90%9C%E7%B4%A2%E7%B2%92%E5%BA%A6"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">搜索粒度</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Micro-Search-Space"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">Micro Search Space</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Macro-Search-Space"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">Macro Search Space</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Search-Strategy"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">Search Strategy</span></a></li></ol></li></ol>
         
         </div>
       </aside>
