@@ -269,9 +269,9 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/categories/">
               
-              标签
+              分类
               
               
             </a>
@@ -280,9 +280,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/tags/">
               
-              分类
+              标签
               
               
             </a>
@@ -521,10 +521,10 @@ nx) \quad (n=1,2,3…)\end{cases}<br>
 $$<br>
 即$f(x)=(f,\frac{1}{\sqrt{2\pi}})\frac{1}{\sqrt{2\pi}}+\sum_{n=1}^{∞}{[(f,\frac{1}{\sqrt{\pi}}cosnx)\frac{1}{\sqrt{\pi}}cosnx+(f,\frac{1}{\sqrt{\pi}}sinnx)\frac{1}{\sqrt{\pi}}sinnx]}$</p>
 <h2 id="傅里叶变换">傅里叶变换</h2>
-<p>傅里叶变换往往应用在信号处理上，信号f(t)表示的是时域上的波形情况，若其具备周期性，则可通过傅里叶级数分解成若干个正（余）弦波的叠加：$f(t)=\frac{a_0}{2}+\sum_{n=1}^{∞}{(a_ncos\frac{n\pi t}{\mathcal{l}}+b_nsin\frac{n\pi t}{\mathcal{l}})}$，定义频率为$\frac{\pi}{l}$则可简写为$f(t)=\frac{a_0}{2}+\sum_{n=1}^{∞}{(a_ncosnw t+b_nsinnw t)}$。事实上，由辅助角公式$asin\theta+bcos\theta=\sqrt{a^2+b^2}sin(\theta+\phi),tan\phi=\frac{b}{a}$，原式其实可以写为$f(t)=\frac{d_0}{2}+\sum_{n=1}^{∞}{d_nsin(nwt+\phi_n)}$</p>
-<p>事实上，这其中蕴含着的物理意义是原波形根据频域可以分解为若干个频率、相位不同的正弦波。这提示我们需要将$w$相同的一组$sinnwt$以及$cosnwt$放在一起看，故而最好的方法就是采用欧拉公式，取原式的复型傅里叶展开。</p>
-<p>傅里叶变换实际上要做的就是计算波形f(t)频率为w的分量，相当于计算正交基$sinnwt$和$cosnwt$两个方向上的分量，这可以通过计算内积实现，即计算$\int_{-l}^{l}f(t)cosnwtdt$以及$\int_{-l}^{l}f(t)sinnwtdt$，而事实上就是计算$F(w)=\int_{-l}^{l}f(t)e^{-iwt}dt$</p>
-<p>而傅里叶逆变换则是通过将不同频域和相位的波性叠加起来重新合成原波形，当原波形本身是周期函数时，显然$f(t)=\frac{a_0}{2}+\sum_{n=1}^{∞}{(a_ncosnw t+b_nsinnw t)}$或$f(t)=\sum_{n=-∞}^{n=∞}c_n\mathcal{e}^{inwt}$就是该逆变换</p>
+<p>傅里叶变换往往应用在信号处理上，信号f(t)表示的是时域上的波形情况，若其具备周期性，则可通过傅里叶级数分解成若干个正（余）弦波的叠加：$f(t)=\frac{a_0}{2}+\sum_{n=1}^{∞}{(a_ncos\frac{n\pi t}{\mathcal{l}}+b_nsin\frac{n\pi t}{\mathcal{l}})}$，定义频率为$w_n=\frac{n\pi}{l}$则可简写为$f(t)=\frac{a_0}{2}+\sum_{n=1}^{∞}{(a_ncosw_nt+b_nsinw_nt)}$。事实上，由辅助角公式$asin\theta+bcos\theta=\sqrt{a^2+b^2}sin(\theta+\phi),tan\phi=\frac{b}{a}$，原式其实可以写为$f(t)=\frac{d_0}{2}+\sum_{n=1}^{∞}{d_nsin(w_nt+\phi_n)}$</p>
+<p>事实上，这其中蕴含着的物理意义是原波形根据频域可以分解为若干个频率、相位不同的正弦波。这提示我们需要将$w_n$相同的一组$sinw_nt$以及$cosw_nt$放在一起看，故而最好的方法就是采用欧拉公式，取原式的复型傅里叶展开。</p>
+<p>傅里叶变换实际上要做的就是计算波形f(t)频率为$w_n$的分量，相当于计算正交基$sinw_nt$和$cosw_nt$两个方向上的分量，这可以通过计算内积实现，即计算$\int_{-l}^{l}f(t)cosw_ntdt$以及$\int_{-l}^{l}f(t)sinw_ntdt$，而事实上就是计算$F(w_n)=\int_{-l}^{l}f(t)e^{-iw_nt}dt$</p>
+<p>而傅里叶逆变换则是通过将不同频域和相位的波性叠加起来重新合成原波形，当原波形本身是周期函数时，显然$f(t)=\frac{a_0}{2}+\sum_{n=1}^{∞}{(a_ncosw_n t+b_nsinw_nt)}$或$f(t)=\sum_{n=-∞}^{n=∞}c_n\mathcal{e}^{iw_nt}$就是该逆变换</p>
 <p>而当原波形不具备周期性，即周期为无穷时，傅里叶变换显然为$F(w)=\int_{-∞}^{∞}f(t)e^{-iwt}dt$，而逆变换则也退化为积分$f(t)=\int_{-∞}^{∞}F(w)e^{iwt}dw$（代表分量频率连续）</p>
 
 
