@@ -247,17 +247,6 @@
           
           
           <li>
-            <a href="/about/">
-              
-              ABOUT
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
             <a href="/archive/">
               
               ARCHIVES
@@ -269,9 +258,9 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/about/">
               
-              TAGS
+              ABOUT
               
               
             </a>
@@ -283,6 +272,17 @@
             <a href="/categories/">
               
               CATEGORIES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              TAGS
               
               
             </a>
@@ -463,9 +463,9 @@
       <!-- 标签云 -->
       <div id='tag_cloud' class="tags">
         
-        <a href="#深度学习" title="深度学习" rel="2">深度学习</a>
-        
         <a href="#Linux系统配置" title="Linux系统配置" rel="1">Linux系统配置</a>
+        
+        <a href="#深度学习" title="深度学习" rel="2">深度学习</a>
         
         <a href="#集群配置" title="集群配置" rel="4">集群配置</a>
         
@@ -476,6 +476,35 @@
       </div>
 
       <!-- 标签列表 -->
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="Linux系统配置">
+          <span class="tag-text">Linux系统配置</span>
+        </span>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/Deepin全自动科学上网/">
+            <h2 class="post-title">
+              Deepin下socks代理全自动
+              
+              -- cn
+              
+            </h2>
+            
+            <h3 class="post-subtitle">
+              代理配置
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+      </div>
       
       <div class="one-tag-list">
         <span class="fa fa-tag listing-seperator" id="深度学习">
@@ -519,35 +548,6 @@
             
             <h3 class="post-subtitle">
               图谱卷积的应用
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="Linux系统配置">
-          <span class="tag-text">Linux系统配置</span>
-        </span>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/Deepin全自动科学上网/">
-            <h2 class="post-title">
-              Deepin下socks代理全自动
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              代理配置
             </h3>
             
           </a>
@@ -1209,5 +1209,22 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+</body>
 </html>
