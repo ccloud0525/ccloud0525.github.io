@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/">
+  <link rel="canonical" href="http://yoursite-url/cn/AGCRN/">
   <title>
     
-      Ccloud&#39;s
+      AGCRN——Adaptive Graph Convolutional Recurrent Network - Ccloud&#39;s
     
   </title>
 <meta name="generator" content="Hexo 5.4.2"></head>
@@ -239,7 +239,7 @@
       <div class="navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="/">HOME</a>
+            <a href="/">首页</a>
           </li>
 
           
@@ -249,7 +249,7 @@
           <li>
             <a href="/archive/">
               
-              ARCHIVES
+              归档
               
               
             </a>
@@ -260,7 +260,7 @@
           <li>
             <a href="/tags/">
               
-              TAGS
+              标签
               
               
             </a>
@@ -271,7 +271,7 @@
           <li>
             <a href="/categories/">
               
-              CATEGORIES
+              分类
               
               
             </a>
@@ -282,7 +282,7 @@
           <li>
             <a href="/about/">
               
-              ABOUT
+              关于
               
               
             </a>
@@ -293,36 +293,14 @@
           
           <li>
             <a class="popup-trigger">
-              <span class="search-icon"></span>SEARCH</a>
+              <span class="search-icon"></span>搜索</a>
           </li>
           
 
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="index.html">
-      
-      
-      <option value="en"  selected >
-        English
-      </option>
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -374,19 +352,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
     }
 
     header.intro-header {
-       /*config*/
-        background-image: var(--intro-header-background-image-url-home);
-        /* background-image: url('/img/header_img/newhome_bg.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/lml_bg.jpg'); */
       
     }
 
@@ -408,10 +386,44 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>Ccloud&#39;s</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">Difficult doesn&#39;t mean Impossible</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#深度学习" title="深度学习">深度学习</a>
+              
+              <a class="tag" href="/tags/#图卷积神经网络" title="图卷积神经网络">图卷积神经网络</a>
+              
+            </div>
+            <h1>AGCRN——Adaptive Graph Convolutional Recurrent Network</h1>
+            <h2 class="subheading">AGCRN学习笔记</h2>
+            <span class="meta">
+              Posted by Cloud on
+              2023-01-10
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">10</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">2.7k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -452,692 +464,345 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
-
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-
-      <!-- Main Content -->
-
-
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/AGCRN/">
-    <h2 class="post-title">
-      AGCRN——Adaptive Graph Convolutional Recurrent Network
-    </h2>
-    <h3 class="post-subtitle">
-      AGCRN学习笔记
-    </h3>
-    <div class="post-content-preview">
-      
-本文详细介绍了论文AGCRN: Adaptive Graph Convolutional Recurrent Network for Traffic Forecasting的研究内容和成果
-
-介绍
-智能交通系统的发展仰仗着交通预测技术的发展，而交通预测的难点在于复杂的内部依赖关系（同一个交通序列的时间联系）和相互依赖关系（不同交通序列的空间联系）。传统方法例如自回归整体均值移动（ARIMA......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Cloud on
-    2023-01-10
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#深度学习" title="深度学习">深度学习</a>
-    
-    <a href="/tags/#图卷积神经网络" title="图卷积神经网络">图卷积神经网络</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/AutoCTS/">
-    <h2 class="post-title">
-      AutoCTS——Automated Correlated Time Series Forecasting
-    </h2>
-    <h3 class="post-subtitle">
-      前沿论文学习笔记
-    </h3>
-    <div class="post-content-preview">
-      
-本文详细介绍了论文AutoCTS: Automated Correlated Time Series Forecasting的研究内容和成果
-
-引言
-
-
-相关时序预测（CTS forecasting）在信息物理系统中非常重要
-
-
-基于深度学习的CTS预测方法已经能够通过时空模块（ST blocks）根据时间序列的时间依赖性和空间关联性建模
-
-
-ST-Blocks用于提炼原始数据的时间和空间......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Cloud on
-    2023-01-08
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#深度学习" title="深度学习">深度学习</a>
-    
-    <a href="/tags/#自动机器学习" title="自动机器学习">自动机器学习</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/STGCN/">
-    <h2 class="post-title">
-      STGCN——Spacial Temporal Graph Convolutional Network
-    </h2>
-    <h3 class="post-subtitle">
-      图谱卷积的应用
-    </h3>
-    <div class="post-content-preview">
-      
-本文详细介绍了论文STGCN:Spacial Temporal Graph Convolutional Network
-
-引言
-
-实时而精准的交通预测对于交通管控非常重要。
-由于非线性性和复杂性，传统方法没法满足中长期的预测任务并且总是忽视时空依赖关系。
-STGCN(Spatio-Temporal Graph Convolutional Networks)被提出用来解决以上两个痛点。
-摒弃......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Cloud on
-    2023-01-06
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#深度学习" title="深度学习">深度学习</a>
-    
-    <a href="/tags/#图神经网络" title="图神经网络">图神经网络</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/深入理解傅里叶变换/">
-    <h2 class="post-title">
-      深入理解傅里叶变换
-    </h2>
-    <h3 class="post-subtitle">
-      傅里叶变换内在解构
-    </h3>
-    <div class="post-content-preview">
-      
-本文详细阐述了傅里叶变换的推导、实际意义以及深层含义
-
-傅里叶级数
-傅里叶级数的产生归功于数学家傅里叶对于周期函数的研究。已知三角函数系sinnx ，cosnx均为周期函数，则其任意线性组合也为周期函数。故而傅里叶认为任意可积周期函数均可分解成三角函数系的线性组合并率先研究了周期为2$\pi$的函数：
-$$f(x)=\frac{a_0}{2}+\sum_{n=1}^{∞}{(a_ncosn......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Cloud on
-    2022-11-19
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#maths" title="maths">maths</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/Deepin全自动科学上网/">
-    <h2 class="post-title">
-      Deepin下socks代理全自动
-    </h2>
-    <h3 class="post-subtitle">
-      代理配置
-    </h3>
-    <div class="post-content-preview">
-      
-本文详细介绍了如何在Deepin下实现全自动化科学上网
-
-Pac代理设置
-12345$ sudo apt install python3-pip$ sudo pip3 install genpac$ genpac --pac-compress --pac-proxy &#x27;SOCKS5 127.0.0.1:1081&#x27; --format pac  -o ~/auto.pac
-......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Cloud on
-    2022-10-28
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#网络代理" title="网络代理">网络代理</a>
-    
-    <a href="/tags/#Deepin" title="Deepin">Deepin</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/小程序+nginx+uwsgi+django配置/">
-    <h2 class="post-title">
-      从零开始配置Django+uWSGI+Nginx负载均衡
-    </h2>
-    <h3 class="post-subtitle">
-      微信小程序项目部署
-    </h3>
-    <div class="post-content-preview">
-      
-本文详细叙述了前端基于微信小程序，后端基于Django框架的web项目部署过程。
-
-引言
-小程序开发已经衍化出了一套十分固定的流程，而腾讯也希望开发者们在未经上线（商用化）前，只在本地调试，为了安全性设置了必须拥有合法域名才能上线的硬性要求。而作为学生项目而言，想要免费体验在服务器上部署后端，用前端访问的完整流程，小程序显然并不是特别适合。为了不购买域名，将Nginx部署在本地进行“前向代......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Cloud on
-    2022-08-24
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#Linux" title="Linux">Linux</a>
-    
-    <a href="/tags/#Nginx" title="Nginx">Nginx</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/config/">
-    <h2 class="post-title">
-      docker配置TensorFlow训练环境
-    </h2>
-    <h3 class="post-subtitle">
-      神经网络
-    </h3>
-    <div class="post-content-preview">
-      
-本文详细介绍了如何直接拉取、配置适用于深度神经网络训练的环境
-
-docker环境配置
-12345678910111213141516171819202122232425262728293031323334353637383940414243#给docker安装nvidia-container-runtime，让container能使用宿主机的nvidia显卡教程网址：http://www.......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Cloud on
-    2022-08-23
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#深度学习" title="深度学习">深度学习</a>
-    
-    <a href="/tags/#docker" title="docker">docker</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/git远程仓库同步关系/">
-    <h2 class="post-title">
-      git三类分支详解
-    </h2>
-    <h3 class="post-subtitle">
-      三类分支解混淆
-    </h3>
-    <div class="post-content-preview">
-      
-本文区分了三个比较容易混淆的分支
-
-远程分支
-远程分支指的是Github或者Gitlab这种基于git做版本管理的远程仓库中的项目的分支。
-远程跟踪分支
-《progit》中提出的概念，虽然叫远程跟踪，但实际在本地。当使用 git fetch命令时，git比较远程仓库和本地仓库的差异，并且将远程仓库的分支拉取下来，保存为形如origin/master的本地只读分支（这就是远程跟踪分支）。所谓......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Cloud on
-    2022-08-16
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#git" title="git">git</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/docker_multnode/">
-    <h2 class="post-title">
-      docker配置多节点集群
-    </h2>
-    <h3 class="post-subtitle">
-      基于docker模拟集群配置
-    </h3>
-    <div class="post-content-preview">
-      
-本文详细介绍了如何利用docker容器配置节点，模拟集群情况
-
-镜像下载+配置
-12345678910111213$ sudo docker pull centos:centos7$ sudo run -it --name cen centos:centos7# yum需要换源(centos8才需要)$ cd /etc/yum.repos.d$ sed -i &#x27;s/mirrorl......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Cloud on
-    2022-08-16
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#docker" title="docker">docker</a>
-    
-    <a href="/tags/#集群" title="集群">集群</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/多节点配置HPL测试/">
-    <h2 class="post-title">
-      多节点配置HPL测试
-    </h2>
-    <h3 class="post-subtitle">
-      基于docker模拟集群hpl测试
-    </h3>
-    <div class="post-content-preview">
-      
-接上文通过docker容易配置多节点模拟集群，本文进一步进行HPL测试
-
-安装MPICH
-123456789101112131415# 下载mpich的源码$ wget --no-check-certificate https://www.mpich.org/static/downloads/3.3rc1/mpich-3.3rc1.tar.gz$ tar zxvf mpich-3.3rc1......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Cloud on
-    2022-08-16
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#docker" title="docker">docker</a>
-    
-    <a href="/tags/#hpl" title="hpl">hpl</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-
-  <!-- Pager -->
-  <ul class="pager">
-    
-    
-  </ul>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
-
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
-        <hr>
-    
-        <!-- Featured Tags -->
-
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#深度学习" title="深度学习" rel="4">深度学习</a>
-    
-    
-    
-    <a href="/tags/#图卷积神经网络" title="图卷积神经网络" rel="1">图卷积神经网络</a>
-    
-    
-    
-    <a href="/tags/#自动机器学习" title="自动机器学习" rel="1">自动机器学习</a>
-    
-    
-    
-    <a href="/tags/#网络代理" title="网络代理" rel="1">网络代理</a>
-    
-    
-    
-    <a href="/tags/#Deepin" title="Deepin" rel="1">Deepin</a>
-    
-    
-    
-    <a href="/tags/#图神经网络" title="图神经网络" rel="1">图神经网络</a>
-    
-    
-    
-    <a href="/tags/#docker" title="docker" rel="3">docker</a>
-    
-    
-    
-    <a href="/tags/#集群" title="集群" rel="1">集群</a>
-    
-    
-    
-    <a href="/tags/#hpl" title="hpl" rel="1">hpl</a>
-    
-    
-    
-    <a href="/tags/#git" title="git" rel="1">git</a>
-    
-    
-    
-    <a href="/tags/#Linux" title="Linux" rel="1">Linux</a>
-    
-    
-    
-    <a href="/tags/#Nginx" title="Nginx" rel="1">Nginx</a>
-    
-    
-    
-    <a href="/tags/#maths" title="maths" rel="1">maths</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/Argentina.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>The world open itself before those with noble hearts</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/ccloud0525">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-      <li>
-        <a target="_blank" href="https://www.zhihu.com/people/tian-xing-jian-82-19">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa  fa-stack-1x fa-inverse">知</i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-      <li>
-        <a target="_blank" href="http://weibo.com/6386058030">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="cn/AGCRN/">
-      <li>AGCRN——Adaptive Graph Convolutional Recurrent Network</li>
-    </a>
-    
-    <a href="cn/AutoCTS/">
-      <li>AutoCTS——Automated Correlated Time Series Forecasting</li>
-    </a>
-    
-    <a href="cn/STGCN/">
-      <li>STGCN——Spacial Temporal Graph Convolutional Network</li>
-    </a>
-    
-    <a href="cn/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/">
-      <li>深入理解傅里叶变换</li>
-    </a>
-    
-    <a href="cn/Deepin%E5%85%A8%E8%87%AA%E5%8A%A8%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">
-      <li>Deepin下socks代理全自动</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Friends Blog -->
-
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://github.com/Cyria7" target="_blank">Cyria7</a></li>
-  
-  <li><a href="https://github.com/ameki77" target="_blank">ameki77</a></li>
-  
-  <li><a href="https://picasun.github.io/" target="_blank">Picasun</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <blockquote>
+<p>本文详细介绍了论文AGCRN: Adaptive Graph Convolutional Recurrent Network for Traffic Forecasting的研究内容和成果</p>
+</blockquote>
+<h2 id="介绍">介绍</h2>
+<p>智能交通系统的发展仰仗着交通预测技术的发展，而交通预测的难点在于复杂的内部依赖关系（同一个交通序列的时间联系）和相互依赖关系（不同交通序列的空间联系）。传统方法例如自回归整体均值移动（ARIMA）和向量自回归（VAR）都只采用了时间序列建模，他们不能捕获非线性关系和大规模交通数据中错综复杂的时空关联。而基于深度学习的方法仅仅用循环神经网络建模时间关联——用长短记忆网络和门电路卷积单元；用基于图卷积神经网络（GCN）的方法建模非结构化的交通序列数据以及他们的内在联系。这样构建的模型只对于所有交通序列中突出且共有的模式非常敏感，却无法普适而精确地捕获所有的特定模式。这是因为时间序列可能表达多种多样的模式，然而基于图卷积升级网络的方法却需要预定义一个构建好内部联系的图来捕获空间关联性，而这个过程非常得直觉化，经验性，不完整性，故而对于特定的预测任务并没有直观联系。</p>
+<p>而本文为了解决以上问题通过修改现有方法的基本模块提出了两个相对简明的机制。是为了增强图卷积神经网络而提出的两个适应性的模块：1）一个节点参数适应学习模块（NAPL）用来为每个交通序列学习节点相关的模式；2）一个数据适应图生成模块（DAGG）用以根据数据来推理节点结构和属性嵌入。以上两个模块互相独立且可以被分别或是独立地应用于现存的基于图卷积神经网络的交通预测模型。更进一步，这两个模块可以和循环神经网络组合起来，提出一个整合好的交通预测模型AGCRN，它可以捕获精确的特定节点交通序列中的时空关联并且整合内嵌进入DAGG模块。训练AGCRN可以对于每个交通序列源创造一个有意义的节点表达向量。这些表达可以被潜在应用于其他任务。</p>
+<h2 id="相关工作">相关工作</h2>
+<ul>
+<li>
+<p>相关时间序列预测——LSTM和GRU，但都不能兼顾空间关联</p>
+</li>
+<li>
+<p>基于图卷积神经网络的交通预测，例如DCRNN和Graph WaveNet，以及更新的ASTGCN、STSGCN和GMAN，但是他们均不能捕获动态的时空关联性，只能捕获交通序列间共有的时空关系并且严重依赖预定义的图</p>
+</li>
 </ul>
+<h2 id="方法论">方法论</h2>
+<h3 id="问题定义">问题定义</h3>
+<p>考虑N个相关的单变量时间序列$\mathcal{X}=[ X_{:,0},X_{:,1},…,X_{:,t},… ]$,其中$X_{:,t}:=[x_{1,t},x_{2,t},…,x_{i,t},…,x_{n,t}]^T\in R^{N\times 1}$代表N个信源在时间戳t时发出的信号，目标是基于历史观测值预测未来的值，问题可以形式化为找到一个函数$\mathcal{F}$，基于过去$T$步的历史数据预测未来$\tau$步的数据：</p>
+<p>$$[X_{:,t+1},X_{:,t+2},…,X_{:,t+\tau},…]= \mathcal{F}_\theta (X _{:,t}, X _{:,t-1},…, X _{:,t-T+1})$$</p>
+<p>其中$\theta$表示模型中所有可学习的参数。为了精确地大批量处理交通序列间的空间关联，可以进一步在图$\mathcal{G}=(\mathcal{V},\epsilon,A)$上表示，其中$\mathcal{V}$是顶点集，代表交通序列信源，$|\mathcal{V}|=N$，$\epsilon$是边集，$A \in R^{N\times N}$是图的邻接矩阵，代表信源间的关系（空间距离或是相似度），因此，问题可以被表示为：</p>
+<p>$$[ X_{:,t+1},X_{:,t+2},…,X_{:,t+\tau},… ]=\mathcal{F} _\theta(X _{:,t},X _{:,t-1},…,X _{:,t-T+1};\mathcal{G})$$</p>
+<h3 id="节点适应性参数学习-NAPL">节点适应性参数学习(NAPL)</h3>
+<p>许多关于交通预测的工作都倾向于用GCN捕获交通序列间的空间关系并遵循在谱域上计算的原则，图卷积可以被一阶切比雪夫不等式较好地近似，大致过程可以总结为如下推导：</p>
+<p>$$X \ast_{\mathcal{G}} g=\mathcal{F^{-1}}(\mathcal{F}(x)\odot\mathcal{F}(g))=U(U^Tx \odot U^Tg)=U(diag(U^Tg)U^TX)$$</p>
+<p>令卷积核$g_\theta=diag(U^Tg)$且应用切比雪夫不等式近似：</p>
+<p>$$X \ast_{\mathcal{G}} g=Ug_\theta U^TX=U(\sum_{i=0}^{k-1}{\beta_i T_i(\hat{\Lambda})})U^TX \approx U(\sum_{i=0}^{k-1}{\beta_i (\sum_{c=0}^{c=k-1}\alpha_{ci}\Lambda^c}))U^TX$$</p>
+<p>$$=\sum_{i=0}^{k-1}{\beta_i (\sum_{c=0}^{c=k-1}\alpha_{ci}(U\Lambda U^T)^c})X=\sum_{i=0}^{k-1}{\beta_i (\sum_{c=0}^{c=k-1}\alpha_{ci}L^c})X$$</p>
+<p>$$=\sum_{i=0}^{k-1}{\beta_iT_i(\hat{L})} X$$</p>
+<p>切比雪夫不等式的递推公式为:</p>
+<p>$$T_0(x)=1,T_1(x)=x,T_{n+1}(x)=2xT_n(x)-T_{n-1}(x)$$</p>
+<p>而只采用一阶切比雪夫不等式近似，就可以简化为：</p>
+<p>$$\sum_{i=0}^{1}{\beta_iT(\hat{L})} X=(\beta_0+\beta_1 \hat{L})X$$</p>
+<p>又已知$\hat{L}=L-I_n$且其中L为归一化图拉普拉斯矩阵$L=I_n-D^{-\frac{1}{2}}AD^{-\frac{1}{2}}$</p>
+<p>故而原式为$(\beta_0-\beta_1(D^{-\frac{1}{2}}AD^{-\frac{1}{2}}))X$，令$\beta_0=\theta=-\beta_1$再加上偏置项就有</p>
+<p>$$X \ast_{\mathcal{G}}g=(D^{-\frac{1}{2}}AD^{-\frac{1}{2}}+I_n)\theta X+b$$，当将输入输出扩展成整个网络，则有:</p>
+<p>$$Z=(I_N+D^{-\frac{1}{2}}AD^{-\frac{1}{2}})\mathbb{X}\Theta+\mathbb{b}$$</p>
+<p>其中$A \in R^{N\times N}$是邻接矩阵，$D$是度矩阵，$\mathbb{X}\in R^{N\times C}$和$Z\in R^{N\times F}$</p>
+<p>分别是GCN层的输入和输出，$\Theta \in R^{C\times F}$和$\mathbb{b} \in R^{F}$表示可学习的参数和偏置</p>
+<p>扩展后的$\Theta$可以看作是多节点共享参数，而最坏情况也可以学习成对角矩阵（右乘对角矩阵相当于对于原矩阵同一列乘相同的放缩系数，即和扩展前的含义一致）</p>
+<p>虽然上述方式可以快速学习多节点所共有的显著模式并能显著降低参数量，但是用于交通预测问题时却有一些不足：由于交通时序数据的多样性，即便是相邻节点的交通流量也可能由于一些特定的属性表现出不相似的模式，而来自于不连接的节点的交通序列可能表现出相反的模式。故而仅仅捕获所有节点所共有的模式并不能用于精确的交通预测，需要对于每个节点维护一个独立的参数空间进行参数学习。</p>
+<p>对于扩大的参数空间$\Theta \in R^{N\times C\times F}$，对其进行分解从而减少计算复杂度，$\Theta = E_{\mathcal{G}}\cdot W_{\mathcal{G}}$，其中$E_{\mathcal{G}}\in R^{N\times d}$，$W_{\mathcal{G}}\in R^{d\times C\times F}$。从单节点的视角来看，该因式分解相当于为$i$节点从参数池$W_{\mathcal{G}}$中提取参数$\Theta^i$（根据分量$E^i_{\mathcal{G}}$），同理，$b_{\mathcal{G}}\in R^{d\times F}$：</p>
+<p>$$Z=(I_n+D^{-\frac{1}{2}}AD^{-\frac{1}{2}})XE_{\mathcal{G}}W_{\mathcal{G}}+E_{\mathcal{G}}b_{\mathcal{G}}$$</p>
+<h3 id="数据自适应图生成-DAGG">数据自适应图生成(DAGG)</h3>
+<p>基于GCN的预测模型的另外一个问题就是需要一个预定义的邻接矩阵$A$用以图卷积操作。现存方法主要以两种方式定义矩阵：1）地理距离；2）相似度。然而这些都较为直觉化，不能包含完整的空间依赖且不和具体的预测任务直接相关。并且不能给其他领域不具备相关知识的工作人员直接应用，使得其较为低效。</p>
+<p>为了解决上述问题，提出一个新颖的模块——数据自适应图生成模块（DAGG），用以根据数据自动推理隐藏的内部联系。该模块首先为所有节点初始化一个节点嵌入表示词典$E_A\in R^{N\times d_e}$，其每一行代表节点的嵌入表示，$d_e$代表节点嵌入空间的维数。参照定义图时用得节点相似度，新的节点间的相似度可以用$E_AE^T_A$表示：</p>
+<p>$$D^{-\frac{1}{2}}AD^{-\frac{1}{2}}=softmax(ReLU(E_A\cdot E_A^T))$$</p>
+<p>这样操作可以避免生成$A$和计算$L$，直接算出$D^{-\frac{1}{2}}AD^{-\frac{1}{2}}$，在训练过程中，$E_A$可以自动更新来学习不同交通序列间的隐藏细节并且为图卷积算出自适应性矩阵：</p>
+<p>$$Z=(I_N+softmax(ReLU(E_A\cdot E_A^T)))X\Theta$$</p>
+<h3 id="自适应图卷积循环神经网络（AGCRN）">自适应图卷积循环神经网络（AGCRN）</h3>
+<p>除了空间关联，交通预测还涉及复杂的时间关联性。这部分提出了AGCRN——组合了NAPL、DAGG以及Gated Recurrent Units（GRU），即将上述机制结合得到新的图卷积，并且将这种图卷积集成到GRU中替代原有的线性层同时捕捉交通数据中的时空依赖，整个模型可以形式化表示为如下：</p>
+<p>$$\tilde{A}=softmax(ReLU(EE^T))$$</p>
+<p>$$z_t=\sigma(\tilde{A}[X_{:,t},h_{t-1}]EW_z+Eb_z)$$</p>
+<p>$$r_t=\sigma(\tilde{A}[X_{:,t},h_{t-1}]EW_r+Eb_r)$$</p>
+<p>$$\hat{h} _t=tanh(\tilde{A}[X _{:,t},r\odot h _{t-1}]EW _{\hat{h}}+Eb _{\hat{h}})$$</p>
+<p>$$h_t=z\odot h_{t-1}+(1-z)\odot \hat{h}_t$$</p>
+<p>$X_{:,t}$和$h_t$是时间戳t的输入和输出，$[\cdot]$表示连接操作，$z$和$r$是重置门和更新门。$E$，$W_z$，$W_r$，$W_{\hat{h}}$，$b_z$，$b_r$以及$b_{\hat{h}}$都是模型AGCRN中的可学习参数。</p>
+<h3 id="多步交通预测">多步交通预测</h3>
+<p>使用AGCRN作为编码器捕获历史序列中的时空依赖，并且直接使用线性变换将编码器最后一步的输出$H\in R^{N\times d_0}$转换为未来多步的序列预测值$\hat{Y}\in R^{N\times \tau}$，其中$\tau$表示未来序列的长度，使用$L_1$损失函数：</p>
+<p>$$\mathcal{L}(W_\theta)=\sum_{i=t+1}^{i=t+\tau}|X_{:,i}-X^{'}_{:,i}|$$</p>
+<p>其中$W_\theta$代表所有可学习参数，$X_{:,i}$代表gt，$X^{'}_{:,i}$代表所有节点在时间戳$i$时的预测值</p>
+<h2 id="实验">实验</h2>
+<h3 id="数据集">数据集</h3>
+<p>此文使用公开的PEMS04与PEMS08两个交通数据集</p>
+<h3 id="实验设置">实验设置</h3>
+<p>将AGCRN与领域所有的高性能模型进行对比：</p>
+<ol>
+<li>Historical Average (HA)</li>
+<li>Vector Auto-Regression (VAR)</li>
+<li>GRU-ED</li>
+<li>DSANet</li>
+<li>DCRNN</li>
+<li>STGCN</li>
+<li>ASTGCN</li>
+<li>STSGCN</li>
+</ol>
+<p><img src="comparison" alt="comparison"></p>
+<h3 id="metrics">metrics</h3>
+<p>使用了三个广泛使用的metrics——- Mean Absolute Error (MAE), Root Mean Square Error(RMSE), and Mean Absolute Percentage Error (MAPE)</p>
 
 
         <hr>
-    
-        <!-- Archives -->
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/AutoCTS/" data-toggle="tooltip" data-placement="top" title="AutoCTS——Automated Correlated Time Series Forecasting">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2023/01/">January 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/11/">November 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/08/">August 2022</a><span class="archive-list-count">5</span></li></ul>
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
 </div>
+<!-- tip end -->
 
+        <!-- tip end -->
+        
 
-        <hr>
-    
-        <!-- Categories -->
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
 
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#深度学习">
-      <li>深度学习</li>
-    </a>
-    
-    <a href="/categories/#Linux系统配置">
-      <li>Linux系统配置</li>
-    </a>
-    
-    <a href="/categories/#集群配置">
-      <li>集群配置</li>
-    </a>
-    
-    <a href="/categories/#git">
-      <li>git</li>
-    </a>
-    
-    <a href="/categories/#maths">
-      <li>maths</li>
-    </a>
-    
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=AGCRN——Adaptive Graph Convolutional Recurrent Network&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/AGCRN/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
   </ul>
 </div>
 
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 
+        <!-- Sharing End -->
+        
         <hr>
-    
-</div>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '04b857744df6aca41a4b',
+      clientSecret: '46345ef524913d79f188d03d10e82693a1b90cbe',
+      repo: 'blogcomment',
+      owner: 'ccloud0525',
+      admin: 'ccloud0525',
+      id: 'Tue Jan 10 2023 12:09:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'zh-CN',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
 
 
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
     
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">介绍</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">相关工作</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%96%B9%E6%B3%95%E8%AE%BA"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">方法论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%98%E5%AE%9A%E4%B9%89"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">问题定义</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%8A%82%E7%82%B9%E9%80%82%E5%BA%94%E6%80%A7%E5%8F%82%E6%95%B0%E5%AD%A6%E4%B9%A0-NAPL"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">节点适应性参数学习(NAPL)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E8%87%AA%E9%80%82%E5%BA%94%E5%9B%BE%E7%94%9F%E6%88%90-DAGG"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">数据自适应图生成(DAGG)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%87%AA%E9%80%82%E5%BA%94%E5%9B%BE%E5%8D%B7%E7%A7%AF%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%88AGCRN%EF%BC%89"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">自适应图卷积循环神经网络（AGCRN）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%A4%9A%E6%AD%A5%E4%BA%A4%E9%80%9A%E9%A2%84%E6%B5%8B"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">多步交通预测</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">实验</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">数据集</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AE%9E%E9%AA%8C%E8%AE%BE%E7%BD%AE"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">实验设置</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#metrics"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">metrics</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#深度学习" title="深度学习">深度学习</a>
+            
+            <a class="tag" href="/tags/#图卷积神经网络" title="图卷积神经网络">图卷积神经网络</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://github.com/Cyria7" target="_blank">Cyria7</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/ameki77" target="_blank">ameki77</a>
+          </li>
+          
+          <li>
+            <a href="https://picasun.github.io/" target="_blank">Picasun</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
@@ -1320,7 +985,7 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             <span class="search-icon">
               <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
             </span>
-            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
           </div>
         </div>
         <div id="local-search-result"></div>

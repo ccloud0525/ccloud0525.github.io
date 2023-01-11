@@ -142,7 +142,7 @@
   <link rel="canonical" href="http://yoursite-url/cn/AutoCTS/">
   <title>
     
-      Auto CTS Forecasting方法介绍 - Ccloud&#39;s
+      AutoCTS——Automated Correlated Time Series Forecasting - Ccloud&#39;s
     
   </title>
 <meta name="generator" content="Hexo 5.4.2"></head>
@@ -258,9 +258,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/tags/">
               
-              关于
+              标签
               
               
             </a>
@@ -280,9 +280,9 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/about/">
               
-              标签
+              关于
               
               
             </a>
@@ -394,11 +394,11 @@
               <a class="tag" href="/tags/#自动机器学习" title="自动机器学习">自动机器学习</a>
               
             </div>
-            <h1>Auto CTS Forecasting方法介绍</h1>
+            <h1>AutoCTS——Automated Correlated Time Series Forecasting</h1>
             <h2 class="subheading">前沿论文学习笔记</h2>
             <span class="meta">
               Posted by Cloud on
-              2022-10-07
+              2023-01-08
             </span>
 
 
@@ -473,7 +473,7 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <blockquote>
-<p>本文详细介绍了论文https://www.vldb.org/pvldb/vol15/p971-wu.pdf的研究内容和成果</p>
+<p>本文详细介绍了论文AutoCTS: Automated Correlated Time Series Forecasting的研究内容和成果</p>
 </blockquote>
 <h2 id="引言">引言</h2>
 <ul>
@@ -568,7 +568,7 @@
 <p>本文的目的在于自动构建一个精确的预测模型$F_w$，需要考虑的参数为描述模型$F_w$的参数θ——用于描述ST-Backbone中的ST块以及连接情况；以及参数w——被用于不同ST块中算子、卷积算子核心部分以及注意力算子的预测矩阵。目标函数如下：$$argmin_{θ,w}=ErrorMetric(F_w,D)$$，其中D是数据集，目标是找出使误差函数最小的参数。</p>
 </li>
 </ul>
-<h2 id="自动CTS预测">自动CTS预测</h2>
+<h2 id="AutoCTS-forecasting">AutoCTS forecasting</h2>
 <p><img src="frame_work.png" alt="frame_work"></p>
 <ul>
 <li>核心部分是ST-backbone learning层，可以自动设计ST-backbone和其中的ST块</li>
@@ -657,6 +657,12 @@ $$:=∑_{i&lt;j}\frac{exp(β^{(j)}[i])}{∑_{i&lt;j}exp(β^{(j)}[i])}\sum_{o∈O
 </ul>
 </li>
 </ul>
+<h2 id="实验">实验</h2>
+<h3 id="数据集">数据集</h3>
+<p><img src="dataset.png" alt="dataset"></p>
+<h3 id="实验结果">实验结果</h3>
+<p><img src="accuracy1.png" alt="accuracy1"></p>
+<p><img src="accuracy2.png" alt="accuracy2"></p>
 
 
         <hr>
@@ -664,12 +670,12 @@ $$:=∑_{i&lt;j}\frac{exp(β^{(j)}[i])}{∑_{i&lt;j}exp(β^{(j)}[i])}\sum_{o∈O
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/Deepin全自动科学上网/" data-toggle="tooltip" data-placement="top" title="Deepin下socks代理全自动">&larr; Previous Post</a>
+            <a href="/cn/AGCRN/" data-toggle="tooltip" data-placement="top" title="AGCRN——Adaptive Graph Convolutional Recurrent Network">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/小程序+nginx+uwsgi+django配置/" data-toggle="tooltip" data-placement="top" title="从零开始配置Django+uWSGI+Nginx负载均衡">Next Post &rarr;</a>
+            <a href="/cn/STGCN/" data-toggle="tooltip" data-placement="top" title="STGCN——Spacial Temporal Graph Convolutional Network">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -718,7 +724,7 @@ $$:=∑_{i&lt;j}\frac{exp(β^{(j)}[i])}{∑_{i&lt;j}exp(β^{(j)}[i])}\sum_{o∈O
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=Auto CTS Forecasting方法介绍&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/AutoCTS/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=AutoCTS——Automated Correlated Time Series Forecasting&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/AutoCTS/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -753,7 +759,7 @@ $$:=∑_{i&lt;j}\frac{exp(β^{(j)}[i])}{∑_{i&lt;j}exp(β^{(j)}[i])}\sum_{o∈O
       repo: 'blogcomment',
       owner: 'ccloud0525',
       admin: 'ccloud0525',
-      id: 'Fri Oct 07 2022 12:09:00 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Sun Jan 08 2023 12:09:00 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -806,7 +812,7 @@ $$:=∑_{i&lt;j}\frac{exp(β^{(j)}[i])}{∑_{i&lt;j}exp(β^{(j)}[i])}\sum_{o∈O
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">引言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">介绍</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">准备工作</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%87%AA%E5%8A%A8CTS%E9%A2%84%E6%B5%8B"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">自动CTS预测</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%90%9C%E7%B4%A2%E7%B2%92%E5%BA%A6"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">搜索粒度</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Micro-Search-Space"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">Micro Search Space</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Macro-Search-Space"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">Macro Search Space</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Search-Strategy"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">Search Strategy</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">引言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">介绍</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">准备工作</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#AutoCTS-forecasting"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">AutoCTS forecasting</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%90%9C%E7%B4%A2%E7%B2%92%E5%BA%A6"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">搜索粒度</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Micro-Search-Space"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">Micro Search Space</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Macro-Search-Space"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">Macro Search Space</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Search-Strategy"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">Search Strategy</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">实验</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">数据集</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">实验结果</span></a></li></ol></li></ol>
         
         </div>
       </aside>
