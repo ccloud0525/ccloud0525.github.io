@@ -410,7 +410,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">1.6k</span> In Total
+              Words <span class="post-count">1.5k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -475,7 +475,7 @@
         <blockquote>
 <p>本文详细介绍了扩散卷积的相关知识以及论文DCRNN的研究内容和成果</p>
 </blockquote>
-<h2 id="1-介绍">1 介绍</h2>
+<h1>介绍</h1>
 <ul>
 <li>基本目标是构建一个速度传感器网络，通过给定的历史速度数据以及潜在的道路网络，预测交通情况（速度）</li>
 <li>挑战性主要在于时空关联性以及长程预测问题的内在复杂性
@@ -501,11 +501,11 @@
 <p>本文用有向图的节点代表传感器，边的权重表示传感器之间的近似性（时空），将动态的交通流当成广播过程建模并且提出了广播卷积（diffusion convolution）操作来捕获空间依赖并提出了应用了广播卷积的广播卷积循环神经网络（DCRNN）。</p>
 </li>
 </ul>
-<h2 id="2-方法论">2 方法论</h2>
-<h3 id="2-1-交通预测问题">2.1 交通预测问题</h3>
+<h1>方法论</h1>
+<h2 id="交通预测问题">交通预测问题</h2>
 <p>目标是预测根据给定的$N$个道路网络上相关的传感器返回的历史数据预测未来的交通速度，可以用图定义：$\mathcal{G}=(\mathcal{V},\epsilon,W)$，其中$|\mathcal{V} |=N$代表传感器节点，$\epsilon$代表边集，$W$代表边的邻接权重（由道路图距离方程计算得到）的矩阵。观测到的交通流数据可以用$X\in \mathbb{R}^{N\times P}$表示，其中$P$代表每个节点的特征数（例如速度、容量）。$X^{(t)}$达标在$t$时刻观测到的数据，该问题旨在学习一个映射$h(\cdot)$通过过去的$T’$个数据预测未来的$T$个数据：</p>
 <p>$$[X^{(t-T’+1)},…,X^{(t)};\mathcal{G}]\stackrel{h(\cdot)}{\longrightarrow}[X^{(t+1)},…,X^{(t+T)}] $$</p>
-<h3 id="2-2-空间依赖建模">2.2 空间依赖建模</h3>
+<h2 id="空间依赖建模">空间依赖建模</h2>
 <p>把交通流和扩散过程相结合，以抓住交通流动态数据随机性的本质。其中用到了图上的random walk和diffusion convolution，先介绍该知识：</p>
 
 
@@ -532,7 +532,7 @@
 <p>由上述可以定义扩散卷积层，一个将$P$维特征映射到$Q$维的层：</p>
 <p>$$H_{:,q}=a(\sum_{p=1}^{P}X_{:,p}\ast_{\mathcal{G}}f_{\Theta_{q,p,:,:}})\quad for\quad q\in[1,Q]\cap N^\ast$$</p>
 <p>其中$X\in \mathbb{R}^{N\times P}$是输入，$H\in \mathbb{R}^{N\times Q}$是输出，$\Theta \in \mathbb{R} ^{Q\times P \times K\times 2}=[\theta]_{q,p}$，其中$\Theta _{q,p,:,:}\in \mathbb{R} ^{K\times 2}$表示第$p$个输入和第$q$个输出的关联</p>
-<h3 id="2-3-时间动态建模">2.3 时间动态建模</h3>
+<h2 id="时间动态建模">时间动态建模</h2>
 <p>采用循环神经网络建模，使用门控循环单元（GRU），把线性层替换为扩散卷积，形成本文提出的扩散卷积门控单元（DCGRU）</p>
 <p>$$r^{(t)}=\sigma(\Theta_r \ast _{\mathcal{G}}[X^{(t)},H^{(t-1)}]+b_r)$$</p>
 <p>$$u(t)=\sigma(\Theta_u \ast_{\mathcal{G}}[X^{(t)},H^{t-1}]+b_u)$$</p>
@@ -541,9 +541,9 @@
 <p>其中$X^{(t)}$和$H^{(t)}$分别代表$t$时刻的输入和输出，$r^{(t)}$和$u^{(t)}$分别代表$t$时刻的重置门和更新门，$\Theta_{r}$，$\Theta_{u}$和$\Theta_{C}$分别是相关卷积核的参数，和GRU一样，DCGRU也可以被用来构建卷积神经网络的层并且可以用反向传播算法进行训练</p>
 <p>在多步预测过程中采用编码器-解码器的结构，且均为DCGRU。训练过程中，将历史时间序列数据投入编码器中，并且用最终状态初始化解码器。解码器通过和ground truth比对生成预测：</p>
 <p><img src="DCRNN_system.png" alt="DCRNN_system"></p>
-<h2 id="4-实验">4 实验</h2>
+<h1>实验</h1>
 <p>在两个数据集METR-LA和PEMS-BAY上进行实验，实验中将交通读数数据分为5分钟一个窗口，采取Z-Score分割法，70%的数据用以训练，20%用以测试，10%用以验证。为了构建传感器图，采用阈值高斯核构建邻接矩阵$W_{ij}=exp(-\frac{dist(v_i,v_j)^2}{\sigma^2})$，当其小于一个阈值时，将其定为0。其中$W_{ij}$表示传感器$v_i$和$v_j$之间的权重，$dist(v_i,v_j)$表示道路网上两传感器的实际距离，$\sigma$表示距离的标准差</p>
-<h3 id="4-1-实验设置">4.1 实验设置</h3>
+<h2 id="实验设置">实验设置</h2>
 <p>将DCRNN和其他广泛应用的时间序列回归模型对比：</p>
 <ul>
 <li>HA</li>
@@ -553,14 +553,14 @@
 <li>FNN</li>
 <li>FC-LSTM</li>
 </ul>
-<h3 id="4-2-交通预测表现对比">4.2 交通预测表现对比</h3>
+<h2 id="交通预测表现对比">交通预测表现对比</h2>
 <p>设定metrics:</p>
 <ul>
 <li>MAE</li>
 <li>MAPE</li>
 <li>RMSE</li>
 </ul>
-<h2 id="原文">原文</h2>
+<h1>原文</h1>
 
 
 	<div class="row">
@@ -714,7 +714,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-%E4%BB%8B%E7%BB%8D"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">1 介绍</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-%E6%96%B9%E6%B3%95%E8%AE%BA"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">2 方法论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-1-%E4%BA%A4%E9%80%9A%E9%A2%84%E6%B5%8B%E9%97%AE%E9%A2%98"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">2.1 交通预测问题</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-2-%E7%A9%BA%E9%97%B4%E4%BE%9D%E8%B5%96%E5%BB%BA%E6%A8%A1"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">2.2 空间依赖建模</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-3-%E6%97%B6%E9%97%B4%E5%8A%A8%E6%80%81%E5%BB%BA%E6%A8%A1"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">2.3 时间动态建模</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-%E5%AE%9E%E9%AA%8C"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">4 实验</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-1-%E5%AE%9E%E9%AA%8C%E8%AE%BE%E7%BD%AE"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">4.1 实验设置</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-2-%E4%BA%A4%E9%80%9A%E9%A2%84%E6%B5%8B%E8%A1%A8%E7%8E%B0%E5%AF%B9%E6%AF%94"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">4.2 交通预测表现对比</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8E%9F%E6%96%87"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">原文</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">介绍</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">方法论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%A4%E9%80%9A%E9%A2%84%E6%B5%8B%E9%97%AE%E9%A2%98"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">交通预测问题</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A9%BA%E9%97%B4%E4%BE%9D%E8%B5%96%E5%BB%BA%E6%A8%A1"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">空间依赖建模</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%97%B6%E9%97%B4%E5%8A%A8%E6%80%81%E5%BB%BA%E6%A8%A1"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">时间动态建模</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">实验</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AE%9E%E9%AA%8C%E8%AE%BE%E7%BD%AE"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">实验设置</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%A4%E9%80%9A%E9%A2%84%E6%B5%8B%E8%A1%A8%E7%8E%B0%E5%AF%B9%E6%AF%94"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">交通预测表现对比</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">原文</span></a></li></ol>
         
         </div>
       </aside>
