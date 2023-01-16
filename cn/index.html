@@ -258,9 +258,9 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/about/">
               
-              标签
+              关于
               
               
             </a>
@@ -280,9 +280,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/tags/">
               
-              关于
+              标签
               
               
             </a>
@@ -470,6 +470,50 @@
       <!-- Main Content -->
 
 
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/DCRNN/">
+    <h2 class="post-title">
+      DCRNN:Diffusion Convolutional Recurrent Neural Network
+    </h2>
+    <h3 class="post-subtitle">
+      前沿论文学习笔记
+    </h3>
+    <div class="post-content-preview">
+      
+本文详细介绍了扩散卷积的相关知识以及论文DCRNN的研究内容和成果
+
+1 介绍
+
+基本目标是构建一个速度传感器网络，通过给定的历史速度数据以及潜在的道路网络，预测交通情况（速度）
+挑战性主要在于时空关联性以及长程预测问题的内在复杂性
+
+交通序列的动态变化性——不断出现的特殊事件例如交通事故和上下班高峰导致了不稳定性，使长期预测变得不可靠
+道路网络上的交通传感器具备独特的空间关联性——非欧且......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Cloud on
+    2023-01-14
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#深度学习" title="深度学习">深度学习</a>
+    
+    <a href="/tags/#图神经网络" title="图神经网络">图神经网络</a>
+    
+  </div>
+  
+
+</div>
+<hr>
 
 <div class="post-preview">
   
@@ -834,49 +878,14 @@ docker环境配置
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/多节点配置HPL测试/">
-    <h2 class="post-title">
-      多节点配置HPL测试
-    </h2>
-    <h3 class="post-subtitle">
-      基于docker模拟集群hpl测试
-    </h3>
-    <div class="post-content-preview">
-      
-接上文通过docker容易配置多节点模拟集群，本文进一步进行HPL测试
-
-安装MPICH
-123456789101112131415# 下载mpich的源码$ wget --no-check-certificate https://www.mpich.org/static/downloads/3.3rc1/mpich-3.3rc1.tar.gz$ tar zxvf mpich-3.3rc1......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Cloud on
-    2022-08-16
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#docker" title="docker">docker</a>
-    
-    <a href="/tags/#hpl" title="hpl">hpl</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
     
+    
+    <li class="next">
+      <a href="/cn/archives/2/">下一页 &rarr;</a>
+    </li>
     
   </ul>
 
@@ -917,7 +926,7 @@ docker环境配置
   <div class="tags">
     
     
-    <a href="/tags/#深度学习" title="深度学习" rel="4">深度学习</a>
+    <a href="/tags/#深度学习" title="深度学习" rel="5">深度学习</a>
     
     
     
@@ -929,15 +938,15 @@ docker环境配置
     
     
     
+    <a href="/tags/#图神经网络" title="图神经网络" rel="2">图神经网络</a>
+    
+    
+    
     <a href="/tags/#网络代理" title="网络代理" rel="1">网络代理</a>
     
     
     
     <a href="/tags/#Deepin" title="Deepin" rel="1">Deepin</a>
-    
-    
-    
-    <a href="/tags/#图神经网络" title="图神经网络" rel="1">图神经网络</a>
     
     
     
@@ -949,11 +958,11 @@ docker环境配置
     
     
     
-    <a href="/tags/#hpl" title="hpl" rel="1">hpl</a>
-    
-    
-    
     <a href="/tags/#git" title="git" rel="1">git</a>
+    
+    
+    
+    <a href="/tags/#hpl" title="hpl" rel="1">hpl</a>
     
     
     
@@ -1046,6 +1055,10 @@ docker环境配置
 <div class="widget">
   <ul>
     
+    <a href="DCRNN/">
+      <li>DCRNN:Diffusion Convolutional Recurrent Neural Network</li>
+    </a>
+    
     <a href="AGCRN/">
       <li>AGCRN:Adaptive Graph Convolutional Recurrent Network</li>
     </a>
@@ -1060,10 +1073,6 @@ docker环境配置
     
     <a href="%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/">
       <li>深入理解傅里叶变换</li>
-    </a>
-    
-    <a href="Deepin%E5%85%A8%E8%87%AA%E5%8A%A8%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">
-      <li>Deepin下socks代理全自动</li>
     </a>
     
   </ul>
@@ -1094,7 +1103,7 @@ docker环境配置
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2023/01/">January 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2022/11/">November 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2022/08/">August 2022</a><span class="archive-list-count">5</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2023/01/">January 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2022/11/">November 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2022/08/">August 2022</a><span class="archive-list-count">5</span></li></ul>
 </div>
 
 
