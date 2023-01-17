@@ -475,7 +475,7 @@
         <blockquote>
 <p>本文详细介绍了论文AutoCTS: Automated Correlated Time Series Forecasting的研究内容和成果</p>
 </blockquote>
-<h1>引言</h1>
+<h2 id="引言">引言</h2>
 <ul>
 <li>
 <p>相关时序预测（CTS forecasting）在信息物理系统中非常重要</p>
@@ -503,7 +503,7 @@
 <p>通过在8个广泛应用了CTS预测基准的数据集上进行实验，论证了设计的合理性以及AutoCTS自动搜索的预测模型比人工CTS找到的最佳模型还要好</p>
 </li>
 </ul>
-<h1>介绍</h1>
+<h2 id="介绍">介绍</h2>
 <ul>
 <li>
 <p>时间依赖性揭示了过去数据和未来数据的关联</p>
@@ -548,7 +548,7 @@
 </ul>
 </li>
 </ul>
-<h1>准备工作</h1>
+<h2 id="准备工作">准备工作</h2>
 <ul>
 <li>
 <p>Correlated Time Series。例如100个摄像头再一天内每五分钟检测一次，一次检测两个特征——交通流量和交通速度。一天内将产生多元时间序列$R^{100x288x2}$。采用图的方式表述关系，G(V,E,A)，V中每个节点对应一个时间序列（一个摄像头），边代表两个摄像头（时间序列）的空间关系，邻接矩阵A则蕴含了边的权值——反映了时间序列间的关系强弱，是根据传感器距离预先定义或者提前学习出来的。</p>
@@ -568,13 +568,13 @@
 <p>本文的目的在于自动构建一个精确的预测模型$F_w$，需要考虑的参数为描述模型$F_w$的参数θ——用于描述ST-Backbone中的ST块以及连接情况；以及参数w——被用于不同ST块中算子、卷积算子核心部分以及注意力算子的预测矩阵。目标函数如下：$$argmin_{θ,w}=ErrorMetric(F_w,D)$$，其中D是数据集，目标是找出使误差函数最小的参数。</p>
 </li>
 </ul>
-<h2 id="AutoCTS-forecasting">AutoCTS forecasting</h2>
+<h3 id="AutoCTS-forecasting">AutoCTS forecasting</h3>
 <p><img src="frame_work.png" alt="frame_work"></p>
 <ul>
 <li>核心部分是ST-backbone learning层，可以自动设计ST-backbone和其中的ST块</li>
 <li>搜索ST-backbone时，用γ参数化了$b_1$,$b_2$和$b_3$连接到$b_4$的方式。当搜索ST块时，用$α_2$表示隐藏表达式$h_0$和$h_3$之间的算子的参数，用$β_2$参数表示隐藏表达式$h_0$,$h_1$和$h_2$连接到$h_3$的方式。故而用一个参数对{$α_i$,$β_i$}可以表达一个成分复杂的ST块</li>
 </ul>
-<h2 id="搜索粒度">搜索粒度</h2>
+<h3 id="搜索粒度">搜索粒度</h3>
 <ul>
 <li>搜索空间可以由不同粒度的算子构成，如果这些算子的粒度都是良定的，那么会有更大的机会搜索出好的神经网络结构，但是这样往往会产生一个很大的搜索空间，需要花费很长的时间和庞大的计算资源。相比而言，一个基于粗粒度算子的搜索空间会比较小，且不耗时，不需要很多计算资源，但是这样会引入人工偏差，导致无法找到更优秀的架构。</li>
 <li>三种粒度，从粗到细，分别为ST-blocks，S/T operators和basic computations。如下图所示，</li>
@@ -586,7 +586,7 @@
 <li>最精细的搜索粒度，是以基础运算为搜索单元构成的搜索空间，在其中搜索出合适的参数从而找到更新颖的算子</li>
 <li>设计时将第一种定义为Macro Search Space，将第二种定义为Micro Search Space</li>
 </ul>
-<h2 id="Micro-Search-Space">Micro Search Space</h2>
+<h3 id="Micro-Search-Space">Micro Search Space</h3>
 <ul>
 <li>Micro-DAG，是每个ST-block中的隐藏结构，$h_0$用于接受上一层的输出。每个节点$h_i$代表一个隐含表达式，两个隐含表达式之间的边代表一个算子，所以如果考虑一个算子集合O，每两个节点之间就有|O|条边</li>
 </ul>
@@ -632,7 +632,7 @@ $$:=∑_{i&lt;j}\frac{exp(β^{(j)}[i])}{∑_{i&lt;j}exp(β^{(j)}[i])}\sum_{o∈O
 </ul>
 </li>
 </ul>
-<h2 id="Macro-Search-Space">Macro Search Space</h2>
+<h3 id="Macro-Search-Space">Macro Search Space</h3>
 <ul>
 <li>
 <p>同样采用图的形式，macro-DAG，每个节点$b_i$代表一个ST-block，每条边代表有向信息流，eg：edge$(b_i,b_j)$代表从$b_i$流向$b_j$的信息流</p>
@@ -657,13 +657,13 @@ $$:=∑_{i&lt;j}\frac{exp(β^{(j)}[i])}{∑_{i&lt;j}exp(β^{(j)}[i])}\sum_{o∈O
 </ul>
 </li>
 </ul>
-<h1>实验</h1>
-<h2 id="数据集">数据集</h2>
+<h2 id="实验">实验</h2>
+<h3 id="数据集">数据集</h3>
 <p><img src="dataset.png" alt="dataset"></p>
-<h2 id="实验结果">实验结果</h2>
+<h3 id="实验结果">实验结果</h3>
 <p><img src="accuracy1.png" alt="accuracy1"></p>
 <p><img src="accuracy2.png" alt="accuracy2"></p>
-<h1>原文</h1>
+<h2 id="原文">原文</h2>
 
 
 	<div class="row">
@@ -821,7 +821,7 @@ $$:=∑_{i&lt;j}\frac{exp(β^{(j)}[i])}{∑_{i&lt;j}exp(β^{(j)}[i])}\sum_{o∈O
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">引言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">介绍</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">准备工作</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#AutoCTS-forecasting"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">AutoCTS forecasting</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%90%9C%E7%B4%A2%E7%B2%92%E5%BA%A6"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">搜索粒度</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Micro-Search-Space"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">Micro Search Space</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Macro-Search-Space"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">Macro Search Space</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Search-Strategy"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">Search Strategy</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">实验</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">数据集</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">实验结果</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">原文</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">引言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">介绍</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">准备工作</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#AutoCTS-forecasting"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">AutoCTS forecasting</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%90%9C%E7%B4%A2%E7%B2%92%E5%BA%A6"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">搜索粒度</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Micro-Search-Space"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">Micro Search Space</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Macro-Search-Space"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">Macro Search Space</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Search-Strategy"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Search Strategy</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">实验</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">数据集</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">实验结果</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8E%9F%E6%96%87"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">原文</span></a></li></ol>
         
         </div>
       </aside>

@@ -475,7 +475,7 @@
         <blockquote>
 <p>本文详细介绍了论文STGCN:Spacial Temporal Graph Convolutional Network</p>
 </blockquote>
-<h1>引言</h1>
+<h2 id="引言">引言</h2>
 <ul>
 <li>实时而精准的交通预测对于交通管控非常重要。</li>
 <li>由于非线性性和复杂性，传统方法没法满足中长期的预测任务并且总是忽视时空依赖关系。</li>
@@ -483,7 +483,7 @@
 <li>摒弃过去的常规卷积和循环单元，在图上重新构建完整的卷积结构，起到减少参数，加速训练的效果。</li>
 <li>实验表明STGCN可以通过建模多规模的交通网络捕获时空关系并持续在现实世界的交通数据集上表现出state-of-the-art级别的效果。</li>
 </ul>
-<h1>介绍</h1>
+<h2 id="介绍">介绍</h2>
 <ul>
 <li>随着交通需求的日益增长，交通服务例如流量控制，路线规划等高度依赖于高质量的交通情况评估。故而，多规模的交通预测是交通管控和导引的基础，且作为智能交通系统(ITS)的核心功能。</li>
 <li>速度、容量、密度被选为基础的交通流量监视的指标，用以预测未来情况，但是传统的方法例如线性回归只适用于短期预测但是却不适用于具备高度不确定性和复杂性的长期交通流预测。</li>
@@ -497,14 +497,14 @@
 <li>为了充分利用空间特征，一些研究者采用卷积神经网络(CNN)捕获相邻关系，同时在时间序列上使用循环神经网络(RNN)。一种用于短期时序预测的架构CLTFP被提出。但是问题在于需要迭代训练，每一步都会积累误差且基于RNN的网络训练困难</li>
 <li>提出一个新颖的深度学习框架——STGCN。包含了时空卷积块和卷积序列学习层，用于建模时空关联。首次应用纯卷积结构从图结构的时间序列中同时提取时空关系。</li>
 </ul>
-<h1>初步准备</h1>
-<h2 id="道路图上的交通预测">道路图上的交通预测</h2>
+<h2 id="初步准备">初步准备</h2>
+<h3 id="道路图上的交通预测">道路图上的交通预测</h3>
 <p>交通预测是经典的时序预测问题，通过已有交通指标（速度或流量）根据已知的M个观测预测未来H步：</p>
 <p>$$\hat{V_{t+1}},…,\hat{V_{t+H}}=argmax_{V_{t+1}…,V_{t+H}}logP(V_{t+1},…,V_{t+H}|V_{t-M+1},…,V_t)$$</p>
 <p>$V_t$是在时间戳t观察到的n个路段的信息（流量），每一维度都是一个单独的路段的信息</p>
 <p><img src="%E5%9B%BE%E7%BB%93%E6%9E%84.png" alt="图结构.png"></p>
 <p>上述表明$V_t$是t时刻的图结构，$\mathcal{G}=(\mathcal{V_t},\epsilon,W)$，$\mathcal{V_t}$是顶点集，分别代表n个路段观测站的观测数据，$\epsilon$代表边集，表明这些观测站间的联系，W则代表边的权重矩阵</p>
-<h2 id="图上卷积">图上卷积</h2>
+<h3 id="图上卷积">图上卷积</h3>
 <p>有两个基础的方法用于泛化CNN为结构化数据形式。一种是去扩展卷积的空间定义，一种是用图傅里叶变换去操作谱域。前者重新分配顶点到特定的可以被常规卷积操作的结构中，后者引入谱框架，在谱域上应用谱图卷积。</p>
 <p>$$\Theta\ast\mathcal{G}x=\Theta(L)x=\Theta(U\Lambda U^T)x=U\Theta(\Lambda)U^Tx$$</p>
 <p><img src="%E8%B0%B1%E5%9B%BE%E5%8D%B7%E7%A7%AF.png" alt="谱图卷积.png"></p>
@@ -515,11 +515,11 @@
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/138213902">图上卷积操作和SCNN模型</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/138420723">图谱卷积之ChebNet/PyTorch实现</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/138686535">图谱卷积之GCN/PyTorch实现/系列</a></p>
-<h1>模型提出</h1>
-<h2 id="网络架构">网络架构</h2>
+<h2 id="模型提出">模型提出</h2>
+<h3 id="网络架构">网络架构</h3>
 <p>STGCN由顺序时空卷积块(ST块)组成，并且每个卷积块内部结构是”三明治“式的，两侧由两个门卷积层组成，中间由一个时空图卷积层共同构成。</p>
 <p><img src="STGCN%E7%BB%93%E6%9E%84.png" alt="STGCN结构.png"></p>
-<h2 id="用图CNN提取空间特征">用图CNN提取空间特征</h2>
+<h3 id="用图CNN提取空间特征">用图CNN提取空间特征</h3>
 <p>使用卷积神经网络提取特征的过程可以看成是根据已有数据训练卷积核（特征），在图神经网络中也是如此。训练目标是卷积核$\Theta$，为了优化计算速度并减少参数，使用切比雪夫多项式逼近卷积核，可以将卷积核视为和图拉普拉斯矩阵（L）相关的函数：</p>
 <p>$$\Theta(\Lambda)=\sum_{k=0}^{K-1}\theta_k\Lambda^k$$</p>
 <p>其中$\theta \in \mathbb{R}^K $是矩阵多项式的系数。传统意义上来说，切比雪夫多项式$T_k(x)$用于截断膨胀估计：</p>
@@ -536,18 +536,18 @@
 <p>自然的，图卷积操作子$\ast\mathcal{G}$可以被泛化到张量上，例如对于一个具备$C_i$个通道的信号$X\in \mathbb{R}^{n\times C_i}$，图卷积为：</p>
 <p>$$y_j=\sum_{i=1}^{C_i}\Theta_{i,j}(L)x_i\in\mathbb{R}^n,1&lt;=j&lt;=C_0$$</p>
 <p>其中$C_i$和$C_0$分别表示输入和输出的特征图的大小</p>
-<h2 id="用于提取时间特征的门电路CNN">用于提取时间特征的门电路CNN</h2>
+<h3 id="用于提取时间特征的门电路CNN">用于提取时间特征的门电路CNN</h3>
 <p>虽然基于RNN的模型在时间序列分析中已经广为运用，用于交通预测的循环神经网络仍受到耗时、复杂的门机制和对于动态变化响应过慢等缺点的影响。然而反着来说，CNN有着训练快速，结构简单以及和前置步骤无关的好处。STGCN在完整的时间序列上部署卷积结构用来捕获交通流的时间动态特点，这个特定的设计允许并行并且可控的训练过程。</p>
 <p>卷积核$\Gamma\in \mathbb{R}^{K_t\times C_i\times 2C_0}$用于匹配输入数据$Y\in \mathbb{R}^{M\times C_i}$（有$C_i个信道的长为M的时间序列$）的特征，即每次只看输入序列的后$K_t$个数据，得到两个长度为$C_0$的特征序列P和Q，时间门卷积可以被定义为:</p>
 <p>$$\Gamma \ast \tau Y=P\odot\sigma(Q)\in \mathbb{R}^{(M-K_t+1)\times C_0}$$</p>
-<h2 id="时空图卷积块">时空图卷积块</h2>
+<h3 id="时空图卷积块">时空图卷积块</h3>
 <p>为了融合来自时域和空域的特征，时空卷积块被构建用以处理图结构的时间序列，这个块可以被作为基本单位堆叠。</p>
 <p>联合的式子可以表述为如下形式，其中ST卷积块的输入和输出形式均为3D张量，对于块$l$的输入$v^l\in \mathbb{R}^{M\times n\times C^l}$，输出$v^{l+1} \in \mathbb{R}^{(M-2(K_t-1))\times n \times C^{l+1}}$:</p>
 <p>$$v^{l+1}=\Gamma_1^l\ast\tau ReLU(\Theta^l\ast\mathcal{G}(\Gamma_0^{l}\ast\tau v^l))$$</p>
 <p>损失函数可以像如下定义:</p>
 <p>$$L(\hat{v};W_{\theta})=\sum_t||\hat{v}(v_{t-M+1},…,v_t,W_\theta)-v_{t+1}||^2$$</p>
 <p>$W_\theta$时模型中所有的可训练模型，$v_{t+1}$是ground truth，且$\hat{v}(\cdot)$表示模型的预测值</p>
-<h1>原文</h1>
+<h2 id="原文">原文</h2>
 
 
 	<div class="row">
@@ -705,7 +705,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">引言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">介绍</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">初步准备</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%81%93%E8%B7%AF%E5%9B%BE%E4%B8%8A%E7%9A%84%E4%BA%A4%E9%80%9A%E9%A2%84%E6%B5%8B"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">道路图上的交通预测</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%9B%BE%E4%B8%8A%E5%8D%B7%E7%A7%AF"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">图上卷积</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">模型提出</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">网络架构</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%94%A8%E5%9B%BECNN%E6%8F%90%E5%8F%96%E7%A9%BA%E9%97%B4%E7%89%B9%E5%BE%81"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">用图CNN提取空间特征</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%94%A8%E4%BA%8E%E6%8F%90%E5%8F%96%E6%97%B6%E9%97%B4%E7%89%B9%E5%BE%81%E7%9A%84%E9%97%A8%E7%94%B5%E8%B7%AFCNN"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">用于提取时间特征的门电路CNN</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%97%B6%E7%A9%BA%E5%9B%BE%E5%8D%B7%E7%A7%AF%E5%9D%97"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">时空图卷积块</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">原文</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">引言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">介绍</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%9D%E6%AD%A5%E5%87%86%E5%A4%87"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">初步准备</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%81%93%E8%B7%AF%E5%9B%BE%E4%B8%8A%E7%9A%84%E4%BA%A4%E9%80%9A%E9%A2%84%E6%B5%8B"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">道路图上的交通预测</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9B%BE%E4%B8%8A%E5%8D%B7%E7%A7%AF"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">图上卷积</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%A8%A1%E5%9E%8B%E6%8F%90%E5%87%BA"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">模型提出</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">网络架构</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%94%A8%E5%9B%BECNN%E6%8F%90%E5%8F%96%E7%A9%BA%E9%97%B4%E7%89%B9%E5%BE%81"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">用图CNN提取空间特征</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%94%A8%E4%BA%8E%E6%8F%90%E5%8F%96%E6%97%B6%E9%97%B4%E7%89%B9%E5%BE%81%E7%9A%84%E9%97%A8%E7%94%B5%E8%B7%AFCNN"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">用于提取时间特征的门电路CNN</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%97%B6%E7%A9%BA%E5%9B%BE%E5%8D%B7%E7%A7%AF%E5%9D%97"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">时空图卷积块</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8E%9F%E6%96%87"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">原文</span></a></li></ol>
         
         </div>
       </aside>
