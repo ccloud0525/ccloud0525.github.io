@@ -247,9 +247,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              归档
+              关于
               
               
             </a>
@@ -258,9 +258,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              关于
+              归档
               
               
             </a>
@@ -506,7 +506,7 @@
 <p>上述表明$V_t$是t时刻的图结构，$\mathcal{G}=(\mathcal{V_t},\epsilon,W)$，$\mathcal{V_t}$是顶点集，分别代表n个路段观测站的观测数据，$\epsilon$代表边集，表明这些观测站间的联系，W则代表边的权重矩阵</p>
 <h3 id="图上卷积">图上卷积</h3>
 <p>有两个基础的方法用于泛化CNN为结构化数据形式。一种是去扩展卷积的空间定义，一种是用图傅里叶变换去操作谱域。前者重新分配顶点到特定的可以被常规卷积操作的结构中，后者引入谱框架，在谱域上应用谱图卷积。</p>
-<p>$$\Theta\ast\mathcal{G}x=\Theta(L)x=\Theta(U\Lambda U^T)x=U\Theta(\Lambda)U^Tx$$</p>
+<p>$$\Theta \ast _\mathcal{G}x=\Theta(L)x=\Theta(U\Lambda U^T)x=U\Theta(\Lambda)U^Tx$$</p>
 <p><img src="%E8%B0%B1%E5%9B%BE%E5%8D%B7%E7%A7%AF.png" alt="谱图卷积.png"></p>
 <p>一些必要的前置文章如下:<br>
 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/368878987">图拉普拉斯矩阵的推导</a></p>
@@ -525,25 +525,25 @@
 <p>其中$\theta \in \mathbb{R}^K $是矩阵多项式的系数。传统意义上来说，切比雪夫多项式$T_k(x)$用于截断膨胀估计：</p>
 <p>$$\Theta(\Lambda)\approx\sum_{k=0}^{K-1}\theta_kT_k(\hat\Lambda)$$，其中$\hat\Lambda$是一个调整值：$$\hat\Lambda=2\Lambda/\lambda_{max}-I_n(\lambda_{max}表示L最大的特征值)$$</p>
 <p>故而图卷积可以重写为：</p>
-<p>$$\Theta\ast\mathcal{G}x=\Theta(L)x\approx\sum_{k=0}^{k-1}\theta_kT_k(\hat{L})x$$</p>
+<p>$$\Theta \ast_\mathcal{G} x=\Theta(L)x\approx\sum_{k=0}^{k-1}\theta_kT_k(\hat{L})x$$</p>
 <p>这是由于</p>
-<p>$$\Theta\ast\mathcal{G}x=\Theta(L)x=\Theta(U\Lambda U^T)x=U\Theta(\Lambda)U^Tx\approx U\sum_{k=0}^{K-1}\theta_k\Lambda^kU^Tx=\sum_{k=0}^{K-1}\theta_kU\Lambda^kU^Tx=\sum_{k=0}^{K-1}\theta_k(U\Lambda U^T)^kx=\sum_{k=0}^{K-1}\theta_k(L)^kx\approx\sum_{k=0}^{k-1}\theta_kT_k(\hat{L})x$$</p>
+<p>$$\Theta \ast_\mathcal{G} x=\Theta(L)x=\Theta(U\Lambda U^T)x=U\Theta(\Lambda)U^Tx\approx U\sum_{k=0}^{K-1}\theta_k\Lambda^kU^Tx=\sum_{k=0}^{K-1}\theta_kU\Lambda^kU^Tx=\sum_{k=0}^{K-1}\theta_k(U\Lambda U^T)^kx=\sum_{k=0}^{K-1}\theta_k(L)^kx\approx\sum_{k=0}^{k-1}\theta_kT_k(\hat{L})x$$</p>
 <p>其中$T_k(\hat{L})\in\mathbb{R}^{n\times n}$是切比雪夫多项式在重新调整过的拉普拉斯矩阵（$\hat{L}=2L/\lambda_{max}-I_n$）上的k阶值.</p>
 <p>多层的线性表达式可以通过逐层堆积图卷积层，且每一层的卷积都只定义一阶的，并且深度学习架构可以恢复空间信息而不被限制在明确的多项式参数上，这意味着可以假设$\lambda_{max}\approx 2$，这样原式就化简为:</p>
-<p>$$\Theta\ast\mathcal{G}x\approx \theta_0x+\theta_1(\frac{2}{\lambda_{max}}L-I_n)x\approx\theta_ox-\theta_1(D^{-\frac{1}{2}}WD^{\frac{1}{2}})x$$</p>
+<p>$$\Theta \ast_\mathcal{G} x \approx \theta_0 x+\theta_1(\frac{2}{\lambda_{max}}L-I_n)x\approx\theta_ox -\theta_1(D^{-\frac{1}{2}}WD^{\frac{1}{2}})x$$</p>
 <p>其中$\theta_0$和$\theta_1$是卷积核的参数，为了限制参数变更且稳定算数表现，这两个参数被替代为一个$\theta=\theta_0=-\theta_1$，W和D被重新规范化为$\hat{W}=W+I_n$和$\hat{D} _{ii}=\sum_j\hat{W} _{ij}$，故而图卷积可以被写为：</p>
-<p>$$\Theta \ast\mathcal{G}=\theta(I_n+D^{-\frac{1}{2}}WD^{\frac{1}{2}})x=\theta(\hat{D}^{\frac{1}{2}}\hat{W}\hat{D}^{\frac{1}{2}})x$$.</p>
+<p>$$\Theta \ast _\mathcal{G}=\theta(I_n+D^{-\frac{1}{2}}WD^{\frac{1}{2}})x=\theta(\hat{D}^{\frac{1}{2}}\hat{W}\hat{D}^{\frac{1}{2}})x$$.</p>
 <p>自然的，图卷积操作子$\ast\mathcal{G}$可以被泛化到张量上，例如对于一个具备$C_i$个通道的信号$X\in \mathbb{R}^{n\times C_i}$，图卷积为：</p>
 <p>$$y_j=\sum_{i=1}^{C_i}\Theta_{i,j}(L)x_i\in\mathbb{R}^n,1&lt;=j&lt;=C_0$$</p>
 <p>其中$C_i$和$C_0$分别表示输入和输出的特征图的大小</p>
 <h3 id="用于提取时间特征的门电路CNN">用于提取时间特征的门电路CNN</h3>
 <p>虽然基于RNN的模型在时间序列分析中已经广为运用，用于交通预测的循环神经网络仍受到耗时、复杂的门机制和对于动态变化响应过慢等缺点的影响。然而反着来说，CNN有着训练快速，结构简单以及和前置步骤无关的好处。STGCN在完整的时间序列上部署卷积结构用来捕获交通流的时间动态特点，这个特定的设计允许并行并且可控的训练过程。</p>
 <p>卷积核$\Gamma\in \mathbb{R}^{K_t\times C_i\times 2C_0}$用于匹配输入数据$Y\in \mathbb{R}^{M\times C_i}$（有$C_i个信道的长为M的时间序列$）的特征，即每次只看输入序列的后$K_t$个数据，得到两个长度为$C_0$的特征序列P和Q，时间门卷积可以被定义为:</p>
-<p>$$\Gamma \ast \tau Y=P\odot\sigma(Q)\in \mathbb{R}^{(M-K_t+1)\times C_0}$$</p>
+<p>$$\Gamma \ast_\tau Y=P\odot\sigma(Q)\in \mathbb{R}^{(M-K_t+1)\times C_0}$$</p>
 <h3 id="时空图卷积块">时空图卷积块</h3>
 <p>为了融合来自时域和空域的特征，时空卷积块被构建用以处理图结构的时间序列，这个块可以被作为基本单位堆叠。</p>
 <p>联合的式子可以表述为如下形式，其中ST卷积块的输入和输出形式均为3D张量，对于块$l$的输入$v^l\in \mathbb{R}^{M\times n\times C^l}$，输出$v^{l+1} \in \mathbb{R}^{(M-2(K_t-1))\times n \times C^{l+1}}$:</p>
-<p>$$v^{l+1}=\Gamma_1^l\ast\tau ReLU(\Theta^l\ast\mathcal{G}(\Gamma_0^{l}\ast\tau v^l))$$</p>
+<p>$$v^{l+1}=\Gamma_1^l \ast _\tau ReLU(\Theta^l\ast _\mathcal{G}(\Gamma_0^{l} \ast _\tau v^l))$$</p>
 <p>损失函数可以像如下定义:</p>
 <p>$$L(\hat{v};W_{\theta})=\sum_t||\hat{v}(v_{t-M+1},…,v_t,W_\theta)-v_{t+1}||^2$$</p>
 <p>$W_\theta$时模型中所有的可训练模型，$v_{t+1}$是ground truth，且$\hat{v}(\cdot)$表示模型的预测值</p>
