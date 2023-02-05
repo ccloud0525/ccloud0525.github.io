@@ -476,7 +476,7 @@
 <h2 id="Introduction">Introduction</h2>
 <ul>
 <li>A method for predicting traffic speed should not only find spatial-temporal dependencies among roads but also  understand how these dependencies change over time and influence other traffic conditions</li>
-<li>Existing models assume $\textit{fixed}$ spatial dependencies among roads without considering dynamically changing traffic conditions</li>
+<li>Existing models assume <strong>fixed</strong> spatial dependencies among roads without considering dynamically changing traffic conditions</li>
 <li>To handle the issue before, recent models utilize multi-head attention to model spatial dependencies but they neglect the overall graph structure information</li>
 <li>While existing Attention-based models can be used for replacing GCNN-based spatial modeling, they all have a drawback that they do not consider the information embedded in the graph structure (such as distances, connectivity, and flow directions between nodes) in their spatial dependency modeling processes in deciding when and where to attend. Compared to previous models, ST-GRAT has a novel spatial attention mechanism that can consider all of the mentioned graph structure information.</li>
 <li>In this work, a novel spatial -temporal graph attention network(ST-GRAT) is proposed to consider both of dynamically adjusting attention weights and the graph structure information</li>
@@ -507,7 +507,7 @@
 <p>where $e _{i,j}$ indicates the energy logits and $e _{i,s}$ represents the sentinel energy logit.</p>
 <p>$$e _{i,j} = \frac{(z _i W _h ^{Q _N})(z _j W _h ^{K _N})}{\sqrt{d _k}} + P _h (\mathcal{A})$$</p>
 <p>where parameter matrices $W _h ^{V _s} \in R ^{d _{model} \times d _q}$ and $W _h ^{V <em>n} \in R ^{d</em>{model} \times d _k}$ are the linear transformation matrices of the query vector and the key vector.</p>
-<p>To explicitly provide edge information, the additional prior knowledge $P _h (\mathcal{A})$  called $diffusion \quad prior$ is introduced. It comes from the diffusion process in a graph and distinguish inflow from outflow</p>
+<p>To explicitly provide edge information, the additional prior knowledge $P _h (\mathcal{A})$  called <strong>diffusion prior</strong> is introduced. It comes from the diffusion process in a graph and distinguish inflow from outflow</p>
 <p>$$P _{2m+1} (\mathcal{A}) = \sum _{k=0} ^{K} \beta _h ^k \ast (D _I ^{-1} \mathcal{A} ^T) ^k$$</p>
 <p>$$P _{2m} (\mathcal{A}) = \sum _{k=0} ^K \beta _h ^k \ast (D ^{-1} _O \mathcal{A}) ^k$$</p>
 <p>where $K$ is the number of truncation steps of the diffusion process, $\mathcal{A}$ is the adjacency matrix while $D _I ^{-1} \mathcal{A} ^T$ and $D ^{-1} _O \mathcal{A}$ are the transition matrices, $\beta _h ^k$ is the weight of the diffusion process at step $k$ in the $h$-th attention head.</p>
