@@ -404,11 +404,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">7</span> Minutes
+              Estimated Reading Time <span class="post-count">8</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">1.2k</span> In Total
+              Words <span class="post-count">1.3k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -527,7 +527,8 @@ So that if $p(k _j | q _i) = 1/L _K$, the self-attention becomes a trivial sum o
 <p><strong>Lemma 1.</strong> <em>For each query $q _i \in \mathbb{R } ^d$ and $k _j \in \mathbb{R} ^d$ in the keys set $K$, we have the bound as $ln _{L _K}&lt;=M(q _i,K)&lt;= max _j (q _i K _j ^T / \sqrt{d}) - \frac{1}{L _K} \sum _{j=1} ^{L _K} (q _i K _j ^T / \sqrt{d}) + lnL _K$</em></p>
 <p>From the <strong>Lemma1</strong>,the max-mean measurement is defined as</p>
 <p>$$\bar{M}(q _i,K) = max _j (q _i K _j ^T / \sqrt{d}) - \frac{1}{L _K} \sum _{j=1} ^{L _K} (q _i K _j ^T / \sqrt{d})$$</p>
-<p>So the time and space complexity are $O(L ln L)$</p>
+<p>Under the long tail distribution, we only need to randomly sample $U = L _K ln L _Q$ dot-product pairs to calculate the $\bar{M}(q _i,K)$,i.e., filling other pairs with zero. Then we select sparse Top-$u$ from them as $\bar{Q}$. The max-operator in $\bar{M}(q _i,K)$ is less sensitive to zero values and is numerical stable.</p>
+<p>In practice, the input length of queries and keys are typically equivalent in the self-attention computation,i.e, $L _Q = L _K = L$ such the time and space complexity are $O(L ln L)$</p>
 <h3 id="Encoder-Allowing-for-Processing-Longer-Sequential-Inputs-under-the-Memory-Usage-Limitation">Encoder:Allowing for Processing Longer Sequential Inputs under the Memory Usage Limitation</h3>
 <p><img src="architecture.png" alt="architecture"></p>
 <h4 id="Self-attention-Distilling">Self-attention Distilling</h4>
