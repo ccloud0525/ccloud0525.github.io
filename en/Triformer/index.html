@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/tags/">
+  <link rel="canonical" href="http://yoursite-url/en/Triformer/">
   <title>
     
-      Tags - Ccloud&#39;s
+      Triformer:Triangular,Variable-Specific Attentions for Long Sequence - Ccloud&#39;s
     
   </title>
 <meta name="generator" content="Hexo 5.4.2"></head>
@@ -300,29 +300,7 @@
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="tags/index.html">
-      
-      
-      <option value="en"  selected >
-        English
-      </option>
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -374,19 +352,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('img/header_img/tag_bg.jpg');
-      --intro-header-background-image-url-page: url('/img/header_img/tag_bg.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('img/header_img/tag_bg.jpg');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/tag_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/header_img/tag_bg.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/lml_bg.jpg'); */
       
     }
 
@@ -408,10 +386,42 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>Tags</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">I don’t know where I am going, but I am on my way......</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#注意力机制" title="注意力机制">注意力机制</a>
+              
+            </div>
+            <h1>Triformer:Triangular,Variable-Specific Attentions for Long Sequence</h1>
+            <h2 class="subheading">A introduction to Triformer</h2>
+            <span class="meta">
+              Posted by Cloud on
+              2023-02-06
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">7</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">1.2k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -452,581 +462,363 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <!-- 标签列表 -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-      <!-- 标签云 -->
-      <div id='tag_cloud' class="tags">
+        <blockquote>
+<p>The blog introduces the paper : Triformer</p>
+</blockquote>
+<h2 id="Introduction">Introduction</h2>
+<ul>
+<li>
+<p>Recent studies show that attentions are able to capture better long term dependencies. But For a time series of $H$ timestamps, canonical self-attention has a quadratic complexity of $\mathcal{O} (H ^2)$.</p>
+</li>
+<li>
+<p>The author proposes the <strong>Triformer</strong> with linear complexity $\mathcal{O}(H)$ by defining a novel <em>Patch Attention</em> with linear complexity for each patch.</p>
+</li>
+<li>
+<p>Introduce a pseudo timestamp for a patch and compute attentions of the timestamps in the patch only to the single pseudo timestamp, making patch attention linear. Then, only the pseudo timestamps are fed into the next layer, such that the layer sizes shrink exponentially.</p>
+</li>
+<li>
+<p>Existing forecasting models often use variable-agnostic parameters, though different variables may exhibit distinct temporal patterns.<br>
+<img src="variable.png" alt="variable"></p>
+<p><strong>Variable-agnostic modeling</strong> forces the learned parameters to capture an “average” pattern among all the variables, thus failing to capture distinct temporal pattern of each variable and hurting accuracy.</p>
+</li>
+<li>
+<p>By proposing a distinct set of matrices $W _Q ^{(i)} , W _K ^{(i)} ,W _V ^{(i)}$ for the $i$-th variable to capture distinct temporal patterns for different variables.</p>
+</li>
+<li>
+<p>Factorize the projection matrices into <strong>variable-agnostic</strong> and <strong>variable-specific</strong> matrices and make the variable-specific matrices very compact, thus aboding increasing the parameter space and computation overhead.</p>
+</li>
+<li>
+<p>The main contributions of the paper</p>
+<ol>
+<li>Propose a novel, efficient attention mechanism, namely Patch Attention, along with its triangular, multi-layer structure to ensure high <strong>efficiency</strong>.</li>
+<li>Propose a light-weight approach to enable variable-specific model parameters, making it possible to capture distinct temporal patterns from different variables thus enhancing <strong>accuracy</strong></li>
+<li>Conduct extensive experiments on four public , commonly used multivariate time series data sets from different domains, justifying design choice and demonstrating that the proposal outperforms state-of-the-art methods.</li>
+</ol>
+</li>
+</ul>
+<h2 id="Related-Work">Related Work</h2>
+<p><img src="category.png" alt="category"></p>
+<p>The author makes some analysis to prove that variable-specific model would perform better on long-term time-series forecasting tasks.</p>
+<h2 id="Preliminaries">Preliminaries</h2>
+<p>A multivariate time series records the values of $N$ variables over time.</p>
+<p>$x _t \in \mathbb{R} ^N$ denotes the values of all $N$ variables at $t$  and $x _t \in \mathbb{R}$ is the value of the $i$-th variable at $t$. The problem can be formulated as</p>
+<p>$$\mathcal{F} _{\phi} (x _{t-H+1},…,x _{t-1},x _t)=(\hat{x} _{t+1},\hat{x} _{t+2},…,\hat{x} _{t+F} )$$</p>
+<p>where $\phi$ denotes the learnable parameters of the forecasting model and $\hat{x} _j$ is the predicted values at timestamp $j$.</p>
+<h2 id="Triformer">Triformer</h2>
+<p>The <strong>Triformer</strong> is proposed for learning long-term and multi-scale dependencies in multivariate time series.</p>
+<p><img src="triangle.png" alt="triangle"></p>
+<ol>
+<li>Design the <strong>Patch Attention</strong> with linear complexity as the basic block</li>
+<li>Propose a <strong>triangular structure</strong> when stacking multiple layers of patch attentions, such that the layer sizes shrink exponentially.</li>
+<li>Propose a light-weight method to enable variable specific modeling, thus being able to capture distinct temporal patterns form different variables, without compromising efficiency.</li>
+</ol>
+<h3 id="Linear-Patch-Attention">Linear Patch Attention</h3>
+<p>First the author breaks down the input times series of length $H$ into $P = H/S$ patches along the temporal dimension, where $S$ is the patch size. Then compute attention scores per patch in another way.</p>
+<p>To reduce the complexity to linear, a learnable  pseudo timestamp $\textbf{T} _p \in \mathbb{R} ^{N \times d}$ is proposed.</p>
+<p><img src="patch_attention.png" alt="patch_attention"></p>
+<p>In <strong>Triformer</strong>, the author chooses to use the attention mechanism to update the pseudo timestamp, where the pseudo timestamp works as the Query in self-attentions. It queries all the “real” timestamps in the patch, thus only computing a single attention score for each real timestamp, giving rise to linear complexity.</p>
+<p>Note that $T _p = [T _p ^{(i)}] _{i=1} ^N$ and each variable has specific pseudo timestamp $T _p ^{(i)}$,thus being variable-specific.</p>
+<p>$$\mathcal{P}\mathcal{A}(T _p,x _p) = [\phi (\frac{T _p ^{(i)}(x _p ^{(i)}W _K) ^T}{\sqrt{d}})(x _p ^{(i)}W _V)] _{i=1} ^N$$</p>
+<p>The reduced complexity of $PA$ comes with a price that the temporal receptive field of each timestamp is reduced to the patch size $S$. In contrast, it is H covering all timestamps in the canonical attention.</p>
+<p>This makes it harder to capture relationships among different patches and also the long-term dependencies, thus adversely affecting accuracy. To compensate for the reduced temporal receptive field,  introduce a recurrent connection to connect the outputs of the patches, such that the temporal information flow is maintained.</p>
+<p>$$T _{p+1} = g(\Theta _1 T _p + b _1) \odot \sigma (\Theta _2 T _p + b _2) + T _{p}$$</p>
+<p>where $\Theta _1,\Theta _2,b _1$ and $b _2$ are learned parameters for the recurrent gates, $\odot$ is element-wise product, $g(\cdot)$ is <em>tanh</em> activation function and $\sigma(\cdot)$ is a <em>sigmoid</em> function controlling the information ratio that is passed to the next pseudo timestamp.</p>
+<h3 id="Triangular-Stacking">Triangular Stacking</h3>
+<p>In attention based models, each attention layer has the same input, e.g. , the input time series size $H$. In traditional self-attention same input and output have the same shape.</p>
+<p>When using $PA$s, only feed the pseudo timestamps from the patches to the next layer, which shrinks the layer sizes exponentially. The size of $(l+1)$-th layer is only $\frac{1}{S _l}$ of the size of the $l$-th layer, where $S _l$ is the patch if the $l$-th layer.</p>
+<p>In a multi-layer <strong>Triformer</strong>, each layer consists of different numbers of patches and thus having different number of outputs ,i.e., pseudo timestamps.</p>
+<p>Instead of only using the last pseudo timestamp per layer, we aggregate all pseudo timestamps per layer into an aggregated output. The aggregate output $O ^l$ at the $l$-th layer is defined as</p>
+<p>$$O ^l = \theta ^l (T _1 ^l ,…, T _k ^l,…,T _P ^l)$$</p>
+<p>where $\theta ^l$ is a neural network, $T _p ^l$ denotes the pseudo timestamp for patch $p \in [1,P]$ at the $l$-th layer.</p>
+<p>Finally, the aggregate outputs from all layers are connected to the <strong>predictor</strong>(A fully connected neural network). It represents features from different temporal scales, contributing to different temporal views and provides multiple gradient feedback short-paths, thus easing the learning processes.</p>
+<h3 id="Variable-Specific-Modeling">Variable-Specific Modeling</h3>
+<p><img src="Variable_Specific.png" alt="Variable_Specific"></p>
+<p>Introduce a $m$-dimensional memory vector $M ^{(i)} \in \mathbb{R} ^m$ for each variable with $i \in [1,N]$.The memory is randomly initialized and learnable. This makes the method purely data-driven and can lean the most prominent characteristics of each variable.</p>
+<p>The left and right matrices are variable-agnostic, thus being shared with all variables. Different variables have their own middle matrices $B ^{(i)}$,thus making the middle matrices variable-specific. Make the matrix $B$ compact to make the method light-weight.</p>
+<p>Use a generator $\mathcal{G}(\cdot)$(a 1-layer neural network) to generate $B ^{(i)}$ from $M ^{(i)}$. Learning a full matrix $B = [B ^{(i)}] _{i=1} ^N$ directly requires $N \cdot a ^2$  parameters. In contrast, when using a generator, it requires $N \cdot m$ for the memories, and an additional overhead of $m \cdot a ^2$ for the generator. (Reduce $N \cdot a ^2$ to $N \cdot m + m \cdot a ^2$.)We don’t need the Query matrix as $PA$ does not need it and employs the pseudo timestamp instead.</p>
+<p>$$<br>
+\begin{bmatrix}<br>
+W _K ^{(i)} \\<br>
+W _B ^{(i)}<br>
+\end{bmatrix} = \begin{bmatrix}<br>
+L _K \mathcal{G}(M ^{(i)})R _K\\<br>
+L _V \mathcal{G}(M ^{(i)})R _V<br>
+\end{bmatrix}<br>
+$$</p>
+<h2 id="Experiments">Experiments</h2>
+<p><img src="overall_accuracy.png" alt="overall_accuracy"></p>
+<h2 id="The-paper">The paper</h2>
+
+
+	<div class="row">
+    <embed src="Triformer.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/en/Informer/" data-toggle="tooltip" data-placement="top" title="Informer:Beyond Efficient Transformer for Long Sequence Time-Series Forecasting">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/en/STTN/" data-toggle="tooltip" data-placement="top" title="STTN:Spatial-Temporal Transformer Networks for Traffic Flow Forecasting">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
         
-        <a href="#深度学习" title="深度学习" rel="6">深度学习</a>
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
         
-        <a href="#图卷积神经网络" title="图卷积神经网络" rel="1">图卷积神经网络</a>
+
         
-        <a href="#自动机器学习" title="自动机器学习" rel="1">自动机器学习</a>
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Triformer:Triangular,Variable-Specific Attentions for Long Sequence&body=Hi,I found this website and thought you might like it http://yoursite-url/en/Triformer/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
         
-        <a href="#图神经网络" title="图神经网络" rel="2">图神经网络</a>
-        
-        <a href="#网络代理" title="网络代理" rel="1">网络代理</a>
-        
-        <a href="#Deepin" title="Deepin" rel="1">Deepin</a>
-        
-        <a href="#docker" title="docker" rel="3">docker</a>
-        
-        <a href="#集群" title="集群" rel="1">集群</a>
-        
-        <a href="#git" title="git" rel="1">git</a>
-        
-        <a href="#hpl" title="hpl" rel="1">hpl</a>
-        
-        <a href="#注意力机制" title="注意力机制" rel="5">注意力机制</a>
-        
-        <a href="#maths" title="maths" rel="1">maths</a>
-        
-        <a href="#Linux" title="Linux" rel="1">Linux</a>
-        
-        <a href="#Nginx" title="Nginx" rel="1">Nginx</a>
-        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '04b857744df6aca41a4b',
+      clientSecret: '46345ef524913d79f188d03d10e82693a1b90cbe',
+      repo: 'blogcomment',
+      owner: 'ccloud0525',
+      admin: 'ccloud0525',
+      id: 'Mon Feb 06 2023 23:02:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'zh-CN',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
       </div>
 
-      <!-- 标签列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="深度学习">
-          <span class="tag-text">深度学习</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/AGCRN/">
-            <h2 class="post-title">
-              AGCRN:Adaptive Graph Convolutional Recurrent Network
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              AGCRN以及图谱卷积相关介绍
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/AutoCTS/">
-            <h2 class="post-title">
-              AutoCTS:Automated Correlated Time Series Forecasting
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              前沿论文学习笔记
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/DCRNN/">
-            <h2 class="post-title">
-              DCRNN:Diffusion Convolutional Recurrent Neural Network
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              前沿论文学习笔记
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/Graph_WaveNet/">
-            <h2 class="post-title">
-              Graph WaveNet for Deep Spatial-Temporal Graph Modeling
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              基于GCN和CNN的时空建模
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/config/">
-            <h2 class="post-title">
-              docker配置TensorFlow训练环境
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              神经网络
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/STGCN/">
-            <h2 class="post-title">
-              STGCN:Spacial Temporal Graph Convolutional Network
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              图谱卷积的应用
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="图卷积神经网络">
-          <span class="tag-text">图卷积神经网络</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/AGCRN/">
-            <h2 class="post-title">
-              AGCRN:Adaptive Graph Convolutional Recurrent Network
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              AGCRN以及图谱卷积相关介绍
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="自动机器学习">
-          <span class="tag-text">自动机器学习</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/AutoCTS/">
-            <h2 class="post-title">
-              AutoCTS:Automated Correlated Time Series Forecasting
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              前沿论文学习笔记
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="图神经网络">
-          <span class="tag-text">图神经网络</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/DCRNN/">
-            <h2 class="post-title">
-              DCRNN:Diffusion Convolutional Recurrent Neural Network
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              前沿论文学习笔记
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/STGCN/">
-            <h2 class="post-title">
-              STGCN:Spacial Temporal Graph Convolutional Network
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              图谱卷积的应用
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="网络代理">
-          <span class="tag-text">网络代理</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/Deepin全自动科学上网/">
-            <h2 class="post-title">
-              Deepin下socks代理全自动
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              代理配置
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="Deepin">
-          <span class="tag-text">Deepin</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/Deepin全自动科学上网/">
-            <h2 class="post-title">
-              Deepin下socks代理全自动
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              代理配置
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="docker">
-          <span class="tag-text">docker</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/config/">
-            <h2 class="post-title">
-              docker配置TensorFlow训练环境
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              神经网络
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/docker_multnode/">
-            <h2 class="post-title">
-              docker配置多节点集群
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              基于docker模拟集群配置
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/多节点配置HPL测试/">
-            <h2 class="post-title">
-              多节点配置HPL测试
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              基于docker模拟集群hpl测试
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="集群">
-          <span class="tag-text">集群</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/docker_multnode/">
-            <h2 class="post-title">
-              docker配置多节点集群
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              基于docker模拟集群配置
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="git">
-          <span class="tag-text">git</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/git远程仓库同步关系/">
-            <h2 class="post-title">
-              git三类分支详解
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              三类分支解混淆
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="hpl">
-          <span class="tag-text">hpl</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/多节点配置HPL测试/">
-            <h2 class="post-title">
-              多节点配置HPL测试
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              基于docker模拟集群hpl测试
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="注意力机制">
-          <span class="tag-text">注意力机制</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/en/Informer/">
-            <h2 class="post-title">
-              Informer:Beyond Efficient Transformer for Long Sequence Time-Series Forecasting
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              A introduction to Informer
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/en/ST-GRAT/">
-            <h2 class="post-title">
-              ST-GRAT:A Novel Spatio-temporal Graph Attention Network for Accurately Forecasting Dynamically Changing Road Speed
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              A introduction to ST-GRAT
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/en/STTN/">
-            <h2 class="post-title">
-              STTN:Spatial-Temporal Transformer Networks for Traffic Flow Forecasting
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              A introduction to STTN
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/en/Transformer_Attention Is All You Need/">
-            <h2 class="post-title">
-              Attention Is All You Need
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              Transformer
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/en/Triformer/">
-            <h2 class="post-title">
-              Triformer:Triangular,Variable-Specific Attentions for Long Sequence
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              A introduction to Triformer
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="maths">
-          <span class="tag-text">maths</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/深入理解傅里叶变换/">
-            <h2 class="post-title">
-              深入理解傅里叶变换
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              傅里叶变换内在解构
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="Linux">
-          <span class="tag-text">Linux</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/小程序+nginx+uwsgi+django配置/">
-            <h2 class="post-title">
-              从零开始配置Django+uWSGI+Nginx负载均衡
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              微信小程序项目部署
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="Nginx">
-          <span class="tag-text">Nginx</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/小程序+nginx+uwsgi+django配置/">
-            <h2 class="post-title">
-              从零开始配置Django+uWSGI+Nginx负载均衡
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              微信小程序项目部署
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
 
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Introduction"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Introduction</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Related-Work"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Related Work</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Preliminaries"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Preliminaries</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Triformer"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Triformer</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Linear-Patch-Attention"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">Linear Patch Attention</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Triangular-Stacking"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">Triangular Stacking</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Variable-Specific-Modeling"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">Variable-Specific Modeling</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Experiments"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">Experiments</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#The-paper"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">The paper</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#注意力机制" title="注意力机制">注意力机制</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://github.com/Cyria7" target="_blank">Cyria7</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/ameki77" target="_blank">ameki77</a>
+          </li>
+          
+          <li>
+            <a href="https://picasun.github.io/" target="_blank">Picasun</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
     </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
