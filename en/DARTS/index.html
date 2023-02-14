@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/categories/">
+  <link rel="canonical" href="http://yoursite-url/en/DARTS/">
   <title>
     
-      Categories - Ccloud&#39;s
+      DARTS:Differentiable Architecture Search - Ccloud&#39;s
     
   </title>
 <meta name="generator" content="Hexo 5.4.2"></head>
@@ -300,29 +300,7 @@
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="categories/index.html">
-      
-      
-      <option value="en"  selected >
-        English
-      </option>
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -374,19 +352,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('img/header_img/categories_bg.jpg');
-      --intro-header-background-image-url-page: url('/img/header_img/categories_bg.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('img/header_img/categories_bg.jpg');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/categories_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/header_img/categories_bg.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/lml_bg.jpg'); */
       
     }
 
@@ -408,10 +386,42 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>Categories</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">Hi , here is Categories ....</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#自动机器学习" title="自动机器学习">自动机器学习</a>
+              
+            </div>
+            <h1>DARTS:Differentiable Architecture Search</h1>
+            <h2 class="subheading">A introduction to DARTS</h2>
+            <span class="meta">
+              Posted by Cloud on
+              2023-02-14
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">8</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">1.3k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -452,485 +462,343 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <!-- 分类页面 -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-      
+        <blockquote>
+<p>The blog introduces the paper : DARTS</p>
+</blockquote>
+<h2 id="Introduction">Introduction</h2>
+<p>The conventional architecture search algorithms are computationally demanding despite their remarkable performance. An inherent cause of inefficiency for the dominant approaches based on reinforcement learning(RL), evolution, MCTS, SMBO or Bayesian optimization is the fact that architecture search is treated as a black-box optimization problem over a discrete domain, which leads to a large number of architecture evaluations required.</p>
+<p>In this work, the author approaches the problem from a different angle and propose a method for efficient architecture search called DARTS(Differentiable ARchiTecture Search). Instead of searching over a discrete set of candidate architectures, the author relax the search space to be continuous so that the architecture can be optimization with respect to its validation set performance by gradient descent. It’s able to achieve competitive performance with the state of the art using orders of magnitude less computation resources. It’s also simpler than many existing approaches as it does not involve controllers, hypernetworks or performance predictors.</p>
+<p>DARTS is able to learn high-performance architecture building blocks with complex graph topologies within a rich search space. It is not restricted to any specific architecture family and is applicable to both convolutional and recurrent networks.</p>
+<p>The contributions of this paper can be summarized as follows:</p>
+<ul>
+<li>Introduce a novel algorithm for differentiable network architecture search based on bilevel optimization, which is applicable to both convolutional and recurrent architectures.</li>
+<li>Achieve highly competitive results on <strong>CIFAR-10</strong> and outperforms the state of the art on <strong>PTB</strong>.</li>
+<li>Achieve remarkable efficiency improvement (reducing the cost of architecture discovery to a few GPU days), which the author attributes to the use of gradient-based optimization as opposed to non-differentiable search techniques.</li>
+<li>Show that the architectures learned by <strong>DARTS</strong> on <strong>CIFAR-10</strong> and <strong>PTB</strong> are transferable to ImageNet and WikiText-2, respectively.</li>
+</ul>
+<h2 id="Differentiable-Architecture-Search">Differentiable Architecture Search</h2>
+<h3 id="Search-Space">Search Space</h3>
+<p>Search for a computation cell as the building block of the final architecture. The learned cell could either be stacked to form a convolutional network or recursively connected to form a recurrent network.</p>
+<p>A cell is a directed acyclic graph consisting of an ordered sequence of $N$ nodes. Each node $x ^{(i)}$ is a latent representation(e.g. a feature map in convolutional networks) and each directed edge $(i,j)$ is associated with some operation $o ^{(i,j)}$ that transforms $x ^{(i)}$. Assume the cell to have two input nodes and a single output node.</p>
+<ul>
+<li>For convolutional cells, the input nodes are defined as the cell outputs in the previous two layers.</li>
+<li>For recurrent cells, these are defined as the input at the current step and the state carried from the previous step. The output of the cell is obtained by applying a reduction operation (e.g. concatenation) to all the intermediate nodes.</li>
+</ul>
+<p>Each intermediate node is computed based on all of its predecessors:</p>
+<p>$$x ^{(j)} = \underset{i&lt;j}{\sum} o ^{(i,j)} (x ^{(i)})$$</p>
+<p>A special <em>zero</em> operation is also included to indicate a lack of connection between two nodes. The task of learning the cell therefore reduces to learning the operations on its edge.\</p>
+<h3 id="Continuous-Relaxation-and-Optimization">Continuous Relaxation and Optimization</h3>
+<p>Let $\mathcal{O}$ be a set of candidate operations(e.g. convolution, max pooling, <em>zero</em>) where each operation represents some function $o(\cdot)$ to be applied to $x ^{(i)}$. To make the search space continuous, relax the categorical choice of a particular operation to a softmax over all possible operations:</p>
+<p>$$\bar{o} ^{(i,j)} = \underset{o \in \mathcal{O}}{\sum} \frac{exp(\alpha _o ^{(i,j)})}{\sum _{o ^{‘} \in \mathcal{O}}exp(\alpha _{o ^{’}} ^{(i,j)})} o(x)$$</p>
+<p>where the operation mixing weights for a pair of nodes $(i,j)$ are parameterized by a vector $\alpha ^{(i,j)}$ of dimension $|\mathcal{O}|$. The task of architecture search then reduces to learning a set of continuous variables $\alpha = [\alpha ^{(i,j)}]$.</p>
+<p><img src="cell.png" alt="cell"></p>
+<p>At the end of the search, a discrete architecture can be obtained by replacing each mixed operation $\bar{o} ^{(i,j)}$ with the most likely operation, i.e., $o ^{(i,j)} = argmax _{o \in \mathcal{O}} \alpha _o ^{(i,j)}$.</p>
+<p>After relaxation, the goal it to jointly learn the architecture $\alpha$ and the weights $w$ within all the mixed operations(e.g. weights of the convolution filters).</p>
+<p>Denote by $\mathcal{L} _{train}$ and $\mathcal{L} _{val}$ the training and the validation loss. Both losses are determined not only by the architecture $\alpha$ but also the weights $w$ in the network.</p>
+<p>The goal for architecture search is to find $\alpha ^\ast$ that minimizes the validation loss $\mathcal{L} _{val} (w ^\ast, \alpha ^\ast)$, where the weights $w ^\ast$ associated with the architecture are obtained by minimizing the training loss $w ^\ast = argmin _w \mathcal{L} _{train}(w,\alpha ^\ast)$.</p>
+<p>This implies a bilevel optimization problem with $\alpha$ as the upper-level variable and $w$ as the lower-level variable:</p>
+<p>$$\underset{\alpha}{min} \mathcal{L} _{val}(w ^\ast (\alpha), \alpha)$$</p>
+<p>$$s.t. \quad w ^\ast(\alpha) = argmin _w \mathcal{L} _{train} (w,\alpha)$$</p>
+<p><img src="search.png" alt="search"></p>
+<p><img src="xi.png" alt="xi"></p>
+<h3 id="Approximate-Architecture-Gradient">Approximate Architecture Gradient</h3>
+<p>Propose a simple approximation scheme as follows:</p>
+<p>$$\nabla _\alpha \mathcal{L} _{val} (w ^\ast(\alpha),\alpha)$$</p>
+<p>$$\approx \nabla _\alpha \mathcal{L} _{val} (w - \xi \nabla _w \mathcal{L} _{train} (w,\alpha),\alpha)$$</p>
+<p>The idea is to <em>approximate</em> $w ^\ast(\alpha)$ by <em>adapting</em> $w$ using only <em>a single training step</em>, without solving the inner optimization completely by training until convergence.</p>
+<p>$$\nabla _\alpha \mathcal{L} _{val} (w ^{‘} ,\alpha)-\xi \nabla ^2 _{\alpha,w} \mathcal{L} _{train} (w, \alpha) \nabla _{w ^{’}} \mathcal{L} _{val} (w ^{'},\alpha)$$</p>
+<p>$$w ^{'} = w - \xi \nabla _w \mathcal{L} _{train} (w,\alpha)$$</p>
+<p>The expression above contains an expensive matrix-vector product in its second term. The complexity can be substantially reduced using the finite difference approximation:</p>
+<p>$$w ^{\pm} = w \pm \epsilon \nabla _{w ^{‘}}\mathcal{L} _{val} (w ^{’},\alpha)$$</p>
+<p>$$\nabla ^2 _{\alpha,w} \mathcal{L} _{train} (w,\alpha) \nabla _{w ^{‘}} \mathcal{L} _{val} (w ^{’},\alpha) \approx \frac{\nabla _\alpha \mathcal{L} _{train}(w ^+ , \alpha) - \nabla _\alpha \mathcal{L} _{train} (w ^- , \alpha)}{2 \epsilon}$$</p>
+<p>Evaluating the finite difference requires only two forward passes for the weights and two backward passes for $\alpha$, and the complexity is reduced from $O(|\alpha||w|)$ to $O(|\alpha| + |w|)$.</p>
+<h3 id="Deriving-Discrete-Architectures">Deriving Discrete Architectures</h3>
+<p>Retain the top-$k$ strongest operations among all non-zero candidate operations collected form all the previous nodes to form each node in the discrete architecture.</p>
+<p>To make the derived architecture comparable with those in the existing work, use $k=2$ for convolutional cells and $k=1$ for recurrent cells.</p>
+<h2 id="Experiments-and-Results">Experiments and Results</h2>
+<p>Experiments on <strong>CIFAR-10</strong> and <strong>PTB</strong> consist of two stages, architecture search and architecture evaluation.</p>
+<ul>
+<li>Search for the cell architectures using <strong>DARTS</strong> and determine the best cells based on their validation performance.</li>
+<li>Use these cells to construct <em>larger</em> architectures, and test their performance.</li>
+<li>Investigate the transferability of the best cells learned on <strong>CIFAR-10</strong> and <strong>PTB</strong> by evaluating them on ImageNet and WikiText-2(WT2) respectively.</li>
+</ul>
+<h3 id="Architecture-Search">Architecture Search</h3>
+<p><img src="comp.png" alt="comp"></p>
+<p><img src="learned_arc.png" alt="learned_arc"></p>
+<h3 id="Architecture-Evaluation">Architecture Evaluation</h3>
+<p><img src="comp1.png" alt="comp1"></p>
+<p><img src="comp2.png" alt="comp2"></p>
+<p><img src="comp3.png" alt="comp3"></p>
+<p><img src="comp4.png" alt="comp4"></p>
+<h2 id="Conclusion">Conclusion</h2>
+<p>We presented DARTS, a simple yet effificient architecture search algorithm for both convolutional and recurrent networks. By searching in a continuous space, DARTS is able to match or outperform the state-of-the-art non-differentiable architecture search methods on image classifification and language modeling tasks with remarkable effificiency improvement by several orders of magnitude. There are many interesting directions to improve DARTS further. For example, the current method may suffer from discrepancies between the continuous architecture encoding and the derived discrete architecture. This could be alleviated, e.g., by annealing the softmax temperature (with a suitable schedule) to enforce one-hot selection. It would also be interesting to investigate performance-aware architecture derivation schemes based on the shared parameters learned during the search process.</p>
+<h2 id="The-paper">The paper</h2>
 
-      <!-- 标签云 -->
-      <div id='tag_cloud' class="tags">
+
+	<div class="row">
+    <embed src="DARTS.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/Python语法糖/" data-toggle="tooltip" data-placement="top" title="Python语法糖">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
         
-        <a href="#深度学习" title="深度学习" rel="11">深度学习</a>
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
         
-        <a href="#Linux系统配置" title="Linux系统配置" rel="1">Linux系统配置</a>
+
         
-        <a href="#集群配置" title="集群配置" rel="4">集群配置</a>
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=DARTS:Differentiable Architecture Search&body=Hi,I found this website and thought you might like it http://yoursite-url/en/DARTS/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
         
-        <a href="#git" title="git" rel="1">git</a>
-        
-        <a href="#maths" title="maths" rel="1">maths</a>
-        
-        <a href="#编程" title="编程" rel="1">编程</a>
-        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '04b857744df6aca41a4b',
+      clientSecret: '46345ef524913d79f188d03d10e82693a1b90cbe',
+      repo: 'blogcomment',
+      owner: 'ccloud0525',
+      admin: 'ccloud0525',
+      id: 'Tue Feb 14 2023 18:12:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'zh-CN',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
       </div>
 
-      <!-- 标签列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="深度学习">
-          <span class="tag-text">深度学习</span>
-        </span>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/AGCRN/">
-            <h2 class="post-title">
-              AGCRN:Adaptive Graph Convolutional Recurrent Network
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              AGCRN以及图谱卷积相关介绍
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/AutoCTS/">
-            <h2 class="post-title">
-              AutoCTS:Automated Correlated Time Series Forecasting
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              前沿论文学习笔记
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/DCRNN/">
-            <h2 class="post-title">
-              DCRNN:Diffusion Convolutional Recurrent Neural Network
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              前沿论文学习笔记
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/Graph_WaveNet/">
-            <h2 class="post-title">
-              Graph WaveNet for Deep Spatial-Temporal Graph Modeling
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              基于GCN和CNN的时空建模
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/STGCN/">
-            <h2 class="post-title">
-              STGCN:Spacial Temporal Graph Convolutional Network
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              图谱卷积的应用
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/en/Informer/">
-            <h2 class="post-title">
-              Informer:Beyond Efficient Transformer for Long Sequence Time-Series Forecasting
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              A introduction to Informer
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/en/ST-GRAT/">
-            <h2 class="post-title">
-              ST-GRAT:A Novel Spatio-temporal Graph Attention Network for Accurately Forecasting Dynamically Changing Road Speed
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              A introduction to ST-GRAT
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/en/STTN/">
-            <h2 class="post-title">
-              STTN:Spatial-Temporal Transformer Networks for Traffic Flow Forecasting
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              A introduction to STTN
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/en/Transformer_Attention Is All You Need/">
-            <h2 class="post-title">
-              Attention Is All You Need
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              Transformer
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/en/Triformer/">
-            <h2 class="post-title">
-              Triformer:Triangular,Variable-Specific Attentions for Long Sequence
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              A introduction to Triformer
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/en/DARTS/">
-            <h2 class="post-title">
-              DARTS:Differentiable Architecture Search
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              A introduction to DARTS
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="Linux系统配置">
-          <span class="tag-text">Linux系统配置</span>
-        </span>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/Deepin全自动科学上网/">
-            <h2 class="post-title">
-              Deepin下socks代理全自动
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              代理配置
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="集群配置">
-          <span class="tag-text">集群配置</span>
-        </span>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/config/">
-            <h2 class="post-title">
-              docker配置TensorFlow训练环境
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              神经网络
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/docker_multnode/">
-            <h2 class="post-title">
-              docker配置多节点集群
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              基于docker模拟集群配置
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/多节点配置HPL测试/">
-            <h2 class="post-title">
-              多节点配置HPL测试
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              基于docker模拟集群hpl测试
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/小程序+nginx+uwsgi+django配置/">
-            <h2 class="post-title">
-              从零开始配置Django+uWSGI+Nginx负载均衡
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              微信小程序项目部署
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="git">
-          <span class="tag-text">git</span>
-        </span>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/git远程仓库同步关系/">
-            <h2 class="post-title">
-              git三类分支详解
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              三类分支解混淆
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="maths">
-          <span class="tag-text">maths</span>
-        </span>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/深入理解傅里叶变换/">
-            <h2 class="post-title">
-              深入理解傅里叶变换
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              傅里叶变换内在解构
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="编程">
-          <span class="tag-text">编程</span>
-        </span>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/Python语法糖/">
-            <h2 class="post-title">
-              Python语法糖
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              快速通道
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-      </div>
-      
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
 
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Introduction"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Introduction</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Differentiable-Architecture-Search"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Differentiable Architecture Search</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Search-Space"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">Search Space</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Continuous-Relaxation-and-Optimization"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">Continuous Relaxation and Optimization</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Approximate-Architecture-Gradient"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">Approximate Architecture Gradient</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Deriving-Discrete-Architectures"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">Deriving Discrete Architectures</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Experiments-and-Results"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Experiments and Results</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Architecture-Search"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">Architecture Search</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Architecture-Evaluation"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">Architecture Evaluation</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Conclusion"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Conclusion</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#The-paper"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">The paper</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#自动机器学习" title="自动机器学习">自动机器学习</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://github.com/Cyria7" target="_blank">Cyria7</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/ameki77" target="_blank">ameki77</a>
+          </li>
+          
+          <li>
+            <a href="https://picasun.github.io/" target="_blank">Picasun</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
     </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
