@@ -497,7 +497,7 @@
 <p>A special <em>zero</em> operation is also included to indicate a lack of connection between two nodes. The task of learning the cell therefore reduces to learning the operations on its edge.\</p>
 <h3 id="Continuous-Relaxation-and-Optimization">Continuous Relaxation and Optimization</h3>
 <p>Let $\mathcal{O}$ be a set of candidate operations(e.g. convolution, max pooling, <em>zero</em>) where each operation represents some function $o(\cdot)$ to be applied to $x ^{(i)}$. To make the search space continuous, relax the categorical choice of a particular operation to a softmax over all possible operations:</p>
-<p>$$\bar{o} ^{(i,j)} = \underset{o \in \mathcal{O}}{\sum} \frac{exp(\alpha _o ^{(i,j)})}{\sum _{o ^{‘} \in \mathcal{O}}exp(\alpha _{o ^{’}} ^{(i,j)})} o(x)$$</p>
+<p>$$\bar{o} ^{(i,j)} = \underset{o \in \mathcal{O}}{\sum} \frac{exp(\alpha _o ^{(i,j)})}{\sum _{o’ \in \mathcal{O}}exp(\alpha _{o’} ^{(i,j)})} o(x)$$</p>
 <p>where the operation mixing weights for a pair of nodes $(i,j)$ are parameterized by a vector $\alpha ^{(i,j)}$ of dimension $|\mathcal{O}|$. The task of architecture search then reduces to learning a set of continuous variables $\alpha = [\alpha ^{(i,j)}]$.</p>
 <p><img src="cell.png" alt="cell"></p>
 <p>At the end of the search, a discrete architecture can be obtained by replacing each mixed operation $\bar{o} ^{(i,j)}$ with the most likely operation, i.e., $o ^{(i,j)} = argmax _{o \in \mathcal{O}} \alpha _o ^{(i,j)}$.</p>
@@ -514,11 +514,11 @@
 <p>$$\nabla _\alpha \mathcal{L} _{val} (w ^\ast(\alpha),\alpha)$$</p>
 <p>$$\approx \nabla _\alpha \mathcal{L} _{val} (w - \xi \nabla _w \mathcal{L} _{train} (w,\alpha),\alpha)$$</p>
 <p>The idea is to <em>approximate</em> $w ^\ast(\alpha)$ by <em>adapting</em> $w$ using only <em>a single training step</em>, without solving the inner optimization completely by training until convergence.</p>
-<p>$$\nabla _\alpha \mathcal{L} _{val} (w ^{‘} ,\alpha)-\xi \nabla ^2 _{\alpha,w} \mathcal{L} _{train} (w, \alpha) \nabla _{w ^{’}} \mathcal{L} _{val} (w ^{'},\alpha)$$</p>
-<p>$$w ^{'} = w - \xi \nabla _w \mathcal{L} _{train} (w,\alpha)$$</p>
+<p>$$\nabla _\alpha \mathcal{L} _{val} (w’ ,\alpha)-\xi \nabla ^2 _{\alpha,w} \mathcal{L} _{train} (w, \alpha) \nabla _{w’} \mathcal{L} _{val} (w’,\alpha)$$</p>
+<p>$$w’ = w - \xi \nabla _w \mathcal{L} _{train} (w,\alpha)$$</p>
 <p>The expression above contains an expensive matrix-vector product in its second term. The complexity can be substantially reduced using the finite difference approximation:</p>
-<p>$$w ^{\pm} = w \pm \epsilon \nabla _{w ^{‘}}\mathcal{L} _{val} (w ^{’},\alpha)$$</p>
-<p>$$\nabla ^2 _{\alpha,w} \mathcal{L} _{train} (w,\alpha) \nabla _{w ^{‘}} \mathcal{L} _{val} (w ^{’},\alpha) \approx \frac{\nabla _\alpha \mathcal{L} _{train}(w ^+ , \alpha) - \nabla _\alpha \mathcal{L} _{train} (w ^- , \alpha)}{2 \epsilon}$$</p>
+<p>$$w ^{\pm} = w \pm \epsilon \nabla _{w’} \mathcal{L} _{val} (w’,\alpha)$$</p>
+<p>$$\nabla ^2 _{\alpha,w} \mathcal{L} _{train} (w,\alpha) \nabla _{w’} \mathcal{L} _{val} (w’,\alpha) \approx \frac{\nabla _\alpha \mathcal{L} _{train}(w ^+ , \alpha) - \nabla _\alpha \mathcal{L} _{train} (w ^- , \alpha)}{2 \epsilon}$$</p>
 <p>Evaluating the finite difference requires only two forward passes for the weights and two backward passes for $\alpha$, and the complexity is reduced from $O(|\alpha||w|)$ to $O(|\alpha| + |w|)$.</p>
 <h3 id="Deriving-Discrete-Architectures">Deriving Discrete Architectures</h3>
 <p>Retain the top-$k$ strongest operations among all non-zero candidate operations collected form all the previous nodes to form each node in the discrete architecture.</p>
