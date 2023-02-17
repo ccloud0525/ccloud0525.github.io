@@ -475,16 +475,22 @@
 </blockquote>
 <h2 id="Introduction">Introduction</h2>
 <ul>
-<li>Leveraging the powerful feature extraction capabilities of deep learning models, expert-designed ST-blocks have been proposed to capture spatio-temporal dependencies to enable accurate forecasting.</li>
-<li>A more recent approach is to automate the design of effective ST-blocks, represented as a supernet-subnet architecture. The goal is to learn the operator-associated weights $[\alpha _i]$, upon which an optimal subnet is obtained by picking the operator with the highest weight between every two nodes.</li>
-<li>The existing automated CTS forecasting methods above still suffer from three main limitations:
+<li>
+<p>Leveraging the powerful feature extraction capabilities of deep learning models, expert-designed ST-blocks have been proposed to capture spatio-temporal dependencies to enable accurate forecasting.</p>
+</li>
+<li>
+<p>A more recent approach is to automate the design of effective ST-blocks, represented as a supernet-subnet architecture. The goal is to learn the operator-associated weights $[\alpha _i]$, upon which an optimal subnet is obtained by picking the operator with the highest weight between every two nodes.</p>
+</li>
+<li>
+<p>The existing automated CTS forecasting methods above still suffer from three main limitations:</p>
 <ul>
-<li><strong>Lack of support for joint search for architectures and hyperparameters.</strong> Rely on predefined hyperparameters including architectural hyperparameters(e.g. the number of latent representations, i.e., nodes, in an ST-block and the size of a latent representation) and training hyperparameters(e.g. the dropout rate). Thus semi-automated.</li>
-<li>**Poor scalability. ** The entire supernet must reside in memory during training, which may cause memory overflow in large-scale CTS settings. The memory usage of a supernet goes overflow more than a subnet, which limits the scalability of neural architecture search.</li>
+<li><strong>Lack of support for joint search for architectures and hyperparameters</strong> .Rely on predefined hyperparameters including architectural hyperparameters(e.g. the number of latent representations, i.e., nodes, in an ST-block and the size of a latent representation) and training hyperparameters(e.g. the dropout rate). Thus semi-automated.</li>
+<li><strong>Poor scalability</strong> .The entire supernet must reside in memory during training, which may cause memory overflow in large-scale CTS settings. The memory usage of a supernet goes overflow more than a subnet, which limits the scalability of neural architecture search.</li>
 <li><strong>One-time use</strong>. Existing automated CTS forecasting methods train a supernet for each specific dataset from scratch, which is costly.</li>
 </ul>
 </li>
-<li><strong>SEARCH, A Scalable and Efficient joint ARChitecture and Hyperparameter search framework</strong> is proposed to address the limitations above.
+<li>
+<p><strong>SEARCH, A Scalable and Efficient joint ARChitecture and Hyperparameter search framework</strong> is proposed to address the limitations above.</p>
 <ul>
 <li>Propose a novel search space for correlated time series forecasting to facilitate joint search for <strong>architectures and hyperparameter</strong> settings.</li>
 <li>A memory-efficient Architecture-Hyperparameter Comparator (AHC) is proposed to rank arch-hyper candidates that encompasses an easy-to-obtain <strong>proxy metric</strong> to generate pseudo-labels to train an AHC in a denoising manner, thereby improving search efficiency.</li>
