@@ -404,7 +404,7 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">14</span> Minutes
+              Estimated Reading Time <span class="post-count">15</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
@@ -595,6 +595,15 @@
 <p>Use $l _a$ to represent an arch-hyper.</p>
 <p>$$L _a = concatenate(l _a,l _a’)$$</p>
 <p>$$output = \mathbb{1}(\sigma(FC(L,w _l)) &gt;= 0.5)$$</p>
+<p>GIN is proposed in the following paper “How powerful are Graph Neural Networks?”</p>
+
+
+	<div class="row">
+    <embed src="GIN.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
 <h3 id="Training-AHC-with-Noisy-Proxies">Training AHC with Noisy Proxies</h3>
 <p>Design a computation-efficient $R’(\cdot)$ to easily obtain a large number of noisy training samples $(ah _1,ah _2,y’)$.</p>
 <h4 id="Proxy-Performance-Metric">Proxy Performance Metric</h4>
@@ -639,6 +648,15 @@
 <p>Choose the top-$K$ arch-hypers from the population to collect their exact forecasting accuracy and pick the one with the highest accuracy as the final searched ST-block.</p>
 </li>
 </ol>
+<p>The evolutionary algorithm is shown as followed:</p>
+
+
+	<div class="row">
+    <embed src="Evolutionary.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
 <h4 id="Transfer-a-well-trained-AHC">Transfer a well-trained AHC</h4>
 <p>Give a well-trained AHC $\mathcal{N} _s$ on a source dataset $D _s$ (use $L _1$ noisy samples and $L _2$ clean samples for training), a new well-trained AHC $\mathcal{N} _s$ from $D _s$ to $D _t$ with much less arch-hyper samples $ah _t$ on $D _t$:</p>
 <p>$$\mathcal{N} _t(D _t) \overset{ah _t}{\longleftarrow} \mathcal{N} _s (D _s)$$</p>
