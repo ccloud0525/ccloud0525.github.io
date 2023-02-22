@@ -578,7 +578,7 @@
 <p>Use an adjacency matrix $A _a$ and a feature matrix $F _a$ to encode an arch-hyper graph $G _a$.</p>
 <p>$A_a \in \mathbb{R} ^{(n+1) \times (n+1)}$ reflects the topology information of $G _a$,where the binary value of an entry $(i,j)$ indicates whether there is information flow between these two nodes. Self-connections are also added to all nodes.</p>
 <p>$F _a \in \mathbb{R} ^{(n+1) \times D}$ contains operator information of each node.</p>
-<p>For the “Hyper” mode, the original feature is an $r$-dimensional vector from the hyperparameter search space. Employ min-max normalization to normalize the original feature of the “Hyper” node and then convert the normalized feature into a $D$-dimensional embedding:</p>
+<p>For the “Hyper” node, the original feature is an $r$-dimensional vector from the hyperparameter search space. Employ min-max normalization to normalize the original feature of the “Hyper” node and then convert the normalized feature into a $D$-dimensional embedding:</p>
 <p>$$F _h = norm(H _o) W _c$$</p>
 <p>where $H _o \in \mathbb{R} ^r$ is the original feature vector of the “Hyper” node and $W _c \in \mathbb{R} ^{r \times D}$ is learnable matrix, and $F _h \in \mathbb{R} ^D$ is the embedding of the “Hyper” node.</p>
 <p>For the other $n$ operator nodes, first embed each operator with an one-hot embedding and then introduce a learnable matrix that converts the one-hot embeddings of all operator nodes into an embedding matrx:</p>
@@ -1436,22 +1436,5 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-
-</body>
+	</body>
 </html>
