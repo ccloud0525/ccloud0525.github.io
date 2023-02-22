@@ -473,13 +473,13 @@
         
         <a href="#Deepin" title="Deepin" rel="1">Deepin</a>
         
+        <a href="#python" title="python" rel="1">python</a>
+        
         <a href="#docker" title="docker" rel="3">docker</a>
         
         <a href="#集群" title="集群" rel="1">集群</a>
         
         <a href="#git" title="git" rel="1">git</a>
-        
-        <a href="#hpl" title="hpl" rel="1">hpl</a>
         
         <a href="#Linux" title="Linux" rel="1">Linux</a>
         
@@ -489,7 +489,7 @@
         
         <a href="#注意力机制" title="注意力机制" rel="5">注意力机制</a>
         
-        <a href="#python" title="python" rel="1">python</a>
+        <a href="#hpl" title="hpl" rel="1">hpl</a>
         
       </div>
 
@@ -569,23 +569,6 @@
         <hr>
         
         <div class="post-preview">
-          <a href="/cn/config/">
-            <h2 class="post-title">
-              docker配置TensorFlow训练环境
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              神经网络
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
           <a href="/cn/STGCN/">
             <h2 class="post-title">
               STGCN:Spacial Temporal Graph Convolutional Network
@@ -596,6 +579,23 @@
             
             <h3 class="post-subtitle">
               图谱卷积的应用
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/config/">
+            <h2 class="post-title">
+              docker配置TensorFlow训练环境
+              
+              -- cn
+              
+            </h2>
+            
+            <h3 class="post-subtitle">
+              神经网络
             </h3>
             
           </a>
@@ -651,21 +651,6 @@
         <hr>
         
         <div class="post-preview">
-          <a href="/en/DARTS/">
-            <h2 class="post-title">
-              DARTS:Differentiable Architecture Search
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              A introduction to DARTS
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
           <a href="/en/AutoCTS+/">
             <h2 class="post-title">
               AutoCTS+:Joint Neural Architecture and Hyperparameter Search for Correlated Times Series Forecasting
@@ -674,6 +659,21 @@
             
             <h3 class="post-subtitle">
               A introduction to AutoCTS+
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/en/DARTS/">
+            <h2 class="post-title">
+              DARTS:Differentiable Architecture Search
+              
+            </h2>
+            
+            <h3 class="post-subtitle">
+              A introduction to DARTS
             </h3>
             
           </a>
@@ -763,6 +763,30 @@
             
             <h3 class="post-subtitle">
               代理配置
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="python">
+          <span class="tag-text">python</span>
+        </span>
+        
+        <div class="post-preview">
+          <a href="/cn/Python语法糖/">
+            <h2 class="post-title">
+              Python语法糖
+              
+              -- cn
+              
+            </h2>
+            
+            <h3 class="post-subtitle">
+              快速通道
             </h3>
             
           </a>
@@ -869,30 +893,6 @@
             
             <h3 class="post-subtitle">
               三类分支解混淆
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="hpl">
-          <span class="tag-text">hpl</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/多节点配置HPL测试/">
-            <h2 class="post-title">
-              多节点配置HPL测试
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              基于docker模拟集群hpl测试
             </h3>
             
           </a>
@@ -1056,21 +1056,21 @@
       </div>
       
       <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="python">
-          <span class="tag-text">python</span>
+        <span class="fa fa-tag listing-seperator" id="hpl">
+          <span class="tag-text">hpl</span>
         </span>
         
         <div class="post-preview">
-          <a href="/cn/Python语法糖/">
+          <a href="/cn/多节点配置HPL测试/">
             <h2 class="post-title">
-              Python语法糖
+              多节点配置HPL测试
               
               -- cn
               
             </h2>
             
             <h3 class="post-subtitle">
-              快速通道
+              基于docker模拟集群hpl测试
             </h3>
             
           </a>
@@ -1578,5 +1578,22 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+</body>
 </html>
