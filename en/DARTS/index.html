@@ -393,7 +393,7 @@
               
             </div>
             <h1>DARTS:Differentiable Architecture Search</h1>
-            <h2 class="subheading">A introduction to DARTS</h2>
+            <h2 class="subheading">An introduction to DARTS</h2>
             <span class="meta">
               Posted by Cloud on
               2023-02-14
@@ -404,11 +404,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">8</span> Minutes
+              Estimated Reading Time <span class="post-count">2</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">1.3k</span> In Total
+              Words <span class="post-count">474</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -473,8 +473,7 @@
         <blockquote>
 <p>The blog introduces the paper : DARTS</p>
 </blockquote>
-<h2 id="Introduction">Introduction</h2>
-<p>The conventional architecture search algorithms are computationally demanding despite their remarkable performance. An inherent cause of inefficiency for the dominant approaches based on reinforcement learning(RL), evolution, MCTS, SMBO or Bayesian optimization is the fact that architecture search is treated as a black-box optimization problem over a discrete domain, which leads to a large number of architecture evaluations required.</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>The conventional architecture search algorithms are computationally demanding despite their remarkable performance. An inherent cause of inefficiency for the dominant approaches based on reinforcement learning(RL), evolution, MCTS, SMBO or Bayesian optimization is the fact that architecture search is treated as a black-box optimization problem over a discrete domain, which leads to a large number of architecture evaluations required.</p>
 <p>In this work, the author approaches the problem from a different angle and propose a method for efficient architecture search called DARTS(Differentiable ARchiTecture Search). Instead of searching over a discrete set of candidate architectures, the author relax the search space to be continuous so that the architecture can be optimization with respect to its validation set performance by gradient descent. It’s able to achieve competitive performance with the state of the art using orders of magnitude less computation resources. It’s also simpler than many existing approaches as it does not involve controllers, hypernetworks or performance predictors.</p>
 <p>DARTS is able to learn high-performance architecture building blocks with complex graph topologies within a rich search space. It is not restricted to any specific architecture family and is applicable to both convolutional and recurrent networks.</p>
 <p>The contributions of this paper can be summarized as follows:</p>
@@ -484,64 +483,44 @@
 <li>Achieve remarkable efficiency improvement (reducing the cost of architecture discovery to a few GPU days), which the author attributes to the use of gradient-based optimization as opposed to non-differentiable search techniques.</li>
 <li>Show that the architectures learned by <strong>DARTS</strong> on <strong>CIFAR-10</strong> and <strong>PTB</strong> are transferable to ImageNet and WikiText-2, respectively.</li>
 </ul>
-<h2 id="Differentiable-Architecture-Search">Differentiable Architecture Search</h2>
-<h3 id="Search-Space">Search Space</h3>
-<p>Search for a computation cell as the building block of the final architecture. The learned cell could either be stacked to form a convolutional network or recursively connected to form a recurrent network.</p>
-<p>A cell is a directed acyclic graph consisting of an ordered sequence of $N$ nodes. Each node $x ^{(i)}$ is a latent representation(e.g. a feature map in convolutional networks) and each directed edge $(i,j)$ is associated with some operation $o ^{(i,j)}$ that transforms $x ^{(i)}$. Assume the cell to have two input nodes and a single output node.</p>
+<h2 id="Differentiable-Architecture-Search"><a href="#Differentiable-Architecture-Search" class="headerlink" title="Differentiable Architecture Search"></a>Differentiable Architecture Search</h2><h3 id="Search-Space"><a href="#Search-Space" class="headerlink" title="Search Space"></a>Search Space</h3><p>Search for a computation cell as the building block of the final architecture. The learned cell could either be stacked to form a convolutional network or recursively connected to form a recurrent network.</p>
+<p>A cell is a directed acyclic graph consisting of an ordered sequence of $N$ nodes. Each node $x ^{(i)}$ is a latent representation(e.g. a feature map in convolutional networks) and each directed edge $(i,j)$ is associated with some operation $o ^{(i,j)}$ that transforms $x ^{(i)}$. Assume the cell to have two input nodes and a single output node. </p>
 <ul>
-<li>For convolutional cells, the input nodes are defined as the cell outputs in the previous two layers.</li>
+<li>For convolutional cells, the input nodes are defined as the cell outputs in the previous two layers. </li>
 <li>For recurrent cells, these are defined as the input at the current step and the state carried from the previous step. The output of the cell is obtained by applying a reduction operation (e.g. concatenation) to all the intermediate nodes.</li>
 </ul>
 <p>Each intermediate node is computed based on all of its predecessors:</p>
-<p>$$x ^{(j)} = \underset{i&lt;j}{\sum} o ^{(i,j)} (x ^{(i)})$$</p>
-<p>A special <em>zero</em> operation is also included to indicate a lack of connection between two nodes. The task of learning the cell therefore reduces to learning the operations on its edge.\</p>
-<h3 id="Continuous-Relaxation-and-Optimization">Continuous Relaxation and Optimization</h3>
-<p>Let $\mathcal{O}$ be a set of candidate operations(e.g. convolution, max pooling, <em>zero</em>) where each operation represents some function $o(\cdot)$ to be applied to $x ^{(i)}$. To make the search space continuous, relax the categorical choice of a particular operation to a softmax over all possible operations:</p>
-<p>$$\bar{o} ^{(i,j)} = \underset{o \in \mathcal{O}}{\sum} \frac{exp(\alpha _o ^{(i,j)})}{\sum _{o’ \in \mathcal{O}}exp(\alpha _{o’} ^{(i,j)})} o(x)$$</p>
-<p>where the operation mixing weights for a pair of nodes $(i,j)$ are parameterized by a vector $\alpha ^{(i,j)}$ of dimension $|\mathcal{O}|$. The task of architecture search then reduces to learning a set of continuous variables $\alpha = [\alpha ^{(i,j)}]$.</p>
+<script type="math/tex; mode=display">x ^{(j)} = \underset{i<j}{\sum} o ^{(i,j)} (x ^{(i)})</script><p>A special <em>zero</em> operation is also included to indicate a lack of connection between two nodes. The task of learning the cell therefore reduces to learning the operations on its edge.\</p>
+<h3 id="Continuous-Relaxation-and-Optimization"><a href="#Continuous-Relaxation-and-Optimization" class="headerlink" title="Continuous Relaxation and Optimization"></a>Continuous Relaxation and Optimization</h3><p>Let $\mathcal{O}$ be a set of candidate operations(e.g. convolution, max pooling, <em>zero</em>) where each operation represents some function $o(\cdot)$ to be applied to $x ^{(i)}$. To make the search space continuous, relax the categorical choice of a particular operation to a softmax over all possible operations:</p>
+<script type="math/tex; mode=display">\bar{o} ^{(i,j)} = \underset{o \in \mathcal{O}}{\sum} \frac{exp(\alpha _o ^{(i,j)})}{\sum _{o' \in \mathcal{O}}exp(\alpha _{o'} ^{(i,j)})} o(x)</script><p>where the operation mixing weights for a pair of nodes $(i,j)$ are parameterized by a vector $\alpha ^{(i,j)}$ of dimension $|\mathcal{O}|$. The task of architecture search then reduces to learning a set of continuous variables $\alpha = [\alpha ^{(i,j)}]$.</p>
 <p><img src="cell.png" alt="cell"></p>
 <p>At the end of the search, a discrete architecture can be obtained by replacing each mixed operation $\bar{o} ^{(i,j)}$ with the most likely operation, i.e., $o ^{(i,j)} = argmax _{o \in \mathcal{O}} \alpha _o ^{(i,j)}$.</p>
 <p>After relaxation, the goal it to jointly learn the architecture $\alpha$ and the weights $w$ within all the mixed operations(e.g. weights of the convolution filters).</p>
 <p>Denote by $\mathcal{L} _{train}$ and $\mathcal{L} _{val}$ the training and the validation loss. Both losses are determined not only by the architecture $\alpha$ but also the weights $w$ in the network.</p>
 <p>The goal for architecture search is to find $\alpha ^\ast$ that minimizes the validation loss $\mathcal{L} _{val} (w ^\ast, \alpha ^\ast)$, where the weights $w ^\ast$ associated with the architecture are obtained by minimizing the training loss $w ^\ast = argmin _w \mathcal{L} _{train}(w,\alpha ^\ast)$.</p>
 <p>This implies a bilevel optimization problem with $\alpha$ as the upper-level variable and $w$ as the lower-level variable:</p>
-<p>$$\underset{\alpha}{min} \mathcal{L} _{val}(w ^\ast (\alpha), \alpha)$$</p>
-<p>$$s.t. \quad w ^\ast(\alpha) = argmin _w \mathcal{L} _{train} (w,\alpha)$$</p>
-<p><img src="search.png" alt="search"></p>
+<script type="math/tex; mode=display">\underset{\alpha}{min} \mathcal{L} _{val}(w ^\ast (\alpha), \alpha)</script><script type="math/tex; mode=display">s.t. \quad w ^\ast(\alpha) = argmin _w \mathcal{L} _{train} (w,\alpha)</script><p><img src="search.png" alt="search"></p>
 <p><img src="xi.png" alt="xi"></p>
-<h3 id="Approximate-Architecture-Gradient">Approximate Architecture Gradient</h3>
-<p>Propose a simple approximation scheme as follows:</p>
-<p>$$\nabla _\alpha \mathcal{L} _{val} (w ^\ast(\alpha),\alpha)$$</p>
-<p>$$\approx \nabla _\alpha \mathcal{L} _{val} (w - \xi \nabla _w \mathcal{L} _{train} (w,\alpha),\alpha)$$</p>
-<p>The idea is to <em>approximate</em> $w ^\ast(\alpha)$ by <em>adapting</em> $w$ using only <em>a single training step</em>, without solving the inner optimization completely by training until convergence.</p>
-<p>$$\nabla _\alpha \mathcal{L} _{val} (w’ ,\alpha)-\xi \nabla ^2 _{\alpha,w} \mathcal{L} _{train} (w, \alpha) \nabla _{w’} \mathcal{L} _{val} (w’,\alpha)$$</p>
-<p>$$w’ = w - \xi \nabla _w \mathcal{L} _{train} (w,\alpha)$$</p>
-<p>The expression above contains an expensive matrix-vector product in its second term. The complexity can be substantially reduced using the finite difference approximation:</p>
-<p>$$w ^{\pm} = w \pm \epsilon \nabla _{w’} \mathcal{L} _{val} (w’,\alpha)$$</p>
-<p>$$\nabla ^2 _{\alpha,w} \mathcal{L} _{train} (w,\alpha) \nabla _{w’} \mathcal{L} _{val} (w’,\alpha) \approx \frac{\nabla _\alpha \mathcal{L} _{train}(w ^+ , \alpha) - \nabla _\alpha \mathcal{L} _{train} (w ^- , \alpha)}{2 \epsilon}$$</p>
-<p>Evaluating the finite difference requires only two forward passes for the weights and two backward passes for $\alpha$, and the complexity is reduced from $O(|\alpha||w|)$ to $O(|\alpha| + |w|)$.</p>
-<h3 id="Deriving-Discrete-Architectures">Deriving Discrete Architectures</h3>
-<p>Retain the top-$k$ strongest operations among all non-zero candidate operations collected form all the previous nodes to form each node in the discrete architecture.</p>
+<h3 id="Approximate-Architecture-Gradient"><a href="#Approximate-Architecture-Gradient" class="headerlink" title="Approximate Architecture Gradient"></a>Approximate Architecture Gradient</h3><p>Propose a simple approximation scheme as follows:</p>
+<script type="math/tex; mode=display">\nabla _\alpha \mathcal{L} _{val} (w ^\ast(\alpha),\alpha)</script><script type="math/tex; mode=display">\approx \nabla _\alpha \mathcal{L} _{val} (w - \xi \nabla _w \mathcal{L} _{train} (w,\alpha),\alpha)</script><p>The idea is to <em>approximate</em> $w ^\ast(\alpha)$ by <em>adapting</em> $w$ using only <em>a single training step</em>, without solving the inner optimization completely by training until convergence.</p>
+<script type="math/tex; mode=display">\nabla _\alpha \mathcal{L} _{val} (w' ,\alpha)-\xi \nabla ^2 _{\alpha,w} \mathcal{L} _{train} (w, \alpha) \nabla _{w'} \mathcal{L} _{val} (w',\alpha)</script><script type="math/tex; mode=display">w' = w - \xi \nabla _w \mathcal{L} _{train} (w,\alpha)</script><p>The expression above contains an expensive matrix-vector product in its second term. The complexity can be substantially reduced using the finite difference approximation:</p>
+<script type="math/tex; mode=display">w ^{\pm} = w \pm \epsilon \nabla _{w'} \mathcal{L} _{val} (w',\alpha)</script><script type="math/tex; mode=display">\nabla ^2 _{\alpha,w} \mathcal{L} _{train} (w,\alpha) \nabla _{w'} \mathcal{L} _{val} (w',\alpha) \approx \frac{\nabla _\alpha \mathcal{L} _{train}(w ^+ , \alpha) - \nabla _\alpha \mathcal{L} _{train} (w ^- , \alpha)}{2 \epsilon}</script><p>Evaluating the finite difference requires only two forward passes for the weights and two backward passes for $\alpha$, and the complexity is reduced from $O(|\alpha||w|)$ to $O(|\alpha| + |w|)$.</p>
+<h3 id="Deriving-Discrete-Architectures"><a href="#Deriving-Discrete-Architectures" class="headerlink" title="Deriving Discrete Architectures"></a>Deriving Discrete Architectures</h3><p>Retain the top-$k$ strongest operations among all non-zero candidate operations collected form all the previous nodes to form each node in the discrete architecture.</p>
 <p>To make the derived architecture comparable with those in the existing work, use $k=2$ for convolutional cells and $k=1$ for recurrent cells.</p>
-<h2 id="Experiments-and-Results">Experiments and Results</h2>
-<p>Experiments on <strong>CIFAR-10</strong> and <strong>PTB</strong> consist of two stages, architecture search and architecture evaluation.</p>
+<h2 id="Experiments-and-Results"><a href="#Experiments-and-Results" class="headerlink" title="Experiments and Results"></a>Experiments and Results</h2><p>Experiments on <strong>CIFAR-10</strong> and <strong>PTB</strong> consist of two stages, architecture search and architecture evaluation.</p>
 <ul>
 <li>Search for the cell architectures using <strong>DARTS</strong> and determine the best cells based on their validation performance.</li>
 <li>Use these cells to construct <em>larger</em> architectures, and test their performance.</li>
 <li>Investigate the transferability of the best cells learned on <strong>CIFAR-10</strong> and <strong>PTB</strong> by evaluating them on ImageNet and WikiText-2(WT2) respectively.</li>
 </ul>
-<h3 id="Architecture-Search">Architecture Search</h3>
-<p><img src="comp.png" alt="comp"></p>
+<h3 id="Architecture-Search"><a href="#Architecture-Search" class="headerlink" title="Architecture Search"></a>Architecture Search</h3><p><img src="comp.png" alt="comp"></p>
 <p><img src="learned_arc.png" alt="learned_arc"></p>
-<h3 id="Architecture-Evaluation">Architecture Evaluation</h3>
-<p><img src="comp1.png" alt="comp1"></p>
+<h3 id="Architecture-Evaluation"><a href="#Architecture-Evaluation" class="headerlink" title="Architecture Evaluation"></a>Architecture Evaluation</h3><p><img src="comp1.png" alt="comp1"></p>
 <p><img src="comp2.png" alt="comp2"></p>
 <p><img src="comp3.png" alt="comp3"></p>
 <p><img src="comp4.png" alt="comp4"></p>
-<h2 id="Conclusion">Conclusion</h2>
-<p>We presented DARTS, a simple yet effificient architecture search algorithm for both convolutional and recurrent networks. By searching in a continuous space, DARTS is able to match or outperform the state-of-the-art non-differentiable architecture search methods on image classifification and language modeling tasks with remarkable effificiency improvement by several orders of magnitude. There are many interesting directions to improve DARTS further. For example, the current method may suffer from discrepancies between the continuous architecture encoding and the derived discrete architecture. This could be alleviated, e.g., by annealing the softmax temperature (with a suitable schedule) to enforce one-hot selection. It would also be interesting to investigate performance-aware architecture derivation schemes based on the shared parameters learned during the search process.</p>
-<h2 id="The-paper">The paper</h2>
-
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>We presented DARTS, a simple yet effificient architecture search algorithm for both convolutional and recurrent networks. By searching in a continuous space, DARTS is able to match or outperform the state-of-the-art non-differentiable architecture search methods on image classifification and language modeling tasks with remarkable effificiency improvement by several orders of magnitude. There are many interesting directions to improve DARTS further. For example, the current method may suffer from discrepancies between the continuous architecture encoding and the derived discrete architecture. This could be alleviated, e.g., by annealing the softmax temperature (with a suitable schedule) to enforce one-hot selection. It would also be interesting to investigate performance-aware architecture derivation schemes based on the shared parameters learned during the search process.</p>
+<h2 id="The-paper"><a href="#The-paper" class="headerlink" title="The paper"></a>The paper</h2>
 
 	<div class="row">
     <embed src="DARTS.pdf" width="100%" height="550" type="application/pdf">

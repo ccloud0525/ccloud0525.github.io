@@ -393,7 +393,7 @@
               
             </div>
             <h1>AutoST:Efficient Neural Architecture Search for Spatio-Temporal Prediction</h1>
-            <h2 class="subheading">A introduction to AutoST</h2>
+            <h2 class="subheading">An introduction to AutoST</h2>
             <span class="meta">
               Posted by Cloud on
               2023-02-28
@@ -473,42 +473,33 @@
         <blockquote>
 <p>The blog introduces the paper : AutoST:Efficient Neural Architecture Search for Spatio-Temporal Prediction</p>
 </blockquote>
-<h2 id="Introduction">Introduction</h2>
-<ul>
-<li>
-<p>How to find the optimal neural architecture at various scenarios in cities is still an unsettled problem.</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><ul>
+<li><p>How to find the optimal neural architecture at various scenarios in cities is still an unsettled problem.</p>
 <ul>
 <li>The spatio-temporal correlation is diverse from location to location</li>
 <li>spatio-temporal correlation is complex including spatial dependency between regions and temporal correlation among timestamps</li>
 <li>spatio-temporal correlation is heterogeneous to different tasks</li>
 </ul>
 </li>
-<li>
-<p>Two important aspects neglected in existing approaches.</p>
+<li><p>Two important aspects neglected in existing approaches.</p>
 <ul>
-<li>
-<p>Different areas may have different spatial ranges preference while the the size of convolution kernel which models the range of neighborhood dependency is usually fixed and empirically set.<br>
-Select the optimal architecture found in neural architecture search (NAS) and analyze the search process.</p>
+<li><p>Different areas may have different spatial ranges preference while the the size of convolution kernel which models the range of neighborhood dependency is usually fixed and empirically set.<br>Select the optimal architecture found in neural architecture search (NAS) and analyze the search process.</p>
 <p>Finally, it shows that the Beijing achieves slightly higher score than Guiyang in convolution score (add the weighted kernel size in all layers as the total scores for each architecture at every iteration)</p>
 <p><img src="fig1.png" alt="fig1"></p>
 </li>
-<li>
-<p>Current approaches usually use the residual network to aggregate the features in adjacent layers, failing to fuse the low and high-level features. The more the number of skip connections at the search stage indicates the more important the low-level features. It turns out that different cities have distinct architecture preferences and core cities usually pay attention to the global spatial dependency.(shown in Fig1©)</p>
+<li><p>Current approaches usually use the residual network to aggregate the features in adjacent layers, failing to fuse the low and high-level features. The more the number of skip connections at the search stage indicates the more important the low-level features. It turns out that different cities have distinct architecture preferences and core cities usually pay attention to the global spatial dependency.(shown in Fig1(c))</p>
 </li>
 </ul>
 </li>
-<li>
-<p>Propose a general network called AutoST shown in Fig2.</p>
-<p><img src="fig2.png" alt="fig2"><br>
-The traditional processes of ST prediction consists of three components:</p>
+<li><p>Propose a general network called AutoST shown in Fig2.</p>
+<p><img src="fig2.png" alt="fig2"><br>The traditional processes of ST prediction consists of three components:</p>
 <ol>
 <li>initial ST feature extractor: constructing ST features from raw ST data</li>
 <li>feature learning network</li>
 <li>external fusion and predictor: fusing the external factors with flow information and then predicting urban flows in the future</li>
 </ol>
 </li>
-<li>
-<p>The contributions can be summarized as three aspects:</p>
+<li><p>The contributions can be summarized as three aspects:</p>
 <ul>
 <li>Propose a novel model named AutoST for spatio-temporal prediction which introduces the neural architecture search technique to dynamically capture the various-range spatial correlations and to fuse multi-level features. In addition, AutoST is oriented to ST data rather than specific application scenarios, which can be easily applied to a series of deep models.</li>
 <li>Design an efficient and effective search space including two basic modules: i) a mix convolution block at each layer to capture various-range spatial correlations; ii) a mix skip connection block among layers to dynamically fuse the multi-level features. Specifically, the mix convolution block consists of multiple convolutions kernels, the larger size of which indicates the longer range correlations. Besides, the mix skip connection block includes a <em>connection</em> cell and a <em>do-not-connection</em> cell to dynamically learn to fuse the low- and high level features.</li>
@@ -516,23 +507,19 @@ The traditional processes of ST prediction consists of three components:</p>
 </ul>
 </li>
 </ul>
-<h2 id="Preliminaries">Preliminaries</h2>
-<p><img src="notations.png" alt="notations"></p>
-<p>DEFINITION 1. <em><strong>Spatial-Temporal prediction:</strong></em> <em>We partition a city into an</em> <em>I</em> ∗ <em>J</em> <em>grids based on longitude and latitude where a grid denotes a region. There are many types of measures in a region for different ST applications, such as the crowd flows, bike recent and return, taxi pick-ups and drop-offs. Then, the urban information at time</em> <em>t</em> <em>can be denoted as</em> $X _t \in \mathbb{R} ^{C \ast I \ast J}$ <em>where</em> <em>C</em> <em>is the number of measured values.</em></p>
-<p>DEFINITION 2. <em><strong>External Features:</strong></em> <em>We denote $X _e$ as the external features including the meteorological and holiday information.</em></p>
-<p><strong>Problem Statement:</strong> Given historical observed citywide urban flows {$X _0,X _1,…, X _{t-1}$}, and external features $X _e$, predict the traffic</p>
+<h2 id="Preliminaries"><a href="#Preliminaries" class="headerlink" title="Preliminaries"></a>Preliminaries</h2><p><img src="notations.png" alt="notations"></p>
+<p>DEFINITION 1. <strong><em>Spatial-Temporal prediction:</em></strong> <em>We partition a city into an</em> <em>I</em> ∗ <em>J</em> <em>grids based on longitude and latitude where a grid denotes a region. There are many types of measures in a region for different ST applications, such as the crowd flows, bike recent and return, taxi pick-ups and drop-offs. Then, the urban information at time</em> <em>t</em> <em>can be denoted as</em> $X _t \in \mathbb{R} ^{C \ast I \ast J}$ <em>where</em> <em>C</em> <em>is the number of measured values.</em></p>
+<p>DEFINITION 2. <strong><em>External Features:</em></strong> <em>We denote $X _e$ as the external features including the meteorological and holiday information.</em></p>
+<p><strong>Problem Statement:</strong> Given historical observed citywide urban flows {$X _0,X _1,.., X _{t-1}$}, and external features $X _e$, predict the traffic</p>
 <p>flow for all locations in the next timestamps $X _t$.</p>
-<h2 id="Methodology">Methodology</h2>
-<p><img src="fig3.png" alt="fig3"></p>
-<h3 id="Spatio-Temporal-Search-Space">Spatio-Temporal Search Space</h3>
-<p>Distinct to neural network with fixed architecture, NAS network is composed of three modules form simple to complex:</p>
+<h2 id="Methodology"><a href="#Methodology" class="headerlink" title="Methodology"></a>Methodology</h2><p><img src="fig3.png" alt="fig3"></p>
+<h3 id="Spatio-Temporal-Search-Space"><a href="#Spatio-Temporal-Search-Space" class="headerlink" title="Spatio-Temporal Search Space"></a>Spatio-Temporal Search Space</h3><p>Distinct to neural network with fixed architecture, NAS network is composed of three modules form simple to complex:</p>
 <ol>
 <li>a candidate cell module which defines the search unit.</li>
 <li>an operation block module which perform weighted sum over all possible operations to make the sarch sape continuous.</li>
 <li>a NAS network module which is consisted of a series of mix operations.</li>
 </ol>
-<h4 id="Candidate-Cells">Candidate Cells</h4>
-<p>Divide a city into a grid map where each grid denotes a region and these grids make up an image. Select the candidate cells based on following three considerations:</p>
+<h4 id="Candidate-Cells"><a href="#Candidate-Cells" class="headerlink" title="Candidate Cells"></a>Candidate Cells</h4><p>Divide a city into a grid map where each grid denotes a region and these grids make up an image. Select the candidate cells based on following three considerations:</p>
 <ol>
 <li>Since nearby regions may affect each other for ST prediction, convolution operation is important. Convolutions with different kernel size model the spatial dependency in different ranges</li>
 <li>Local correlation captured by low-level convolution and global correlation encoded with high-level convolution are both important for city-wide flow forecasting. Therefore, skip connection which fuse multi-level correlations is necessary.</li>
@@ -543,58 +530,45 @@ The traditional processes of ST prediction consists of three components:</p>
 <li>Convolutional operations consisting of $3 \times 3$ standard convolution (Std_conv_3), $5 \times 5$ standard convolution (Std_conv_5), $3 \times 3$ separable convolution(Sep_conv_3), $5 \times 5$ separable convolution (Sep_conv_5)</li>
 <li>Skip connection operation including don’t connection (none) operation and connection (identity) operation.</li>
 </ol>
-<h4 id="Operation-Blocks">Operation Blocks</h4>
-<p>Gradient-based search strategy usually calculate the weighted sums over the outputs of all basic operations to avoid the discrete choice of basic operation unit.</p>
+<h4 id="Operation-Blocks"><a href="#Operation-Blocks" class="headerlink" title="Operation Blocks"></a>Operation Blocks</h4><p>Gradient-based search strategy usually calculate the weighted sums over the outputs of all basic operations to avoid the discrete choice of basic operation unit.</p>
 <p>In DARTS, the author simply add the outputs of eight basic cells as the final output of one operation block, which can be formulated as follows:</p>
-<p>$$\bar{p} _i(x) = \underset{p \in S _p}{\sum} \frac{exp(\alpha _i ^p)}{\sum _{p’ \in S _p} exp(\alpha _i ^{p’})}f(x;\theta _i ^p)$$</p>
-<p>However, the calculation of all basic convolution operation at each layer may cause large memory consumption. There are $\frac{L \ast (L-1)}{2} + L$ possible operations and each operation is selected from eight basic search cells. There are $8 ^{L \ast (L -1)/2 +L}$ <em>possible network architectures</em> in total.</p>
+<script type="math/tex; mode=display">\bar{p} _i(x) = \underset{p \in S _p}{\sum} \frac{exp(\alpha _i ^p)}{\sum _{p' \in S _p} exp(\alpha _i ^{p'})}f(x;\theta _i ^p)</script><p>However, the calculation of all basic convolution operation at each layer may cause large memory consumption. There are $\frac{L \ast (L-1)}{2} + L$ possible operations and each operation is selected from eight basic search cells. There are $8 ^{L \ast (L -1)/2 +L}$ <em>possible network architectures</em> in total.</p>
 <p>In order to solve the memory inefficient problem, the basic cells are grouped into two categories and define twp types of mix operations:</p>
 <ol>
 <li>mix convolution block $\bar{c} _i$ represented as blue arrow which calculates the weighted sum of all convolution outputs</li>
 <li>mix connection block $\bar{s} _i$ represented as green arrow which multiples the outputs of each layers with connection probability.</li>
 </ol>
-<p>The architecture parameters $\mathcal{A}$ ($\alpha _0-\alpha _5$) controls the possibility of choosing candidate cells. Besides , every convolution cell has parameters including kernels and bias which are defined as</p>
+<p>The architecture parameters $\mathcal{A}$ ($\alpha _0-\alpha _5$) controls the possibility of choosing candidate cells. Besides , every convolution cell has parameters including kernels and bias which are defined as  </p>
 <p>$\mathcal{M}$.</p>
 <p>The number of skip connections increases when iterating more epochs and is caused by the inherent unfair competition.  Therefore, they propose to relax the choice of operations to be dependent and make each operation has an equal opportunity to develop its strength. They apply a <em>sigmoid activation</em> instead of <em>softmax</em> to generate the architecture weights.</p>
 <p>The values in $\mathcal{A}$ ate initialized with zeros instead of random numbers. Suppose $S _c$ and $S _s$ are the search units for convolution operation and skip connection respectively, then the calculation of mix convolution block and mix connection block is defined as:</p>
-<p>$$\bar{c} _i = \underset{c \in S _c}{\sum} \sigma (a _i ^c)f(x;\theta _i ^c)$$</p>
-<p>$$\bar{s} _{i,j} (x) = \underset{s \in S _s}{\sum}\sigma(a _{i,j} ^s)s _{i,j} \quad s _{i,j}=0,1$$</p>
-<p>There are $L$ mix convolution blocks and $\frac{L \ast (L-1)}{2}$ mix connection blocks, then the number of possible architectures is $4 ^L + 2 ^{\frac{L \ast (L -1)}{2}}$ in total, which greatly reduces the search space.</p>
-<h4 id="NAS-Network">NAS Network</h4>
-<p>DARTS divided the network into two parts, the inner network which learns the architecture by NAS and the outer network which has the fixed architecture.</p>
+<script type="math/tex; mode=display">\bar{c} _i = \underset{c \in S _c}{\sum} \sigma (a _i ^c)f(x;\theta _i ^c)</script><script type="math/tex; mode=display">\bar{s} _{i,j} (x) = \underset{s \in S _s}{\sum}\sigma(a _{i,j} ^s)s _{i,j} \quad s _{i,j}=0,1</script><p>There are $L$ mix convolution blocks and $\frac{L \ast (L-1)}{2}$ mix connection blocks, then the number of possible architectures is $4 ^L + 2 ^{\frac{L \ast (L -1)}{2}}$ in total, which greatly reduces the search space.</p>
+<h4 id="NAS-Network"><a href="#NAS-Network" class="headerlink" title="NAS Network"></a>NAS Network</h4><p>DARTS divided the network into two parts, the inner network which learns the architecture by NAS and the outer network which has the fixed architecture.</p>
 <p>However, the fixed architecture of outer network may reduce the performance. In order to make the network more efficient, we constrain the search space according to the characteristics of ST prediction in the following two aspects:</p>
 <ol>
 <li>There are only one convolution in adjacent layers to capture large-range spatial dependency</li>
 <li>There are no external feature transform when fusing multi-level features so that we simply add the outputs of previous layers to current layer.</li>
 </ol>
 <p>The output of $l$-th layer can be formulated as:</p>
-<p>$$o _l = \bar{c} _l(o _{l-1}) + \displaystyle\sum _{i=1} ^{l-1} \bar{s} _i (o _i)$$</p>
-<p>where $o _i$ is the output of $i$-th layer. The $\bar{c} _l$ is to generate high-level features at layer $l$ and $\bar{s} _i$ is to fuse features in layer $i$ and layer $l$.</p>
+<script type="math/tex; mode=display">o _l = \bar{c} _l(o _{l-1}) + \displaystyle\sum _{i=1} ^{l-1} \bar{s} _i (o _i)</script><p>where $o _i$ is the output of $i$-th layer. The $\bar{c} _l$ is to generate high-level features at layer $l$ and $\bar{s} _i$ is to fuse features in layer $i$ and layer $l$.</p>
 <p>The proposed network admits the following three advantages:</p>
 <ol>
 <li>it is more effective than fixed architecture due that existing networks are a subset of AutoST</li>
 <li>it releases experts from refining networks</li>
 <li>it is more efficient than recent neural architecture search method because the search space is carefully designed and constrained for ST prediction task</li>
 </ol>
-<h3 id="AutoST-for-Spatio-Temporal-Prediction">AutoST for Spatio-Temporal Prediction</h3>
-<p><img src="fig4.png" alt="fig4"></p>
+<h3 id="AutoST-for-Spatio-Temporal-Prediction"><a href="#AutoST-for-Spatio-Temporal-Prediction" class="headerlink" title="AutoST for Spatio-Temporal Prediction"></a>AutoST for Spatio-Temporal Prediction</h3><p><img src="fig4.png" alt="fig4"></p>
 <p>We evaluate AutoST on three popular spatio-temporal prediction models (STResNet, ST-3DNet and DeepSTN) to verify the efficiency and generality.</p>
 <p>We follow the same CPT (closeness, period and trend) paradigm and take DeepSTN as example to explain the AutoST for spatio-temporal prediction.</p>
-<p>$$\mathcal{A} = [a _l ^c,a _l ^s],l=1,…,L,c=1,…,n,s=1,…,n _s$$</p>
-<p>$$\mathcal{M} = [\theta _l ^c, \theta _{c _1},\theta _{c _2},\theta _{fc}],l=1,…,L,c=1,…,n _c$$</p>
-<p>where $n _c = 4$ represents the number of convolution cells and $n _s = 2$ is the number of connections. The $\theta _l ^c$ is the convolution parameter at layer $i$. Besides, the $\theta _{c _1},\theta _{c _2}$ and $\theta _{fc}$ are parameters for Conv1, Conv2 and FCs respectively. Finally, the output of ST architecture search network in Fig4 is:</p>
-<p>$$o = Relu(f(o _L;\theta _{c _2}) + f(x _e;\theta _{fc}))$$</p>
-<p>Where $o _L$ is the output of AutoST and $x _e$ represents the external factor.</p>
-<h3 id="Algorithm-and-Optimization">Algorithm and Optimization</h3>
-<p><img src="algorithm.png" alt="algorithm"></p>
-<h2 id="Experiments">Experiments</h2>
-<p><img src="exp1.png" alt="exp1"></p>
+<script type="math/tex; mode=display">\mathcal{A} = [a _l ^c,a _l ^s],l=1,..,L,c=1,..,n,s=1,..,n _s</script><script type="math/tex; mode=display">\mathcal{M} = [\theta _l ^c, \theta _{c _1},\theta _{c _2},\theta _{fc}],l=1,..,L,c=1,..,n _c</script><p>where $n _c = 4$ represents the number of convolution cells and $n _s = 2$ is the number of connections. The $\theta _l ^c$ is the convolution parameter at layer $i$. Besides, the $\theta _{c _1},\theta _{c _2}$ and $\theta _{fc}$ are parameters for Conv1, Conv2 and FCs respectively. Finally, the output of ST architecture search network in Fig4 is:</p>
+<script type="math/tex; mode=display">o = Relu(f(o _L;\theta _{c _2}) + f(x _e;\theta _{fc}))</script><p>Where $o _L$ is the output of AutoST and $x _e$ represents the external factor.</p>
+<h3 id="Algorithm-and-Optimization"><a href="#Algorithm-and-Optimization" class="headerlink" title="Algorithm and Optimization"></a>Algorithm and Optimization</h3><p><img src="algorithm.png" alt="algorithm"></p>
+<h2 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h2><p><img src="exp1.png" alt="exp1"></p>
 <p><img src="exp2.png" alt="exp2"></p>
 <p><img src="exp3.png" alt="exp3"></p>
 <p><img src="exp4.png" alt="exp4"></p>
 <p><img src="exp5.png" alt="exp5"></p>
-<h2 id="The-paper">The paper</h2>
-
+<h2 id="The-paper"><a href="#The-paper" class="headerlink" title="The paper"></a>The paper</h2>
 
 	<div class="row">
     <embed src="AutoST_1.pdf" width="100%" height="550" type="application/pdf">

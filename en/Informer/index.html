@@ -393,7 +393,7 @@
               
             </div>
             <h1>Informer:Beyond Efficient Transformer for Long Sequence Time-Series Forecasting</h1>
-            <h2 class="subheading">A introduction to Informer</h2>
+            <h2 class="subheading">An introduction to Informer</h2>
             <span class="meta">
               Posted by Cloud on
               2023-02-06
@@ -404,7 +404,7 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">8</span> Minutes
+              Estimated Reading Time <span class="post-count">7</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
@@ -473,23 +473,16 @@
         <blockquote>
 <p>The blog introduces the paper : Informer</p>
 </blockquote>
-<h2 id="Introduction">Introduction</h2>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><ul>
+<li><p>The conventional time-series forecasting models perform well in short-term  prediction tasks. The increasingly long sequences strain the models’ prediction capacity to the point where this trend is holding the research on LSTF (long sequence time-series forecasting).<br><img src="LSTM_LSTF.png" alt="LSTM_LSTF"></p>
+</li>
+<li><p>The major challenge for LSTF is to enhance the prediction capacity to meet the increasingly long sequence demand</p>
 <ul>
-<li>
-<p>The conventional time-series forecasting models perform well in short-term  prediction tasks. The increasingly long sequences strain the models’ prediction capacity to the point where this trend is holding the research on LSTF (long sequence time-series forecasting).<br>
-<img src="LSTM_LSTF.png" alt="LSTM_LSTF"></p>
+<li>extraordinary long-range alignment ability</li>
+<li>efficient operations on long sequence inputs and outputs</li>
+</ul>
 </li>
-<li>
-<p>The major challenge for LSTF is to enhance the prediction capacity to meet the increasingly long sequence demand</p>
-</li>
-<li>
-<p>extraordinary long-range alignment ability</p>
-</li>
-<li>
-<p>efficient operations on long sequence inputs and outputs</p>
-</li>
-<li>
-<p>The contributions of this paper are summarized as follows:</p>
+<li><p>The contributions of this paper are summarized as follows:</p>
 <ul>
 <li>We propose Informer to successfully enhance the prediction capacity in the LSTF problem, which validates the Transformer-like model’s potential value to capture individual long-range dependency between long sequence time-series outputs and inputs.</li>
 <li>We propose <em>ProbSparse</em> self-attention mechanism to effificiently replace the canonical self-attention. It achieves the $O(LlogL)$ time complexity and $O(LlogL)$memory usage on dependency alignments.</li>
@@ -498,55 +491,39 @@
 </ul>
 </li>
 </ul>
-<h2 id="Preliminary">Preliminary</h2>
-<p>The LSTF problem definition:</p>
-<p>the input $\mathcal{X} ^t = [x _1 ^t,…,x _{L _x} ^t]$ where $x _i ^t \in \mathbb{R} ^{d _x}$ at time $t$, and the output is to predict corresponding sequence $\mathcal{Y} ^t = [y _1 ^t,…,y _{L _y} ^t]$ where $y _i ^t \in \mathbb{R} ^{d _y}(d _y &gt;= 1)$</p>
-<h2 id="Methodology">Methodology</h2>
-<p><img src="overview.png" alt="overview"></p>
-<h3 id="Efficient-Self-attention-Mechanism">Efficient Self-attention Mechanism</h3>
-<p>The canonical self-attention in Transformer is defined based on the tuple inputs, i.e, query, key and value, which performs the scaled dot-product as $\mathcal{A} (Q,K,V) = softmax(Q K ^T / \sqrt{d}) V$, where $Q \in \mathbb{R} ^{L _Q \times d},K \in \mathbb{R} ^{L _k \times d},V \in \mathbb{R } ^{L _V \times d}$ and $d$ is the input dimension.</p>
+<h2 id="Preliminary"><a href="#Preliminary" class="headerlink" title="Preliminary"></a>Preliminary</h2><p>The LSTF problem definition:</p>
+<p>the input $\mathcal{X} ^t = [x _1 ^t,..,x _{L _x} ^t]$ where $x _i ^t \in \mathbb{R} ^{d _x}$ at time $t$, and the output is to predict corresponding sequence $\mathcal{Y} ^t = [y _1 ^t,..,y _{L _y} ^t]$ where $y _i ^t \in \mathbb{R} ^{d _y}(d _y &gt;= 1)$</p>
+<h2 id="Methodology"><a href="#Methodology" class="headerlink" title="Methodology"></a>Methodology</h2><p><img src="overview.png" alt="overview"></p>
+<h3 id="Efficient-Self-attention-Mechanism"><a href="#Efficient-Self-attention-Mechanism" class="headerlink" title="Efficient Self-attention Mechanism"></a>Efficient Self-attention Mechanism</h3><p>The canonical self-attention in Transformer is defined based on the tuple inputs, i.e, query, key and value, which performs the scaled dot-product as $\mathcal{A} (Q,K,V) = softmax(Q K ^T / \sqrt{d}) V$, where $Q \in \mathbb{R} ^{L _Q \times d},K \in \mathbb{R} ^{L _k \times d},V \in \mathbb{R } ^{L _V \times d}$ and $d$ is the input dimension.</p>
 <p>Let $q _i,k _i,v _i$ stand for the $i$-th row in $Q,K,V$, the $i$-th query’s attention is defined as a kernel smoother in a probability form:</p>
-<p>$$\mathcal{A}(q _i,K,V) = \sum _j \frac{k(q _i,k _j)}{\sum _l k(q _i,k _l)} v _j = \mathbb{E} _{p (k _j | q _i)}[v _j]$$</p>
-<p>where $p(k _j | q _i) = k(q _i,k _j) / \sum _l k(q _i,k _l)$ and $k(q _i , k _j)$ selects the asymmetric exponential kernel $exp(q _ik _j ^T / \sqrt{d})$. It requires the quadratic times dot-product computation and $O(L _Q L _K)$ memory usage, which is the major drawback when enhancing prediction capacity.</p>
+<script type="math/tex; mode=display">\mathcal{A}(q _i,K,V) = \sum _j \frac{k(q _i,k _j)}{\sum _l k(q _i,k _l)} v _j = \mathbb{E} _{p (k _j | q _i)}[v _j]</script><p>where $p(k _j | q _i) = k(q _i,k _j) / \sum _l k(q _i,k _l)$ and $k(q _i , k _j)$ selects the asymmetric exponential kernel $exp(q _ik _j ^T / \sqrt{d})$. It requires the quadratic times dot-product computation and $O(L _Q L _K)$ memory usage, which is the major drawback when enhancing prediction capacity.</p>
 <p>Some attempts have revealed that the distribution of self-attention probability has potential sparsity but they are limited to theoretical analysis from following heuristic methods and tackle each multi-head self-attention with the same strategy, which narrows their further improvement.</p>
 <p>The author performs a qualitative assessment on the learned attention patterns of the canonical self-attention in Transformer and the “sparsity” self-attention score forms  a long tail distribution.</p>
 <p><img src="long_tail.png" alt="long_tail"></p>
 <p>That means only a few dot-product pairs contribute to the major attention and others generate trivial attention.</p>
-<h4 id="Query-Sparsity-Measurement">Query Sparsity Measurement</h4>
-<p>The dominant dot-product pairs encourages the corresponding query’s attention probability distribution away from the uniform distribution.<br>
-So that if $p(k _j | q _i) = 1/L _K$, the self-attention becomes a trivial sum of values $V$ and is redundant to the residential input. Naturally, the “likeness” between distribution $p$ and $q$ can be used to distinguish the “important” queries. Measure the “likeness” through Kullback-Leibler divergence $$KL(q||p) = ln \sum _{l=1} ^{L _K} e ^{q _i k _l ^T / \sqrt{d}} - \frac{1}{L _K} \sum _{j=1} ^{L _K} q _i K _j ^T / \sqrt{d} - lnL _K$$</p>
+<h4 id="Query-Sparsity-Measurement"><a href="#Query-Sparsity-Measurement" class="headerlink" title="Query Sparsity Measurement"></a>Query Sparsity Measurement</h4><p>The dominant dot-product pairs encourages the corresponding query’s attention probability distribution away from the uniform distribution.<br>So that if $p(k _j | q _i) = 1/L _K$, the self-attention becomes a trivial sum of values $V$ and is redundant to the residential input. Naturally, the “likeness” between distribution $p$ and $q$ can be used to distinguish the “important” queries. Measure the “likeness” through Kullback-Leibler divergence <script type="math/tex">KL(q||p) = ln \sum _{l=1} ^{L _K} e ^{q _i k _l ^T / \sqrt{d}} - \frac{1}{L _K} \sum _{j=1} ^{L _K} q _i K _j ^T / \sqrt{d} - lnL _K</script></p>
 <p>Dropping the constant, the $i$-th query’s sparsity measurement is</p>
-<p>$$M(q _i,K) = ln \sum _{l=1} ^{L _K} e ^{\frac{q _i k _l ^T }{ \sqrt{d}}} - \frac{1}{L _K} \sum _{j=1} ^{L _K} \frac{q _i K _j ^T}{\sqrt{d}}$$</p>
-<p>(The first term is the Log-Sum-Exp(<em>LSE</em>), and the second term is the arithmetic mean)</p>
+<script type="math/tex; mode=display">M(q _i,K) = ln \sum _{l=1} ^{L _K} e ^{\frac{q _i k _l ^T }{ \sqrt{d}}} - \frac{1}{L _K} \sum _{j=1} ^{L _K} \frac{q _i K _j ^T}{\sqrt{d}}</script><p>(The first term is the Log-Sum-Exp(<em>LSE</em>), and the second term is the arithmetic mean)</p>
 <p>If the $i$-th query gains a larger $M(q _i,K)$, its attention probability $p$ is more “diverse” and has a high chance to contain the dominate dot-product pairs in the header field of the long tail self-attention distribution.</p>
-<h4 id="ProbSparse-Self-attention"><em>ProbSparse</em> Self-attention</h4>
-<p>Propose the <em>ProbSparse</em> self-attention by allowing each key to only attend to the $u$ dominant queries:</p>
-<p>$$\mathcal{A}(Q,K,V) = Softmax(\frac{\bar{Q}K ^T}{\sqrt{d}}) V$$</p>
-<p>where $\bar{Q}$ is sparse matrix of the same size of $q$ and it only contains the Top-$u$ queries under the sparsity measurement $M(q,K)$. Controlled by a constant sampling factor $c$. Set $u=c \cdot lnL _Q$, which makes the <em>ProbSparse</em> self-attention only need to calculate $O(ln L _Q)$ dot-product for each query-key lookup and the layer memory usage maintains $O( L _K lnL _Q)$. Under the multi-head perspective, this attention generates different sparse query-key pairs for each head, which avoids severe information loss in return.</p>
+<h4 id="ProbSparse-Self-attention"><a href="#ProbSparse-Self-attention" class="headerlink" title="ProbSparse Self-attention"></a><em>ProbSparse</em> Self-attention</h4><p>Propose the <em>ProbSparse</em> self-attention by allowing each key to only attend to the $u$ dominant queries:</p>
+<script type="math/tex; mode=display">\mathcal{A}(Q,K,V) = Softmax(\frac{\bar{Q}K ^T}{\sqrt{d}}) V</script><p>where $\bar{Q}$ is sparse matrix of the same size of $q$ and it only contains the Top-$u$ queries under the sparsity measurement $M(q,K)$. Controlled by a constant sampling factor $c$. Set $u=c \cdot lnL _Q$, which makes the <em>ProbSparse</em> self-attention only need to calculate $O(ln L _Q)$ dot-product for each query-key lookup and the layer memory usage maintains $O( L _K lnL _Q)$. Under the multi-head perspective, this attention generates different sparse query-key pairs for each head, which avoids severe information loss in return.</p>
 <p>Propose an empirical approximation for the efficient acquisition of the query sparsity measurement</p>
 <p><strong>Lemma 1.</strong> <em>For each query $q _i \in \mathbb{R } ^d$ and $k _j \in \mathbb{R} ^d$ in the keys set $K$, we have the bound as $ln _{L _K}&lt;=M(q _i,K)&lt;= max _j (q _i K _j ^T / \sqrt{d}) - \frac{1}{L _K} \sum _{j=1} ^{L _K} (q _i K _j ^T / \sqrt{d}) + lnL _K$</em></p>
 <p>From the <strong>Lemma1</strong>,the max-mean measurement is defined as</p>
-<p>$$\bar{M}(q _i,K) = max _j (q _i K _j ^T / \sqrt{d}) - \frac{1}{L _K} \sum _{j=1} ^{L _K} (q _i K _j ^T / \sqrt{d})$$</p>
-<p>Under the long tail distribution, we only need to randomly sample $U = L _K ln L _Q$ dot-product pairs to calculate the $\bar{M}(q _i,K)$,i.e., filling other pairs with zero. Then we select sparse Top-$u$ from them as $\bar{Q}$. The max-operator in $\bar{M}(q _i,K)$ is less sensitive to zero values and is numerical stable.</p>
+<script type="math/tex; mode=display">\bar{M}(q _i,K) = max _j (q _i K _j ^T / \sqrt{d}) - \frac{1}{L _K} \sum _{j=1} ^{L _K} (q _i K _j ^T / \sqrt{d})</script><p>Under the long tail distribution, we only need to randomly sample $U = L _K ln L _Q$ dot-product pairs to calculate the $\bar{M}(q _i,K)$,i.e., filling other pairs with zero. Then we select sparse Top-$u$ from them as $\bar{Q}$. The max-operator in $\bar{M}(q _i,K)$ is less sensitive to zero values and is numerical stable. </p>
 <p>In practice, the input length of queries and keys are typically equivalent in the self-attention computation,i.e, $L _Q = L _K = L$ such the time and space complexity are $O(L ln L)$</p>
-<h3 id="Encoder-Allowing-for-Processing-Longer-Sequential-Inputs-under-the-Memory-Usage-Limitation">Encoder:Allowing for Processing Longer Sequential Inputs under the Memory Usage Limitation</h3>
-<p><img src="architecture.png" alt="architecture"></p>
-<h4 id="Self-attention-Distilling">Self-attention Distilling</h4>
-<p>A the natural consequence of the <em>ProbSparse</em> self-attention mechansim, the encoder’s feature map has redundant combinations of value V.</p>
-<p>$$X _{j+1} ^t = MaxPool(ELU(Conv1d([X _j ^t] _{AB})))$$</p>
-<p>where $[\cdot] _{AB}$ represents the attention block. It contains the Mulit-head <em>probSparse</em> self -attention and the essential operations, where $Conv1d(\cdot)$ performs an 1-D convolutional filters (kernel width=3) on time dimension with the $ELU(\cdot)$ activation function. A max-pooling layer with stride 2 and down-sample $X ^t$ into its half slice after stacking a layer, which reduces the whole memory usage to be $O((2-\epsilon) Llog L)$</p>
-<h3 id="Decoder-Generating-Long-Sequential-Outputs-Through-One-Forward-Procedure">Decoder: Generating Long Sequential Outputs Through One Forward Procedure</h3>
-<p>Use a standard decoder structure in Transformer and it is composed of a stack of two identical multi-head attention layers.</p>
+<h3 id="Encoder-Allowing-for-Processing-Longer-Sequential-Inputs-under-the-Memory-Usage-Limitation"><a href="#Encoder-Allowing-for-Processing-Longer-Sequential-Inputs-under-the-Memory-Usage-Limitation" class="headerlink" title="Encoder:Allowing for Processing Longer Sequential Inputs under the Memory Usage Limitation"></a>Encoder:Allowing for Processing Longer Sequential Inputs under the Memory Usage Limitation</h3><p><img src="architecture.png" alt="architecture"></p>
+<h4 id="Self-attention-Distilling"><a href="#Self-attention-Distilling" class="headerlink" title="Self-attention Distilling"></a>Self-attention Distilling</h4><p>A the natural consequence of the <em>ProbSparse</em> self-attention mechansim, the encoder’s feature map has redundant combinations of value V. </p>
+<script type="math/tex; mode=display">X _{j+1} ^t = MaxPool(ELU(Conv1d([X _j ^t] _{AB})))</script><p>where $[\cdot] _{AB}$ represents the attention block. It contains the Mulit-head <em>probSparse</em> self -attention and the essential operations, where $Conv1d(\cdot)$ performs an 1-D convolutional filters (kernel width=3) on time dimension with the $ELU(\cdot)$ activation function. A max-pooling layer with stride 2 and down-sample $X ^t$ into its half slice after stacking a layer, which reduces the whole memory usage to be $O((2-\epsilon) Llog L)$</p>
+<h3 id="Decoder-Generating-Long-Sequential-Outputs-Through-One-Forward-Procedure"><a href="#Decoder-Generating-Long-Sequential-Outputs-Through-One-Forward-Procedure" class="headerlink" title="Decoder: Generating Long Sequential Outputs Through One Forward Procedure"></a>Decoder: Generating Long Sequential Outputs Through One Forward Procedure</h3><p>Use a standard decoder structure in Transformer and it is composed of a stack of two identical multi-head attention layers.</p>
 <p><img src="overview.png" alt="overview"></p>
-<h2 id="Experiments">Experiments</h2>
-<p><img src="exp1.png" alt="exp1"></p>
+<h2 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h2><p><img src="exp1.png" alt="exp1"></p>
 <p><img src="exp2.png" alt="exp2"></p>
 <p><img src="exp3.png" alt="exp3"></p>
 <p><img src="exp4.png" alt="exp4"></p>
 <p><img src="exp5.png" alt="exp5"></p>
 <p><img src="exp6.png" alt="exp6"></p>
-<h2 id="The-paper">The paper</h2>
-
+<h2 id="The-paper"><a href="#The-paper" class="headerlink" title="The paper"></a>The paper</h2>
 
 	<div class="row">
     <embed src="Informer.pdf" width="100%" height="550" type="application/pdf">

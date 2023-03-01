@@ -393,7 +393,7 @@
               
             </div>
             <h1>ST-GRAT:A Novel Spatio-temporal Graph Attention Network for Accurately Forecasting Dynamically Changing Road Speed</h1>
-            <h2 class="subheading">A introduction to ST-GRAT</h2>
+            <h2 class="subheading">An introduction to ST-GRAT</h2>
             <span class="meta">
               Posted by Cloud on
               2023-02-02
@@ -471,67 +471,50 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <blockquote>
-<p>The blog introduces the paper : ST-GRAT</p>
+<p>The blog introduces the paper : ST-GRAT </p>
 </blockquote>
-<h2 id="Introduction">Introduction</h2>
-<ul>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><ul>
 <li>A method for predicting traffic speed should not only find spatial-temporal dependencies among roads but also  understand how these dependencies change over time and influence other traffic conditions</li>
 <li>Existing models assume <strong>fixed</strong> spatial dependencies among roads without considering dynamically changing traffic conditions</li>
 <li>To handle the issue before, recent models utilize multi-head attention to model spatial dependencies but they neglect the overall graph structure information</li>
 <li>While existing Attention-based models can be used for replacing GCNN-based spatial modeling, they all have a drawback that they do not consider the information embedded in the graph structure (such as distances, connectivity, and flow directions between nodes) in their spatial dependency modeling processes in deciding when and where to attend. Compared to previous models, ST-GRAT has a novel spatial attention mechanism that can consider all of the mentioned graph structure information.</li>
 <li>In this work, a novel spatial -temporal graph attention network(ST-GRAT) is proposed to consider both of dynamically adjusting attention weights and the graph structure information</li>
 </ul>
-<h2 id="Proposed-approach">Proposed approach</h2>
-<h3 id="problem-setting-for-traffic-speed-forecasting">problem setting for traffic speed forecasting</h3>
-<p>Define the sensor graph as $\mathcal{G}=(\mathcal{V},\epsilon,\mathcal{A})$,where $\mathcal{V}$ is the set of all the different sensor nodes, ($|\mathcal{V}|=N$), $\epsilon$ is the set of edges, and $\mathcal{A} \in \mathbb{R} ^{N \times N}$ is a weighted adjacency matrix. $\mathcal{A}$ includes tow types of proximity information in the road network: connectivity and edge weights.</p>
-<p>Denote $X^{(t)} \in \mathbb{R} ^{N \times 2}$ as the input feature matrix at time t, where $N$ is the number of nodes and 2 is the number of features (velocity and the      timestamp). The problem is to learn a map $f$ that predicts the speed of the next $T$ time steps($Y=[X _{:,0} ^{(t+1)},…,X _{:,0} ^{(t+T)}]$), given the previous $T$ input speeds in a sequence ($X=[X ^{(t-T+1)},…,X ^{(t)}]$) and graph $\mathcal{G}$, i.e., $Y=f(X,\mathcal{G})$</p>
+<h2 id="Proposed-approach"><a href="#Proposed-approach" class="headerlink" title="Proposed approach"></a>Proposed approach</h2><h3 id="problem-setting-for-traffic-speed-forecasting"><a href="#problem-setting-for-traffic-speed-forecasting" class="headerlink" title="problem setting for traffic speed forecasting"></a>problem setting for traffic speed forecasting</h3><p>Define the sensor graph as $\mathcal{G}=(\mathcal{V},\epsilon,\mathcal{A})$,where $\mathcal{V}$ is the set of all the different sensor nodes, ($|\mathcal{V}|=N$), $\epsilon$ is the set of edges, and $\mathcal{A} \in \mathbb{R} ^{N \times N}$ is a weighted adjacency matrix. $\mathcal{A}$ includes tow types of proximity information in the road network: connectivity and edge weights.</p>
+<p>Denote $X^{(t)} \in \mathbb{R} ^{N \times 2}$ as the input feature matrix at time t, where $N$ is the number of nodes and 2 is the number of features (velocity and the      timestamp). The problem is to learn a map $f$ that predicts the speed of the next $T$ time steps($Y=[X _{:,0} ^{(t+1)},..,X _{:,0} ^{(t+T)}]$), given the previous $T$ input speeds in a sequence ($X=[X ^{(t-T+1)},..,X ^{(t)}]$) and graph $\mathcal{G}$, i.e., $Y=f(X,\mathcal{G})$</p>
 <p>Use a encoder-decoder architecture to model the ST-GRAT:</p>
 <p><img src="architecture.png" alt="architecture"></p>
-<h3 id="Encoder-Architecture">Encoder Architecture</h3>
-<p>A single encoder layer consists of three sequential sub-layers to capture both temporal and spatial information: the spatial attention layer, the temporal attention layer, and the point-wise feed-forward neural networks.</p>
+<h3 id="Encoder-Architecture"><a href="#Encoder-Architecture" class="headerlink" title="Encoder Architecture"></a>Encoder Architecture</h3><p>A single encoder layer consists of three sequential sub-layers to capture both temporal and spatial information: the spatial attention layer, the temporal attention layer, and the point-wise feed-forward neural networks.</p>
 <p>The spatial attention layer attends to neighbor nodes spatially correlated to the center node at each time-step, while the temporal attention layer attends to individual nodes and focuses on different time steps of a given input sequence. The point-wise feed-forward networks create high-level features that integrate information from two attention layers. These layer consist of two sequential fully connected networks with GELU activation function.</p>
 <p>The encoder has a skip-connection to bypass the sub-layer and use layer normalization performance and dropout after each sub-layer to improve the generalization performance. The encoder architecture is a stack of one embedding layer and four(L=4) identical encoder layers and it transforms the spatial and temporal dependencies of an input signal into a hidden representation vector which is used for attention layers in the decoder.</p>
-<h3 id="Embedding-Layer">Embedding Layer</h3>
-<p>To incorporate the proximity information, the embedding layer in ST-GRAT takes  a pre-trained node-embedding vector generated by LINE.</p>
+<h3 id="Embedding-Layer"><a href="#Embedding-Layer" class="headerlink" title="Embedding Layer"></a>Embedding Layer</h3><p>To incorporate the proximity information, the embedding layer in ST-GRAT takes  a pre-trained node-embedding vector generated by LINE.</p>
 <p>The embedding layer also performs positional embedding to acquire the order of input sequences using the positional encoding scheme of the Transformer and residual skip connections to prevent the vanishing effect increases.</p>
 <p>Concatenate each node embedding result with the node features and then project the concatenated features onto $d _{model}$ and add the positional encoding vector to each time step lastly.</p>
-<h3 id="Spatial-Attention">Spatial Attention</h3>
-<p><img src="spatial_attention.png" alt="spatial_attention"></p>
+<h3 id="Spatial-Attention"><a href="#Spatial-Attention" class="headerlink" title="Spatial Attention"></a>Spatial Attention</h3><p><img src="spatial_attention.png" alt="spatial_attention"></p>
 <p>The spatial attention mechanism consists of multiple inflow attention heads(odd head indices) and outflow attention heads (even head indices) because the model considers the direction in a road network.</p>
-<p>The hidden state of the encoder can be denoted as $\mathcal{Z}=[z _i,…,z _N]$,where $z _i \in R ^{d _{model}}$ is the hidden state of the $i$-th node. The set of $i$-th node and its neighbor nodes are denoted as $N_i$. The dimensions of the query, key, and value vector are defined as $d _q = d _k = d _v = d _{model} / H$, where $H$ is the number of attention head in multi-head self-attention.</p>
-<p>Fig2 shows that the multi-head attention mechanism distinguish the even and odd indices by distribute them different tasks. In the 1st attention head, node a and its inflow neighbors node b and node d are taken account of. Every two attention heads  extract  whole spatial dependencies and multi-head mechanism ensures extracting as more features in different aspects as possible.</p>
+<p>The hidden state of the encoder can be denoted as $\mathcal{Z}=[z _i,..,z _N]$,where $z _i \in R ^{d _{model}}$ is the hidden state of the $i$-th node. The set of $i$-th node and its neighbor nodes are denoted as $N_i$. The dimensions of the query, key, and value vector are defined as $d _q = d _k = d _v = d _{model} / H$, where $H$ is the number of attention head in multi-head self-attention.</p>
+<p>Fig2 shows that the multi-head attention mechanism distinguish the even and odd indices by distribute them different tasks. In the 1st attention head, node a and its inflow neighbors node b and node d are taken account of. Every two attention heads  extract  whole spatial dependencies and multi-head mechanism ensures extracting as more features in different aspects as possible. </p>
 <p>The self-attention mechanism in Transformer has the constraint that the sum of the weights has to be one. There may exist no spatial correlation between two nodes while they have connectivity on graph. To prevent such unnecessary attention, the author adds spatial sentinel key and value vectors which are linear transformations of a query node by improving the formula as follows:</p>
-<p>$$o _i ^h = (1-\sum _{j=N _i} \alpha _{i,j}) \ast (z _i W _h ^{V _s}) + \sum _{j=N _i} \alpha _{i,j} (z _j W _h ^{V _n})$$</p>
-<p>where $o _i ^h \in R ^{d _v}$ is the output feature of the $i$-th node in the $h$-th attention head, $W _h ^{V _s} \in R ^{d _{model} \times d _v}$ and $W _h ^{V _n} \in R ^{d _{model} \times d_v}$ indicate the linear transformation matrices of the sentinel value vector and the value vector of spatial attention. The attention coefficient $\alpha _{i,j}$ is computed as</p>
-<p>$$\alpha _{i,j} = \frac{exp(e _{i,j})}{e _{i,s} + \sum _{j=N _i}exp(e _{i,j})}$$</p>
-<p>where $e _{i,j}$ indicates the energy logits and $e _{i,s}$ represents the sentinel energy logit.</p>
-<p>$$e _{i,j} = \frac{(z _i W _h ^{Q _N})(z _j W _h ^{K _N})}{\sqrt{d _k}} + P _h (\mathcal{A})$$</p>
-<p>where parameter matrices $W _h ^{V _s} \in R ^{d _{model} \times d _q}$ and $W _h ^{V <em>n} \in R ^{d</em>{model} \times d _k}$ are the linear transformation matrices of the query vector and the key vector.</p>
+<script type="math/tex; mode=display">o _i ^h = (1-\sum _{j=N _i} \alpha _{i,j}) \ast (z _i W _h ^{V _s}) + \sum _{j=N _i} \alpha _{i,j} (z _j W _h ^{V _n})</script><p>where $o _i ^h \in R ^{d _v}$ is the output feature of the $i$-th node in the $h$-th attention head, $W _h ^{V _s} \in R ^{d _{model} \times d _v}$ and $W _h ^{V _n} \in R ^{d _{model} \times d_v}$ indicate the linear transformation matrices of the sentinel value vector and the value vector of spatial attention. The attention coefficient $\alpha _{i,j}$ is computed as</p>
+<script type="math/tex; mode=display">\alpha _{i,j} = \frac{exp(e _{i,j})}{e _{i,s} + \sum _{j=N _i}exp(e _{i,j})}</script><p>where $e _{i,j}$ indicates the energy logits and $e _{i,s}$ represents the sentinel energy logit. </p>
+<script type="math/tex; mode=display">e _{i,j} = \frac{(z _i W _h ^{Q _N})(z _j W _h ^{K _N})}{\sqrt{d _k}} + P _h (\mathcal{A})</script><p>where parameter matrices $W _h ^{V _s} \in R ^{d _{model} \times d _q}$ and $W _h ^{V _n} \in R ^{d_{model} \times d _k}$ are the linear transformation matrices of the query vector and the key vector.</p>
 <p>To explicitly provide edge information, the additional prior knowledge $P _h (\mathcal{A})$  called <strong>diffusion prior</strong> is introduced. It comes from the diffusion process in a graph and distinguish inflow from outflow</p>
-<p>$$P _{2m+1} (\mathcal{A}) = \sum _{k=0} ^{K} \beta _h ^k \ast (D _I ^{-1} \mathcal{A} ^T) ^k$$</p>
-<p>$$P _{2m} (\mathcal{A}) = \sum _{k=0} ^K \beta _h ^k \ast (D ^{-1} _O \mathcal{A}) ^k$$</p>
-<p>where $K$ is the number of truncation steps of the diffusion process, $\mathcal{A}$ is the adjacency matrix while $D _I ^{-1} \mathcal{A} ^T$ and $D ^{-1} _O \mathcal{A}$ are the transition matrices, $\beta _h ^k$ is the weight of the diffusion process at step $k$ in the $h$-th attention head.</p>
+<script type="math/tex; mode=display">P _{2m+1} (\mathcal{A}) = \sum _{k=0} ^{K} \beta _h ^k \ast (D _I ^{-1} \mathcal{A} ^T) ^k</script><script type="math/tex; mode=display">P _{2m} (\mathcal{A}) = \sum _{k=0} ^K \beta _h ^k \ast (D ^{-1} _O \mathcal{A}) ^k</script><p>where $K$ is the number of truncation steps of the diffusion process, $\mathcal{A}$ is the adjacency matrix while $D _I ^{-1} \mathcal{A} ^T$ and $D ^{-1} _O \mathcal{A}$ are the transition matrices, $\beta _h ^k$ is the weight of the diffusion process at step $k$ in the $h$-th attention head.</p>
 <p>The sentinel energy logit excludes prior knowledge and uses a sentinel key vector instead and is defined as follows:</p>
-<p>$$e _{i,s} = \frac{(z _i W _h ^{Q _N})(z _i W _h ^{K _s}) ^T}{\sqrt{d _k}}$$</p>
-<p>where $W _h ^{K _s} \in R ^{d _{model} \times d _k}$ is a linear transformation matrix of the sentinel key vector.</p>
+<script type="math/tex; mode=display">e _{i,s} = \frac{(z _i W _h ^{Q _N})(z _i W _h ^{K _s}) ^T}{\sqrt{d _k}}</script><p>where $W _h ^{K _s} \in R ^{d _{model} \times d _k}$ is a linear transformation matrix of the sentinel key vector.</p>
 <p>So that,if $e _{i,s}$ if higher than $\sum e _{i,j}$, the model will assign less attention to the nodes in $N _i$ nodes.</p>
 <p>After computing the output features $o _i ^h$ on each attention head, they are concatenated and projected as</p>
-<p>$$z ^\ast _i = Concat(o _i ^1,…,o _i ^H) W ^{O _N}$$</p>
-<p>where $W ^{O _N} \in R ^{d _{model} \times d _{model}}$​ is the projection layer. The projection layer helps the model to combine various aspects of spatial correlation features and the outputs of the inflow and outflow attention heads.</p>
-<h3 id="Temporal-Attention">Temporal Attention</h3>
-<ol>
+<script type="math/tex; mode=display">z ^\ast _i = Concat(o _i ^1,...,o _i ^H) W ^{O _N}</script><p>where $W ^{O _N} \in R ^{d _{model} \times d _{model}}$​ is the projection layer. The projection layer helps the model to combine various aspects of spatial correlation features and the outputs of the inflow and outflow attention heads.</p>
+<h3 id="Temporal-Attention"><a href="#Temporal-Attention" class="headerlink" title="Temporal Attention"></a>Temporal Attention</h3><ol>
 <li>temporal attention does not use the sentinel vectors and the diffusion prior</li>
 <li>temporal attention attends to important time steps of each node, while spatial attention attends to important nodes at each time step</li>
 </ol>
 <p>Use the multi-head attention mechanism proposed in Transformer.</p>
-<h3 id="Decoder-Architecture">Decoder Architecture</h3>
-<p>Designed like the decoder in Transformer. The decoder consists of the embedding layer and four other sub-layers: the spatial attention layer, two temporal attention layers, and the feed-forward neural networks. After each sub-layer, layer normalization is applied. The masked attention layer masks future time step inputs to restrict attention to present and past information. The encoder-decoder attention layer extracts features by using the encoded vectors from both the encoder and the masked attention layer. In this layer, the encoder-decoder attention from the encoder is used as both the key and the value, and query features of each node are passed along with the masked self-attention.</p>
-<h2 id="Experiment">Experiment</h2>
-<p>Evaluate the model on METR-LA and PEMS-BAY</p>
+<h3 id="Decoder-Architecture"><a href="#Decoder-Architecture" class="headerlink" title="Decoder Architecture"></a>Decoder Architecture</h3><p>Designed like the decoder in Transformer. The decoder consists of the embedding layer and four other sub-layers: the spatial attention layer, two temporal attention layers, and the feed-forward neural networks. After each sub-layer, layer normalization is applied. The masked attention layer masks future time step inputs to restrict attention to present and past information. The encoder-decoder attention layer extracts features by using the encoded vectors from both the encoder and the masked attention layer. In this layer, the encoder-decoder attention from the encoder is used as both the key and the value, and query features of each node are passed along with the masked self-attention.</p>
+<h2 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h2><p>Evaluate the model on METR-LA and PEMS-BAY</p>
 <p><img src="exp1.png" alt="exp1"></p>
 <p><img src="exp2.png" alt="exp2"></p>
-<h2 id="The-paper">The paper</h2>
-
+<h2 id="The-paper"><a href="#The-paper" class="headerlink" title="The paper"></a>The paper</h2>
 
 	<div class="row">
     <embed src="ST-GRAT.pdf" width="100%" height="550" type="application/pdf">
