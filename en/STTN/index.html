@@ -247,17 +247,6 @@
           
           
           <li>
-            <a href="/categories/">
-              
-              CATEGORIES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
             <a href="/archive/">
               
               ARCHIVES
@@ -283,6 +272,17 @@
             <a href="/tags/">
               
               TAGS
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
               
               
             </a>
@@ -404,7 +404,7 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">11</span> Minutes
+              Estimated Reading Time <span class="post-count">12</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
@@ -473,71 +473,122 @@
         <blockquote>
 <p>The blog introduces the paper : STTN</p>
 </blockquote>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><ul>
-<li><p>Models with stationary assumption are not practical in long-term forecasting, as traffic flows are highly dynamical in nature.</p>
-</li>
-<li><p>CNN-based and RNN-based models are restricted for traffic forecasting in the following two aspects</p>
+<h2 id="Introduction">Introduction</h2>
 <ul>
-<li><p><strong>Fixed Spatial Dependencies</strong><br>For each sensor, its correlated sensors vary with the forecasting. Fig1(a) shows that for the target node(purple), different correlated nodes(red) are considered to formulate the spatial dependencies for different time steps(e.g. $\tau -1,\tau-2,\tau-3$), according to the range(red circle) determined by the traffic speeds and distances.<br><img src="irregular.png" alt="irregular"></p>
+<li>
+<p>Models with stationary assumption are not practical in long-term forecasting, as traffic flows are highly dynamical in nature.</p>
+</li>
+<li>
+<p>CNN-based and RNN-based models are restricted for traffic forecasting in the following two aspects</p>
+<ul>
+<li>
+<p><strong>Fixed Spatial Dependencies</strong><br>
+For each sensor, its correlated sensors vary with the forecasting. Fig1(a) shows that for the target node(purple), different correlated nodes(red) are considered to formulate the spatial dependencies for different time steps(e.g. $\tau -1,\tau-2,\tau-3$), according to the range(red circle) determined by the traffic speeds and distances.<br>
+<img src="irregular.png" alt="irregular"></p>
 <p>Furthermore, it is important to capture the dynamical spatial dependencies. Spatial dependencies irregularly oscillate with time steps, due to the periodical effect of rush hours, varying weather conditions and unexpected occurrence of traffic accidents as shown in Fig1(b).</p>
 </li>
-<li><p><strong>Limited-range Temporal Dependencies</strong><br>Long-range temporal dependencies are usually ignored in existing methods.</p>
-<p>Fig1(a) illustrates spatial dependencies with various scales for different time steps, which implies that prediction performance would be degraded by limiting the range of temporal dependencies.<br>Furthermore, prediction errors would be propagated and accumulated for long-term traffic forecasting with existing auto-regressive methods trained with either individual loss for each time step or joint loss for multiple time steps, as depicted in Fig2(a).<br><img src="vary.png" alt="vary"><br>It is desirable to achieve accurate long-term perdicition based on long-range temporal dependencies extarcted form error-free temporal contexts as shown in Fig2(b).</p>
+<li>
+<p><strong>Limited-range Temporal Dependencies</strong><br>
+Long-range temporal dependencies are usually ignored in existing methods.</p>
+<p>Fig1(a) illustrates spatial dependencies with various scales for different time steps, which implies that prediction performance would be degraded by limiting the range of temporal dependencies.<br>
+Furthermore, prediction errors would be propagated and accumulated for long-term traffic forecasting with existing auto-regressive methods trained with either individual loss for each time step or joint loss for multiple time steps, as depicted in Fig2(a).<br>
+<img src="vary.png" alt="vary"><br>
+It is desirable to achieve accurate long-term perdicition based on long-range temporal dependencies extarcted form error-free temporal contexts as shown in Fig2(b).</p>
 </li>
 </ul>
 </li>
-<li><p>STTN is proposed to address aforementioned challenges. The contributions of the paper are summarized as below:</p>
+<li>
+<p>STTN is proposed to address aforementioned challenges. The contributions of the paper are summarized as below:</p>
 <ul>
-<li>Develop a spatial-temporal block to dynamically<br>model long-range spatial-temporal dependencies.</li>
+<li>Develop a spatial-temporal block to dynamically<br>
+model long-range spatial-temporal dependencies.</li>
 <li>Present a new variant of GNNs, named <em>spatial transformer</em>, to model the time-varying directed spatial dependencies and dynamically capture the hidden spatial patterns of traffific flflows.</li>
 <li>Design a <em>temporal transformer</em> to achieve multi-step prediction using long-range temporal dependencies.</li>
 </ul>
 </li>
 </ul>
-<h2 id="Proposed-Model"><a href="#Proposed-Model" class="headerlink" title="Proposed Model"></a>Proposed Model</h2><p>Formulate the  traffic forecasting task as a spatial-temporal prediction problem. The model consists of two main components: spatial-temporal (ST) block and prediction layer.</p>
-<h3 id="Problem-Formulation"><a href="#Problem-Formulation" class="headerlink" title="Problem Formulation"></a>Problem Formulation</h3><p>As other traffic network, the model can be respresented as:</p>
-<script type="math/tex; mode=display">\hat{v} ^{\tau + 1},..., \hat{v} ^{\tau + T} = \mathcal{F} (v ^{\tau - M +1},..,v ^{\tau}; \mathcal{G})</script><p>To achieve accurate prediction, $\mathcal{F}$ captures dynamical spatial dependencies $S _\tau ^\mathcal{S} \in \mathbb{R} ^{N \times N}$ and long-range temporal dependencies $S _\tau ^\mathcal{T} \in \mathbb{R} ^{M \times M}$ from $v ^{\tau -M +1},…,v ^\tau$ and $\mathcal{G}$.</p>
-<h3 id="Overall-Architecture"><a href="#Overall-Architecture" class="headerlink" title="Overall Architecture"></a>Overall Architecture</h3><p><img src="Architecture.png" alt="Architecture"></p>
-<h4 id="Spatial-temporal-Blocks"><a href="#Spatial-temporal-Blocks" class="headerlink" title="Spatial-temporal Blocks"></a>Spatial-temporal Blocks</h4><p>As shown in Fig3, the input to the $l$-th spatial-temporal block is a 3-D tensor $X _l ^\mathcal{S} \in \mathbb{R} ^{M \times N \times d _{\mathcal{G}}}$ of $d _{\mathcal{G}}$-dimensional features for the $N$ nodes at time steps $\tau - M +1,…,\tau$ extracted by the $l-1$-th spatial-temporal block. The spatial transformer $\mathcal{S}$ and temporal transformer $\mathcal{T}$ are stacked to generate the 3-D output tensor. Residual connections are adopted to for stable training.  In the $l$-th spatial-temporal block, the spatial transformer $\mathcal{S}$ extracts spatial features $Y _l ^\mathcal{S}$ from the input node feature $X _l ^\mathcal{S}$ as well as graph adjacency matrix $A$</p>
-<script type="math/tex; mode=display">Y _l ^\mathcal{S} = \mathcal{S} (X _l ^\mathcal{S},A)</script><p>$Y _l ^\mathcal{S}$ is combined with $X _l ^\mathcal{S}$ to generate the input $X _l ^\mathcal{T}$ to the subsequent temporal transformer</p>
-<script type="math/tex; mode=display">Y _l ^\mathcal{T} = \mathcal{T} (X _l ^\mathcal{T})</script><script type="math/tex; mode=display">X _{l+1} ^{\mathcal{S}} = Y _l ^{\mathcal{T}} + X _l ^{\mathcal{T}}</script><h4 id="Prediction-Layer"><a href="#Prediction-Layer" class="headerlink" title="Prediction Layer"></a>Prediction Layer</h4><p>The prediction layer leverages two classical convolutional layer to make multi-step prediction based on the spatial-temporal features from the last spatial-temporal block. Its input is a 2-D tensor $X ^{\mathcal{S}\mathcal{T}} \in \mathbb{R} ^{N \times d ^{\mathcal{S} \mathcal{T}}}$ that consists of the $d ^{\mathcal{S} \mathcal{T}}$-dimensional spatial-temporal features of the $N$ nodes for last time step $\tau$. The mulit-setp prediction $Y \in \mathbb{R} ^{N \times T}$ for $T$ future traffic conditions of the $N$ nodes is</p>
-<script type="math/tex; mode=display">Y = Conv(Conv(X ^{\mathcal{S} \mathcal{T}}))</script><p>Mean absolute loss are adopted to train the model</p>
-<script type="math/tex; mode=display">L = || Y - Y ^{gt}|| _1</script><p>where $Y ^{gt} \in \mathbb{R} ^{N \times T}$ is the groundtruth traffic speeds.</p>
-<h3 id="Spatial-Transformer"><a href="#Spatial-Transformer" class="headerlink" title="Spatial Transformer"></a>Spatial Transformer</h3><p><img src="Spatial_Transformer.png" alt="Spatial_Transformer"></p>
-<p> The spatial transformer consists of <strong>spatial-temporal positional embedding layer</strong>, <strong>fixed graph convolution layer</strong>,<strong>dynamical graph convolution layer</strong> and <strong>gate mechanism for information fusion</strong>.</p>
-<h4 id="Spatial-Temporal-Positional-Embedding"><a href="#Spatial-Temporal-Positional-Embedding" class="headerlink" title="Spatial-Temporal Positional Embedding"></a>Spatial-Temporal Positional Embedding</h4><p>The spatial dependencies of two nodes in the graph would be determined by their distances and observed time steps. Transformer cannot capture the spatial (position) and temporal information of observations with the fully connected feed-forward structures. </p>
+<h2 id="Proposed-Model">Proposed Model</h2>
+<p>Formulate the  traffic forecasting task as a spatial-temporal prediction problem. The model consists of two main components: spatial-temporal (ST) block and prediction layer.</p>
+<h3 id="Problem-Formulation">Problem Formulation</h3>
+<p>As other traffic network, the model can be respresented as:</p>
+<p>$$\hat{v} ^{\tau + 1},…, \hat{v} ^{\tau + T} = \mathcal{F} (v ^{\tau - M +1},…,v ^{\tau}; \mathcal{G})$$</p>
+<p>To achieve accurate prediction, $\mathcal{F}$ captures dynamical spatial dependencies $S _\tau ^\mathcal{S} \in \mathbb{R} ^{N \times N}$ and long-range temporal dependencies $S _\tau ^\mathcal{T} \in \mathbb{R} ^{M \times M}$ from $v ^{\tau -M +1},…,v ^\tau$ and $\mathcal{G}$.</p>
+<h3 id="Overall-Architecture">Overall Architecture</h3>
+<p><img src="Architecture.png" alt="Architecture"></p>
+<h4 id="Spatial-temporal-Blocks">Spatial-temporal Blocks</h4>
+<p>As shown in Fig3, the input to the $l$-th spatial-temporal block is a 3-D tensor $X _l ^\mathcal{S} \in \mathbb{R} ^{M \times N \times d _{\mathcal{G}}}$ of $d _{\mathcal{G}}$-dimensional features for the $N$ nodes at time steps $\tau - M +1,…,\tau$ extracted by the $l-1$-th spatial-temporal block. The spatial transformer $\mathcal{S}$ and temporal transformer $\mathcal{T}$ are stacked to generate the 3-D output tensor. Residual connections are adopted to for stable training.  In the $l$-th spatial-temporal block, the spatial transformer $\mathcal{S}$ extracts spatial features $Y _l ^\mathcal{S}$ from the input node feature $X _l ^\mathcal{S}$ as well as graph adjacency matrix $A$</p>
+<p>$$Y _l ^\mathcal{S} = \mathcal{S} (X _l ^\mathcal{S},A)$$</p>
+<p>$Y _l ^\mathcal{S}$ is combined with $X _l ^\mathcal{S}$ to generate the input $X _l ^\mathcal{T}$ to the subsequent temporal transformer</p>
+<p>$$Y _l ^\mathcal{T} = \mathcal{T} (X _l ^\mathcal{T})$$</p>
+<p>$$X _{l+1} ^{\mathcal{S}} = Y _l ^{\mathcal{T}} + X _l ^{\mathcal{T}}$$</p>
+<h4 id="Prediction-Layer">Prediction Layer</h4>
+<p>The prediction layer leverages two classical convolutional layer to make multi-step prediction based on the spatial-temporal features from the last spatial-temporal block. Its input is a 2-D tensor $X ^{\mathcal{S}\mathcal{T}} \in \mathbb{R} ^{N \times d ^{\mathcal{S} \mathcal{T}}}$ that consists of the $d ^{\mathcal{S} \mathcal{T}}$-dimensional spatial-temporal features of the $N$ nodes for last time step $\tau$. The mulit-setp prediction $Y \in \mathbb{R} ^{N \times T}$ for $T$ future traffic conditions of the $N$ nodes is</p>
+<p>$$Y = Conv(Conv(X ^{\mathcal{S} \mathcal{T}}))$$</p>
+<p>Mean absolute loss are adopted to train the model</p>
+<p>$$L = || Y - Y ^{gt}|| _1$$</p>
+<p>where $Y ^{gt} \in \mathbb{R} ^{N \times T}$ is the groundtruth traffic speeds.</p>
+<h3 id="Spatial-Transformer">Spatial Transformer</h3>
+<p><img src="Spatial_Transformer.png" alt="Spatial_Transformer"></p>
+<p>The spatial transformer consists of <strong>spatial-temporal positional embedding layer</strong>, <strong>fixed graph convolution layer</strong>,<strong>dynamical graph convolution layer</strong> and <strong>gate mechanism for information fusion</strong>.</p>
+<h4 id="Spatial-Temporal-Positional-Embedding">Spatial-Temporal Positional Embedding</h4>
+<p>The spatial dependencies of two nodes in the graph would be determined by their distances and observed time steps. Transformer cannot capture the spatial (position) and temporal information of observations with the fully connected feed-forward structures.</p>
 <p>Thus, the prior positional embedding is to encode the ‘position’ information into the input sequences. Adopt the <strong>spatial-temporal positional embedding layer</strong> to learn the spatial-temporal embedding into each node feature. The parameter matrices $\hat{D} ^{\mathcal{S} } \in \mathbb{R} ^{N \times N}$ and $\hat{D} ^{\mathcal{T}} \in \mathbb{R} ^{M \times M}$ are the dictionaries.</p>
 <p>$\hat{D} ^{\mathcal{S} }$ is initialized with the graph adjacency matrix to consider the connectivity and distance between nodes for modeling spatial dependencies, while $\hat{D} ^{\mathcal{T} }$ is initialized with one-hot time encoding to inject the time step into each node.</p>
 <p>$\hat{D} ^{\mathcal{S} }$ and $\hat{D} ^{\mathcal{T} }$are tiled along the spatial and temporal axes to generate $D ^{\mathcal{S}} \in \mathbb{R} ^{M \times N \times N}$ and $D ^{\mathcal{T}} \in \mathbb{R} ^{M \times N \times M}$.Concatenate them as $[X ^{\mathcal{S}},D ^{\mathcal{S}},D ^{\mathcal{T}}]$ and use a $1 \times 1$ convolutional layer $F _t$ to decreases the dimension to $d _\mathcal{G}$</p>
-<script type="math/tex; mode=display">X ^{'S} = F _t ([X ^{\mathcal{S}},D ^{\mathcal{S}},D ^{\mathcal{T}}]) \in \mathbb{R} ^{M \times N \times d _\mathcal{G}}</script><p>Fed the $X ^{‘S}$ into the fixed and dynamical graph convolutional layers for spatial feature learning. Since graph convolution operations can be realized in parallel for the $M$ time steps via tensor operations, consider the 2-D tensor $\hat{X} ^S \in \mathbb{R} ^{N \times d _\mathcal{G}}$ of  $X ^{‘S}$ for arbitrary one time step for brevity.</p>
-<h4 id="Fixed-Graph-Convolutional-Layer"><a href="#Fixed-Graph-Convolutional-Layer" class="headerlink" title="Fixed Graph Convolutional Layer"></a>Fixed Graph Convolutional Layer</h4><p>Use the graph spectral convolution based on Chebyshev polynomial approximation to capture the stationary spatial dependencies form the road topology.</p>
+<p>$$X ^{'S} = F _t ([X ^{\mathcal{S}},D ^{\mathcal{S}},D ^{\mathcal{T}}]) \in \mathbb{R} ^{M \times N \times d _\mathcal{G}}$$</p>
+<p>Fed the $X ^{'S}$ into the fixed and dynamical graph convolutional layers for spatial feature learning. Since graph convolution operations can be realized in parallel for the $M$ time steps via tensor operations, consider the 2-D tensor $\hat{X} ^S \in \mathbb{R} ^{N \times d _\mathcal{G}}$ of  $X ^{'S}$ for arbitrary one time step for brevity.</p>
+<h4 id="Fixed-Graph-Convolutional-Layer">Fixed Graph Convolutional Layer</h4>
+<p>Use the graph spectral convolution based on Chebyshev polynomial approximation to capture the stationary spatial dependencies form the road topology.</p>
 <p>Extract the structure-aware features:</p>
-<script type="math/tex; mode=display">\hat{X} _{:,j} ^\mathcal{G} = \sum _{i=1} ^{d _\mathcal{G}} \sum _{k=0} ^{K} \theta _{ij,k} T _k (\tilde{L}) \hat{X} _{:,i} ^S \quad \forall j=0,..,d _\mathcal{G}</script><p>where $\hat{X} _{:,j} ^\mathcal{G}$ is the $j$-th channel(column) of $\hat{X} ^\mathcal{G}$ and $\theta _{ij,k}$ is the learned weights. Since $\mathcal{G}$ is constructed based on the physical connectivity and distance between sensors, the stationary spatial dependencies determined by the road topology can be explicity explored through the fixed graph convolutional layer.</p>
-<h4 id="Dynamical-Graph-Convolutional-Layer"><a href="#Dynamical-Graph-Convolutional-Layer" class="headerlink" title="Dynamical Graph Convolutional Layer"></a>Dynamical Graph Convolutional Layer</h4><p>To capture the time-evolving hidden spatial dependencies, the author proposes a novel dynamical graph convolutional layer to achieve training and modeling in the high-demensional latent subspaces.</p>
+<p>$$\hat{X} _{:,j} ^\mathcal{G} = \sum _{i=1} ^{d _\mathcal{G}} \sum _{k=0} ^{K} \theta _{ij,k} T _k (\tilde{L}) \hat{X} _{:,i} ^S \quad \forall j=0,…,d _\mathcal{G}$$</p>
+<p>where $\hat{X} _{:,j} ^\mathcal{G}$ is the $j$-th channel(column) of $\hat{X} ^\mathcal{G}$ and $\theta _{ij,k}$ is the learned weights. Since $\mathcal{G}$ is constructed based on the physical connectivity and distance between sensors, the stationary spatial dependencies determined by the road topology can be explicity explored through the fixed graph convolutional layer.</p>
+<h4 id="Dynamical-Graph-Convolutional-Layer">Dynamical Graph Convolutional Layer</h4>
+<p>To capture the time-evolving hidden spatial dependencies, the author proposes a novel dynamical graph convolutional layer to achieve training and modeling in the high-demensional latent subspaces.</p>
 <p><img src="latent.png" alt="latent"></p>
 <p>Learn the linear mappings that project the input features of each node to the high-dimensional latent subspaces. Then utilize the dynamic nature of self-attention mechanism to address the projected features to efficiently model the dynamical spatial dependencies between node according to the varying graph signals.</p>
 <p>The process is as follows:</p>
-<script type="math/tex; mode=display">Q ^S = \hat{X} ^S W _q ^S</script><script type="math/tex; mode=display">K ^S = \hat{X} ^S W _k ^S</script><script type="math/tex; mode=display">V ^S = \hat{X} ^S W _v ^S</script><p><img src="self_attention.png" alt="self_attention"></p>
-<script type="math/tex; mode=display">S ^S = softmax(Q ^S(K ^S) ^T / \sqrt{d _{\mathcal{A}} ^S})</script><script type="math/tex; mode=display">M ^S = S ^S V ^S</script><p>It is worth mentioning that multiple patterns of spatial dependencies can be learned with mulit-head attention mechanism by introducing multiple pairs of subsapces.</p>
+<p>$$Q ^S = \hat{X} ^S W _q ^S$$</p>
+<p>$$K ^S = \hat{X} ^S W _k ^S$$</p>
+<p>$$V ^S = \hat{X} ^S W _v ^S$$</p>
+<p><img src="self_attention.png" alt="self_attention"></p>
+<p>$$S ^S = softmax(Q ^S(K ^S) ^T / \sqrt{d _{\mathcal{A}} ^S})$$</p>
+<p>$$M ^S = S ^S V ^S$$</p>
+<p>It is worth mentioning that multiple patterns of spatial dependencies can be learned with mulit-head attention mechanism by introducing multiple pairs of subsapces.</p>
 <p>Furthermore a shared three-layer feed-forward nerual network with nonlinear activation is applied on each node:</p>
-<script type="math/tex; mode=display">U ^S = ReLu(ReLu(\hat{M} ^{'S}W _0 ^S)W _1 ^S)W _2 ^S</script><p>where $M ^{‘S} = \hat{X} ^{S} + M ^{S}$ is the residual connections.</p>
-<p>$U ^S$ and $M ^{‘S}$ are combined by $\hat{Y} ^S = U ^S +M ^{‘S}$ for feature fusion with the gate mechanism</p>
-<h4 id="Gate-Mechanism-for-Feature-Fusion"><a href="#Gate-Mechanism-for-Feature-Fusion" class="headerlink" title="Gate Mechanism for Feature Fusion"></a>Gate Mechanism for Feature Fusion</h4><p>The gate mechanism is developed to fuse the spatial features learned from fifixed and dynamical graph convolutional layers. The gate $g$ is derived from $Y ^{‘S}$and $X ^S$of the fixed and dynamical graph convolutional layers.</p>
-<script type="math/tex; mode=display">g = sigmoid(f _S (\hat{Y} ^S) + f _\mathcal{G}(X ^\mathcal{G}))</script><p>where $f _\mathcal{G}$ and $f _S$ are linear projections that transform $Y ^{‘S}$ and $X ^\mathcal{G}$ into 1-D vectors</p>
-<script type="math/tex; mode=display">Y ^{'S} = g\hat{Y} ^S + (1-g)X ^\mathcal{G}</script><h4 id="General-Dynamical-Graph-Neural-Networks"><a href="#General-Dynamical-Graph-Neural-Networks" class="headerlink" title="General Dynamical Graph Neural Networks"></a>General Dynamical Graph Neural Networks</h4><p>The spatial transformer can be viewed as a general message-passing dynamical graph neural network.</p>
+<p>$$U ^S = ReLu(ReLu(\hat{M} ^{'S}W _0 ^S)W _1 ^S)W _2 ^S$$</p>
+<p>where $M ^{'S} = \hat{X} ^{S} + M ^{S}$ is the residual connections.</p>
+<p>$U ^S$ and $M ^{'S}$ are combined by $\hat{Y} ^S = U ^S +M ^{'S}$ for feature fusion with the gate mechanism</p>
+<h4 id="Gate-Mechanism-for-Feature-Fusion">Gate Mechanism for Feature Fusion</h4>
+<p>The gate mechanism is developed to fuse the spatial features learned from fifixed and dynamical graph convolutional layers. The gate $g$ is derived from $Y ^{'S}$and $X ^S$of the fixed and dynamical graph convolutional layers.</p>
+<p>$$g = sigmoid(f _S (\hat{Y} ^S) + f _\mathcal{G}(X ^\mathcal{G}))$$</p>
+<p>where $f _\mathcal{G}$ and $f _S$ are linear projections that transform $Y ^{'S}$ and $X ^\mathcal{G}$ into 1-D vectors</p>
+<p>$$Y ^{'S} = g\hat{Y} ^S + (1-g)X ^\mathcal{G}$$</p>
+<h4 id="General-Dynamical-Graph-Neural-Networks">General Dynamical Graph Neural Networks</h4>
+<p>The spatial transformer can be viewed as a general message-passing dynamical graph neural network.</p>
 <p>The author demonstrates that the spatial transformer can be formulated as an iterative feature learning process of message passing and update for all the nodes $v \in \mathcal{V}$ in a dynamical graph neural network.</p>
 <p>Denote $x _v \in \mathbb{R} ^{d _\mathcal{G}}$ the input features of node $v$. For arbitrary $v \in \mathcal{V}$ ,it receives the message $m _v  \in \mathbb{R} ^{d _\mathcal{G}}$ from the nodes in $\mathcal{V}$</p>
-<script type="math/tex; mode=display">m _v = \sum _{u \in \mathcal{V}} F(x _v,x _u) = \sum _{u \in \mathcal{V}} \langle (W _q ^S) ^T x _v,(W _k ^S) ^T x _u \rangle x _u</script><p>where $F$ is the composite message-passing function that realizes Eqs. When $m _v$ is obtained, $x _v$ is updated with $y _v$ calculated from $m _v$ and $x _v$</p>
-<script type="math/tex; mode=display">y _v = G (m _v,x _v)</script><p>where $G$ is the shared position-wise feed forward network.</p>
-<h3 id="Temporal-Transformers"><a href="#Temporal-Transformers" class="headerlink" title="Temporal Transformers"></a>Temporal Transformers</h3><p><img src="temporal_transformer.png" alt="temporal_transformer"></p>
-<p>Similar to the spatial transformer, $X ^{‘ \mathcal{T}} = G _t ([X ^\mathcal{T},D ^\mathcal{T}]) \in \mathbb{R} ^{M \times N \times d _\mathcal{G}}$ is obtained from the concatenation of the input features $X ^\mathcal{T} = X ^S + Y ^S \in \mathbb{R} ^{M \times N \times d _\mathcal{G}}$ and the temporal embedding $D ^\mathcal{T}$ ,where $G _t$ is a $1 \times 1$ convolutional layer that yields a $d _\mathcal{G}$-dimension vector for each node at each time step. Parallelize over the nodes to model temporal dependencies. The 2-D tensor of spatial features $\hat{X} ^\mathcal{T} \in \mathbb{R} ^{M \times d _\mathcal{G}}$is considered for arbitrary one node in $\mathcal{G}$.</p>
+<p>$$m _v = \sum _{u \in \mathcal{V}} F(x _v,x _u) = \sum _{u \in \mathcal{V}} \langle (W _q ^S) ^T x _v,(W _k ^S) ^T x _u \rangle x _u$$</p>
+<p>where $F$ is the composite message-passing function that realizes Eqs. When $m _v$ is obtained, $x _v$ is updated with $y _v$ calculated from $m _v$ and $x _v$</p>
+<p>$$y _v = G (m _v,x _v)$$</p>
+<p>where $G$ is the shared position-wise feed forward network.</p>
+<h3 id="Temporal-Transformers">Temporal Transformers</h3>
+<p><img src="temporal_transformer.png" alt="temporal_transformer"></p>
+<p>Similar to the spatial transformer, $X ^{’ \mathcal{T}} = G _t ([X ^\mathcal{T},D ^\mathcal{T}]) \in \mathbb{R} ^{M \times N \times d _\mathcal{G}}$ is obtained from the concatenation of the input features $X ^\mathcal{T} = X ^S + Y ^S \in \mathbb{R} ^{M \times N \times d _\mathcal{G}}$ and the temporal embedding $D ^\mathcal{T}$ ,where $G _t$ is a $1 \times 1$ convolutional layer that yields a $d _\mathcal{G}$-dimension vector for each node at each time step. Parallelize over the nodes to model temporal dependencies. The 2-D tensor of spatial features $\hat{X} ^\mathcal{T} \in \mathbb{R} ^{M \times d _\mathcal{G}}$is considered for arbitrary one node in $\mathcal{G}$.</p>
 <p>The process is as follows:</p>
-<script type="math/tex; mode=display">Q ^\mathcal{T} = \hat{X} ^\mathcal{T} W _q ^\mathcal{T}</script><script type="math/tex; mode=display">K ^\mathcal{T} = \hat{X} ^\mathcal{T} W _k ^\mathcal{T}</script><script type="math/tex; mode=display">V ^\mathcal{T} = \hat{X} ^\mathcal{T} W _v ^\mathcal{T}</script><script type="math/tex; mode=display">S ^\mathcal{T} = softmax(Q ^\mathcal{T}(K ^\mathcal{T}) ^T / \sqrt{d _{\mathcal{A}} ^\mathcal{T}})</script><script type="math/tex; mode=display">M ^\mathcal{T} = S ^\mathcal{T} V ^\mathcal{T}</script><script type="math/tex; mode=display">U ^\mathcal{T} = ReLu(ReLu(\hat{M} ^{'\mathcal{T}}W _0 ^\mathcal{T})W _1 ^\mathcal{T})W _2 ^\mathcal{T}</script><p>where $M ^{‘\mathcal{T}} = \hat{X} ^{\mathcal{T}} + M ^{\mathcal{T}}$ is the residual connections.</p>
-<p>For each node, its output is $\hat{Y} ^\mathcal{T} = U  ^\mathcal{T} + M ^\mathcal{‘T}$</p>
-<h2 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h2><p><img src="exp1.png" alt="exp1"></p>
+<p>$$Q ^\mathcal{T} = \hat{X} ^\mathcal{T} W _q ^\mathcal{T}$$</p>
+<p>$$K ^\mathcal{T} = \hat{X} ^\mathcal{T} W _k ^\mathcal{T}$$</p>
+<p>$$V ^\mathcal{T} = \hat{X} ^\mathcal{T} W _v ^\mathcal{T}$$</p>
+<p>$$S ^\mathcal{T} = softmax(Q ^\mathcal{T}(K ^\mathcal{T}) ^T / \sqrt{d _{\mathcal{A}} ^\mathcal{T}})$$</p>
+<p>$$M ^\mathcal{T} = S ^\mathcal{T} V ^\mathcal{T}$$</p>
+<p>$$U ^\mathcal{T} = ReLu(ReLu(\hat{M} ^{'\mathcal{T}}W _0 ^\mathcal{T})W _1 ^\mathcal{T})W _2 ^\mathcal{T}$$</p>
+<p>where $M ^{'\mathcal{T}} = \hat{X} ^{\mathcal{T}} + M ^{\mathcal{T}}$ is the residual connections.</p>
+<p>For each node, its output is $\hat{Y} ^\mathcal{T} = U  ^\mathcal{T} + M ^\mathcal{'T}$</p>
+<h2 id="Experiments">Experiments</h2>
+<p><img src="exp1.png" alt="exp1"></p>
 <p><img src="exp2.png" alt="exp2"></p>
 <p><img src="exp3.png" alt="exp3"></p>
-<h2 id="The-paper"><a href="#The-paper" class="headerlink" title="The paper"></a>The paper</h2>
+<h2 id="The-paper">The paper</h2>
+
 
 	<div class="row">
     <embed src="STTN.pdf" width="100%" height="550" type="application/pdf">

@@ -247,17 +247,6 @@
           
           
           <li>
-            <a href="/categories/">
-              
-              CATEGORIES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
             <a href="/archive/">
               
               ARCHIVES
@@ -283,6 +272,17 @@
             <a href="/tags/">
               
               TAGS
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
               
               
             </a>
@@ -473,64 +473,90 @@
         <blockquote>
 <p>The blog introduces the paper : Triformer</p>
 </blockquote>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><ul>
-<li>Recent studies show that attentions are able to capture better long term dependencies. But For a time series of $H$ timestamps, canonical self-attention has a quadratic complexity of $\mathcal{O} (H ^2)$. </li>
-<li><p>The author proposes the <strong>Triformer</strong> with linear complexity $\mathcal{O}(H)$ by defining a novel <em>Patch Attention</em> with linear complexity for each patch.</p>
+<h2 id="Introduction">Introduction</h2>
+<ul>
+<li>
+<p>Recent studies show that attentions are able to capture better long term dependencies. But For a time series of $H$ timestamps, canonical self-attention has a quadratic complexity of $\mathcal{O} (H ^2)$.</p>
 </li>
-<li><p>Introduce a pseudo timestamp for a patch and compute attentions of the timestamps in the patch only to the single pseudo timestamp, making patch attention linear. Then, only the pseudo timestamps are fed into the next layer, such that the layer sizes shrink exponentially.</p>
+<li>
+<p>The author proposes the <strong>Triformer</strong> with linear complexity $\mathcal{O}(H)$ by defining a novel <em>Patch Attention</em> with linear complexity for each patch.</p>
 </li>
-<li><p>Existing forecasting models often use variable-agnostic parameters, though different variables may exhibit distinct temporal patterns.<br><img src="variable.png" alt="variable"></p>
+<li>
+<p>Introduce a pseudo timestamp for a patch and compute attentions of the timestamps in the patch only to the single pseudo timestamp, making patch attention linear. Then, only the pseudo timestamps are fed into the next layer, such that the layer sizes shrink exponentially.</p>
+</li>
+<li>
+<p>Existing forecasting models often use variable-agnostic parameters, though different variables may exhibit distinct temporal patterns.<br>
+<img src="variable.png" alt="variable"></p>
 <p><strong>Variable-agnostic modeling</strong> forces the learned parameters to capture an “average” pattern among all the variables, thus failing to capture distinct temporal pattern of each variable and hurting accuracy.</p>
 </li>
-<li><p>By proposing a distinct set of matrices $W _Q ^{(i)} , W _K ^{(i)} ,W _V ^{(i)}$ for the $i$-th variable to capture distinct temporal patterns for different variables.</p>
+<li>
+<p>By proposing a distinct set of matrices $W _Q ^{(i)} , W _K ^{(i)} ,W _V ^{(i)}$ for the $i$-th variable to capture distinct temporal patterns for different variables.</p>
 </li>
-<li>Factorize the projection matrices into <strong>variable-agnostic</strong> and <strong>variable-specific</strong> matrices and make the variable-specific matrices very compact, thus aboding increasing the parameter space and computation overhead.</li>
-<li>The main contributions of the paper<ol>
+<li>
+<p>Factorize the projection matrices into <strong>variable-agnostic</strong> and <strong>variable-specific</strong> matrices and make the variable-specific matrices very compact, thus aboding increasing the parameter space and computation overhead.</p>
+</li>
+<li>
+<p>The main contributions of the paper</p>
+<ol>
 <li>Propose a novel, efficient attention mechanism, namely Patch Attention, along with its triangular, multi-layer structure to ensure high <strong>efficiency</strong>.</li>
 <li>Propose a light-weight approach to enable variable-specific model parameters, making it possible to capture distinct temporal patterns from different variables thus enhancing <strong>accuracy</strong></li>
 <li>Conduct extensive experiments on four public , commonly used multivariate time series data sets from different domains, justifying design choice and demonstrating that the proposal outperforms state-of-the-art methods.</li>
 </ol>
 </li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><p><img src="category.png" alt="category"></p>
+<h2 id="Related-Work">Related Work</h2>
+<p><img src="category.png" alt="category"></p>
 <p>The author makes some analysis to prove that variable-specific model would perform better on long-term time-series forecasting tasks.</p>
-<h2 id="Preliminaries"><a href="#Preliminaries" class="headerlink" title="Preliminaries"></a>Preliminaries</h2><p>A multivariate time series records the values of $N$ variables over time.</p>
+<h2 id="Preliminaries">Preliminaries</h2>
+<p>A multivariate time series records the values of $N$ variables over time.</p>
 <p>$x _t \in \mathbb{R} ^N$ denotes the values of all $N$ variables at $t$  and $x _t \in \mathbb{R}$ is the value of the $i$-th variable at $t$. The problem can be formulated as</p>
-<script type="math/tex; mode=display">\mathcal{F} _{\phi} (x _{t-H+1},...,x _{t-1},x _t)=(\hat{x} _{t+1},\hat{x} _{t+2},...,\hat{x} _{t+F} )</script><p>where $\phi$ denotes the learnable parameters of the forecasting model and $\hat{x} _j$ is the predicted values at timestamp $j$.</p>
-<h2 id="Triformer"><a href="#Triformer" class="headerlink" title="Triformer"></a>Triformer</h2><p>The <strong>Triformer</strong> is proposed for learning long-term and multi-scale dependencies in multivariate time series.</p>
+<p>$$\mathcal{F} _{\phi} (x _{t-H+1},…,x _{t-1},x _t)=(\hat{x} _{t+1},\hat{x} _{t+2},…,\hat{x} _{t+F} )$$</p>
+<p>where $\phi$ denotes the learnable parameters of the forecasting model and $\hat{x} _j$ is the predicted values at timestamp $j$.</p>
+<h2 id="Triformer">Triformer</h2>
+<p>The <strong>Triformer</strong> is proposed for learning long-term and multi-scale dependencies in multivariate time series.</p>
 <p><img src="triangle.png" alt="triangle"></p>
 <ol>
-<li>Design the <strong>Patch Attention</strong> with linear complexity as the basic block </li>
+<li>Design the <strong>Patch Attention</strong> with linear complexity as the basic block</li>
 <li>Propose a <strong>triangular structure</strong> when stacking multiple layers of patch attentions, such that the layer sizes shrink exponentially.</li>
 <li>Propose a light-weight method to enable variable specific modeling, thus being able to capture distinct temporal patterns form different variables, without compromising efficiency.</li>
 </ol>
-<h3 id="Linear-Patch-Attention"><a href="#Linear-Patch-Attention" class="headerlink" title="Linear Patch Attention"></a>Linear Patch Attention</h3><p>First the author breaks down the input times series of length $H$ into $P = H/S$ patches along the temporal dimension, where $S$ is the patch size. Then compute attention scores per patch in another way. </p>
+<h3 id="Linear-Patch-Attention">Linear Patch Attention</h3>
+<p>First the author breaks down the input times series of length $H$ into $P = H/S$ patches along the temporal dimension, where $S$ is the patch size. Then compute attention scores per patch in another way.</p>
 <p>To reduce the complexity to linear, a learnable  pseudo timestamp $\textbf{T} _p \in \mathbb{R} ^{N \times d}$ is proposed.</p>
 <p><img src="patch_attention.png" alt="patch_attention"></p>
 <p>In <strong>Triformer</strong>, the author chooses to use the attention mechanism to update the pseudo timestamp, where the pseudo timestamp works as the Query in self-attentions. It queries all the “real” timestamps in the patch, thus only computing a single attention score for each real timestamp, giving rise to linear complexity.</p>
 <p>Note that $T _p = [T _p ^{(i)}] _{i=1} ^N$ and each variable has specific pseudo timestamp $T _p ^{(i)}$,thus being variable-specific.</p>
-<script type="math/tex; mode=display">\mathcal{P}\mathcal{A}(T _p,x _p) = [\phi (\frac{T _p ^{(i)}(x _p ^{(i)}W _K) ^T}{\sqrt{d}})(x _p ^{(i)}W _V)] _{i=1} ^N</script><p>The reduced complexity of $PA$ comes with a price that the temporal receptive field of each timestamp is reduced to the patch size $S$. In contrast, it is H covering all timestamps in the canonical attention.</p>
+<p>$$\mathcal{P}\mathcal{A}(T _p,x _p) = [\phi (\frac{T _p ^{(i)}(x _p ^{(i)}W _K) ^T}{\sqrt{d}})(x _p ^{(i)}W _V)] _{i=1} ^N$$</p>
+<p>The reduced complexity of $PA$ comes with a price that the temporal receptive field of each timestamp is reduced to the patch size $S$. In contrast, it is H covering all timestamps in the canonical attention.</p>
 <p>This makes it harder to capture relationships among different patches and also the long-term dependencies, thus adversely affecting accuracy. To compensate for the reduced temporal receptive field,  introduce a recurrent connection to connect the outputs of the patches, such that the temporal information flow is maintained.</p>
-<script type="math/tex; mode=display">T _{p+1} = g(\Theta _1 T _p + b _1) \odot \sigma (\Theta _2 T _p + b _2) + T _{p}</script><p>where $\Theta _1,\Theta _2,b _1$ and $b _2$ are learned parameters for the recurrent gates, $\odot$ is element-wise product, $g(\cdot)$ is <em>tanh</em> activation function and $\sigma(\cdot)$ is a <em>sigmoid</em> function controlling the information ratio that is passed to the next pseudo timestamp.</p>
-<h3 id="Triangular-Stacking"><a href="#Triangular-Stacking" class="headerlink" title="Triangular Stacking"></a>Triangular Stacking</h3><p>In attention based models, each attention layer has the same input, e.g. , the input time series size $H$. In traditional self-attention same input and output have the same shape.</p>
+<p>$$T _{p+1} = g(\Theta _1 T _p + b _1) \odot \sigma (\Theta _2 T _p + b _2) + T _{p}$$</p>
+<p>where $\Theta _1,\Theta _2,b _1$ and $b _2$ are learned parameters for the recurrent gates, $\odot$ is element-wise product, $g(\cdot)$ is <em>tanh</em> activation function and $\sigma(\cdot)$ is a <em>sigmoid</em> function controlling the information ratio that is passed to the next pseudo timestamp.</p>
+<h3 id="Triangular-Stacking">Triangular Stacking</h3>
+<p>In attention based models, each attention layer has the same input, e.g. , the input time series size $H$. In traditional self-attention same input and output have the same shape.</p>
 <p>When using $PA$s, only feed the pseudo timestamps from the patches to the next layer, which shrinks the layer sizes exponentially. The size of $(l+1)$-th layer is only $\frac{1}{S _l}$ of the size of the $l$-th layer, where $S _l$ is the patch if the $l$-th layer.</p>
-<p>In a multi-layer <strong>Triformer</strong>, each layer consists of different numbers of patches and thus having different number of outputs ,i.e., pseudo timestamps. </p>
+<p>In a multi-layer <strong>Triformer</strong>, each layer consists of different numbers of patches and thus having different number of outputs ,i.e., pseudo timestamps.</p>
 <p>Instead of only using the last pseudo timestamp per layer, we aggregate all pseudo timestamps per layer into an aggregated output. The aggregate output $O ^l$ at the $l$-th layer is defined as</p>
-<script type="math/tex; mode=display">O ^l = \theta ^l (T _1 ^l ,.., T _k ^l,..,T _P ^l)</script><p>where $\theta ^l$ is a neural network, $T _p ^l$ denotes the pseudo timestamp for patch $p \in [1,P]$ at the $l$-th layer.</p>
+<p>$$O ^l = \theta ^l (T _1 ^l ,…, T _k ^l,…,T _P ^l)$$</p>
+<p>where $\theta ^l$ is a neural network, $T _p ^l$ denotes the pseudo timestamp for patch $p \in [1,P]$ at the $l$-th layer.</p>
 <p>Finally, the aggregate outputs from all layers are connected to the <strong>predictor</strong>(A fully connected neural network). It represents features from different temporal scales, contributing to different temporal views and provides multiple gradient feedback short-paths, thus easing the learning processes.</p>
-<h3 id="Variable-Specific-Modeling"><a href="#Variable-Specific-Modeling" class="headerlink" title="Variable-Specific Modeling"></a>Variable-Specific Modeling</h3><p><img src="Variable_Specific.png" alt="Variable_Specific"></p>
+<h3 id="Variable-Specific-Modeling">Variable-Specific Modeling</h3>
+<p><img src="Variable_Specific.png" alt="Variable_Specific"></p>
 <p>Introduce a $m$-dimensional memory vector $M ^{(i)} \in \mathbb{R} ^m$ for each variable with $i \in [1,N]$.The memory is randomly initialized and learnable. This makes the method purely data-driven and can lean the most prominent characteristics of each variable.</p>
 <p>The left and right matrices are variable-agnostic, thus being shared with all variables. Different variables have their own middle matrices $B ^{(i)}$,thus making the middle matrices variable-specific. Make the matrix $B$ compact to make the method light-weight.</p>
 <p>Use a generator $\mathcal{G}(\cdot)$(a 1-layer neural network) to generate $B ^{(i)}$ from $M ^{(i)}$. Learning a full matrix $B = [B ^{(i)}] _{i=1} ^N$ directly requires $N \cdot a ^2$  parameters. In contrast, when using a generator, it requires $N \cdot m$ for the memories, and an additional overhead of $m \cdot a ^2$ for the generator. (Reduce $N \cdot a ^2$ to $N \cdot m + m \cdot a ^2$.)We don’t need the Query matrix as $PA$ does not need it and employs the pseudo timestamp instead.</p>
-<script type="math/tex; mode=display">
-\begin{bmatrix}
-W _K ^{(i)} \\\\
-W _B ^{(i)}
-\end{bmatrix} = \begin{bmatrix}
-L _K \mathcal{G}(M ^{(i)})R _K\\\\
-L _V \mathcal{G}(M ^{(i)})R _V
-\end{bmatrix}</script><h2 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h2><p><img src="overall_accuracy.png" alt="overall_accuracy"></p>
-<h2 id="The-paper"><a href="#The-paper" class="headerlink" title="The paper"></a>The paper</h2>
+<p>$$<br>
+\begin{bmatrix}<br>
+W _K ^{(i)} \\<br>
+W _B ^{(i)}<br>
+\end{bmatrix} = \begin{bmatrix}<br>
+L _K \mathcal{G}(M ^{(i)})R _K\\<br>
+L _V \mathcal{G}(M ^{(i)})R _V<br>
+\end{bmatrix}<br>
+$$</p>
+<h2 id="Experiments">Experiments</h2>
+<p><img src="overall_accuracy.png" alt="overall_accuracy"></p>
+<h2 id="The-paper">The paper</h2>
+
 
 	<div class="row">
     <embed src="Triformer.pdf" width="100%" height="550" type="application/pdf">
