@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite-url/en/AutoST_2/</loc>
+    
+    <lastmod>2023-03-06</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite-url/en/AutoSTG/</loc>
     
     <lastmod>2023-03-06</lastmod>
@@ -214,14 +221,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/tags/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
+    <loc>http://yoursite-url/tags/%E8%87%AA%E5%8A%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2023-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite-url/tags/%E8%87%AA%E5%8A%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>http://yoursite-url/tags/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2023-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -277,6 +284,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite-url/tags/maths/</loc>
+    <lastmod>2023-03-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://yoursite-url/tags/Linux/</loc>
     <lastmod>2023-03-06</lastmod>
     <changefreq>daily</changefreq>
@@ -285,13 +299,6 @@
   
   <url>
     <loc>http://yoursite-url/tags/Nginx/</loc>
-    <lastmod>2023-03-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite-url/tags/maths/</loc>
     <lastmod>2023-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

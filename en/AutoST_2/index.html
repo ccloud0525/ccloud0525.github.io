@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/en/Transformer_Attention Is All You Need/">
+  <link rel="canonical" href="http://yoursite-url/en/AutoST_2/">
   <title>
     
-      Attention Is All You Need - Ccloud&#39;s
+      AutoST:Towards the Universal Modeling of Spatio-temporal Sequences - Ccloud&#39;s
     
   </title>
 <meta name="generator" content="Hexo 5.4.2"></head>
@@ -389,14 +389,14 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#注意力机制" title="注意力机制">注意力机制</a>
+              <a class="tag" href="/tags/#自动机器学习" title="自动机器学习">自动机器学习</a>
               
             </div>
-            <h1>Attention Is All You Need</h1>
-            <h2 class="subheading">Transformer</h2>
+            <h1>AutoST:Towards the Universal Modeling of Spatio-temporal Sequences</h1>
+            <h2 class="subheading">An introduction to AutoST</h2>
             <span class="meta">
               Posted by Cloud on
-              2023-02-02
+              2023-03-06
             </span>
 
 
@@ -404,11 +404,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">5</span> Minutes
+              Estimated Reading Time <span class="post-count">9</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">953</span> In Total
+              Words <span class="post-count">1.5k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -471,78 +471,128 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <blockquote>
-<p>The blog introduces the paper : Attention is all you need</p>
+<p>The blog introduces the paper : AutoST:Towards the Universal Modeling of Spato-temporal Sequences</p>
 </blockquote>
 <h2 id="Introduction">Introduction</h2>
-<ul>
-<li>
-<p>Recurrent models and encoder-decoder architectures are widely used so that numerous efforts have continued to push their boundaries. But its inherently sequential nature precludes parallelization within training examples which becomes critical at longer sequence lengths.</p>
-</li>
-<li>
-<p>Attention mechanisms allow modeling of dependencies without regard to their distance in the input or output sequences. Furthermore, attention mechanisms can also be used in conjunction with a recurrent network.</p>
-</li>
-</ul>
-<h2 id="Background">Background</h2>
-<ul>
-<li>To reduce sequential computation, models which use CNN blocks can compute hidden representations in parallel for all input and output positions. In these models, the number of operations required to related signals form two arbitrary input or output positions grows in the distance between positions linearly (ConvS2S) or logarithmically(ByteNet). This makes it more difficult to learn dependencies between distant positions.</li>
-<li>In the Transformer this is reduced to a constant number of operations, albeit at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect the author counteract with Multi-Head Attention.</li>
-<li>Transformer is the first transduction model relying entirely on self attention to compute representations of its input and output without using sequence-aligned RNNs or convolution.</li>
-</ul>
-<h2 id="Model-Architecture">Model Architecture</h2>
-<p>Transformer has an encoder-decoder structure like most competitive neural sequence transduction models. The encoder maps an input sequence of symbol representations $(x_1 ,…, x_n)$ to a sequence of continuous representations $\textbf{z} = (z_1 ,…, z_n)$. Given $\textbf{z}$, the decoder then generates an output sequence $(y_1 ,…, y_n)$​ of symbols one element at a time. At each step the model is auto-regressive, consuming the previously generated symbols as additional input when generating the next.</p>
-<p><img src="architecture.png" alt="architecture"></p>
-<h3 id="Encoder-and-Decoder-Stacks">Encoder and Decoder Stacks</h3>
-<p><strong>Encoder:</strong></p>
-<p>The encoder is composed of a stack of <em>N</em> = 6 identical layers. Each layer has two sub-layers. The first is a multi-head self-attention mechanism, and the second is a simple, position-wise fully connected feed-forward network. We employ a residual connection around each of the two sub-layers, followed by layer normalization. That is, the output of each sub-layer is $LayerNorm(x + Sublayer(x))$, where $Sublayer(x)$ is the function implemented by the sub-layer itself. To facilitate these residual connections, all sub-layers in the model, as well as the embedding layers, produce outputs of dimension $d_{model}=512$ .</p>
-<p><strong>Decoder:</strong></p>
-<p>The decoder is also composed of a stack of N = 6 identical layers. In addition to the two sub-layers in each encoder layer, the decoder inserts a third sub-layer, which performs multi-head attention over the output of the encoder stack. Similar to the encoder, we employ residual connections around each of the sub-layers, followed by layer normalization. We also modify the self-attention sub-layer in the decoder stack to prevent positions from attending to subsequent positions. This masking, combined with fact that the output embeddings are offset by one position, ensures that the predictions for position <em>i</em> can depend only on the known outputs at positions less than <em>i</em>.</p>
-<h3 id="Attention">Attention</h3>
-<p><img src="attention.png" alt="attention"></p>
-<h4 id="Scaled-Dot-Product-Attention">Scaled Dot-Product Attention</h4>
-<p><img src="self_attention.png" alt="self_attention"></p>
-<p>$$Attention(Q,K,V)=softmax(\frac{QK ^T}{\sqrt{d _k}}) V$$</p>
-<h4 id="Mulit-Head-Attention">Mulit-Head Attention</h4>
-<p>In this work the author employs 8 parallel attention layers to compose a multi-head attention mechanism for $8 \times 64 =512$</p>
-<p>$$MultiHead(Q,K,V)=Concat(head _1,…, head _h)W ^o$$</p>
-<p>$$where \quad head _i = Attention(QW ^Q _i ,KW ^K _i , VW ^V _i)$$</p>
-<h4 id="Applications-of-Attention-in-our-Model">Applications of Attention in our Model</h4>
-<p>The Transformer uses multi-head attention in three different ways:</p>
-<ul>
-<li>In “encoder-decoder attention” layers, the queries come from the previous decoder layer,and the memory keys and values come from the output of the encoder. This allows every position in the decoder to attend over all positions in the input sequence.</li>
-<li>The encoder contains self-attention layers. In a self-attention layer all of the keys, values and queries come from the same place, in this case, the output of the previous layer in the encoder. Each position in the encoder can attend to all positions in the previous layer of the encoder.</li>
-<li>Similarly, self-attention layers in the decoder allow each position in the decoder to attend to all positions in the decoder up to and including that position. We need to prevent leftward information flow in the decoder to preserve the auto-regressive property. We implement this inside of scaled dot-product attention by masking out (setting to $- \infty$) all values in the input of the softmax which correspond to illegal connections</li>
-</ul>
-<h3 id="Position-wise-Feed-Forward-Networks">Position-wise Feed-Forward Networks</h3>
-<p>use a feed-forward network in every attention layer:</p>
-<p>$$FNN(x) = max(0,xW _1 + b _1)W _2 + b_2$$</p>
-<h3 id="Embeddings-and-Softmax">Embeddings and Softmax</h3>
-<p>Similarly to other sequence transduction models, we use learned embeddings to convert the input tokens and output tokens to vectors of dimension $d _{model}$. We also use the usual learned linear transformation and softmax function to convert the decoder output to predicted next-token probabilities. In our model, we share the same weight matrix between the two embedding layers and the pre-softmax linear transformation.</p>
-<h3 id="Positional-Encoding">Positional Encoding</h3>
-<p>Since the Transformer contains no recurrence and no convolution so that the position information needs to be injected to the sequence in an other way.</p>
-<p>$$PE _{(pos,2i)} = sin(pos / 10000 ^{2i/d _{model}})$$</p>
-<p>$$PE _{(pos,2i+1)} = cos(pos/10000 ^{2i/d _{model}})$$</p>
-<p>the pos is the position of word in the sequence and the $2i$ or $2i+1$ means the even or odd position index.</p>
-<h2 id="Why-Self-Attention">Why Self-Attention</h2>
-<ul>
-<li>Total computational complexity per layer</li>
-<li>The amount of computation that can be parallelized</li>
-<li>The path length between long-range dependencies in the network</li>
-</ul>
-<p><img src="max.png" alt="max"></p>
-<h2 id="The-paper">The paper</h2>
+<p><img src="Fig1.png" alt="Fig1"></p>
+<p>Previous research for different forecasting tasks fall into three typical paradigms：</p>
+<ol>
+<li><strong>Spatial-first modeling</strong></li>
+<li><strong>Temporal-first modeling</strong></li>
+<li><strong>Spatio-temporal synchronous modeling</strong></li>
+</ol>
+<p>However, the distribution of ST dependencies varies and depends on the forecasting task and corresponding datasets. They are mixed in a compound way when modeling ST sequences, and the three tasks in Fig.1(b) are the representative ones. What makes it worse is that, the prevalent modeling methods show anisotropic tendency to capture the ST dependency. If we use the spatial-first models on the three tasks in Fig.2(b), the task 1’s states are highly influenced by the surrounding information, and the periodic pattern is the underlying factors, which makes the spatial-first model fits it properly.</p>
+<p>We can compare the model ability (red lines) with the ideal one in Fig.2(a), this kind of model will be insuffificient for task 2 and task 3. Similarly, suppose we use the temporal-first models on the three tasks in Fig.2©. In that case, the model ability only matches task 3, where the periodic pattern decides the states other than the spatial information. The previous analysis also applies to the spatio-temporal synchronous situation, where the states are mainly influenced by the complex associations across the spatial and temporal, like semantic relationships. In this paper, we aim to propose a universal model that alleviates the the modeling gap on different tasks.</p>
+<p><img src="Fig2.png" alt="Fig2"></p>
+<p>The contributions are:</p>
+<ol>
+<li>The first to raise and address the modeling order problem in spatio-temporal forecasting tasks by proposing a universal modeling framework UniST and an automatic structure search strategy AutoST.</li>
+<li>Proposing 3 replacable and unified attention-based modeling units named S2T,T2S and STS, which model spatio-time sequence with three different priorities: spatial first, temporal first and spatio-temporal synchronous.</li>
+<li>Extensive experiments on 5 datasets and 3 sequence forecasting tasks demonstrate that only using our three modeling units outperforms the baseline methods, and our framework together with AutoST achieves the new state-of-the-art performance.</li>
+</ol>
+<h2 id="Related-Work">Related Work</h2>
+<p><strong>Spatial-first</strong>:</p>
+<ol>
+<li>STG2Seq</li>
+<li>STGCN</li>
+<li>DCRNN</li>
+</ol>
+<p><strong>Temporal-first:</strong></p>
+<ol>
+<li>Graph WaveNet</li>
+<li>GSTNet</li>
+</ol>
+<p><strong>Spatio-temporal synchronous:</strong></p>
+<ol>
+<li>STSGCN</li>
+<li>STFGNN</li>
+<li>ST-ResNet</li>
+<li>ASTGCN</li>
+</ol>
+<h2 id="Preliminary">Preliminary</h2>
+<h3 id="Spatio-temporal-Sequence-Forecasting">Spatio-temporal Sequence Forecasting</h3>
+<p>Spatio-temporal Sequence Forecasting is to predict the future sequence of spatio-temporal inputs based on the historical observations.</p>
+<p>Given a graph $G = (V,E,A)$, where $V$ and $E$ are the node set and edge set, and $N$ is the number of nodes, $A \in \mathbb{R} ^{N \times N}$ is the adjacency matrix of $G$. $X =${$X _1,X _2,…,X _T$} is a ST sequence of $T$ time steps, where $X \in \mathbb{R} ^{T \times N \times C}$. The problem can be defined as:</p>
+<p>$$[X _{(t-S):t},G]\overset{f}{\rightarrow}X _{(t+1):(t+P)}$$</p>
+<h3 id="Network-Architecture-Search">Network Architecture Search</h3>
+<p>DARTS is the foundation of existing Auto ST-forecasting research, the objective function is:</p>
+<p>$$\underset{\alpha}{min} L _{val} (w ^\ast(\alpha),\alpha) \quad s.t. w ^\ast (\alpha) = \underset{w}{argmin} L _{train} (w,\alpha)$$</p>
+<p>where $\alpha$ is the architecture, and $w$ is the model weights.</p>
+<h2 id="Methods">Methods</h2>
+<ol>
+<li>Introduce two basic modeling units: the time series linear self-attention and the high order mix graph convolution</li>
+<li>Propose three layers as different network backbones and build a universal modeling framework based on the three “atomic” layers</li>
+<li>Propose an automatic searching strategy for spatio-temporal information fusion, which aimed for the optimal order of spatio-temporal modeling on various downstream tasks</li>
+</ol>
+<h3 id="Spatial-Temporal-Modeling-Unit">Spatial/Temporal Modeling Unit</h3>
+<h4 id="Time-Series-Linear-Self-Attention">Time Series Linear Self-Attention</h4>
+<p>Use the linear self-attention mechanism to decrease the time  and space complexity:</p>
+<p>$$V _i’ = \frac{\phi(Q _i) ^T \displaystyle\sum _{j=1} ^{N} \phi (K _j) V _j ^T }{\phi(Q _i) ^T \displaystyle\sum _{j=1} ^{N} \phi (K _j)}$$</p>
+<p>where $\phi(\cdot)$ is a row-wise feature map.</p>
+<h4 id="High-order-Mix-Graph-Convolution">High-order Mix Graph Convolution</h4>
+<p>To acquire better spatial information representation, we propose a high-order mix graph convolutional operation for spatial information mixing and feature extraction of the original inputs:</p>
+<p>$$HighOrder(X, A, order) \overset{def}{=} H ^{order} = \begin{cases} X \quad order=0\\MixGC(X,A) \quad order=1\\ MixGC(H ^{(order-1)}A) \quad order&gt;1 \end{cases}$$</p>
+<p>$$MixGC(X,A)=ChebNet(X,A) + AdapDC(X,A)$$</p>
+<p>$$ = \hat{A}XW _g + P _f X W _f +P _b X W _b + \hat{A} _{adp} X W _{adp}$$</p>
+<p>$$\hat{A}=D ^{-\frac{1}{2}}\tilde{A}D ^{-\frac{1}{2}},\tilde{A}=A + I, D _{ii} = \sum _j \tilde{A} _{ij}$$</p>
+<p>$P _f = \frac{A}{rowsum(A)},P _b = \frac{A ^T}{rowsum(A ^T)}$ refers to a forward and backward state transition matrix. $\hat{A} _{adp} = Softmax(ReLU(E _1 E _2 ^T))$ is an adaptive matrix for complementary spatial state information.</p>
+<p>$order$ denotes the total order of graph convolution operations, i.e., to consider <em>order-hop</em> neighbor relationship of each node.</p>
+<h3 id="Unified-Spatio-temporal-Modeling-Backbone">Unified Spatio-temporal Modeling Backbone</h3>
+<p>In order to solve the problem of spatio-temporal dependency distribution differences in the modeling procedure, we first propose three novel modules: <em>S2T Layer</em>, <em>T2S Layer</em>, <em>STS Layer</em>, that are suitable for three typical spatio-temporal dependencies: spatial-first, temporal-first, spatio-temporal synchronous, respectively. We design all these three modeling module to have the same dimension of inputs and outputs. This provides a solid foundation for our later flexible and universal modeling.</p>
+<p><img src="Fig3.png" alt="Fig3"></p>
+<h4 id="Spatial-first-Modeling-Layer">Spatial-first Modeling Layer</h4>
+<p>S2T Layer models from spatial to temporal.</p>
+<p>$$Q = X _{L-1} W _Q$$</p>
+<p>$$K=HighOrder _1(X _{L-1},A,order) W _K,V = HighOrder _2(X _{L-1},A,order)W _V$$</p>
+<p>$$Z = Attention(Q,K,V)$$</p>
+<p>$$X ^L = Norm(max(0,Norm(Z +X _{L-1})W _1 +b _1)W _2 +b _2)$$</p>
+<h4 id="Temporal-first-Modeling-Layer">Temporal-first Modeling Layer</h4>
+<p>T2S Layer models the ST sequence from temporal to spatial.</p>
+<p>$$Q = X _{L-1} W _Q , K= X _{L-1}W _K, V = X _{L-1} W _V$$</p>
+<p>$$Z’ = HighOrder(Z,A,order)$$</p>
+<p>$$X ^L = Norm(max(0,Norm(Z’ +X _{L-1})W _1 +b _1)W _2 +b _2)$$</p>
+<h4 id="Spatial-temporal-Synchronous-Layer">Spatial-temporal Synchronous Layer</h4>
+<p>STS Layer aims to model the spatial and temporal information simultaneously.</p>
+<p>$$Q = X _{L-1} W _Q , K= X _{L-1}W _K, V = X _{L-1} W _V$$</p>
+<p>$$Temporal \leftarrow Z _1 = Attention(Q,K,V)$$</p>
+<p>$$Spatial \leftarrow Z _2 = HighOrder(X _{L-1},A,order)$$</p>
+<p>$$Z’ = concat[Z _1,Z _2]$$</p>
+<p>$$X ^L = Norm(max(0,Norm(Z’ +X _{L-1})W _1 +b _1)W _2 +b _2)$$</p>
+<h3 id="Universal-Modeling-Framework">Universal Modeling Framework</h3>
+<p>Propose a unified ST sequence modeling framework (UniST) with the proposed unified modeling backbone as follows:</p>
+<p><img src="Fig4.png" alt="Fig4"></p>
+<h4 id="Spatio-temporal-Embedding-Layer">Spatio-temporal Embedding Layer</h4>
 
 
 	<div class="row">
-    <embed src="Transformer.pdf" width="100%" height="550" type="application/pdf">
+    <embed src="A.pdf" width="100%" height="550" type="application/pdf">
 	</div>
 
 
 
-<h2 id="attention-mechanism-knowledege-in-nndlbook（writen-by-professor-Xipeng-Qiu）">attention-mechanism knowledege in nndlbook（writen by professor Xipeng Qiu）</h2>
+<p><strong>Fusion embedding</strong></p>
+<p>$$E _F = E _P + E _V + E _S +E _T$$</p>
+<p>they will be replicated and expanded with broadcast on the respective missing dimensions.</p>
+<h4 id="Encoder">Encoder</h4>
+<p>The encoder of UniST consists of multiple Spatio-Temporal Extractors $STE(\cdot)$, which can be arbitrarily chosen from {<em>T2S Layer</em>, <em>S2T Layer</em>, <em>STS Layer</em>}. All extractors are connected end to end, i.e., the output of the previous one is the input of the next one. To acquire a more diversity representation, the outputs of each extractor are added to form the final output of the encoder. Let the outputs of the embedding layer be $X _0$, the encoder is computed as:</p>
+<p>$X _{en}=\sum _{i=1} ^L STE ^i (X _0)$, where <em>L</em> refers to the number of spatio-temporal extractors.</p>
+<h4 id="Decoder">Decoder</h4>
+<p>The decoder accepts the output of encoder, i.e., <em>L</em> outputs from <em>L</em> spatio-temporal extractors. They are firstly added as a unified spatio-temporal representation. Then the results are through two times of ReLU activation and Linear projection, and produce the final sequence forecasting result. Denote $X _{\mathcal{l}}$ as the output of extractor $\mathcal{l}$, we have the calculation of decoder as:</p>
+<p>$$\bar{Y}=X _{de}=Linear(ReLU(Linear(ReLU(\sum _\mathcal{l}X _\mathcal{l}))))$$</p>
+<h3 id="Automated-Search-for-UniST">Automated Search for UniST</h3>
+<p>With the proposed unifified ST sequence modeling framework UniST, it still suffers from the potential wrong network configuration problem, where we build an arbitrary modeling order with the replaceable model units {<em>T2S Layer</em>, <em>S2T Layer</em>, <em>STS Layer</em>}. Considering the various downstream tasks, how can we build a universal model with an optimal configuration? Here we propose the Automated Spatio-Temporal modeling approach (AutoST), which learns the optimal combinatorial order that suits the spatio-temporal dependency of the current task. We designed two schemes for layer combination. In this section, we first define the basic searching unit of AutoST, then we introduce two designs of AutoST with different searching schemes.</p>
+<h4 id="AutoST-Cell">AutoST Cell</h4>
+<p><img src="Fig5.png" alt="Fig5"></p>
+<p>Use the manner proposed in DARTS:</p>
+<p>$$H ^j = \displaystyle\sum _{i&lt;j}\sum _{o \in O} \frac{exp(\alpha _o ^{(i,j)})}{\sum _{o’ \in O}exp(\alpha _{o’} ^{(i,j)})}o(H ^i)$$</p>
+<p><img src="Fig6.png" alt="Fig6"></p>
+<h2 id="Experiments">Experiments</h2>
+<p><img src="Tab1.png" alt="Tab1"></p>
+<h2 id="The-paper">The paper</h2>
 
 
 	<div class="row">
-    <embed src="nndl.pdf" width="100%" height="550" type="application/pdf">
+    <embed src="AutoST_2.pdf" width="100%" height="550" type="application/pdf">
 	</div>
 
 
@@ -553,13 +603,9 @@
         <!-- Pager -->
         <ul class="pager">
           
-          <li class="previous">
-            <a href="/en/ST-GRAT/" data-toggle="tooltip" data-placement="top" title="ST-GRAT:A Novel Spatio-temporal Graph Attention Network for Accurately Forecasting Dynamically Changing Road Speed">&larr; Previous Post</a>
-          </li>
-          
           
           <li class="next">
-            <a href="/cn/Graph_WaveNet/" data-toggle="tooltip" data-placement="top" title="Graph WaveNet for Deep Spatial-Temporal Graph Modeling">Next Post &rarr;</a>
+            <a href="/en/AutoSTG/" data-toggle="tooltip" data-placement="top" title="AutoSTG:Neural Architecture Search for Predictions of Spatio-Temporal Graphs">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -608,7 +654,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=Attention Is All You Need&body=Hi,I found this website and thought you might like it http://yoursite-url/en/Transformer_Attention Is All You Need/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=AutoST:Towards the Universal Modeling of Spatio-temporal Sequences&body=Hi,I found this website and thought you might like it http://yoursite-url/en/AutoST_2/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -643,7 +689,7 @@
       repo: 'blogcomment',
       owner: 'ccloud0525',
       admin: 'ccloud0525',
-      id: 'Thu Feb 02 2023 16:00:00 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Mon Mar 06 2023 22:15:00 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -696,7 +742,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Introduction"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Introduction</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Background"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Background</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Model-Architecture"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Model Architecture</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Encoder-and-Decoder-Stacks"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">Encoder and Decoder Stacks</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Attention"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">Attention</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Scaled-Dot-Product-Attention"><span class="toc-nav-number">3.2.1.</span> <span class="toc-nav-text">Scaled Dot-Product Attention</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Mulit-Head-Attention"><span class="toc-nav-number">3.2.2.</span> <span class="toc-nav-text">Mulit-Head Attention</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Applications-of-Attention-in-our-Model"><span class="toc-nav-number">3.2.3.</span> <span class="toc-nav-text">Applications of Attention in our Model</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Position-wise-Feed-Forward-Networks"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">Position-wise Feed-Forward Networks</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Embeddings-and-Softmax"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">Embeddings and Softmax</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Positional-Encoding"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">Positional Encoding</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Why-Self-Attention"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Why Self-Attention</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#The-paper"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">The paper</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#attention-mechanism-knowledege-in-nndlbook%EF%BC%88writen-by-professor-Xipeng-Qiu%EF%BC%89"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">attention-mechanism knowledege in nndlbook（writen by professor Xipeng Qiu）</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Introduction"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Introduction</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Related-Work"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Related Work</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Preliminary"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Preliminary</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Spatio-temporal-Sequence-Forecasting"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">Spatio-temporal Sequence Forecasting</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Network-Architecture-Search"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">Network Architecture Search</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Methods"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Methods</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Spatial-Temporal-Modeling-Unit"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">Spatial&#x2F;Temporal Modeling Unit</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Time-Series-Linear-Self-Attention"><span class="toc-nav-number">4.1.1.</span> <span class="toc-nav-text">Time Series Linear Self-Attention</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#High-order-Mix-Graph-Convolution"><span class="toc-nav-number">4.1.2.</span> <span class="toc-nav-text">High-order Mix Graph Convolution</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Unified-Spatio-temporal-Modeling-Backbone"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">Unified Spatio-temporal Modeling Backbone</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Spatial-first-Modeling-Layer"><span class="toc-nav-number">4.2.1.</span> <span class="toc-nav-text">Spatial-first Modeling Layer</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Temporal-first-Modeling-Layer"><span class="toc-nav-number">4.2.2.</span> <span class="toc-nav-text">Temporal-first Modeling Layer</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Spatial-temporal-Synchronous-Layer"><span class="toc-nav-number">4.2.3.</span> <span class="toc-nav-text">Spatial-temporal Synchronous Layer</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Universal-Modeling-Framework"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">Universal Modeling Framework</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Spatio-temporal-Embedding-Layer"><span class="toc-nav-number">4.3.1.</span> <span class="toc-nav-text">Spatio-temporal Embedding Layer</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Encoder"><span class="toc-nav-number">4.3.2.</span> <span class="toc-nav-text">Encoder</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Decoder"><span class="toc-nav-number">4.3.3.</span> <span class="toc-nav-text">Decoder</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Automated-Search-for-UniST"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">Automated Search for UniST</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#AutoST-Cell"><span class="toc-nav-number">4.4.1.</span> <span class="toc-nav-text">AutoST Cell</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Experiments"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">Experiments</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#The-paper"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">The paper</span></a></li></ol>
         
         </div>
       </aside>
@@ -719,7 +765,7 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#注意力机制" title="注意力机制">注意力机制</a>
+            <a class="tag" href="/tags/#自动机器学习" title="自动机器学习">自动机器学习</a>
             
           </div>
         </section>
