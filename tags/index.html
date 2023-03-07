@@ -247,17 +247,6 @@
           
           
           <li>
-            <a href="/categories/">
-              
-              CATEGORIES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
             <a href="/about/">
               
               ABOUT
@@ -283,6 +272,17 @@
             <a href="/tags/">
               
               TAGS
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
               
               
             </a>
@@ -483,11 +483,11 @@
         
         <a href="#hpl" title="hpl" rel="1">hpl</a>
         
-        <a href="#maths" title="maths" rel="1">maths</a>
-        
         <a href="#Linux" title="Linux" rel="1">Linux</a>
         
         <a href="#Nginx" title="Nginx" rel="1">Nginx</a>
+        
+        <a href="#maths" title="maths" rel="1">maths</a>
         
         <a href="#注意力机制" title="注意力机制" rel="5">注意力机制</a>
         
@@ -696,21 +696,6 @@
         <hr>
         
         <div class="post-preview">
-          <a href="/en/AutoST_2/">
-            <h2 class="post-title">
-              AutoST:Towards the Universal Modeling of Spatio-temporal Sequences
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              An introduction to AutoST
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
           <a href="/en/DARTS/">
             <h2 class="post-title">
               DARTS:Differentiable Architecture Search
@@ -719,6 +704,21 @@
             
             <h3 class="post-subtitle">
               An introduction to DARTS
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/en/AutoST_2/">
+            <h2 class="post-title">
+              AutoST:Towards the Universal Modeling of Spatio-temporal Sequences
+              
+            </h2>
+            
+            <h3 class="post-subtitle">
+              An introduction to AutoST
             </h3>
             
           </a>
@@ -971,30 +971,6 @@
       </div>
       
       <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="maths">
-          <span class="tag-text">maths</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/深入理解傅里叶变换/">
-            <h2 class="post-title">
-              深入理解傅里叶变换
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              傅里叶变换内在解构
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
         <span class="fa fa-tag listing-seperator" id="Linux">
           <span class="tag-text">Linux</span>
         </span>
@@ -1034,6 +1010,30 @@
             
             <h3 class="post-subtitle">
               微信小程序项目部署
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="maths">
+          <span class="tag-text">maths</span>
+        </span>
+        
+        <div class="post-preview">
+          <a href="/cn/深入理解傅里叶变换/">
+            <h2 class="post-title">
+              深入理解傅里叶变换
+              
+              -- cn
+              
+            </h2>
+            
+            <h3 class="post-subtitle">
+              傅里叶变换内在解构
             </h3>
             
           </a>
@@ -1623,5 +1623,22 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+</body>
 </html>
