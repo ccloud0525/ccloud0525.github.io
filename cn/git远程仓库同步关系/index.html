@@ -247,9 +247,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              关于
+              归档
               
               
             </a>
@@ -258,9 +258,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              归档
+              关于
               
               
             </a>
@@ -408,7 +408,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">633</span> In Total
+              Words <span class="post-count">635</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -473,17 +473,16 @@
         <blockquote>
 <p>本文区分了三个比较容易混淆的分支</p>
 </blockquote>
-<h2 id="远程分支">远程分支</h2>
-<p>远程分支指的是Github或者Gitlab这种基于git做版本管理的远程仓库中的项目的分支。</p>
-<h2 id="远程跟踪分支">远程跟踪分支</h2>
-<p>《progit》中提出的概念，虽然叫远程跟踪，但实际在本地。当使用 git fetch命令时，git比较远程仓库和本地仓库的差异，并且将远程仓库的分支拉取下来，保存为形如origin/master的本地只读分支（这就是远程跟踪分支）。所谓只读，就是只起到标识最后一次通信时远程仓库的分支情况（相当于在本地的拷贝上标识），这些跟踪分支的只读性体现在他们并不能修改和产生新的提交（因为只用作标识远程的情况）。</p>
-<h2 id="跟踪分支">跟踪分支</h2>
-<p>跟踪分支和远程跟踪分支一起使用，远程跟踪分支才能被最大化利用。因为远程跟踪分支只是本地只读分支，而fetch只是更新远程跟踪分支，所以要把最新一次通信后远程的更改和本地的分支合并，就必须配合merge命令，例如将远程分支上master最新的更改合并到本地master的流程为：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">先fetch，将更新同步到本地远程跟踪分支origin/master</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git fetch origin</span></span><br><span class="line"><span class="meta">#</span><span class="bash">然后合并</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git checkout master</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git merge origin/master</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">这是一般的做法，如果要实现自动化，则引入跟踪分支</span></span><br></pre></td></tr></table></figure>
-<p>跟踪分支从远程跟踪分支上创建而出，由于git的数据模型近似于链表，创建新分支相当于创建新指针，所以基于远程跟踪分支创建跟踪分支性价比很高，并不会增加额外的空间，只是在origin/test当前指向的提交上再创建一根指针，且该分支是可写的（因为就是纯粹的可读写本地分支）。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">创建方法为</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git checkout --track origin/<span class="built_in">test</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">可以自动创建<span class="built_in">test</span>的本地跟踪分支</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">或者</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git checkout -b <span class="built_in">test</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch -u origin/<span class="built_in">test</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">使用跟踪分支后可以通过以下命令比较跟踪分支和远程跟踪分支的版本关系（进一步反应和远程分支之间的关系（领先/落后的提交数））</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch -vv</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">同时可以使用pull命令实现自动化拉取合并，与上述的fetch+merge在大部分情况下一致</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git pull origin</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="progit">progit</h2>
+<h2 id="远程分支"><a href="#远程分支" class="headerlink" title="远程分支"></a>远程分支</h2><p>远程分支指的是Github或者Gitlab这种基于git做版本管理的远程仓库中的项目的分支。</p>
+<h2 id="远程跟踪分支"><a href="#远程跟踪分支" class="headerlink" title="远程跟踪分支"></a>远程跟踪分支</h2><p>《progit》中提出的概念，虽然叫远程跟踪，但实际在本地。当使用 git fetch命令时，git比较远程仓库和本地仓库的差异，并且将远程仓库的分支拉取下来，保存为形如origin&#x2F;master的本地只读分支（这就是远程跟踪分支）。所谓只读，就是只起到标识最后一次通信时远程仓库的分支情况（相当于在本地的拷贝上标识），这些跟踪分支的只读性体现在他们并不能修改和产生新的提交（因为只用作标识远程的情况）。</p>
+<h2 id="跟踪分支"><a href="#跟踪分支" class="headerlink" title="跟踪分支"></a>跟踪分支</h2><p>跟踪分支和远程跟踪分支一起使用，远程跟踪分支才能被最大化利用。因为远程跟踪分支只是本地只读分支，而fetch只是更新远程跟踪分支，所以要把最新一次通信后远程的更改和本地的分支合并，就必须配合merge命令，例如将远程分支上master最新的更改合并到本地master的流程为：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">先fetch，将更新同步到本地远程跟踪分支origin/master</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git fetch origin</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">然后合并</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git checkout master</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git merge origin/master</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">这是一般的做法，如果要实现自动化，则引入跟踪分支</span></span><br></pre></td></tr></table></figure>
 
+
+<p>跟踪分支从远程跟踪分支上创建而出，由于git的数据模型近似于链表，创建新分支相当于创建新指针，所以基于远程跟踪分支创建跟踪分支性价比很高，并不会增加额外的空间，只是在origin&#x2F;test当前指向的提交上再创建一根指针，且该分支是可写的（因为就是纯粹的可读写本地分支）。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">创建方法为</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git checkout --track origin/test</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">可以自动创建<span class="built_in">test</span>的本地跟踪分支</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">或者</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git checkout -b <span class="built_in">test</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git branch -u origin/test</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">使用跟踪分支后可以通过以下命令比较跟踪分支和远程跟踪分支的版本关系（进一步反应和远程分支之间的关系（领先/落后的提交数））</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git branch -vv</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">同时可以使用pull命令实现自动化拉取合并，与上述的fetch+merge在大部分情况下一致</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git pull origin</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="progit"><a href="#progit" class="headerlink" title="progit"></a>progit</h2>
 
 	<div class="row">
     <embed src="progit.pdf" width="100%" height="550" type="application/pdf">
@@ -1241,22 +1240,5 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-
-</body>
+	</body>
 </html>

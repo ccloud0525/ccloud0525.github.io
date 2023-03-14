@@ -247,9 +247,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              关于
+              归档
               
               
             </a>
@@ -258,9 +258,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              归档
+              关于
               
               
             </a>
@@ -489,10 +489,8 @@
       
 本文区分了三个比较容易混淆的分支
 
-远程分支
-远程分支指的是Github或者Gitlab这种基于git做版本管理的远程仓库中的项目的分支。
-远程跟踪分支
-《progit》中提出的概念，虽然叫远程跟踪，但实际在本地。当使用 git fetch命令时，git比较远程仓库和本地仓库的差异，并且将远程仓库的分支拉取下来，保存为形如origin/master的本地只读分支（这就是远程跟踪分支）。所谓......
+远程分支远程分支指的是Github或者Gitlab这种基于git做版本管理的远程仓库中的项目的分支。
+远程跟踪分支《progit》中提出的概念，虽然叫远程跟踪，但实际在本地。当使用 git fetch命令时，git比较远程仓库和本地仓库的差异，并且将远程仓库的分支拉取下来，保存为形如origin&#x2F;master的本地只读分支（这就是远程跟踪分支）......
     </div>
   </a>
   
@@ -528,8 +526,7 @@
       
 本文详细介绍了如何利用docker容器配置节点，模拟集群情况
 
-镜像下载+配置
-12345678910111213$ sudo docker pull centos:centos7$ sudo run -it --name cen centos:centos7# yum需要换源(centos8才需要)$ cd /etc/yum.repos.d$ sed -i &#x27;s/mirrorl......
+镜像下载+配置12345678910111213$ sudo docker pull centos:centos7$ sudo run -it --name cen centos:centos7# yum需要换源(centos8才需要)$ cd /etc/yum.repos.d$ sed -i &#x27;s/mirrorli......
     </div>
   </a>
   
@@ -567,8 +564,7 @@
       
 接上文通过docker容易配置多节点模拟集群，本文进一步进行HPL测试
 
-安装MPICH
-123456789101112131415# 下载mpich的源码$ wget --no-check-certificate https://www.mpich.org/static/downloads/3.3rc1/mpich-3.3rc1.tar.gz$ tar zxvf mpich-3.3rc1......
+安装MPICH123456789101112131415# 下载mpich的源码$ wget --no-check-certificate https://www.mpich.org/static/downloads/3.3rc1/mpich-3.3rc1.tar.gz$ tar zxvf mpich-3.3rc1.......
     </div>
   </a>
   
@@ -1364,22 +1360,5 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-
-</body>
+	</body>
 </html>

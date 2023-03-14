@@ -247,9 +247,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              关于
+              归档
               
               
             </a>
@@ -258,9 +258,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              归档
+              关于
               
               
             </a>
@@ -410,7 +410,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">2.3k</span> In Total
+              Words <span class="post-count">2.4k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -475,20 +475,17 @@
         <blockquote>
 <p>本文详细介绍了论文STGCN:Spacial Temporal Graph Convolutional Network</p>
 </blockquote>
-<h2 id="引言">引言</h2>
-<ul>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><ul>
 <li>实时而精准的交通预测对于交通管控非常重要。</li>
 <li>由于非线性性和复杂性，传统方法没法满足中长期的预测任务并且总是忽视时空依赖关系。</li>
 <li>STGCN(Spatio-Temporal Graph Convolutional Networks)被提出用来解决以上两个痛点。</li>
 <li>摒弃过去的常规卷积和循环单元，在图上重新构建完整的卷积结构，起到减少参数，加速训练的效果。</li>
 <li>实验表明STGCN可以通过建模多规模的交通网络捕获时空关系并持续在现实世界的交通数据集上表现出state-of-the-art级别的效果。</li>
 </ul>
-<h2 id="介绍">介绍</h2>
-<ul>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
 <li>随着交通需求的日益增长，交通服务例如流量控制，路线规划等高度依赖于高质量的交通情况评估。故而，多规模的交通预测是交通管控和导引的基础，且作为智能交通系统(ITS)的核心功能。</li>
 <li>速度、容量、密度被选为基础的交通流量监视的指标，用以预测未来情况，但是传统的方法例如线性回归只适用于短期预测但是却不适用于具备高度不确定性和复杂性的长期交通流预测。</li>
-<li>中长周期的交通预测根据方法可以被分为两个范畴——动态建模和数据驱动。
-<ul>
+<li>中长周期的交通预测根据方法可以被分为两个范畴——动态建模和数据驱动。<ul>
 <li>动态建模用微分方程和物理学方法作为工具来规划交通问题通过计算仿真。但是达到一个稳定的状态需要复杂的系统编程以及大量的算力，并且建模过程中非实践性的假设以及简化会降低预测的准确性。因此随着数据的增加，方法逐渐转向数据驱动的方法。</li>
 <li>数据驱动的方法包括经典统计学方法以及机器学习建模，在时序分析中，一体化自回归均值逼近(ARIMA)方法是基于经典统计学的主要方法，但是这种方法受限于固定的时序假设且不考虑时空关联性，故而在处理高度非线性的交通流时表达效果有限</li>
 <li>而基于深度学习的方法虽然被广泛采用，但这些稠密网络同时提取时空特征较为困难</li>
@@ -497,58 +494,48 @@
 <li>为了充分利用空间特征，一些研究者采用卷积神经网络(CNN)捕获相邻关系，同时在时间序列上使用循环神经网络(RNN)。一种用于短期时序预测的架构CLTFP被提出。但是问题在于需要迭代训练，每一步都会积累误差且基于RNN的网络训练困难</li>
 <li>提出一个新颖的深度学习框架——STGCN。包含了时空卷积块和卷积序列学习层，用于建模时空关联。首次应用纯卷积结构从图结构的时间序列中同时提取时空关系。</li>
 </ul>
-<h2 id="初步准备">初步准备</h2>
-<h3 id="道路图上的交通预测">道路图上的交通预测</h3>
-<p>交通预测是经典的时序预测问题，通过已有交通指标（速度或流量）根据已知的M个观测预测未来H步：</p>
-<p>$$\hat{V_{t+1}},…,\hat{V_{t+H}}=argmax_{V_{t+1}…,V_{t+H}}logP(V_{t+1},…,V_{t+H}|V_{t-M+1},…,V_t)$$</p>
+<h2 id="初步准备"><a href="#初步准备" class="headerlink" title="初步准备"></a>初步准备</h2><h3 id="道路图上的交通预测"><a href="#道路图上的交通预测" class="headerlink" title="道路图上的交通预测"></a>道路图上的交通预测</h3><p>交通预测是经典的时序预测问题，通过已有交通指标（速度或流量）根据已知的M个观测预测未来H步：</p>
+<p>$$\hat{V_{t+1}},…,\hat{V_{t+H}}&#x3D;argmax_{V_{t+1}…,V_{t+H}}logP(V_{t+1},…,V_{t+H}|V_{t-M+1},…,V_t)$$</p>
 <p>$V_t$是在时间戳t观察到的n个路段的信息（流量），每一维度都是一个单独的路段的信息</p>
 <p><img src="%E5%9B%BE%E7%BB%93%E6%9E%84.png" alt="图结构.png"></p>
-<p>上述表明$V_t$是t时刻的图结构，$\mathcal{G}=(\mathcal{V_t},\epsilon,W)$，$\mathcal{V_t}$是顶点集，分别代表n个路段观测站的观测数据，$\epsilon$代表边集，表明这些观测站间的联系，W则代表边的权重矩阵</p>
-<h3 id="图上卷积">图上卷积</h3>
-<p>有两个基础的方法用于泛化CNN为结构化数据形式。一种是去扩展卷积的空间定义，一种是用图傅里叶变换去操作谱域。前者重新分配顶点到特定的可以被常规卷积操作的结构中，后者引入谱框架，在谱域上应用谱图卷积。</p>
-<p>$$\Theta \ast _\mathcal{G}x=\Theta(L)x=\Theta(U\Lambda U^T)x=U\Theta(\Lambda)U^Tx$$</p>
+<p>上述表明$V_t$是t时刻的图结构，$\mathcal{G}&#x3D;(\mathcal{V_t},\epsilon,W)$，$\mathcal{V_t}$是顶点集，分别代表n个路段观测站的观测数据，$\epsilon$代表边集，表明这些观测站间的联系，W则代表边的权重矩阵</p>
+<h3 id="图上卷积"><a href="#图上卷积" class="headerlink" title="图上卷积"></a>图上卷积</h3><p>有两个基础的方法用于泛化CNN为结构化数据形式。一种是去扩展卷积的空间定义，一种是用图傅里叶变换去操作谱域。前者重新分配顶点到特定的可以被常规卷积操作的结构中，后者引入谱框架，在谱域上应用谱图卷积。</p>
+<p>$$\Theta \ast _\mathcal{G}x&#x3D;\Theta(L)x&#x3D;\Theta(U\Lambda U^T)x&#x3D;U\Theta(\Lambda)U^Tx$$</p>
 <p><img src="%E8%B0%B1%E5%9B%BE%E5%8D%B7%E7%A7%AF.png" alt="谱图卷积.png"></p>
-<p>一些必要的前置文章如下:<br>
-<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/368878987">图拉普拉斯矩阵的推导</a></p>
+<p>一些必要的前置文章如下:<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/368878987">图拉普拉斯矩阵的推导</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/137791565">谱域卷积与拉普拉斯</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/137897522">图傅里叶变换</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/138213902">图上卷积操作和SCNN模型</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/138420723">图谱卷积之ChebNet/PyTorch实现</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/138686535">图谱卷积之GCN/PyTorch实现/系列</a></p>
-<h2 id="模型提出">模型提出</h2>
-<h3 id="网络架构">网络架构</h3>
-<p>STGCN由顺序时空卷积块(ST块)组成，并且每个卷积块内部结构是”三明治“式的，两侧由两个门卷积层组成，中间由一个时空图卷积层共同构成。</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/138420723">图谱卷积之ChebNet&#x2F;PyTorch实现</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/138686535">图谱卷积之GCN&#x2F;PyTorch实现&#x2F;系列</a></p>
+<h2 id="模型提出"><a href="#模型提出" class="headerlink" title="模型提出"></a>模型提出</h2><h3 id="网络架构"><a href="#网络架构" class="headerlink" title="网络架构"></a>网络架构</h3><p>STGCN由顺序时空卷积块(ST块)组成，并且每个卷积块内部结构是”三明治“式的，两侧由两个门卷积层组成，中间由一个时空图卷积层共同构成。</p>
 <p><img src="STGCN%E7%BB%93%E6%9E%84.png" alt="STGCN结构.png"></p>
-<h3 id="用图CNN提取空间特征">用图CNN提取空间特征</h3>
-<p>使用卷积神经网络提取特征的过程可以看成是根据已有数据训练卷积核（特征），在图神经网络中也是如此。训练目标是卷积核$\Theta$，为了优化计算速度并减少参数，使用切比雪夫多项式逼近卷积核，可以将卷积核视为和图拉普拉斯矩阵（L）相关的函数：</p>
-<p>$$\Theta(\Lambda)=\sum_{k=0}^{K-1}\theta_k\Lambda^k$$</p>
+<h3 id="用图CNN提取空间特征"><a href="#用图CNN提取空间特征" class="headerlink" title="用图CNN提取空间特征"></a>用图CNN提取空间特征</h3><p>使用卷积神经网络提取特征的过程可以看成是根据已有数据训练卷积核（特征），在图神经网络中也是如此。训练目标是卷积核$\Theta$，为了优化计算速度并减少参数，使用切比雪夫多项式逼近卷积核，可以将卷积核视为和图拉普拉斯矩阵（L）相关的函数：</p>
+<p>$$\Theta(\Lambda)&#x3D;\sum_{k&#x3D;0}^{K-1}\theta_k\Lambda^k$$</p>
 <p>其中$\theta \in \mathbb{R}^K $是矩阵多项式的系数。传统意义上来说，切比雪夫多项式$T_k(x)$用于截断膨胀估计：</p>
-<p>$$\Theta(\Lambda)\approx\sum_{k=0}^{K-1}\theta_kT_k(\hat\Lambda)$$，其中$\hat\Lambda$是一个调整值：$$\hat\Lambda=2\Lambda/\lambda_{max}-I_n(\lambda_{max}表示L最大的特征值)$$</p>
+<p>$$\Theta(\Lambda)\approx\sum_{k&#x3D;0}^{K-1}\theta_kT_k(\hat\Lambda)$$，其中$\hat\Lambda$是一个调整值：$$\hat\Lambda&#x3D;2\Lambda&#x2F;\lambda_{max}-I_n(\lambda_{max}表示L最大的特征值)$$</p>
 <p>故而图卷积可以重写为：</p>
-<p>$$\Theta \ast_\mathcal{G} x=\Theta(L)x\approx\sum_{k=0}^{k-1}\theta_kT_k(\hat{L})x$$</p>
+<p>$$\Theta \ast_\mathcal{G} x&#x3D;\Theta(L)x\approx\sum_{k&#x3D;0}^{k-1}\theta_kT_k(\hat{L})x$$</p>
 <p>这是由于</p>
-<p>$$\Theta \ast_\mathcal{G} x=\Theta(L)x=\Theta(U\Lambda U^T)x=U\Theta(\Lambda)U^Tx\approx U\sum_{k=0}^{K-1}\theta_k\Lambda^kU^Tx=\sum_{k=0}^{K-1}\theta_kU\Lambda^kU^Tx=\sum_{k=0}^{K-1}\theta_k(U\Lambda U^T)^kx=\sum_{k=0}^{K-1}\theta_k(L)^kx\approx\sum_{k=0}^{k-1}\theta_kT_k(\hat{L})x$$</p>
-<p>其中$T_k(\hat{L})\in\mathbb{R}^{n\times n}$是切比雪夫多项式在重新调整过的拉普拉斯矩阵（$\hat{L}=2L/\lambda_{max}-I_n$）上的k阶值.</p>
+<p>$$\Theta \ast_\mathcal{G} x&#x3D;\Theta(L)x&#x3D;\Theta(U\Lambda U^T)x&#x3D;U\Theta(\Lambda)U^Tx\approx U\sum_{k&#x3D;0}^{K-1}\theta_k\Lambda^kU^Tx&#x3D;\sum_{k&#x3D;0}^{K-1}\theta_kU\Lambda^kU^Tx&#x3D;\sum_{k&#x3D;0}^{K-1}\theta_k(U\Lambda U^T)^kx&#x3D;\sum_{k&#x3D;0}^{K-1}\theta_k(L)^kx\approx\sum_{k&#x3D;0}^{k-1}\theta_kT_k(\hat{L})x$$</p>
+<p>其中$T_k(\hat{L})\in\mathbb{R}^{n\times n}$是切比雪夫多项式在重新调整过的拉普拉斯矩阵（$\hat{L}&#x3D;2L&#x2F;\lambda_{max}-I_n$）上的k阶值.</p>
 <p>多层的线性表达式可以通过逐层堆积图卷积层，且每一层的卷积都只定义一阶的，并且深度学习架构可以恢复空间信息而不被限制在明确的多项式参数上，这意味着可以假设$\lambda_{max}\approx 2$，这样原式就化简为:</p>
 <p>$$\Theta \ast_\mathcal{G} x \approx \theta_0 x+\theta_1(\frac{2}{\lambda_{max}}L-I_n)x\approx\theta_ox -\theta_1(D^{-\frac{1}{2}}WD^{\frac{1}{2}})x$$</p>
-<p>其中$\theta_0$和$\theta_1$是卷积核的参数，为了限制参数变更且稳定算数表现，这两个参数被替代为一个$\theta=\theta_0=-\theta_1$，W和D被重新规范化为$\hat{W}=W+I_n$和$\hat{D} _{ii}=\sum_j\hat{W} _{ij}$，故而图卷积可以被写为：</p>
-<p>$$\Theta \ast _\mathcal{G}=\theta(I_n+D^{-\frac{1}{2}}WD^{\frac{1}{2}})x=\theta(\hat{D}^{\frac{1}{2}}\hat{W}\hat{D}^{\frac{1}{2}})x$$.</p>
+<p>其中$\theta_0$和$\theta_1$是卷积核的参数，为了限制参数变更且稳定算数表现，这两个参数被替代为一个$\theta&#x3D;\theta_0&#x3D;-\theta_1$，W和D被重新规范化为$\hat{W}&#x3D;W+I_n$和$\hat{D} _{ii}&#x3D;\sum_j\hat{W} _{ij}$，故而图卷积可以被写为：</p>
+<p>$$\Theta \ast _\mathcal{G}&#x3D;\theta(I_n+D^{-\frac{1}{2}}WD^{\frac{1}{2}})x&#x3D;\theta(\hat{D}^{\frac{1}{2}}\hat{W}\hat{D}^{\frac{1}{2}})x$$.</p>
 <p>自然的，图卷积操作子$\ast\mathcal{G}$可以被泛化到张量上，例如对于一个具备$C_i$个通道的信号$X\in \mathbb{R}^{n\times C_i}$，图卷积为：</p>
-<p>$$y_j=\sum_{i=1}^{C_i}\Theta_{i,j}(L)x_i\in\mathbb{R}^n,1&lt;=j&lt;=C_0$$</p>
+<p>$$y_j&#x3D;\sum_{i&#x3D;1}^{C_i}\Theta_{i,j}(L)x_i\in\mathbb{R}^n,1&lt;&#x3D;j&lt;&#x3D;C_0$$</p>
 <p>其中$C_i$和$C_0$分别表示输入和输出的特征图的大小</p>
-<h3 id="用于提取时间特征的门电路CNN">用于提取时间特征的门电路CNN</h3>
-<p>虽然基于RNN的模型在时间序列分析中已经广为运用，用于交通预测的循环神经网络仍受到耗时、复杂的门机制和对于动态变化响应过慢等缺点的影响。然而反着来说，CNN有着训练快速，结构简单以及和前置步骤无关的好处。STGCN在完整的时间序列上部署卷积结构用来捕获交通流的时间动态特点，这个特定的设计允许并行并且可控的训练过程。</p>
+<h3 id="用于提取时间特征的门电路CNN"><a href="#用于提取时间特征的门电路CNN" class="headerlink" title="用于提取时间特征的门电路CNN"></a>用于提取时间特征的门电路CNN</h3><p>虽然基于RNN的模型在时间序列分析中已经广为运用，用于交通预测的循环神经网络仍受到耗时、复杂的门机制和对于动态变化响应过慢等缺点的影响。然而反着来说，CNN有着训练快速，结构简单以及和前置步骤无关的好处。STGCN在完整的时间序列上部署卷积结构用来捕获交通流的时间动态特点，这个特定的设计允许并行并且可控的训练过程。</p>
 <p>卷积核$\Gamma\in \mathbb{R}^{K_t\times C_i\times 2C_0}$用于匹配输入数据$Y\in \mathbb{R}^{M\times C_i}$（有$C_i个信道的长为M的时间序列$）的特征，即每次只看输入序列的后$K_t$个数据，得到两个长度为$C_0$的特征序列P和Q，时间门卷积可以被定义为:</p>
-<p>$$\Gamma \ast_\tau Y=P\odot\sigma(Q)\in \mathbb{R}^{(M-K_t+1)\times C_0}$$</p>
-<h3 id="时空图卷积块">时空图卷积块</h3>
-<p>为了融合来自时域和空域的特征，时空卷积块被构建用以处理图结构的时间序列，这个块可以被作为基本单位堆叠。</p>
+<p>$$\Gamma \ast_\tau Y&#x3D;P\odot\sigma(Q)\in \mathbb{R}^{(M-K_t+1)\times C_0}$$</p>
+<h3 id="时空图卷积块"><a href="#时空图卷积块" class="headerlink" title="时空图卷积块"></a>时空图卷积块</h3><p>为了融合来自时域和空域的特征，时空卷积块被构建用以处理图结构的时间序列，这个块可以被作为基本单位堆叠。</p>
 <p>联合的式子可以表述为如下形式，其中ST卷积块的输入和输出形式均为3D张量，对于块$l$的输入$v^l\in \mathbb{R}^{M\times n\times C^l}$，输出$v^{l+1} \in \mathbb{R}^{(M-2(K_t-1))\times n \times C^{l+1}}$:</p>
-<p>$$v^{l+1}=\Gamma_1^l \ast _\tau ReLU(\Theta^l\ast _\mathcal{G}(\Gamma_0^{l} \ast _\tau v^l))$$</p>
+<p>$$v^{l+1}&#x3D;\Gamma_1^l \ast _\tau ReLU(\Theta^l\ast _\mathcal{G}(\Gamma_0^{l} \ast _\tau v^l))$$</p>
 <p>损失函数可以像如下定义:</p>
-<p>$$L(\hat{v};W_{\theta})=\sum_t||\hat{v}(v_{t-M+1},…,v_t,W_\theta)-v_{t+1}||^2$$</p>
+<p>$$L(\hat{v};W_{\theta})&#x3D;\sum_t||\hat{v}(v_{t-M+1},..,v_t,W_\theta)-v_{t+1}||^2$$</p>
 <p>$W_\theta$时模型中所有的可训练模型，$v_{t+1}$是ground truth，且$\hat{v}(\cdot)$表示模型的预测值</p>
-<h2 id="原文">原文</h2>
-
+<h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2>
 
 	<div class="row">
     <embed src="STGCN.pdf" width="100%" height="550" type="application/pdf">
@@ -1308,22 +1295,5 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-
-</body>
+	</body>
 </html>

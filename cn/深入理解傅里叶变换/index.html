@@ -247,9 +247,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              关于
+              归档
               
               
             </a>
@@ -258,9 +258,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              归档
+              关于
               
               
             </a>
@@ -473,59 +473,19 @@
         <blockquote>
 <p>本文详细阐述了傅里叶变换的推导、实际意义以及深层含义</p>
 </blockquote>
-<h2 id="傅里叶级数">傅里叶级数</h2>
-<p>傅里叶级数的产生归功于数学家傅里叶对于周期函数的研究。已知三角函数系sinnx ，cosnx均为周期函数，则其任意线性组合也为周期函数。故而傅里叶认为任意可积周期函数均可分解成三角函数系的线性组合并率先研究了周期为2$\pi$的函数：</p>
-<p>$$f(x)=\frac{a_0}{2}+\sum_{n=1}^{∞}{(a_ncosnx+b_nsinnx)}$$</p>
-<p>当时，人们已经了解到三角函数系对于积分满足正交性：<br>
-$$<br>
-\begin{cases}\int_{-\pi}^{\pi}{sinmxsinnxdx}=0\quad m\ne n\\<br>
-\int_{-\pi}^{\pi}{cosmxcosnxdx}=0 \quad m \ne n\\<br>
-\int_{-\pi}^{\pi}{sinmxcosnxdx}=0 \end{cases}<br>
-$$<br>
-基于此良好性质，只需对于两边同时乘以合适的因子并求定积分，即可解出$a_n$和$b_n$的表达形式：<br>
-$$<br>
-\begin{cases}a_0=\frac{1}{\pi}\int_{-\pi}^{\pi}{f(x)dx}\\a_n=\frac{1}{\pi}\int_{-\pi}^{\pi}{cosnxf(x)dx} \quad (n=1,2,3…)\\b_n=\frac{1}{\pi}\int_{-\pi}^{\pi}{sinnxf(x)dx} \quad (n=1,2,3…) \end{cases}<br>
-$$<br>
-至此，周期为2$\pi$的函数的傅里叶级数即可写出，而通过变量代换的技巧，我们可以将之推广到任意周期的函数上，这里假设f(x)周期为2$\mathcal{l}$:<br>
-$$<br>
-设g(x)=f(\frac{\mathcal{l}}{\pi}x)则显然有g(x+2\pi)=f(\frac{\mathcal{l}}{\pi}x+2l)=f(\frac{\mathcal{l}}{\pi}x)=g(x)<br>
-$$<br>
-$$<br>
-故而g(x)=\frac{a_0}{2}+\sum_{n=1}^{∞}{(a_ncosnx+b_nsinnx)}\<br>
-且\begin{cases}a_0=\frac{1}{\pi}\int_{-\pi}^{\pi}{g(x)dx}\\a_n=\frac{1}{\pi}\int_{-\pi}^{\pi}{cosnxg(x)dx} \quad (n=1,2,3…)\\b_n=\frac{1}{\pi}\int_{-\pi}^{\pi}{sinnxg(x)dx} \quad (n=1,2,3…) \end{cases}<br>
-$$</p>
-<p>$$<br>
-即f(\frac{\mathcal{l}}{\pi}x)=\frac{a_0}{2}+\sum_{n=1}^{∞}{(a_ncosnx+b_nsinnx)}\<br>
-\begin{cases}a_0=\frac{1}{\pi}\int_{-\pi}^{\pi}{f(\frac{\mathcal{l}}{\pi}x)dx}\\<br>
-a_n=\frac{1}{\pi}\int_{-\pi}^{\pi}{cosnxf(\frac{\mathcal{l}}{\pi}x)dx} \quad (n=1,2,3…)\\b_n=\frac{1}{\pi}\int_{-\pi}^{\pi}{sinnxf(\frac{\mathcal{l}}{\pi}x)dx} \quad (n=1,2,3…) \end{cases}<br>
-$$</p>
-<p>$$<br>
-作变量代换就有f(x)=\frac{a_0}{2}+\sum_{n=1}^{∞}{(a_ncos\frac{n\pi x}{\mathcal{l}}+b_nsin\frac{n\pi x}{\mathcal{l}})}\<br>
-\begin{cases}a_0=\frac{1}{\mathcal{l}}\int_{-\mathcal{l}}^{\mathcal{l}}{f(x)dx}\\<br>
-a_n=\frac{1}{\mathcal{l}}\int_{-\mathcal{l}}^{\mathcal{l}}{cos\frac{n\pi x}{\mathcal{l}}f(x)dx} \quad (n=1,2,3…)\\b_n=\frac{1}{\mathcal{l}}\int_{-\mathcal{l}}^{\mathcal{l}}{sin\frac{n\pi x}{\mathcal{l}}f(x)dx} \quad (n=1,2,3…) \end{cases}<br>
-$$</p>
-<p>传统工科微积分书上的傅里叶级数部分基本就讲到这里，以上的式子其实被称为f(x)的实型傅里叶级数，事实上，由欧拉公式$\mathcal{e}^{i\theta}=cos\theta+isin\theta$，并且用$\mathcal{e}^{i\theta}$和$\mathcal{e}^{-i\theta}$反表示$cos\theta$和$sin\theta$,以上式子可以整理为如下复型傅里叶级数：<br>
-$$<br>
-f(x)=\sum_{n=-∞}^{n=∞}c_n\mathcal{e}^{\frac{in\pi}{\mathcal{l}}x}\<br>
-c_0=\frac{1}{2}a_0,c_n=\frac{1}{2}(a_n-ib_n),\<br>
-c_{-n}=\frac{1}{2}(a_n+ib_n),n=1,2,3…<br>
-$$</p>
-<p>$$<br>
-易发现c_n=\frac{1}{2l}\int_{-l}^{l}e^{-i\frac{n\pi x}{\mathcal{l}}}f(x)dx,形式上与傅里叶变换相近<br>
-$$</p>
-<h2 id="L-2-E-mu-空间上的傅里叶系数">$L^2(E,\mu)$空间上的傅里叶系数</h2>
-<p>以$L^2(-\pi,\pi)$为例，在其上定义内积为$f,g\in L^2(-\pi,\pi),(f,g)=\int_{E}fgd\mu$，可诱导$L^2$范数$(\int_{E}|f|^2d\mu)^{\frac{1}{2}}$(符合内积定义规范)，该空间是希尔伯特空间。由于可傅里叶展开的函数需满足黎曼可积的条件，在只考虑这类函数的情况下内积可以退化为黎曼积分$(f,g)=\int_{-\pi}^{\pi}f(x)g(x)dx$。直接计算验证可知三角函数系$$[e_n]=[\frac{1}{\sqrt{2\pi}},\frac{1}{\sqrt{\pi}}cosx,\frac{1}{\sqrt{\pi}}sinx,…,\frac{1}{\sqrt{\pi}}sinnx,\frac{1}{\sqrt{\pi}}cosnx,…]$$是一组标准正交系，且$span[e_n]$在$L^2(-\pi,\pi)$中稠密，故而是标准正交基。不难发现傅里叶展开的系数可以写为：<br>
-$$<br>
-\begin{cases}\frac{a_0}{2}=\frac{1}{2\pi}\int_{-\pi}^{\pi}{f(x)dx}=\frac{1}{\sqrt{2\pi}}(f,\frac{1}{\sqrt{2\pi}})\\a_n=\frac{1}{\pi}\int_{-\pi}^{\pi}{cosnxf(x)dx}=\frac{1}{\sqrt{\pi}}(f,\frac{1}{\sqrt{\pi}}cosnx) \quad (n=1,2,3…)\\b_n=\frac{1}{\pi}\int_{-\pi}^{\pi}{sinnxf(x)dx}=\frac{1}{\sqrt{\pi}}(f,\frac{1}{\sqrt{\pi}}sin<br>
-nx) \quad (n=1,2,3…)\end{cases}<br>
-$$<br>
-即$f(x)=(f,\frac{1}{\sqrt{2\pi}})\frac{1}{\sqrt{2\pi}}+\sum_{n=1}^{∞}{[(f,\frac{1}{\sqrt{\pi}}cosnx)\frac{1}{\sqrt{\pi}}cosnx+(f,\frac{1}{\sqrt{\pi}}sinnx)\frac{1}{\sqrt{\pi}}sinnx]}$</p>
-<h2 id="傅里叶变换">傅里叶变换</h2>
-<p>傅里叶变换往往应用在信号处理上，信号f(t)表示的是时域上的波形情况，若其具备周期性，则可通过傅里叶级数分解成若干个正（余）弦波的叠加：$f(t)=\frac{a_0}{2}+\sum_{n=1}^{∞}{(a_ncos\frac{n\pi t}{\mathcal{l}}+b_nsin\frac{n\pi t}{\mathcal{l}})}$，定义频率为$w_n=\frac{n\pi}{l}$则可简写为$f(t)=\frac{a_0}{2}+\sum_{n=1}^{∞}{(a_ncosw_nt+b_nsinw_nt)}$。事实上，由辅助角公式$asin\theta+bcos\theta=\sqrt{a^2+b^2}sin(\theta+\phi),tan\phi=\frac{b}{a}$，原式其实可以写为$f(t)=\frac{d_0}{2}+\sum_{n=1}^{∞}{d_nsin(w_nt+\phi_n)}$</p>
+<h2 id="傅里叶级数"><a href="#傅里叶级数" class="headerlink" title="傅里叶级数"></a>傅里叶级数</h2><p>傅里叶级数的产生归功于数学家傅里叶对于周期函数的研究。已知三角函数系sinnx ，cosnx均为周期函数，则其任意线性组合也为周期函数。故而傅里叶认为任意可积周期函数均可分解成三角函数系的线性组合并率先研究了周期为2$\pi$的函数：</p>
+<p>$$f(x)&#x3D;\frac{a_0}{2}+\sum_{n&#x3D;1}^{∞}{(a_ncosnx+b_nsinnx)}$$</p>
+<p>当时，人们已经了解到三角函数系对于积分满足正交性：<br>$$<br>\begin{cases}\int_{-\pi}^{\pi}{sinmxsinnxdx}&#x3D;0\quad m\ne n\\<br>\int_{-\pi}^{\pi}{cosmxcosnxdx}&#x3D;0 \quad m \ne n\\<br>\int_{-\pi}^{\pi}{sinmxcosnxdx}&#x3D;0 \end{cases}<br>$$<br>基于此良好性质，只需对于两边同时乘以合适的因子并求定积分，即可解出$a_n$和$b_n$的表达形式：<br>$$<br>\begin{cases}a_0&#x3D;\frac{1}{\pi}\int_{-\pi}^{\pi}{f(x)dx}\\a_n&#x3D;\frac{1}{\pi}\int_{-\pi}^{\pi}{cosnxf(x)dx} \quad (n&#x3D;1,2,3..)\\b_n&#x3D;\frac{1}{\pi}\int_{-\pi}^{\pi}{sinnxf(x)dx} \quad (n&#x3D;1,2,3..) \end{cases}<br>$$<br>至此，周期为2$\pi$的函数的傅里叶级数即可写出，而通过变量代换的技巧，我们可以将之推广到任意周期的函数上，这里假设f(x)周期为2$\mathcal{l}$:<br>$$<br>设g(x)&#x3D;f(\frac{\mathcal{l}}{\pi}x)则显然有g(x+2\pi)&#x3D;f(\frac{\mathcal{l}}{\pi}x+2l)&#x3D;f(\frac{\mathcal{l}}{\pi}x)&#x3D;g(x)<br>$$<br>$$<br>故而g(x)&#x3D;\frac{a_0}{2}+\sum_{n&#x3D;1}^{∞}{(a_ncosnx+b_nsinnx)}\<br>且\begin{cases}a_0&#x3D;\frac{1}{\pi}\int_{-\pi}^{\pi}{g(x)dx}\\a_n&#x3D;\frac{1}{\pi}\int_{-\pi}^{\pi}{cosnxg(x)dx} \quad (n&#x3D;1,2,3..)\\b_n&#x3D;\frac{1}{\pi}\int_{-\pi}^{\pi}{sinnxg(x)dx} \quad (n&#x3D;1,2,3..) \end{cases}<br>$$</p>
+<p>$$<br>即f(\frac{\mathcal{l}}{\pi}x)&#x3D;\frac{a_0}{2}+\sum_{n&#x3D;1}^{∞}{(a_ncosnx+b_nsinnx)}\<br>\begin{cases}a_0&#x3D;\frac{1}{\pi}\int_{-\pi}^{\pi}{f(\frac{\mathcal{l}}{\pi}x)dx}\\<br>a_n&#x3D;\frac{1}{\pi}\int_{-\pi}^{\pi}{cosnxf(\frac{\mathcal{l}}{\pi}x)dx} \quad (n&#x3D;1,2,3..)\\b_n&#x3D;\frac{1}{\pi}\int_{-\pi}^{\pi}{sinnxf(\frac{\mathcal{l}}{\pi}x)dx} \quad (n&#x3D;1,2,3..) \end{cases}<br>$$</p>
+<p>$$<br>作变量代换就有f(x)&#x3D;\frac{a_0}{2}+\sum_{n&#x3D;1}^{∞}{(a_ncos\frac{n\pi x}{\mathcal{l}}+b_nsin\frac{n\pi x}{\mathcal{l}})}\<br>\begin{cases}a_0&#x3D;\frac{1}{\mathcal{l}}\int_{-\mathcal{l}}^{\mathcal{l}}{f(x)dx}\\<br>a_n&#x3D;\frac{1}{\mathcal{l}}\int_{-\mathcal{l}}^{\mathcal{l}}{cos\frac{n\pi x}{\mathcal{l}}f(x)dx} \quad (n&#x3D;1,2,3..)\\b_n&#x3D;\frac{1}{\mathcal{l}}\int_{-\mathcal{l}}^{\mathcal{l}}{sin\frac{n\pi x}{\mathcal{l}}f(x)dx} \quad (n&#x3D;1,2,3..) \end{cases}<br>$$</p>
+<p>传统工科微积分书上的傅里叶级数部分基本就讲到这里，以上的式子其实被称为f(x)的实型傅里叶级数，事实上，由欧拉公式$\mathcal{e}^{i\theta}&#x3D;cos\theta+isin\theta$，并且用$\mathcal{e}^{i\theta}$和$\mathcal{e}^{-i\theta}$反表示$cos\theta$和$sin\theta$,以上式子可以整理为如下复型傅里叶级数：<br>$$<br>f(x)&#x3D;\sum_{n&#x3D;-∞}^{n&#x3D;∞}c_n\mathcal{e}^{\frac{in\pi}{\mathcal{l}}x}\<br>c_0&#x3D;\frac{1}{2}a_0,c_n&#x3D;\frac{1}{2}(a_n-ib_n),\<br>c_{-n}&#x3D;\frac{1}{2}(a_n+ib_n),n&#x3D;1,2,3..<br>$$</p>
+<p>$$<br>易发现c_n&#x3D;\frac{1}{2l}\int_{-l}^{l}e^{-i\frac{n\pi x}{\mathcal{l}}}f(x)dx,形式上与傅里叶变换相近<br>$$</p>
+<h2 id="L-2-E-mu-空间上的傅里叶系数"><a href="#L-2-E-mu-空间上的傅里叶系数" class="headerlink" title="$L^2(E,\mu)$空间上的傅里叶系数"></a>$L^2(E,\mu)$空间上的傅里叶系数</h2><p>以$L^2(-\pi,\pi)$为例，在其上定义内积为$f,g\in L^2(-\pi,\pi),(f,g)&#x3D;\int_{E}fgd\mu$，可诱导$L^2$范数$(\int_{E}|f|^2d\mu)^{\frac{1}{2}}$(符合内积定义规范)，该空间是希尔伯特空间。由于可傅里叶展开的函数需满足黎曼可积的条件，在只考虑这类函数的情况下内积可以退化为黎曼积分$(f,g)&#x3D;\int_{-\pi}^{\pi}f(x)g(x)dx$。直接计算验证可知三角函数系$$[e_n]&#x3D;[\frac{1}{\sqrt{2\pi}},\frac{1}{\sqrt{\pi}}cosx,\frac{1}{\sqrt{\pi}}sinx,..,\frac{1}{\sqrt{\pi}}sinnx,\frac{1}{\sqrt{\pi}}cosnx,..]$$是一组标准正交系，且$span[e_n]$在$L^2(-\pi,\pi)$中稠密，故而是标准正交基。不难发现傅里叶展开的系数可以写为：<br>$$<br>\begin{cases}\frac{a_0}{2}&#x3D;\frac{1}{2\pi}\int_{-\pi}^{\pi}{f(x)dx}&#x3D;\frac{1}{\sqrt{2\pi}}(f,\frac{1}{\sqrt{2\pi}})\\a_n&#x3D;\frac{1}{\pi}\int_{-\pi}^{\pi}{cosnxf(x)dx}&#x3D;\frac{1}{\sqrt{\pi}}(f,\frac{1}{\sqrt{\pi}}cosnx) \quad (n&#x3D;1,2,3..)\\b_n&#x3D;\frac{1}{\pi}\int_{-\pi}^{\pi}{sinnxf(x)dx}&#x3D;\frac{1}{\sqrt{\pi}}(f,\frac{1}{\sqrt{\pi}}sin<br>nx) \quad (n&#x3D;1,2,3..)\end{cases}<br>$$<br>即$f(x)&#x3D;(f,\frac{1}{\sqrt{2\pi}})\frac{1}{\sqrt{2\pi}}+\sum_{n&#x3D;1}^{∞}{[(f,\frac{1}{\sqrt{\pi}}cosnx)\frac{1}{\sqrt{\pi}}cosnx+(f,\frac{1}{\sqrt{\pi}}sinnx)\frac{1}{\sqrt{\pi}}sinnx]}$</p>
+<h2 id="傅里叶变换"><a href="#傅里叶变换" class="headerlink" title="傅里叶变换"></a>傅里叶变换</h2><p>傅里叶变换往往应用在信号处理上，信号f(t)表示的是时域上的波形情况，若其具备周期性，则可通过傅里叶级数分解成若干个正（余）弦波的叠加：$f(t)&#x3D;\frac{a_0}{2}+\sum_{n&#x3D;1}^{∞}{(a_ncos\frac{n\pi t}{\mathcal{l}}+b_nsin\frac{n\pi t}{\mathcal{l}})}$，定义频率为$w_n&#x3D;\frac{n\pi}{l}$则可简写为$f(t)&#x3D;\frac{a_0}{2}+\sum_{n&#x3D;1}^{∞}{(a_ncosw_nt+b_nsinw_nt)}$。事实上，由辅助角公式$asin\theta+bcos\theta&#x3D;\sqrt{a^2+b^2}sin(\theta+\phi),tan\phi&#x3D;\frac{b}{a}$，原式其实可以写为$f(t)&#x3D;\frac{d_0}{2}+\sum_{n&#x3D;1}^{∞}{d_nsin(w_nt+\phi_n)}$</p>
 <p>事实上，这其中蕴含着的物理意义是原波形根据频域可以分解为若干个频率、相位不同的正弦波。这提示我们需要将$w_n$相同的一组$sinw_nt$以及$cosw_nt$放在一起看，故而最好的方法就是采用欧拉公式，取原式的复型傅里叶展开。</p>
-<p>傅里叶变换实际上要做的就是计算波形f(t)频率为$w_n$的分量，相当于计算正交基$sinw_nt$和$cosw_nt$两个方向上的分量，这可以通过计算内积实现，即计算$\int_{-l}^{l}f(t)cosw_ntdt$以及$\int_{-l}^{l}f(t)sinw_ntdt$，而事实上就是计算$F(w_n)=\int_{-l}^{l}f(t)e^{-iw_nt}dt$</p>
-<p>而傅里叶逆变换则是通过将不同频域和相位的波性叠加起来重新合成原波形，当原波形本身是周期函数时，显然$f(t)=\frac{a_0}{2}+\sum_{n=1}^{∞}{(a_ncosw_n t+b_nsinw_nt)}$或$f(t)=\sum_{n=-∞}^{n=∞}c_n\mathcal{e}^{iw_nt}$就是该逆变换</p>
-<p>而当原波形不具备周期性，即周期为无穷时，傅里叶变换显然为$F(w)=\int_{-∞}^{∞}f(t)e^{-iwt}dt$，而逆变换则也退化为积分$f(t)=\int_{-∞}^{∞}F(w)e^{iwt}dw$（代表分量频率连续）</p>
+<p>傅里叶变换实际上要做的就是计算波形f(t)频率为$w_n$的分量，相当于计算正交基$sinw_nt$和$cosw_nt$两个方向上的分量，这可以通过计算内积实现，即计算$\int_{-l}^{l}f(t)cosw_ntdt$以及$\int_{-l}^{l}f(t)sinw_ntdt$，而事实上就是计算$F(w_n)&#x3D;\int_{-l}^{l}f(t)e^{-iw_nt}dt$</p>
+<p>而傅里叶逆变换则是通过将不同频域和相位的波性叠加起来重新合成原波形，当原波形本身是周期函数时，显然$f(t)&#x3D;\frac{a_0}{2}+\sum_{n&#x3D;1}^{∞}{(a_ncosw_n t+b_nsinw_nt)}$或$f(t)&#x3D;\sum_{n&#x3D;-∞}^{n&#x3D;∞}c_n\mathcal{e}^{iw_nt}$就是该逆变换</p>
+<p>而当原波形不具备周期性，即周期为无穷时，傅里叶变换显然为$F(w)&#x3D;\int_{-∞}^{∞}f(t)e^{-iwt}dt$，而逆变换则也退化为积分$f(t)&#x3D;\int_{-∞}^{∞}F(w)e^{iwt}dw$（代表分量频率连续）</p>
 
 
         <hr>
@@ -1276,22 +1236,5 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-
-</body>
+	</body>
 </html>
