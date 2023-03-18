@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/cn/Deepin全自动科学上网/">
+  <link rel="canonical" href="http://yoursite-url/cn/screen/">
   <title>
     
-      Deepin下socks代理全自动 - Ccloud&#39;s
+      A command sloving the nohup problem - Ccloud&#39;s
     
   </title>
 <meta name="generator" content="Hexo 5.4.2"><style>mjx-container[jax="SVG"] {
@@ -501,16 +501,14 @@ mjx-container[display="true"] + br {
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#网络代理" title="网络代理">网络代理</a>
-              
-              <a class="tag" href="/tags/#Deepin" title="Deepin">Deepin</a>
+              <a class="tag" href="/tags/#shell" title="shell">shell</a>
               
             </div>
-            <h1>Deepin下socks代理全自动</h1>
-            <h2 class="subheading">代理配置</h2>
+            <h1>A command sloving the nohup problem</h1>
+            <h2 class="subheading">Screen</h2>
             <span class="meta">
               Posted by Cloud on
-              2022-10-28
+              2023-02-16
             </span>
 
 
@@ -522,7 +520,7 @@ mjx-container[display="true"] + br {
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">245</span> In Total
+              Words <span class="post-count">422</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -585,15 +583,35 @@ mjx-container[display="true"] + br {
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <blockquote>
-<p>本文详细介绍了如何在Deepin下实现全自动化科学上网</p>
+<p>The blog introduces the instruction screen</p>
 </blockquote>
-<h1 id="Pac代理设置"><a href="#Pac代理设置" class="headerlink" title="Pac代理设置"></a>Pac代理设置</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo apt install python3-pip</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo pip3 install genpac</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">genpac --pac-compress --pac-proxy <span class="string">'SOCKS5 127.0.0.1:1081'</span> --format pac  -o ~/auto.pac</span></span><br></pre></td></tr></table></figure>
+<h2 id="命令参数"><a href="#命令参数" class="headerlink" title="命令参数"></a>命令参数</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">screen [-AmRvx -<span class="built_in">ls</span> -wipe][-d &lt;作业名称&gt;][-h &lt;行数&gt;][-r &lt;作业名称&gt;][-s &lt;shell&gt;][-S &lt;作业名称&gt;]</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">系统内网络代理设置成pac自动代理</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">url为 http://127.0.0.1/auto.pac</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>-A 　将所有的视窗都调整为目前终端机的大小。</li>
+<li>-d&lt;作业名称&gt; 　将指定的screen作业离线。</li>
+<li>-h&lt;行数&gt; 　指定视窗的缓冲区行数。</li>
+<li>-m 　即使目前已在作业中的screen作业，仍强制建立新的screen作业。</li>
+<li>-r&lt;作业名称&gt; 　恢复离线的screen作业。</li>
+<li>-R 　先试图恢复离线的作业。若找不到离线的作业，即建立新的screen作业。</li>
+<li>-s<shell> 　指定建立新视窗时，所要执行的shell。</shell></li>
+<li>-S&lt;作业名称&gt; 　指定screen作业的名称。</li>
+<li>-v 　显示版本信息。</li>
+<li>-x 　恢复之前离线的screen作业。</li>
+<li>-ls或–list 　显示目前所有的screen作业。</li>
+<li>-wipe 　检查目前所有的screen作业，并删除已经无法使用的screen作业。</li>
+</ul>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>创建screen终端</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">screen &lt;终端名&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="Nginx转发"><a href="#Nginx转发" class="headerlink" title="Nginx转发"></a>Nginx转发</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">采用增量添加模式更改nginx配置文件，并且设置Nginx开机自动平滑启动</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> /etc/nginx/sites-available</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo vim ssr.conf</span></span><br><span class="line">server{</span><br><span class="line">    listen 80; </span><br><span class="line">    server_name 127.0.0.1;</span><br><span class="line">    location /auto.pac {</span><br><span class="line">        alias 绝对路径/auto.pac; #指atuo.pac文件的绝对路径</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo <span class="built_in">ln</span> -s /etc/nginx/sites-available/ssr.conf /etc/nginx/sites-enabled/ssr.conf</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> /etc/nginx</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">还需把nginx.conf中用户改为root，这样开机可自启动</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo vim nginx.conf</span></span><br><span class="line">user root;</span><br></pre></td></tr></table></figure>
+<p>创建终端并执行任务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">screen vi ~/main.c //创建终端，并执行vi命令</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="SSR自启动"><a href="#SSR自启动" class="headerlink" title="SSR自启动"></a>SSR自启动</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">根据deepin特性，在~/.config/autostart下新建一个.desktop文件即可</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> ~/.config/autostart</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">vim ssr.desktop</span></span><br><span class="line">[Desktop Entry]</span><br><span class="line"></span><br><span class="line">Type=Application</span><br><span class="line"></span><br><span class="line">Exec=ssr-qt5的绝对路径</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">ssr-qt5软件勾选启动时隐藏窗口</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">ssr-qt5软件包github上自取</span></span><br></pre></td></tr></table></figure>
+<p>离开screen终端</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">screen vi ~/main.c //创建 screen 终端 ，并执行 vi命令</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">include</span> </span><br><span class="line"></span><br><span class="line">main ()</span><br><span class="line">{</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">"~/mail.c"       0,0-1    </span><br><span class="line"></span><br><span class="line">在 screen 终端 下 按下 Ctrl+a d键</span><br></pre></td></tr></table></figure>
+
+<p>重新连接离开的screen终端</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">screen -<span class="built_in">ls</span>  //显示已创建的screen终端</span> </span><br><span class="line">There are screens on:</span><br><span class="line">2433.pts-3.linux    (2013年10月20日 16时48分59秒)    (Detached)</span><br><span class="line">2428.pts-3.linux    (2013年10月20日 16时48分05秒)    (Detached)</span><br><span class="line">2284.pts-3.linux    (2013年10月20日 16时14分55秒)    (Detached)</span><br><span class="line">2276.pts-3.linux    (2013年10月20日 16时13分18秒)    (Detached)</span><br><span class="line">4 Sockets in /var/run/screen/S-root.</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">screen -r 2276 //连接 screen_id 为 2276 的 screen终端</span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -602,12 +620,12 @@ mjx-container[display="true"] + br {
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/深入理解傅里叶变换/" data-toggle="tooltip" data-placement="top" title="深入理解傅里叶变换">&larr; Previous Post</a>
+            <a href="/en/AutoCTS+/" data-toggle="tooltip" data-placement="top" title="AutoCTS+:Joint Neural Architecture and Hyperparameter Search for Correlated Times Series Forecasting">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/小程序+nginx+uwsgi+django配置/" data-toggle="tooltip" data-placement="top" title="从零开始配置Django+uWSGI+Nginx负载均衡">Next Post &rarr;</a>
+            <a href="/en/DARTS/" data-toggle="tooltip" data-placement="top" title="DARTS:Differentiable Architecture Search">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -656,7 +674,7 @@ mjx-container[display="true"] + br {
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=Deepin下socks代理全自动&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/Deepin全自动科学上网/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=A command sloving the nohup problem&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/screen/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -691,7 +709,7 @@ mjx-container[display="true"] + br {
       repo: 'blogcomment',
       owner: 'ccloud0525',
       admin: 'ccloud0525',
-      id: 'Fri Oct 28 2022 12:09:00 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Thu Feb 16 2023 22:36:00 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -744,7 +762,7 @@ mjx-container[display="true"] + br {
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Pac%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Pac代理设置</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Nginx%E8%BD%AC%E5%8F%91"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Nginx转发</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#SSR%E8%87%AA%E5%90%AF%E5%8A%A8"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">SSR自启动</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">命令参数</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">实例</span></a></li></ol>
         
         </div>
       </aside>
@@ -767,9 +785,7 @@ mjx-container[display="true"] + br {
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#网络代理" title="网络代理">网络代理</a>
-            
-            <a class="tag" href="/tags/#Deepin" title="Deepin">Deepin</a>
+            <a class="tag" href="/tags/#shell" title="shell">shell</a>
             
           </div>
         </section>
