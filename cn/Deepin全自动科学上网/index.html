@@ -142,7 +142,7 @@
   <link rel="canonical" href="http://yoursite-url/cn/Deepin全自动科学上网/">
   <title>
     
-      Deepin下socks代理全自动 - Ccloud&#39;s
+      Deepin下代理全自动 - Ccloud&#39;s
     
   </title>
 <meta name="generator" content="Hexo 5.4.2"><style>mjx-container[jax="SVG"] {
@@ -506,7 +506,7 @@ mjx-container[display="true"] + br {
               <a class="tag" href="/tags/#Deepin" title="Deepin">Deepin</a>
               
             </div>
-            <h1>Deepin下socks代理全自动</h1>
+            <h1>Deepin下代理全自动</h1>
             <h2 class="subheading">代理配置</h2>
             <span class="meta">
               Posted by Cloud on
@@ -522,7 +522,7 @@ mjx-container[display="true"] + br {
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">245</span> In Total
+              Words <span class="post-count">336</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -587,14 +587,22 @@ mjx-container[display="true"] + br {
         <blockquote>
 <p>本文详细介绍了如何在Deepin下实现全自动化科学上网</p>
 </blockquote>
-<h1 id="Pac代理设置"><a href="#Pac代理设置" class="headerlink" title="Pac代理设置"></a>Pac代理设置</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo apt install python3-pip</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo pip3 install genpac</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">genpac --pac-compress --pac-proxy <span class="string">'SOCKS5 127.0.0.1:1081'</span> --format pac  -o ~/auto.pac</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="socks5">socks5</h2>
+<h3 id="Pac代理设置">Pac代理设置</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo apt install python3-pip</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo pip3 install genpac</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">genpac --pac-compress --pac-proxy <span class="string">'SOCKS5 127.0.0.1:1081'</span> --format pac  -o ~/auto.pac</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">系统内网络代理设置成pac自动代理</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">url为 http://127.0.0.1/auto.pac</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="Nginx转发"><a href="#Nginx转发" class="headerlink" title="Nginx转发"></a>Nginx转发</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">采用增量添加模式更改nginx配置文件，并且设置Nginx开机自动平滑启动</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> /etc/nginx/sites-available</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo vim ssr.conf</span></span><br><span class="line">server{</span><br><span class="line">    listen 80; </span><br><span class="line">    server_name 127.0.0.1;</span><br><span class="line">    location /auto.pac {</span><br><span class="line">        alias 绝对路径/auto.pac; #指atuo.pac文件的绝对路径</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo <span class="built_in">ln</span> -s /etc/nginx/sites-available/ssr.conf /etc/nginx/sites-enabled/ssr.conf</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> /etc/nginx</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">还需把nginx.conf中用户改为root，这样开机可自启动</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo vim nginx.conf</span></span><br><span class="line">user root;</span><br></pre></td></tr></table></figure>
-
-<h1 id="SSR自启动"><a href="#SSR自启动" class="headerlink" title="SSR自启动"></a>SSR自启动</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">根据deepin特性，在~/.config/autostart下新建一个.desktop文件即可</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> ~/.config/autostart</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">vim ssr.desktop</span></span><br><span class="line">[Desktop Entry]</span><br><span class="line"></span><br><span class="line">Type=Application</span><br><span class="line"></span><br><span class="line">Exec=ssr-qt5的绝对路径</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">ssr-qt5软件勾选启动时隐藏窗口</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">ssr-qt5软件包github上自取</span></span><br></pre></td></tr></table></figure>
-
+<h3 id="Nginx转发">Nginx转发</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">采用增量添加模式更改nginx配置文件，并且设置Nginx开机自动平滑启动</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> /etc/nginx/sites-available</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo vim ssr.conf</span></span><br><span class="line">server{</span><br><span class="line">    listen 80; </span><br><span class="line">    server_name 127.0.0.1;</span><br><span class="line">    location /auto.pac {</span><br><span class="line">        alias 绝对路径/auto.pac; #指atuo.pac文件的绝对路径</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo <span class="built_in">ln</span> -s /etc/nginx/sites-available/ssr.conf /etc/nginx/sites-enabled/ssr.conf</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> /etc/nginx</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">还需把nginx.conf中用户改为root，这样开机可自启动</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo vim nginx.conf</span></span><br><span class="line">user root;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">加入、去除开机自启动</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo systemctl <span class="built_in">enable</span> nginx</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo systemctl <span class="built_in">disable</span> nginx</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">启动、关闭</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo nginx</span> </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo nginx -s quit</span></span><br></pre></td></tr></table></figure>
+<h3 id="SSR自启动">SSR自启动</h3>
+<p>安装ssr-qt5</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">根据deepin特性，在~/.config/autostart下新建一个.desktop文件即可</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> ~/.config/autostart</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">vim ssr.desktop</span></span><br><span class="line">[Desktop Entry]</span><br><span class="line"></span><br><span class="line">Type=Application</span><br><span class="line"></span><br><span class="line">Exec=ssr-qt5的绝对路径</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">ssr-qt5软件勾选启动时隐藏窗口</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">ssr-qt5软件包github上自取</span></span><br></pre></td></tr></table></figure>
+<h2 id="clash">clash</h2>
+<p>安装https://github.com/Fndroid/clash_for_windows_pkg/releases</p>
+<p>然后profile导入订阅链接</p>
+<p>dashboard界面选择General–&gt;Start with Linux</p>
+<p>系统代理选择手动</p>
+<p>http 和 socks5 选择 127.0.0.1 端口7890（clash默认选择的端口）</p>
 
 
         <hr>
@@ -656,7 +664,7 @@ mjx-container[display="true"] + br {
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=Deepin下socks代理全自动&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/Deepin全自动科学上网/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Deepin下代理全自动&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/Deepin全自动科学上网/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -744,7 +752,7 @@ mjx-container[display="true"] + br {
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Pac%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Pac代理设置</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Nginx%E8%BD%AC%E5%8F%91"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Nginx转发</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#SSR%E8%87%AA%E5%90%AF%E5%8A%A8"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">SSR自启动</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#socks5"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">socks5</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Pac%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">Pac代理设置</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Nginx%E8%BD%AC%E5%8F%91"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">Nginx转发</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#SSR%E8%87%AA%E5%90%AF%E5%8A%A8"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">SSR自启动</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#clash"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">clash</span></a></li></ol>
         
         </div>
       </aside>
