@@ -601,11 +601,10 @@ mjx-container[display="true"] + br {
       
 本文详细介绍了如何在服务器上配置Jupyter服务，并且完美访问
 
-配置文件Jupyter的配置方式有点类似于Nginx，都是通过一份配置文件来维护服务器的工作模式，可以通过运行如下命令直接生成配置文件
-1$ jupyter notebook --generate-config
+配合conda在炼丹or数据分析过程中，我们往往需要在特定的conda环境中运行jupyter notebook，此时需要在当前conda环境下安装jupyter kernel
+12$ conda install ipykernel$ conda install nb_conda
 
-如果是root用户执行，需要用以下配置文件
-1$ jupyter notebook --generate-co......
+这样操作后，jupyter notebo......
     </div>
   </a>
   

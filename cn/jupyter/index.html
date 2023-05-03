@@ -408,7 +408,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">951</span> In Total
+              Words <span class="post-count">1k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -473,6 +473,10 @@
         <blockquote>
 <p>本文详细介绍了如何在服务器上配置Jupyter服务，并且完美访问</p>
 </blockquote>
+<h2 id="配合conda"><a href="#配合conda" class="headerlink" title="配合conda"></a>配合conda</h2><p>在炼丹or数据分析过程中，我们往往需要在特定的conda环境中运行jupyter notebook，此时需要在当前conda环境下安装jupyter kernel</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">conda install ipykernel</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">conda install nb_conda</span></span><br></pre></td></tr></table></figure>
+
+<p>这样操作后，jupyter notebook运行时才能找到虚拟环境中的包</p>
 <h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>Jupyter的配置方式有点类似于Nginx，都是通过一份配置文件来维护服务器的工作模式，可以通过运行如下命令直接生成配置文件</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">jupyter notebook --generate-config</span></span><br></pre></td></tr></table></figure>
 
@@ -662,7 +666,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">配置文件</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%94%9F%E6%88%90%E5%AF%86%E7%A0%81"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">生成密码</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8A%A0%E5%AF%86%E9%80%9A%E4%BF%A1"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">加密通信</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%BF%90%E8%A1%8Cnotebook-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">运行notebook 服务器</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Dataspell%E8%BF%9E%E6%8E%A5"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">Dataspell连接</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%85%8D%E5%90%88conda"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">配合conda</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">配置文件</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%94%9F%E6%88%90%E5%AF%86%E7%A0%81"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">生成密码</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8A%A0%E5%AF%86%E9%80%9A%E4%BF%A1"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">加密通信</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%BF%90%E8%A1%8Cnotebook-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">运行notebook 服务器</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Dataspell%E8%BF%9E%E6%8E%A5"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">Dataspell连接</span></a></li></ol>
         
         </div>
       </aside>
