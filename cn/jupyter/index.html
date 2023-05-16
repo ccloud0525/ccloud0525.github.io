@@ -247,6 +247,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于
@@ -261,17 +272,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              归档
               
               
             </a>
@@ -404,7 +404,7 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">3</span> Minutes
+              Estimated Reading Time <span class="post-count">4</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
@@ -474,7 +474,7 @@
 <p>本文详细介绍了如何在服务器上配置Jupyter服务，并且完美访问</p>
 </blockquote>
 <h2 id="配合conda"><a href="#配合conda" class="headerlink" title="配合conda"></a>配合conda</h2><p>在炼丹or数据分析过程中，我们往往需要在特定的conda环境中运行jupyter notebook，此时需要在当前conda环境下安装jupyter kernel</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">conda install ipykernel</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">conda install nb_conda</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">conda install ipykernel</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">conda install nb_conda</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">pip -m ipykernel install --name &lt;<span class="built_in">env</span> name&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>这样操作后，jupyter notebook运行时才能找到虚拟环境中的包</p>
 <h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>Jupyter的配置方式有点类似于Nginx，都是通过一份配置文件来维护服务器的工作模式，可以通过运行如下命令直接生成配置文件</p>
