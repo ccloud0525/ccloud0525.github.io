@@ -139,13 +139,125 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/tags/hpl/">
+  <link rel="canonical" href="http://yoursite-url/cn/Hexo-静态博客搭建指南/">
   <title>
     
-      Ccloud&#39;s
+      Hexo 静态博客搭建指南 - Ccloud&#39;s
     
   </title>
-<meta name="generator" content="Hexo 5.4.2"></head>
+<meta name="generator" content="Hexo 5.4.2"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
 <!-- hack iOS CSS :active style -->
@@ -239,7 +351,7 @@
       <div class="navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="/">HOME</a>
+            <a href="/">首页</a>
           </li>
 
           
@@ -249,7 +361,7 @@
           <li>
             <a href="/archive/">
               
-              ARCHIVES
+              归档
               
               
             </a>
@@ -260,7 +372,7 @@
           <li>
             <a href="/about/">
               
-              ABOUT
+              关于
               
               
             </a>
@@ -271,7 +383,7 @@
           <li>
             <a href="/categories/">
               
-              CATEGORIES
+              分类
               
               
             </a>
@@ -282,7 +394,7 @@
           <li>
             <a href="/tags/">
               
-              TAGS
+              标签
               
               
             </a>
@@ -293,36 +405,14 @@
           
           <li>
             <a class="popup-trigger">
-              <span class="search-icon"></span>SEARCH</a>
+              <span class="search-icon"></span>搜索</a>
           </li>
           
 
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="tags/hpl/index.html">
-      
-      
-      <option value="en"  selected >
-        English
-      </option>
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -374,19 +464,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/header_img/archive_bg2.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/lml_bg.jpg'); */
       
     }
 
@@ -408,10 +498,42 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>Ccloud&#39;s</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">Impossible is nothing</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#blog" title="blog">blog</a>
+              
+            </div>
+            <h1>Hexo 静态博客搭建指南</h1>
+            <h2 class="subheading">技术总结报告</h2>
+            <span class="meta">
+              Posted by Cloud on
+              2024-04-20
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">1</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">524</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -452,741 +574,293 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+        <blockquote>
+<p>本文是开源软件开发与社区治理课程的第一次作业，旨在详细介绍了Hexo 静态博客的搭建方法</p>
+</blockquote>
+<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>Hexo 是一个基于 Node.js 的静态博客生成工具，它以简洁、高效著称，支持 Markdown 及其他渲染引擎，允许用户轻松创建和管理个人博客。本报告将概述使用 Hexo 搭建静态博客的基本步骤，包括安装、配置、文章编写、预览及部署等。</p>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><p>在开始搭建 Hexo 博客之前，确保已安装 Node.js。可以从 <a target="_blank" rel="noopener" href="https://nodejs.org/">Node.js 官网</a> 获取安装包。</p>
+<h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><p>通过 npm 全局安装 Hexo CLI 工具：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
+<h2 id="创建博客项目"><a href="#创建博客项目" class="headerlink" title="创建博客项目"></a>创建博客项目</h2><p>初始化一个新的 Hexo 博客项目，并安装依赖：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
 
-      
+<h2 id="生成静态内容"><a href="#生成静态内容" class="headerlink" title="生成静态内容"></a>生成静态内容</h2><p>使用以下命令生成静态网页文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
 
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2024">
-          <span class="tag-text">2024</span>
-        </span>
-        <ul>
-          
-          <li>
-            04-20
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Hexo-静态博客搭建指南/" style="color: #0085a1">
-              <span>
-                Hexo 静态博客搭建指南
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2023">
-          <span class="tag-text">2023</span>
-        </span>
-        <ul>
-          
-          <li>
-            06-03
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/fisher/" style="color: #0085a1">
-              <span>
-                Fisher Task Distance
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            04-28
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/jupyter/" style="color: #0085a1">
-              <span>
-                配置服务器Jupyter notebook
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            04-03
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Bellman/" style="color: #0085a1">
-              <span>
-                Bellman公式的矩阵化
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            03-26
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/bayesian/" style="color: #0085a1">
-              <span>
-                Bayesian Optimization
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            03-19
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/pycharm/" style="color: #0085a1">
-              <span>
-                Pycharm配置远程服务器连接调试
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            03-18
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/screen/" style="color: #0085a1">
-              <span>
-                A command sloving the nohup problem
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            03-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/Understanding and Simplifying/" style="color: #0085a1">
-              <span>
-                Understanding and Simplifying Architecture Search in Spatio-Temporal Graph Neural Networks
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/AutoST_2/" style="color: #0085a1">
-              <span>
-                AutoST:Towards the Universal Modeling of Spatio-temporal Sequences
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            03-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/AutoSTG/" style="color: #0085a1">
-              <span>
-                AutoSTG:Neural Architecture Search for Predictions of Spatio-Temporal Graphs
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            03-03
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/AutoST_1/" style="color: #0085a1">
-              <span>
-                AutoST:Efficient Neural Architecture Search for Spatio-Temporal Prediction
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-16
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/AutoCTS+/" style="color: #0085a1">
-              <span>
-                AutoCTS+:Joint Neural Architecture and Hyperparameter Search for Correlated Times Series Forecasting
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/DARTS/" style="color: #0085a1">
-              <span>
-                DARTS:Differentiable Architecture Search
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-13
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Python/" style="color: #0085a1">
-              <span>
-                Python学习资料分享
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/Triformer/" style="color: #0085a1">
-              <span>
-                Triformer:Triangular,Variable-Specific Attentions for Long Sequence
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/Informer/" style="color: #0085a1">
-              <span>
-                Informer:Beyond Efficient Transformer for Long Sequence Time-Series Forecasting
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-05
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/STTN/" style="color: #0085a1">
-              <span>
-                STTN:Spatial-Temporal Transformer Networks for Traffic Flow Forecasting
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-02
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/Transformer_Attention Is All You Need/" style="color: #0085a1">
-              <span>
-                Attention Is All You Need
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-02
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/ST-GRAT/" style="color: #0085a1">
-              <span>
-                ST-GRAT:A Novel Spatio-temporal Graph Attention Network for Accurately Forecasting Dynamically Changing Road Speed
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-16
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Graph_WaveNet/" style="color: #0085a1">
-              <span>
-                Graph WaveNet for Deep Spatial-Temporal Graph Modeling
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/DCRNN/" style="color: #0085a1">
-              <span>
-                DCRNN:Diffusion Convolutional Recurrent Neural Network
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/AGCRN/" style="color: #0085a1">
-              <span>
-                AGCRN:Adaptive Graph Convolutional Recurrent Network
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/AutoCTS/" style="color: #0085a1">
-              <span>
-                AutoCTS:Automated Correlated Time Series Forecasting
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/STGCN/" style="color: #0085a1">
-              <span>
-                STGCN:Spacial Temporal Graph Convolutional Network
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2022">
-          <span class="tag-text">2022</span>
-        </span>
-        <ul>
-          
-          <li>
-            11-19
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/深入理解傅里叶变换/" style="color: #0085a1">
-              <span>
-                深入理解傅里叶变换
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            10-28
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Deepin全自动科学上网/" style="color: #0085a1">
-              <span>
-                Deepin下代理全自动
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-24
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/小程序+nginx+uwsgi+django配置/" style="color: #0085a1">
-              <span>
-                从零开始配置Django+uWSGI+Nginx负载均衡
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-23
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/config/" style="color: #0085a1">
-              <span>
-                docker配置TensorFlow训练环境
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-16
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/git远程仓库同步关系/" style="color: #0085a1">
-              <span>
-                git三类分支详解
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-16
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/多节点配置HPL测试/" style="color: #0085a1">
-              <span>
-                多节点配置HPL测试
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-16
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/docker_multnode/" style="color: #0085a1">
-              <span>
-                docker配置多节点集群
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
-
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
-        <hr>
-    
-        <!-- Featured Tags -->
-
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#深度学习" title="深度学习" rel="6">深度学习</a>
-    
-    
-    
-    <a href="/tags/#图卷积神经网络" title="图卷积神经网络" rel="1">图卷积神经网络</a>
-    
-    
-    
-    <a href="/tags/#自动机器学习" title="自动机器学习" rel="9">自动机器学习</a>
-    
-    
-    
-    <a href="/tags/#math" title="math" rel="1">math</a>
-    
-    
-    
-    <a href="/tags/#网络代理" title="网络代理" rel="1">网络代理</a>
-    
-    
-    
-    <a href="/tags/#Deepin" title="Deepin" rel="1">Deepin</a>
-    
-    
-    
-    <a href="/tags/#图神经网络" title="图神经网络" rel="2">图神经网络</a>
-    
-    
-    
-    <a href="/tags/#python" title="python" rel="2">python</a>
-    
-    
-    
-    <a href="/tags/#docker" title="docker" rel="3">docker</a>
-    
-    
-    
-    <a href="/tags/#集群" title="集群" rel="1">集群</a>
-    
-    
-    
-    <a href="/tags/#git" title="git" rel="1">git</a>
-    
-    
-    
-    <a href="/tags/#jupyter" title="jupyter" rel="1">jupyter</a>
-    
-    
-    
-    <a href="/tags/#shell" title="shell" rel="1">shell</a>
-    
-    
-    
-    <a href="/tags/#hpl" title="hpl" rel="1">hpl</a>
-    
-    
-    
-    <a href="/tags/#Linux" title="Linux" rel="1">Linux</a>
-    
-    
-    
-    <a href="/tags/#Nginx" title="Nginx" rel="1">Nginx</a>
-    
-    
-    
-    <a href="/tags/#maths" title="maths" rel="1">maths</a>
-    
-    
-    
-    <a href="/tags/#注意力机制" title="注意力机制" rel="5">注意力机制</a>
-    
-    
-    
-    <a href="/tags/#blog" title="blog" rel="1">blog</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/Argentina.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>The world open itself before those with noble hearts</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/ccloud0525">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-      <li>
-        <a target="_blank" href="https://www.zhihu.com/people/tian-xing-jian-82-19">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa  fa-stack-1x fa-inverse">知</i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-      <li>
-        <a target="_blank" href="http://weibo.com/6386058030">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../cn/Hexo-%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/">
-      <li>Hexo 静态博客搭建指南</li>
-    </a>
-    
-    <a href="../../en/fisher/">
-      <li>Fisher Task Distance</li>
-    </a>
-    
-    <a href="../../cn/jupyter/">
-      <li>配置服务器Jupyter notebook</li>
-    </a>
-    
-    <a href="../../cn/Bellman/">
-      <li>Bellman公式的矩阵化</li>
-    </a>
-    
-    <a href="../../en/bayesian/">
-      <li>Bayesian Optimization</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Friends Blog -->
-
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://cyria7.github.io/" target="_blank">Cyria7</a></li>
-  
-  <li><a href="https://github.com/ameki77" target="_blank">ameki77</a></li>
-  
-  <li><a href="https://picasun.github.io/" target="_blank">Picasun</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
+<h2 id="启动本地预览"><a href="#启动本地预览" class="headerlink" title="启动本地预览"></a>启动本地预览</h2><p>启动本地服务器以预览博客：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo serve</span><br></pre></td></tr></table></figure>
+<p>访问 <code>http://localhost:4000/</code> 查看博客。</p>
+<h2 id="文章编写"><a href="#文章编写" class="headerlink" title="文章编写"></a>文章编写</h2><p>在 <code>_posts</code> 目录下创建 <code>.md</code> 文件，使用 Markdown 语法编写文章。</p>
+<h2 id="部署博客"><a href="#部署博客" class="headerlink" title="部署博客"></a>部署博客</h2><p>将生成的静态文件部署到静态文件托管服务，如 GitHub Pages、Netlify 或自托管服务器。</p>
+<h2 id="配置与定制"><a href="#配置与定制" class="headerlink" title="配置与定制"></a>配置与定制</h2><p>通过编辑 <code>_config.yml</code> 文件，可以对博客进行基本配置。Hexo 社区提供了丰富的插件和主题，以满足不同用户的定制需求。</p>
+<h2 id="常用命令汇总"><a href="#常用命令汇总" class="headerlink" title="常用命令汇总"></a>常用命令汇总</h2><ul>
+<li><code>hexo new [layout] &lt;title&gt;</code>：创建新文章。</li>
+<li><code>hexo generate</code>：生成静态文件。</li>
+<li><code>hexo clean</code>：清除生成的静态文件。</li>
+<li><code>hexo deploy</code>：部署博客到远程服务器。</li>
 </ul>
+<h2 id="进一步学习"><a href="#进一步学习" class="headerlink" title="进一步学习"></a>进一步学习</h2><p>Hexo 官方文档提供了详尽的指南和高级用法，推荐访问 <a target="_blank" rel="noopener" href="https://hexo.io/docs/">Hexo 官网</a> 深入学习。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>Hexo 以其灵活性和易用性，成为搭建个人博客的优选工具。本报告旨在为初学者提供一个快速上手的指南，随着对 Hexo 的深入了解，用户可以探索更多高级功能，以打造个性化的博客平台。</p>
 
 
         <hr>
-    
-        <!-- Archives -->
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/en/fisher/" data-toggle="tooltip" data-placement="top" title="Fisher Task Distance">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2024/04/">April 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2023/06/">June 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2023/04/">April 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2023/03/">March 2023</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2023/02/">February 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2023/01/">January 2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2022/11/">November 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2022/08/">August 2022</a><span class="archive-list-count">5</span></li></ul>
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
 </div>
+<!-- tip end -->
 
+        <!-- tip end -->
+        
 
-        <hr>
-    
-        <!-- Categories -->
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
 
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#深度学习">
-      <li>深度学习</li>
-    </a>
-    
-    <a href="/categories/#math">
-      <li>math</li>
-    </a>
-    
-    <a href="/categories/#Linux系统配置">
-      <li>Linux系统配置</li>
-    </a>
-    
-    <a href="/categories/#编程">
-      <li>编程</li>
-    </a>
-    
-    <a href="/categories/#集群配置">
-      <li>集群配置</li>
-    </a>
-    
-    <a href="/categories/#git">
-      <li>git</li>
-    </a>
-    
-    <a href="/categories/#linux">
-      <li>linux</li>
-    </a>
-    
-    <a href="/categories/#Linux">
-      <li>Linux</li>
-    </a>
-    
-    <a href="/categories/#maths">
-      <li>maths</li>
-    </a>
-    
-    <a href="/categories/#blog">
-      <li>blog</li>
-    </a>
-    
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Hexo 静态博客搭建指南&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/Hexo-静态博客搭建指南/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
   </ul>
 </div>
 
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 
+        <!-- Sharing End -->
+        
         <hr>
-    
-</div>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '04b857744df6aca41a4b',
+      clientSecret: '46345ef524913d79f188d03d10e82693a1b90cbe',
+      repo: 'blogcomment',
+      owner: 'ccloud0525',
+      admin: 'ccloud0525',
+      id: 'Sat Apr 20 2024 12:09:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'zh-CN',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
 
 
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
     
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%91%98%E8%A6%81"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">摘要</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">环境准备</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AE%89%E8%A3%85-Hexo"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">安装 Hexo</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%9B%AE"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">创建博客项目</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E5%86%85%E5%AE%B9"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">生成静态内容</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">启动本地预览</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%96%87%E7%AB%A0%E7%BC%96%E5%86%99"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">文章编写</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">部署博客</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%AE%9A%E5%88%B6"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">配置与定制</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB"><span class="toc-nav-number">10.</span> <span class="toc-nav-text">常用命令汇总</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%BF%9B%E4%B8%80%E6%AD%A5%E5%AD%A6%E4%B9%A0"><span class="toc-nav-number">11.</span> <span class="toc-nav-text">进一步学习</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-nav-number">12.</span> <span class="toc-nav-text">结语</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#blog" title="blog">blog</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://cyria7.github.io/" target="_blank">Cyria7</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/ameki77" target="_blank">ameki77</a>
+          </li>
+          
+          <li>
+            <a href="https://picasun.github.io/" target="_blank">Picasun</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
@@ -1369,7 +1043,7 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             <span class="search-icon">
               <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
             </span>
-            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
           </div>
         </div>
         <div id="local-search-result"></div>
