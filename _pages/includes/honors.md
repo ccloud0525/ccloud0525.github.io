@@ -1,8 +1,8 @@
-- *2024.10*   National Scholarship
+- *2024.10* National Scholarship
 
-- *2024.11*   Outstanding Student of East China Normal University
+- *2024.11* Outstanding Student of East China Normal University
 
-- *2024.08* VLDB Best Research Paper Award Nomination (Coauthor)
+- *2024.08* VLDB Best Research Paper Award Nomination
 
 - *2023.08* Outstanding Graduate of Shanghai University
 
