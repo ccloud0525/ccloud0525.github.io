@@ -1,0 +1,2 @@
+- *2025.04* Conduct a popular science lecture on large language models for Shanghai No.1 Welfare Institute (a department - level unit). 
+- *2025.03* Conduct a popular science lecture on large language models for Shanghai Art & Design Academy (a department - level unit). 
