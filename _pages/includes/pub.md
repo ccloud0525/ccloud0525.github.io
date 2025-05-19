@@ -1,7 +1,7 @@
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2025 Spotlight</div><img src='images/pub/k2vae.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-K2VAE: A Koopman-Kalman Enhanced Variational AutoEncoder for Probabilistic Time Series Forecasting**
+K2VAE: A Koopman-Kalman Enhanced Variational AutoEncoder for Probabilistic Time Series Forecasting
 
 **Xingjian Wu**\*, Xiangfei Qiu\*, Hongfan Gao, Jilin Hu, Chenjuan Guo, Bin Yang#
 
