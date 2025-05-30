@@ -1,11 +1,13 @@
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2025 Spotlight</div><img src='images/pub/k2vae.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-K<sup>2</sup>VAE: A Koopman-Kalman Enhanced Variational AutoEncoder for Probabilistic Time Series Forecasting
+[K<sup>2</sup>VAE: A Koopman-Kalman Enhanced Variational AutoEncoder for Probabilistic Time Series Forecasting](https://arxiv.org/pdf/2505.23017)
 
 **Xingjian Wu**\*, Xiangfei Qiu\*, Hongfan Gao, Jilin Hu, Chenjuan Guo, Bin Yang#
 
 International Conference on Machine Learning **(ICML)**, 2025.
+
+[[Paper]](https://arxiv.org/pdf/2505.23017)  \| [[Project]](https://github.com/decisionintelligence/K2VAE/)
 
 </div>
 </div>
