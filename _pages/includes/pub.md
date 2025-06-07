@@ -17,7 +17,7 @@ International Conference on Machine Learning **(ICML)**, 2025.
 
 [**Rethinking Irregular Time Series Forecasting: A Simple yet Effective Baseline**](https://arxiv.org/pdf/2505.11250)
 
-Xvyuan Liu\*, Xiangfei Qiu\*, Xingjian Wu, Zhengyu Li, Chenjuan Guo, Jilin Hu#, Bin Yang
+Xvyuan Liu\*, Xiangfei Qiu\*, **Xingjian Wu**, Zhengyu Li, Chenjuan Guo, Jilin Hu#, Bin Yang
 
 arXiv preprint, 2025.
 
@@ -29,7 +29,7 @@ arXiv preprint, 2025.
 
 TAB: Unified Benchmarking of Time Series Anomaly Detection Methods
 
-Xiangfei Qiu, Zhe Li, Wanghui Qiu, Shiyan Hu, Lekui Zhou, Xingjian Wu, Zhengyu Li Chenjuan Guo, Aoying Zhou, Zhenli Sheng, Jilin Hu#, Christian S. Jensen, Bin Yang
+Xiangfei Qiu, Zhe Li, Wanghui Qiu, Shiyan Hu, Lekui Zhou, **Xingjian Wu**, Zhengyu Li Chenjuan Guo, Aoying Zhou, Zhenli Sheng, Jilin Hu#, Christian S. Jensen, Bin Yang
 
 International Conference on Very Large Databases **(PVLDB)**, 2025.
 
