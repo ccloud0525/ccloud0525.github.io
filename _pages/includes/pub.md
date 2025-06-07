@@ -1,7 +1,7 @@
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2025 Spotlight</div><img src='images/pub/k2vae.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[K<sup>2</sup>VAE: A Koopman-Kalman Enhanced Variational AutoEncoder for Probabilistic Time Series Forecasting](https://arxiv.org/pdf/2505.23017)
+[**K<sup>2</sup>VAE: A Koopman-Kalman Enhanced Variational AutoEncoder for Probabilistic Time Series Forecasting**](https://arxiv.org/pdf/2505.23017)
 
 **Xingjian Wu**\*, Xiangfei Qiu\*, Hongfan Gao, Jilin Hu, Chenjuan Guo, Bin Yang#
 
@@ -15,7 +15,7 @@ International Conference on Machine Learning **(ICML)**, 2025.
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/apn.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-Rethinking Irregular Time Series Forecasting: A Simple yet Effective Baseline
+[**Rethinking Irregular Time Series Forecasting: A Simple yet Effective Baseline**](https://arxiv.org/pdf/2505.11250)
 
 Xvyuan Liu\*, Xiangfei Qiu\*, Xingjian Wu, Zhengyu Li, Chenjuan Guo, Jilin Hu#, Bin Yang
 
