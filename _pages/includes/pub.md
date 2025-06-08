@@ -5,7 +5,7 @@
 
 **Xingjian Wu**\*, Xiangfei Qiu\*, Hongfan Gao, Jilin Hu, Chenjuan Guo, Bin Yang#
 
-International Conference on Machine Learning **(ICML)**, 2025.
+International Conference on Machine Learning **(ICML)**, 2025. <font color="red">CCF A</font>.
 
 [[Paper]](https://arxiv.org/pdf/2505.23017)  \| [[Project]](https://github.com/decisionintelligence/K2VAE/)
 
@@ -31,7 +31,7 @@ TAB: Unified Benchmarking of Time Series Anomaly Detection Methods
 
 Xiangfei Qiu, Zhe Li, Wanghui Qiu, Shiyan Hu, Lekui Zhou, **Xingjian Wu**, Zhengyu Li Chenjuan Guo, Aoying Zhou, Zhenli Sheng, Jilin Hu#, Christian S. Jensen, Bin Yang
 
-International Conference on Very Large Databases **(PVLDB)**, 2025.
+International Conference on Very Large Databases **(PVLDB)**, 2025. <font color="red">CCF A</font>.
 
 </div>
 </div>
@@ -43,7 +43,7 @@ International Conference on Very Large Databases **(PVLDB)**, 2025.
 
 **Xingjian Wu**, Xiangfei Qiu, Zhengyu Li, Yihang Wang, Jilin Hu, Chenjuan Guo, Hui Xiong, Bin Yang#
 
-International Conference on Learning Representations **(ICLR)**, 2025.
+International Conference on Learning Representations **(ICLR)**, 2025. <font color="red">CORE A*</font>.
 
 [[Paper]](https://arxiv.org/pdf/2410.12261) \| [[Slides]](./files/CATCH_POSTER_PREPRINT.pdf) \| [[Project]](https://github.com/decisionintelligence/CATCH/)
 
@@ -71,7 +71,7 @@ arXiv preprint, 2025.
 
 Xiangfei Qiu\*, Xiuwen Li\*, Ruiyang Pang\*, Zhicheng Pan\*, **Xingjian Wu**\*, Liu Yang\*, Jilin Hu, Yang Shu, Xuesong Lu, Chengcheng Yang, Chenjuan Guo, Aoying Zhou, Christian S. Jensen and Bin Yang#.
 
-IEEE International Conference on Data Engineering **(ICDE)**, 2025.
+IEEE International Conference on Data Engineering **(ICDE)**, 2025. <font color="red">CCF A</font>.
 
 [[Paper]](https://arxiv.org/pdf/2412.17603) \| [[Project]](https://github.com/decisionintelligence/TFB)
 
@@ -85,7 +85,7 @@ IEEE International Conference on Data Engineering **(ICDE)**, 2025.
 
 Xiangfei Qiu, **Xingjian Wu**, Yan Lin, Chenjuan Guo, Jilin Hu#, Bin Yang
 
-ACM Knowledge Discovery and Data Mining **(SIGKDD)**, 2025.
+ACM Knowledge Discovery and Data Mining **(SIGKDD)**, 2025. <font color="red">CCF A</font>.
 
 [[Paper]](https://arxiv.org/pdf/2412.10859) \| [[Project]](https://github.com/decisionintelligence/DUET)
 
@@ -99,7 +99,7 @@ ACM Knowledge Discovery and Data Mining **(SIGKDD)**, 2025.
 
 Xinle Wu, **Xingjian Wu**, Dalin Zhang, Miao Zhang, Chenjuan Guo, Bin Yang#, Christian S Jensen
 
-International Conference on Very Large Databases **(PVLDB)**, 2025.
+International Conference on Very Large Databases **(PVLDB)**, 2025. <font color="red">CCF A</font>.
 
 [[Paper]](https://arxiv.org/pdf/2411.05833) \| [[Project]](https://github.com/decisionintelligence/FACTS)
 
@@ -113,7 +113,7 @@ International Conference on Very Large Databases **(PVLDB)**, 2025.
 
 Xinle Wu\*, **Xingjian Wu**\*, Bin Yang#, Lekui Zhou, Chenjuan Guo, Xiangfei Qiu, Jilin Hu, Zhenli Sheng, Christian S. Jensen
 
-VLDB Journal **(VLDBJ)**, 2024.
+VLDB Journal **(VLDBJ)**, 2024. <font color="red">CCF A</font>.
 
 [[Paper]](https://vbn.aau.dk/ws/portalfiles/portal/730426496/AutoCTS_.pdf) \| [[Project]](https://github.com/decisionintelligence/AutoCTS_Plus_Plus)
 
@@ -127,7 +127,7 @@ VLDB Journal **(VLDBJ)**, 2024.
 
 Xiangfei Qiu, Jilin Hu#, Lekui Zhou, **Xingjian Wu**, Junyang Du, Buang Zhang, Chenjuan Guo, Aoying Zhou, Christian S. Jensen, Zhenli Sheng, Bin Yang
 
-International Conference on Very Large Databases **(PVLDB)**, 2024.
+International Conference on Very Large Databases **(PVLDB)**, 2024. <font color="red">CCF A</font>.
 
 [[Paper]](https://www.vldb.org/pvldb/vol17/p2363-hu.pdf) \| [[Project]](https://github.com/decisionintelligence/TFB)
 
