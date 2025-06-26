@@ -19,7 +19,7 @@
 </style>  
 <div class="scrollable-area">  
     <ul>
-        <li><em>2025.05</em>: ⭐️⭐️ Our paper "TAB: Unified Benchmarking of Time Series Anomaly Detection Methods" has been accepted by PVLDB 2025! </li>
+        <li><em>2025.05</em>: ⭐️⭐️ Our paper "<a href="http://arxiv.org/abs/2506.18046v1">TAB</a>: Unified Benchmarking of Time Series Anomaly Detection Methods" has been accepted by PVLDB 2025! </li>
         <li><em>2025.05</em>: 🎉🎉 Our paper "<a href="https://arxiv.org/pdf/2505.23017">K<sup>2</sup>VAE</a>: A Koopman-Kalman Enhanced Variational AutoEncoder for Probabilistic Time Series Forecasting" has been accepted as a Spotlight Poster by ICML 2025! </li>
         <li><em>2025.01</em>: 🎈🎈 Our paper "<a href="https://arxiv.org/pdf/2410.12261">CATCH</a>: Channel-Aware Multivariate Time Series Anomaly Detection via Frequency Patching" has been accepted by ICLR 2025! </li>
         <li><em>2024.12</em>: 🏖️🏖️ Our paper "<a href="https://arxiv.org/pdf/2412.17603">EasyTime</a>: Time Series Forecasting Made Easy" has been accepted by ICDE 2025! </li>

@@ -27,11 +27,13 @@ arXiv preprint, 2025.
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">PVLDB 2025</div><img src='images/pub/tab.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-TAB: Unified Benchmarking of Time Series Anomaly Detection Methods
+[**TAB: Unified Benchmarking of Time Series Anomaly Detection Methods**](http://arxiv.org/abs/2506.18046v1)
 
 Xiangfei Qiu, Zhe Li, Wanghui Qiu, Shiyan Hu, Lekui Zhou, **Xingjian Wu**, Zhengyu Li Chenjuan Guo, Aoying Zhou, Zhenli Sheng, Jilin Hu#, Christian S. Jensen, Bin Yang
 
 International Conference on Very Large Databases **(PVLDB)**, 2025. <font color="red">CCF A</font>.
+
+[[Paper]](http://arxiv.org/abs/2506.18046v1)  \| [[Project]](https://github.com/decisionintelligence/TAB/)
 
 </div>
 </div>
