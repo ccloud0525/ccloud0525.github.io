@@ -28,6 +28,6 @@
         <li><em>2024.08</em>: 🎉🎉 Our paper "<a href="https://www.vldb.org/pvldb/vol17/p2363-hu.pdf">TFB</a>: Towards Comprehensive and Fair Benchmarking of Time Series Forecasting Methods" receives VLDB 2024 Best Research Paper Award Nomination! </li>
         <li><em>2024.08</em>: 🥂🥂 The AutoCTS series is integrated into the leaderboard for time series analytics, called <a href="https://decisionintelligence.github.io/OpenTS/algorithms/AutoCTS/">OpenTS</a> </li>
         <li><em>2024.07</em>: 📑📑 Our paper "<a href="https://arxiv.org/pdf/2411.05833">FACTS</a>: Fully Automated Correlated Time Series Forecasting in Minutes" has been accepted by PVLDB 2025 </li>  
-        <li><em>2024.07</em>: 🎓🎓 Our paper "<a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oiHsW2kAAAAJ&citation_for_view=oiHsW2kAAAAJ:qjMakFHDy7sC">AutoCTS++</a>: Zero-shot Joint Neural Architecture and Hyperparameter Search for Correlated Time Series Forecasting" has been accepted by VLDBJ 2024. </li>
+        <li><em>2024.07</em>: 🎓🎓 Our paper "<a href="https://link.springer.com/article/10.1007/s00778-024-00872-x">AutoCTS++</a>: Zero-shot Joint Neural Architecture and Hyperparameter Search for Correlated Time Series Forecasting" has been accepted by VLDBJ 2024. </li>
     </ul>  
 </div>  

@@ -99,7 +99,7 @@ ACM Knowledge Discovery and Data Mining **(SIGKDD)**, 2025. <font color="red">CC
 
 **[FACTS: Fully Automated Correlated Time Series Forecasting in Minutes](https://arxiv.org/pdf/2411.05833)**
 
-Xinle Wu, **Xingjian Wu**, Dalin Zhang, Miao Zhang, Chenjuan Guo, Bin Yang#, Christian S Jensen
+Xinle Wu, **Xingjian Wu**, Dalin Zhang, Miao Zhang, Chenjuan Guo, Bin Yang#, Christian S. Jensen
 
 International Conference on Very Large Databases **(PVLDB)**, 2025. <font color="red">CCF A</font>.
 
@@ -111,13 +111,13 @@ International Conference on Very Large Databases **(PVLDB)**, 2025. <font color=
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">VLDBJ 2024</div><img src='images/pub/autocts++.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[**AutoCTS++: zero-shot joint neural architecture and hyperparameter search for correlated time series forecasting**](https://vbn.aau.dk/ws/portalfiles/portal/730426496/AutoCTS_.pdf)
+[**AutoCTS++: zero-shot joint neural architecture and hyperparameter search for correlated time series forecasting**](https://link.springer.com/article/10.1007/s00778-024-00872-x)
 
 Xinle Wu\*, **Xingjian Wu**\*, Bin Yang#, Lekui Zhou, Chenjuan Guo, Xiangfei Qiu, Jilin Hu, Zhenli Sheng, Christian S. Jensen
 
 VLDB Journal **(VLDBJ)**, 2024. <font color="red">CCF A</font>.
 
-[[Paper]](https://vbn.aau.dk/ws/portalfiles/portal/730426496/AutoCTS_.pdf) \| [[Project]](https://github.com/decisionintelligence/AutoCTS_Plus_Plus)
+[[Paper]](https://link.springer.com/article/10.1007/s00778-024-00872-x) \| [[Project]](https://github.com/decisionintelligence/AutoCTS_Plus_Plus)
 
 </div>
 </div>
