@@ -7,7 +7,7 @@
 
 International Conference on Machine Learning **(ICML)**, 2025. <font color="red">CCF A</font>.
 
-[[Paper]](https://arxiv.org/pdf/2505.23017)  \| [[Project]](https://github.com/decisionintelligence/K2VAE/)
+[[Paper]](https://arxiv.org/pdf/2505.23017) \| [[Slides]](./files/K2VAE_POSTER.pdf) \| [[Project]](https://github.com/decisionintelligence/K2VAE/)
 
 </div>
 </div>
