@@ -3,7 +3,7 @@
 
 [**K<sup>2</sup>VAE: A Koopman-Kalman Enhanced Variational AutoEncoder for Probabilistic Time Series Forecasting**](https://arxiv.org/pdf/2505.23017)
 
-**Xingjian Wu**\*, Xiangfei Qiu\*, Hongfan Gao, Jilin Hu, Chenjuan Guo, Bin Yang#
+**Xingjian Wu**\*, Xiangfei Qiu\*, Hongfan Gao, Jilin Hu, Bin Yang#, Chenjuan Guo 
 
 International Conference on Machine Learning **(ICML)**, 2025. <font color="red">CCF A</font>.
 
