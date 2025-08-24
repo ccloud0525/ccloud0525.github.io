@@ -1,3 +1,4 @@
+## Accepted Papers
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2025 Spotlight</div><img src='images/pub/k2vae.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -8,18 +9,6 @@
 International Conference on Machine Learning **(ICML)**, 2025. <font color="red">CCF A</font>.
 
 [[Paper]](https://arxiv.org/pdf/2505.23017) \| [[Slides]](./files/K2VAE_POSTER.pdf) \| [[Project]](https://github.com/decisionintelligence/K2VAE/)
-
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/apn.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[**Rethinking Irregular Time Series Forecasting: A Simple yet Effective Baseline**](https://arxiv.org/pdf/2505.11250)
-
-Xvyuan Liu\*, Xiangfei Qiu\*, **Xingjian Wu**, Zhengyu Li, Chenjuan Guo, Jilin Hu#, Bin Yang
-
-arXiv preprint, 2025.
 
 </div>
 </div>
@@ -48,20 +37,6 @@ International Conference on Very Large Databases **(PVLDB)**, 2025. <font color=
 International Conference on Learning Representations **(ICLR)**, 2025. <font color="red">CORE A*</font>.
 
 [[Paper]](https://arxiv.org/pdf/2410.12261) \| [[Slides]](./files/CATCH_POSTER_PREPRINT.pdf) \| [[Project]](https://github.com/decisionintelligence/CATCH/)
-
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/c4ts.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[**A Comprehensive Survey of Deep Learning for Multivariate Time Series Forecasting: A Channel Strategy Perspective**](https://arxiv.org/pdf/2502.10721)
-
-Xiangfei Qiu, Hanyin Cheng, **Xingjian Wu**, Jilin Hu, Chenjuan Guo
-
-arXiv preprint, 2025.
-
-[[Paper]](https://arxiv.org/pdf/2502.10721) \| [[Project]](https://github.com/decisionintelligence/CS4TS)
 
 </div>
 </div>
@@ -132,6 +107,34 @@ Xiangfei Qiu, Jilin Hu#, Lekui Zhou, **Xingjian Wu**, Junyang Du, Buang Zhang, C
 International Conference on Very Large Databases **(PVLDB)**, 2024. <font color="red">CCF A</font>.
 
 [[Paper]](https://www.vldb.org/pvldb/vol17/p2363-hu.pdf) \| [[Project]](https://github.com/decisionintelligence/TFB)
+
+</div>
+</div>
+
+## Preprints
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/apn.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Rethinking Irregular Time Series Forecasting: A Simple yet Effective Baseline**](https://arxiv.org/pdf/2505.11250)
+
+Xvyuan Liu\*, Xiangfei Qiu\*, **Xingjian Wu**, Zhengyu Li, Chenjuan Guo, Jilin Hu#, Bin Yang
+
+arXiv preprint, 2025.
+
+</div>
+</div>
+
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/c4ts.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**A Comprehensive Survey of Deep Learning for Multivariate Time Series Forecasting: A Channel Strategy Perspective**](https://arxiv.org/pdf/2502.10721)
+
+Xiangfei Qiu, Hanyin Cheng, **Xingjian Wu**, Jilin Hu, Chenjuan Guo
+
+arXiv preprint, 2025.
+
+[[Paper]](https://arxiv.org/pdf/2502.10721) \| [[Project]](https://github.com/decisionintelligence/CS4TS)
 
 </div>
 </div>
