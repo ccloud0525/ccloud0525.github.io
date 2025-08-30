@@ -72,13 +72,13 @@ ACM Knowledge Discovery and Data Mining **(SIGKDD)**, 2025. <font color="red">CC
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">PVLDB 2025</div><img src='images/pub/facts.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**[FACTS: Fully Automated Correlated Time Series Forecasting in Minutes](https://arxiv.org/pdf/2411.05833)**
+**[FACTS: Fully Automated Correlated Time Series Forecasting in Minutes](https://www.vldb.org/pvldb/vol18/p144-wu.pdf)**
 
 Xinle Wu, **Xingjian Wu**, Dalin Zhang, Miao Zhang, Chenjuan Guo, Bin Yang#, Christian S. Jensen
 
 International Conference on Very Large Databases **(PVLDB)**, 2025. <font color="red">CCF A</font>.
 
-[[Paper]](https://arxiv.org/pdf/2411.05833) \| [[Project]](https://github.com/decisionintelligence/FACTS)
+[[Paper]](https://www.vldb.org/pvldb/vol18/p144-wu.pdf) \| [[Project]](https://github.com/decisionintelligence/FACTS)
 
 </div>
 </div>
