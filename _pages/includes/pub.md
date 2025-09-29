@@ -141,7 +141,7 @@ arXiv preprint, 2025.
 
 [**DAG: A Dual Causal Network for Time Series Forecasting with Exogenous Variables**](https://arxiv.org/pdf/2509.14933)
 
-Xiangfei Qiu, Yuhan Zhu, Zhengyu Li, Hanyin Cheng, **Xingjian Wu**, Chenjuan Guo, Bin Yang, Jilin Hu
+Xiangfei Qiu, Yuhan Zhu, Zhengyu Li, Hanyin Cheng, **Xingjian Wu**, Chenjuan Guo, Bin Yang, Jilin Hu#
 
 arXiv preprint, 2025.
 
