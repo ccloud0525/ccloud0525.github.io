@@ -112,6 +112,30 @@ International Conference on Very Large Databases **(PVLDB)**, 2024. <font color=
 </div>
 
 ## Preprints
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/aurora.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Aurora: Towards Universal Generative Multimodal Time Series Forecasting**](https://arxiv.org/pdf/2509.22295)
+
+Xingjian Wu, Jianxin Jin, Wanghui Qiu, Peng Chen, Yang Shu, Bin Yang, Chenjuan Guo#
+
+arXiv preprint, 2025.
+
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/patchmoe.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Unlocking the Power of Mixture-of-Experts for Task-Aware Time Series Analytics**](https://arxiv.org/pdf/2509.22279)
+
+Xingjian Wu, Zhengyu Li, Hanyin Cheng, Xiangfei Qiu, Jilin Hu, Chenjuan Guo, Bin Yang#
+
+arXiv preprint, 2025.
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/apn.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
