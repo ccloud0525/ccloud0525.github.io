@@ -136,7 +136,7 @@ arXiv preprint, 2025.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/patchmoe.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/dag.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**DAG: A Dual Causal Network for Time Series Forecasting with Exogenous Variables**](https://arxiv.org/pdf/2509.14933)
