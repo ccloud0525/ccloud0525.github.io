@@ -136,6 +136,30 @@ arXiv preprint, 2025.
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/hermes.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Multi-Scale Spatial-Temporal Hypergraph Network with Lead-Lag Structures for Stock Time Series Forecasting**](https://arxiv.org/pdf/2509.23668v1)
+
+Xiangfei Qiu, Liu Yang, Hanyin Cheng, **Xingjian Wu**, Rongjia Wu, Zhigang Zhang, Ding Tu, Chenjuan Guo, Bin Yang, Christian S. Jensen, Jilin Hu#
+
+arXiv preprint, 2025.
+
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/astgi.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**ASTGI: Adaptive Spatio-Temporal Graph Interactions for Irregular Multivariate Time Series Forecasting**](https://arxiv.org/pdf/2509.23313v1)
+
+Xvyuan Liu, Xiangfei Qiu, Hanyin Cheng, **Xingjian Wu**, Chenjuan Guo, Bin Yang, Jilin Hu#
+
+arXiv preprint, 2025.
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/dag.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
