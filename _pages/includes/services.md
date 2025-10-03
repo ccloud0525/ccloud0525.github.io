@@ -1,3 +1,4 @@
+- *2025.10* PC Member of International Conference on Learning Representations ([ICLR 2026](http://iclr.cc/)), (Main Track).
 - *2025.08* PC Member of Association for the Advancement of Artificial Intelligence ([AAAI 2026](https://aaai.org/conference/aaai/aaai-26/)), (Main Technical Track).
 - *2025.02* PC Member of International Joint Conference on Artificial Intelligence ([IJCAI 2025](https://2025.ijcai.org/)), (Main & Survey Track).
 - *2024.12* PC Member of International Conference on Learning Representations ([ICLR 2025](http://iclr.cc/)), (Main Track).
