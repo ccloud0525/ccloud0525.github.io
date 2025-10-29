@@ -24,7 +24,7 @@ Conference on Neural Information Processing Systems **(NeurIPS)**, 2025. <font c
 
 Conference on Neural Information Processing Systems **(NeurIPS)**, 2025. <font color="red">CCF A</font>.
 
-[[Paper]](https://arxiv.org/pdf/2510.14510) \| [[Project]](https://github.com/decisionintelligence/SRSNet/)
+[[Paper]](https://arxiv.org/pdf/2510.14510) \| [[Slides]](./files/SRSNet_POSTER.pdf) \| [[Project]](https://github.com/decisionintelligence/SRSNet/)
 
 </div>
 </div>
