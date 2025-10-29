@@ -122,7 +122,7 @@ Xinle Wu\*, **Xingjian Wu**\*, Bin Yang#, Lekui Zhou, Chenjuan Guo, Xiangfei Qiu
 
 VLDB Journal **(VLDBJ)**, 2024. <font color="red">CCF A</font>.
 
-[[Paper]](https://link.springer.com/article/10.1007/s00778-024-00872-x) \| [[Project]](https://github.com/decisionintelligence/AutoCTS_Plus_Plus)
+[[Paper]](https://link.springer.com/article/10.1007/s00778-024-00872-x) \| [[Project]](https://github.com/decisionintelligence/AutoCTS_plusplus)
 
 </div>
 </div>
