@@ -1,5 +1,20 @@
 ## Accepted Papers
 
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div><img src='images/pub/dbloss.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Decomposition-based Loss Function for Time Series Forecasting**](https://arxiv.org/pdf/2510.23672v1)
+
+Xiangfei Qiu, **Xingjian Wu**, Hanyin Cheng, Xvyuan Liu, Chenjuan Guo, Jilin Hu#, Bin Yang
+
+Conference on Neural Information Processing Systems **(NeurIPS)**, 2025. <font color="red">CCF A</font>.
+
+[[Paper]](https://arxiv.org/pdf/2510.23672v1) \| [[Project]](https://github.com/decisionintelligence/DBLoss/)
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025 Spotlight</div><img src='images/pub/srsnet.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
