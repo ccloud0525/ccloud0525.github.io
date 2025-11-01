@@ -8,5 +8,7 @@
 
 - *2025.04* International Conference on Learning Representations (ICLR 2025)
 
+- *2024.12* Pujiang AI Academic Conference
+
 - *2024.08* National Database Conference (NDBC 2024)
 
