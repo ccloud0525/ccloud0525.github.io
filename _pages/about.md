@@ -38,3 +38,5 @@ redirect_from:
 # 📖 Services
 {% include_relative includes/services.md %}
 
+# 💼 Attendance
+{% include_relative includes/attendance.md %}
