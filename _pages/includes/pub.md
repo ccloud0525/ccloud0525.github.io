@@ -1,6 +1,20 @@
 ## Accepted Papers
 
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/c4ts.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**A Comprehensive Survey of Deep Learning for Multivariate Time Series Forecasting: A Channel Strategy Perspective**](https://arxiv.org/pdf/2502.10721)
+
+Xiangfei Qiu, Hanyin Cheng, **Xingjian Wu**, Jilin Hu, Chenjuan Guo
+
+Association for the Advancement of Artificial Intelligence Conference on Artificial Intelligence **(AAAI)**, 2025. <font color="red">CCF A</font>.
+
+[[Paper]](https://arxiv.org/pdf/2502.10721) \| [[Project]](https://github.com/decisionintelligence/CS4TS)
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div><img src='images/pub/dbloss.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -211,21 +225,6 @@ arXiv preprint, 2025.
 Xvyuan Liu\*, Xiangfei Qiu\*, **Xingjian Wu**, Zhengyu Li, Chenjuan Guo, Jilin Hu#, Bin Yang
 
 arXiv preprint, 2025.
-
-</div>
-</div>
-
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/c4ts.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[**A Comprehensive Survey of Deep Learning for Multivariate Time Series Forecasting: A Channel Strategy Perspective**](https://arxiv.org/pdf/2502.10721)
-
-Xiangfei Qiu, Hanyin Cheng, **Xingjian Wu**, Jilin Hu, Chenjuan Guo
-
-arXiv preprint, 2025.
-
-[[Paper]](https://arxiv.org/pdf/2502.10721) \| [[Project]](https://github.com/decisionintelligence/CS4TS)
 
 </div>
 </div>
