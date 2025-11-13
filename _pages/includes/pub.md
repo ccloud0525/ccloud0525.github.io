@@ -150,7 +150,7 @@ International Conference on Very Large Databases **(PVLDB)**, 2024. <font color=
 
 **Xingjian Wu**, Xiangfei Qiu, Hanyin Cheng, Zhengyu Li, Jilin Hu, Chenjuan Guo, Bin Yang#
 
-Once accepted by NeurIPS 2025 as a Spotlight Poster, but unfairly desk rejected without any evidence provided. We sincerely remind all contributors to carefully check the **"Dual Submission"** policies of top AI conferences and pay attention to such subjective descriptions as **"substantial similarity"** and **"thinly slicing"**. Under such subjective criterions, if your papers focus on the same topic and are parallelly submitted, they are at risk of being judged as dual submissions by some Program Chairs not majoring in your domains. 
+Once accepted by NeurIPS 2025 as a Spotlight Poster, but unfairly desk rejected after the Camera Ready phase without any evidence provided. We sincerely remind all contributors to carefully check the **"Dual Submission"** policies of top AI conferences and pay attention to such subjective descriptions as **"substantial similarity"** and **"thinly slicing"**. Under such subjective criterions, if your papers focus on the same topic and are parallelly submitted, they are at risk of being judged as dual submissions by some Program Chairs not majoring in your domains. 
 
 [[Paper]](https://arxiv.org/pdf/2510.14510) \| [[Project]](https://github.com/decisionintelligence/SRSNet/)
 
