@@ -6,7 +6,7 @@
 
 [**Rethinking Irregular Time Series Forecasting: A Simple yet Effective Baseline**](https://arxiv.org/pdf/2505.11250)
 
-Xvyuan Liu\*, Xiangfei Qiu\*, **Xingjian Wu**, Zhengyu Li, Chenjuan Guo, Jilin Hu#, Bin Yang
+Xvyuan Liu\*, Xiangfei Qiu\*, **Xingjian Wu**\*, Zhengyu Li, Chenjuan Guo, Jilin Hu#, Bin Yang
 
 Association for the Advancement of Artificial Intelligence Conference on Artificial Intelligence **(AAAI)**, 2026. <font color="red">CCF A</font>.
 
@@ -25,20 +25,6 @@ Xiangfei Qiu, **Xingjian Wu**, Hanyin Cheng, Xvyuan Liu, Chenjuan Guo, Jilin Hu#
 Conference on Neural Information Processing Systems **(NeurIPS)**, 2025. <font color="red">CCF A</font>.
 
 [[Paper]](https://arxiv.org/pdf/2510.23672v1) \| [[Project]](https://github.com/decisionintelligence/DBLoss/)
-
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025 Spotlight</div><img src='images/pub/srsnet.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[**Enhancing Time Series Forecasting through Selective Representation Spaces: A Patch Perspective**](https://arxiv.org/pdf/2510.14510)
-
-**Xingjian Wu**, Xiangfei Qiu, Hanyin Cheng, Zhengyu Li, Jilin Hu, Chenjuan Guo, Bin Yang# 
-
-Conference on Neural Information Processing Systems **(NeurIPS)**, 2025. <font color="red">CCF A</font>.
-
-[[Paper]](https://arxiv.org/pdf/2510.14510) \| [[Slides]](./files/SRSNet_POSTER.pdf) \| [[Project]](https://github.com/decisionintelligence/SRSNet/)
 
 </div>
 </div>
@@ -156,6 +142,21 @@ International Conference on Very Large Databases **(PVLDB)**, 2024. <font color=
 </div>
 
 ## Preprints
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/srsnet.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Enhancing Time Series Forecasting through Selective Representation Spaces: A Patch Perspective**](https://arxiv.org/pdf/2510.14510)
+
+**Xingjian Wu**, Xiangfei Qiu, Hanyin Cheng, Zhengyu Li, Jilin Hu, Chenjuan Guo, Bin Yang#
+
+Once accepted by NeurIPS 2025 as a Spotlight Poster, but unfairly desk rejected without any evidence provided. We sincerely remind all contributors to carefully check the **"Dual Submission"** policies of top AI conferences and pay attention to such subjective descriptions as **"substantial similarity"** and **"thinly slicing"**. Under such subjective criterions, if your papers focus on the same topic and are parallelly submitted, they are at risk of being judged as dual submissions by some Program Chairs not majoring in your domains. 
+
+[[Paper]](https://arxiv.org/pdf/2510.14510) \| [[Slides]](./files/SRSNet_POSTER.pdf) \| [[Project]](https://github.com/decisionintelligence/SRSNet/)
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/aurora.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
