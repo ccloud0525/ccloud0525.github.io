@@ -10,7 +10,7 @@ Xvyuan Liu\*, Xiangfei Qiu\*, **Xingjian Wu**\*, Zhengyu Li, Chenjuan Guo, Jilin
 
 Association for the Advancement of Artificial Intelligence Conference on Artificial Intelligence **(AAAI)**, 2026. <font color="red">CCF A</font>.
 
-[[Paper]](https://arxiv.org/pdf/2505.11250) 
+[[Paper]](https://arxiv.org/pdf/2505.11250) \| [[Project]](https://github.com/decisionintelligence/APN/)
 
 </div>
 </div>
