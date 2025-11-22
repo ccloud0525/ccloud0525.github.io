@@ -1,3 +1,5 @@
+- *2025.10* First-class Scholarship for Academic Excellence
+
 - *2024.10* National Scholarship
 
 - *2024.11* Outstanding Student of East China Normal University
