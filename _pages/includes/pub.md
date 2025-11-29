@@ -15,6 +15,20 @@ Association for the Advancement of Artificial Intelligence Conference on Artific
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025 Spotlight</div><img src='images/pub/srsnet.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Enhancing Time Series Forecasting through Selective Representation Spaces: A Patch Perspective**](https://arxiv.org/pdf/2510.14510)
+
+**Xingjian Wu**, Xiangfei Qiu, Hanyin Cheng, Zhengyu Li, Jilin Hu, Chenjuan Guo, Bin Yang#
+
+Conference on Neural Information Processing Systems **(NeurIPS)**, 2025. <font color="red">CCF A</font>.
+
+[[Paper]](https://arxiv.org/pdf/2510.14510) \| [[Project]](https://github.com/decisionintelligence/SRSNet/)
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div><img src='images/pub/dbloss.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -142,20 +156,6 @@ International Conference on Very Large Databases **(PVLDB)**, 2024. <font color=
 </div>
 
 ## Preprints
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/srsnet.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[**Enhancing Time Series Forecasting through Selective Representation Spaces: A Patch Perspective**](https://arxiv.org/pdf/2510.14510)
-
-**Xingjian Wu**, Xiangfei Qiu, Hanyin Cheng, Zhengyu Li, Jilin Hu, Chenjuan Guo, Bin Yang#
-
-arXiv preprint, 2025.
-
-[[Paper]](https://arxiv.org/pdf/2510.14510) \| [[Project]](https://github.com/decisionintelligence/SRSNet/)
-
-</div>
-</div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/aurora.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
