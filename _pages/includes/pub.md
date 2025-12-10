@@ -10,6 +10,8 @@ Xvyuan Liu\*, Xiangfei Qiu\*, **Xingjian Wu**\*, Zhengyu Li, Chenjuan Guo, Jilin
 
 Association for the Advancement of Artificial Intelligence Conference on Artificial Intelligence **(AAAI)**, 2026. <font color="red">CCF A</font>.
 
+<font color="red">Accepted as an Oral paper (Top 4%).</font>
+
 [[Paper]](https://arxiv.org/pdf/2505.11250) \| [[Project]](https://github.com/decisionintelligence/APN/)
 
 </div>
@@ -23,6 +25,8 @@ Association for the Advancement of Artificial Intelligence Conference on Artific
 **Xingjian Wu**, Xiangfei Qiu, Hanyin Cheng, Zhengyu Li, Jilin Hu, Chenjuan Guo, Bin Yang#
 
 Conference on Neural Information Processing Systems **(NeurIPS)**, 2025. <font color="red">CCF A</font>.
+
+<font color="red">Accepted as a Spotlight poster (Top 3.2%).</font>
 
 [[Paper]](https://arxiv.org/pdf/2510.14510) \| [[Slides]](./files/SRSNet_POSTER.pdf) \| [[Project]](https://github.com/decisionintelligence/SRSNet/)
 
@@ -51,6 +55,8 @@ Conference on Neural Information Processing Systems **(NeurIPS)**, 2025. <font c
 **Xingjian Wu**\*, Xiangfei Qiu\*, Hongfan Gao, Jilin Hu, Bin Yang#, Chenjuan Guo 
 
 International Conference on Machine Learning **(ICML)**, 2025. <font color="red">CCF A</font>.
+
+<font color="red">Accepted as a Spotlight poster (Top 2.6%).</font>
 
 [[Paper]](https://arxiv.org/pdf/2505.23017) \| [[Slides]](./files/K2VAE_POSTER.pdf) \| [[Project]](https://github.com/decisionintelligence/K2VAE/)
 
@@ -108,6 +114,8 @@ Xiangfei Qiu, **Xingjian Wu**, Yan Lin, Chenjuan Guo, Jilin Hu#, Bin Yang
 
 ACM Knowledge Discovery and Data Mining **(SIGKDD)**, 2025. <font color="red">CCF A</font>.
 
+<a href="https://resources.paperdigest.org/2025/09/most-influential-kdd-papers-2025-09-version/"><font color="red">One of the most influential papers of SIGKDD 2025.</font></a>
+
 [[Paper]](https://arxiv.org/pdf/2412.10859) \| [[Project]](https://github.com/decisionintelligence/DUET)
 
 </div>
@@ -141,7 +149,7 @@ VLDB Journal **(VLDBJ)**, 2024. <font color="red">CCF A</font>.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge"> PVLDB 2024</div><img src='images/pub/tfb.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge"> PVLDB 2024 Best Paper</div><img src='images/pub/tfb.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**TFB: Towards Comprehensive and Fair Benchmarking of Time Series Forecasting Methods**](https://www.vldb.org/pvldb/vol17/p2363-hu.pdf)
@@ -149,6 +157,8 @@ VLDB Journal **(VLDBJ)**, 2024. <font color="red">CCF A</font>.
 Xiangfei Qiu, Jilin Hu#, Lekui Zhou, **Xingjian Wu**, Junyang Du, Buang Zhang, Chenjuan Guo, Aoying Zhou, Christian S. Jensen, Zhenli Sheng, Bin Yang
 
 International Conference on Very Large Databases **(PVLDB)**, 2024. <font color="red">CCF A</font>.
+
+<font color="red">Best Research Paper Award Nomination of PVLDB 2024.</font>
 
 [[Paper]](https://www.vldb.org/pvldb/vol17/p2363-hu.pdf) \| [[Project]](https://github.com/decisionintelligence/TFB)
 
