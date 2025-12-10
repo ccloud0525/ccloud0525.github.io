@@ -19,7 +19,7 @@
 </style>  
 <div class="scrollable-area">  
     <ul>
-        <li><em>2025.12</em>: ⭐️⭐️ Time series model (<a href="https://arxiv.org/pdf/2412.10859">DUET</a>) was selected as <a href="https://resources.paperdigest.org/2025/09/most-influential-kdd-papers-2025-09-version/">most influential papers</a> by Paper Digest. </li>    
+        <li><em>2025.12</em>: ⭐️⭐️ Time series model (<a href="https://arxiv.org/pdf/2412.10859">DUET</a>) was selected as one of the <a href="https://resources.paperdigest.org/2025/09/most-influential-kdd-papers-2025-09-version/">most influential papers</a> by Paper Digest. </li>    
         <li><em>2025.11</em>: 🎉🎉 Our paper "<a href="https://arxiv.org/pdf/2505.11250">Rethinking</a>  Irregular Time Series Forecasting: A Simple yet Effective Baseline" has been accepted as an Oral paper by AAAI 2026! </li>
         <li><em>2025.09</em>: 🎈🎈 Our paper "<a href="https://arxiv.org/pdf/2510.14510">Enhancing</a> Time Series Forecasting through Selective Representation Spaces: A Patch Perspective" has been accepted as a Spotlight Poster by NeurIPS 2025! </li>
         <li><em>2025.09</em>: 📑📑 Our paper "<a href="https://arxiv.org/pdf/2510.23672v1">DBLoss:</a> Decomposition-based Loss Function for Time Series Forecasting" has been accepted by NeurIPS 2025! </li>  
