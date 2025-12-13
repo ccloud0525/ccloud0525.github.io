@@ -1,3 +1,5 @@
+- *2025.12* China Data 2025
+
 - *2025.10* China National Computer Congress (CNCC 2025)
 
 - *2025.09* CCF Big Data 2025
