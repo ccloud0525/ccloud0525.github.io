@@ -28,7 +28,7 @@ Conference on Neural Information Processing Systems **(NeurIPS)**, 2025. <font c
 
 <font color="red">Accepted as a Spotlight poster (Top 3.2%).</font>
 
-[[Paper]](https://arxiv.org/pdf/2510.14510) \| [[Poster]](./files/SRSNet_POSTER.pdf) |\ [[Slides]](./files/SRSNet_SLIDES.pdf) \| [[Project]](https://github.com/decisionintelligence/SRSNet/)
+[[Paper]](https://arxiv.org/pdf/2510.14510) \| [[Poster]](./files/SRSNet_POSTER.pdf) \| [[Slides]](./files/SRSNet_SLIDES.pdf) \| [[Project]](https://github.com/decisionintelligence/SRSNet/)
 
 </div>
 </div>
