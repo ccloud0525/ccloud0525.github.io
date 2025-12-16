@@ -28,7 +28,7 @@ Conference on Neural Information Processing Systems **(NeurIPS)**, 2025. <font c
 
 <font color="red">Accepted as a Spotlight poster (Top 3.2%).</font>
 
-[[Paper]](https://arxiv.org/pdf/2510.14510) \| [[Slides]](./files/SRSNet_POSTER.pdf) \| [[Project]](https://github.com/decisionintelligence/SRSNet/)
+[[Paper]](https://arxiv.org/pdf/2510.14510) \| [[Poster]](./files/SRSNet_POSTER.pdf) |\ [[Slides]](./files/SRSNet_SLIDES.pdf) \| [[Project]](https://github.com/decisionintelligence/SRSNet/)
 
 </div>
 </div>
@@ -58,7 +58,7 @@ International Conference on Machine Learning **(ICML)**, 2025. <font color="red"
 
 <font color="red">Accepted as a Spotlight poster (Top 2.6%).</font>
 
-[[Paper]](https://arxiv.org/pdf/2505.23017) \| [[Slides]](./files/K2VAE_POSTER.pdf) \| [[Project]](https://github.com/decisionintelligence/K2VAE/)
+[[Paper]](https://arxiv.org/pdf/2505.23017) \| [[Poster]](./files/K2VAE_POSTER.pdf) \| [[Project]](https://github.com/decisionintelligence/K2VAE/)
 
 </div>
 </div>
@@ -86,7 +86,7 @@ International Conference on Very Large Databases **(PVLDB)**, 2025. <font color=
 
 International Conference on Learning Representations **(ICLR)**, 2025. <font color="red">CORE A*</font>.
 
-[[Paper]](https://arxiv.org/pdf/2410.12261) \| [[Slides]](./files/CATCH_POSTER_PREPRINT.pdf) \| [[Project]](https://github.com/decisionintelligence/CATCH/)
+[[Paper]](https://arxiv.org/pdf/2410.12261) \| [[Poster]](./files/CATCH_POSTER_PREPRINT.pdf) \| [[Slides]](./files/CATCH_SLIDES.pdf) \| [[Project]](https://github.com/decisionintelligence/CATCH/)
 
 </div>
 </div>
@@ -114,7 +114,7 @@ Xiangfei Qiu, **Xingjian Wu**, Yan Lin, Chenjuan Guo, Jilin Hu#, Bin Yang
 
 ACM Knowledge Discovery and Data Mining **(SIGKDD)**, 2025. <font color="red">CCF A</font>.
 
-<a href="https://resources.paperdigest.org/2025/09/most-influential-kdd-papers-2025-09-version/"><font color="red">One of the most influential papers of SIGKDD 2025.</font></a>
+<a href="https://resources.paperdigest.org/2025/09/most-influential-kdd-papers-2025-09-version/"><font color="red">PaperDigest Most Influential Paper</font></a>
 
 [[Paper]](https://arxiv.org/pdf/2412.10859) \| [[Project]](https://github.com/decisionintelligence/DUET)
 
