@@ -1,3 +1,5 @@
+- *2025.12* PaperDigest Most Influential Paper
+
 - *2025.10* First-class Scholarship for Academic Excellence
 
 - *2024.10* National Scholarship
