@@ -138,7 +138,7 @@ International Conference on Very Large Databases **(PVLDB)**, 2025. <font color=
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">VLDBJ 2024</div><img src='images/pub/autocts++.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[**AutoCTS++: zero-shot joint neural architecture and hyperparameter search for correlated time series forecasting**](https://link.springer.com/article/10.1007/s00778-024-00872-x)
+[**AutoCTS++: Zero-shot Joint Neural Architecture and Hyperparameter Search for Correlated Time Series Forecasting**](https://link.springer.com/article/10.1007/s00778-024-00872-x)
 
 Xinle Wu\*, **Xingjian Wu**\*, Bin Yang#, Lekui Zhou, Chenjuan Guo, Xiangfei Qiu, Jilin Hu, Zhenli Sheng, Christian S. Jensen
 
