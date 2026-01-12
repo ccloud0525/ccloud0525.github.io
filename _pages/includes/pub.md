@@ -195,7 +195,7 @@ arXiv preprint, 2025.
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/patchmoe.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[**Unlocking the Power of Mixture-of-Experts for Task-Aware Time Series Analytics**](https://arxiv.org/pdf/2509.22279)
+[**Task-Aware Mixture-of-Experts for Time Series Analysis**](https://arxiv.org/pdf/2509.22279)
 
 **Xingjian Wu**, Zhengyu Li, Hanyin Cheng, Xiangfei Qiu, Jilin Hu, Chenjuan Guo, Bin Yang#
 
