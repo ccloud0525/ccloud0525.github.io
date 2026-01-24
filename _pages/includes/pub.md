@@ -167,6 +167,19 @@ International Conference on Very Large Databases **(PVLDB)**, 2024. <font color=
 
 ## Preprints
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/timeart.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**TimeART: Towards Agentic Time Series Reasoning via Tool-Agumentation**](https://arxiv.org/pdf/2601.13653)
+
+**Xingjian Wu**, Junkai Lu, Zhengyu Li, Xiangfei Qiu, Jilin Hu, Chenjuan Guo, Christian S. Jensen, Bin Yang#
+
+arXiv preprint, 2026.
+
+</div>
+</div>
+
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/flame.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
