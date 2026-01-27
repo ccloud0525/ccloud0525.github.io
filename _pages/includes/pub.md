@@ -1,6 +1,6 @@
 ## Accepted Papers
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/aurora.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/pub/aurora.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Aurora: Towards Universal Generative Multimodal Time Series Forecasting**](https://arxiv.org/pdf/2509.22295)
@@ -14,7 +14,7 @@ International Conference on Learning Representations **(ICLR)**, 2026. <font col
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/astgi.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/pub/astgi.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**ASTGI: Adaptive Spatio-Temporal Graph Interactions for Irregular Multivariate Time Series Forecasting**](https://arxiv.org/pdf/2509.23313v1)
