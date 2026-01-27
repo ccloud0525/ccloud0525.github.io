@@ -1,5 +1,32 @@
 ## Accepted Papers
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/aurora.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Aurora: Towards Universal Generative Multimodal Time Series Forecasting**](https://arxiv.org/pdf/2509.22295)
+
+**Xingjian Wu**, Jianxin Jin, Wanghui Qiu, Peng Chen, Yang Shu, Bin Yang, Chenjuan Guo#
+
+International Conference on Learning Representations **(ICLR)**, 2026. <font color="red">CORE A*</font>.
+
+[[Paper]](https://arxiv.org/pdf/2509.22295)
+
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/astgi.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**ASTGI: Adaptive Spatio-Temporal Graph Interactions for Irregular Multivariate Time Series Forecasting**](https://arxiv.org/pdf/2509.23313v1)
+
+Xvyuan Liu, Xiangfei Qiu, Hanyin Cheng, **Xingjian Wu**, Chenjuan Guo, Bin Yang, Jilin Hu#
+
+International Conference on Learning Representations **(ICLR)**, 2026. <font color="red">CORE A*</font>.
+
+[[Paper]](https://arxiv.org/pdf/2509.23313v1)
+
+</div>
+</div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAAI 2026 Oral</div><img src='images/pub/apn.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -193,18 +220,6 @@ arXiv preprint, 2025.
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/aurora.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[**Aurora: Towards Universal Generative Multimodal Time Series Forecasting**](https://arxiv.org/pdf/2509.22295)
-
-**Xingjian Wu**, Jianxin Jin, Wanghui Qiu, Peng Chen, Yang Shu, Bin Yang, Chenjuan Guo#
-
-arXiv preprint, 2025.
-
-</div>
-</div>
-
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/patchmoe.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -223,18 +238,6 @@ arXiv preprint, 2025.
 [**Multi-Scale Spatial-Temporal Hypergraph Network with Lead-Lag Structures for Stock Time Series Forecasting**](https://arxiv.org/pdf/2509.23668v1)
 
 Xiangfei Qiu, Liu Yang, Hanyin Cheng, **Xingjian Wu**, Rongjia Wu, Zhigang Zhang, Ding Tu, Chenjuan Guo, Bin Yang, Christian S. Jensen, Jilin Hu#
-
-arXiv preprint, 2025.
-
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/astgi.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[**ASTGI: Adaptive Spatio-Temporal Graph Interactions for Irregular Multivariate Time Series Forecasting**](https://arxiv.org/pdf/2509.23313v1)
-
-Xvyuan Liu, Xiangfei Qiu, Hanyin Cheng, **Xingjian Wu**, Chenjuan Guo, Bin Yang, Jilin Hu#
 
 arXiv preprint, 2025.
 
