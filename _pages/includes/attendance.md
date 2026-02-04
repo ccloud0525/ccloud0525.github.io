@@ -1,3 +1,5 @@
+- *2026.01* Annual AAAI Conference on Artificial Intelligence (AAAI 2026)
+
 - *2025.12* China Data 2025
 
 - *2025.10* China National Computer Congress (CNCC 2025)
