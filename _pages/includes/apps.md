@@ -1,2 +1,3 @@
+- [aurora-model](https://pypi.org/project/aurora-model/): A PyPI package for Multimodal Time Series Forecasting.
 - [AutoCTS series](https://decisionintelligence.github.io/OpenTS/algorithms/AutoCTS/): AutoML for Time Series analytics.
 - EasyTime: Time Series Forecasting Made Easy.
