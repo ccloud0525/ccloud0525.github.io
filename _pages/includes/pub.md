@@ -244,6 +244,32 @@ arXiv preprint, 2025.
 </div>
 </div>
 
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/seer.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**SEER: Transformer-based Robust Time Series Forecasting via Automated Patch Enhancement and Replacement**](https://arxiv.org/pdf/2602.00589)
+
+Xiangfei Qiu, Xvyuan Liu, Tianen Shen, **Xingjian Wu**, Hanyin Cheng, Bin Yang, Jilin Hu#
+
+arXiv preprint, 2026.
+
+</div>
+</div>
+
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/tfmixer.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Bridging Time and Frequency: A Joint Modeling Framework for Irregular Multivariate Time Series Forecasting**](https://arxiv.org/pdf/2602.00582)
+
+Xiangfei Qiu, Kangjia Yan, Xvyuan Liu, **Xingjian Wu**, Jilin Hu#
+
+arXiv preprint, 2026.
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/dag.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
