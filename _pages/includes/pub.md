@@ -194,6 +194,19 @@ International Conference on Very Large Databases **(PVLDB)**, 2024. <font color=
 
 ## Preprints
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/stevo.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**ST-EVO: Towards Generative Spatio-Temporal Evolution of Multi-Agent Communication Topologies**](https://arxiv.org/pdf/2602.14681)
+
+**Xingjian Wu**, Xvyuan Liu, Junkai Lu, Siyuan Wang, Xiangfei Qiu, Yang Shu, Jilin Hu, Chenjuan Guo, Bin Yang#
+
+arXiv preprint, 2026.
+
+</div>
+</div>
+
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/timeart.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
