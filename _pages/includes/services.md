@@ -1,4 +1,4 @@
-- *2026.02* Proceedings Chair of ST-FM Workshop at [MDM26](https://st-fm-26.github.io/STxFM-MDM2026/#).
+- *2026.02* Proceedings Chair of [ST-FM Workshop](https://st-fm-26.github.io/STxFM-MDM2026/#) at [MDM26](https://mdm-2026.github.io/).
 - *2026.02* PC Member of International Conference on Machine Learning ([ICML 2026](http://icml.cc/)), (Main Track).
 - *2026.02* PC Member of International Joint Conference on Artificial Intelligence ([IJCAI 2026](https://2026.ijcai.org/)), (Main & Survey Track).
 - *2025.10* PC Member of International Conference on Learning Representations ([ICLR 2026](http://iclr.cc/)), (Main Track).
