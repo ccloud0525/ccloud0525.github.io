@@ -111,6 +111,16 @@
         max-width: 75%;
         margin-right: auto;
     }
+    /* 新增：错误提示的样式（红色背景） */
+    .bubble-error {
+        background: #ff4d4f;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 14px 14px 14px 4px;
+        margin: 6px 0;
+        max-width: 75%;
+        margin-right: auto;
+    }
 </style>
 
 <button id="chat-float-btn" onclick="toggleChat()">💬</button>
@@ -139,21 +149,27 @@
         renderMessages();
     }
 
+    // 【修改点1】渲染时区分错误提示样式
     function renderMessages() {
         messagesDom.innerHTML = messages.map(m => `
-    <div class="${m.role === 'user' ? 'bubble-user' : 'bubble-ai'}">
+    <div class="${
+            m.role === 'user' ? 'bubble-user' :
+                m.role === 'error' ? 'bubble-error' : 'bubble-ai'
+        }">
       ${m.content}
     </div>
   `).join("");
         messagesDom.scrollTop = messagesDom.scrollHeight;
     }
 
+    // 【核心修改】sendMessage 函数适配新返回结构
     async function sendMessage() {
         const input = document.getElementById("chat-input");
         const text = input.value.trim();
         if (!text) return;
         input.value = "";
 
+        // 添加用户消息
         messages.push({ role: "user", content: text });
         renderMessages();
 
@@ -163,12 +179,30 @@
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ messages })
             });
+
+            // 解析返回数据
             const data = await res.json();
-            messages.push({ role: "assistant", content: data.answer });
+
+            // 【关键判断】根据 success 区分成功/失败
+            if (data.success) {
+                // 成功：添加正常的助手回答
+                messages.push({ role: "assistant", content: data.answer });
+            } else {
+                // 失败：添加错误提示（用 error 角色区分样式）
+                messages.push({
+                    role: "error",
+                    content: `❌ Error: ${data.error || 'Unknown error'}`
+                });
+            }
             renderMessages();
+
         } catch (e) {
-            console.log(e)
-            messages.push({ role: "assistant", content: "Service exception, please try again later" });
+            console.error("Network error:", e);
+            // 网络异常提示
+            messages.push({
+                role: "error",
+                content: "❌ Service exception, please try again later"
+            });
             renderMessages();
         }
     }
