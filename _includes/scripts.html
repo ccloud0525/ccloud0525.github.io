@@ -1,4 +1,182 @@
 <script src="assets/js/main.min.js"></script>
 
+<style>
+    #chat-float-btn {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #0070f3;
+        color: white;
+        font-size: 24px;
+        border: none;
+        box-shadow: 0 4px 12px rgba(0,112,243,0.3);
+        cursor: pointer;
+        z-index: 9998;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+    }
+    #chat-float-btn:hover {
+        transform: scale(1.08);
+    }
+
+    #chat-modal {
+        position: fixed;
+        bottom: 90px;
+        right: 24px;
+        width: 360px;
+        height: 520px;
+        max-height: 80vh;
+        background: rgba(255,255,255,0.7);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-radius: 20px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        border: 1px solid rgba(255,255,255,0.3);
+        z-index: 9999;
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    #chat-modal.active {
+        display: flex;
+        animation: fadeIn 0.2s ease-in-out;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .chat-header {
+        padding: 16px;
+        font-weight: 600;
+        font-size: 15px;
+        color: #111;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        background: rgba(255,255,255,0.5);
+    }
+
+    .chat-messages {
+        flex: 1;
+        padding: 12px;
+        overflow-y: auto;
+        font-size: 14px;
+    }
+
+    .chat-input-bar {
+        display: flex;
+        gap: 8px;
+        padding: 12px;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        background: rgba(255,255,255,0.5);
+    }
+    .chat-input-bar input {
+        flex: 1;
+        padding: 10px 14px;
+        border-radius: 20px;
+        border: 1px solid rgba(0,0,0,0.1);
+        outline: none;
+        font-size: 14px;
+        background: rgba(255,255,255,0.8);
+    }
+    .chat-input-bar button {
+        padding: 0 16px;
+        border-radius: 20px;
+        background: #0070f3;
+        color: white;
+        border: none;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .bubble-user {
+        background: #0070f3;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 14px 14px 4px 14px;
+        margin: 6px 0;
+        max-width: 75%;
+        margin-left: auto;
+    }
+    .bubble-ai {
+        background: rgba(0,0,0,0.06);
+        color: #111;
+        padding: 8px 12px;
+        border-radius: 14px 14px 14px 4px;
+        margin: 6px 0;
+        max-width: 75%;
+        margin-right: auto;
+    }
+</style>
+
+<button id="chat-float-btn" onclick="toggleChat()">💬</button>
+
+<div id="chat-modal">
+    <div class="chat-header">Ask me anything</div>
+    <div id="chat-messages" class="chat-messages"></div>
+    <div class="chat-input-bar">
+        <input id="chat-input" placeholder="input the question" autocomplete="off">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script>
+    const WORKER_URL = "https://square-mode-81a5.1793410861.workers.dev/";
+
+    let messages = [
+        { role: "assistant", content: "Hello~ I am your blog AI assistant" }
+    ];
+
+    const modal = document.getElementById("chat-modal");
+    const messagesDom = document.getElementById("chat-messages");
+
+    function toggleChat() {
+        modal.classList.toggle("active");
+        renderMessages();
+    }
+
+    function renderMessages() {
+        messagesDom.innerHTML = messages.map(m => `
+    <div class="${m.role === 'user' ? 'bubble-user' : 'bubble-ai'}">
+      ${m.content}
+    </div>
+  `).join("");
+        messagesDom.scrollTop = messagesDom.scrollHeight;
+    }
+
+    async function sendMessage() {
+        const input = document.getElementById("chat-input");
+        const text = input.value.trim();
+        if (!text) return;
+        input.value = "";
+
+        messages.push({ role: "user", content: text });
+        renderMessages();
+
+        try {
+            const res = await fetch(WORKER_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ messages })
+            });
+            const data = await res.json();
+            messages.push({ role: "assistant", content: data.answer });
+            renderMessages();
+        } catch (e) {
+            console.log(e)
+            messages.push({ role: "assistant", content: "Service exception, please try again later" });
+            renderMessages();
+        }
+    }
+
+    document.getElementById("chat-input").addEventListener("keydown", e => {
+        if (e.key === "Enter") sendMessage();
+    });
+</script>
+
 {% include analytics.html %}
 {% include fetch_google_scholar_stats.html %}
