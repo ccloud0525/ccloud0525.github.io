@@ -185,7 +185,7 @@ Xiangfei Qiu, Jilin Hu#, Lekui Zhou, **Xingjian Wu**, Junyang Du, Buang Zhang, C
 
 International Conference on Very Large Databases **(PVLDB)**, 2024. <font color="red">CCF A</font>.
 
-<font color="red">Best Research Paper Award Nomination of PVLDB 2024.</font>
+[<font color="red">Best Research Paper Award Nomination of PVLDB 2024.</font>](./files/vldb_best_paper.pdf)
 
 [[Paper]](https://www.vldb.org/pvldb/vol17/p2363-hu.pdf) \| [[Project]](https://github.com/decisionintelligence/TFB)
 
