@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Xingjian Wu"
-description              : "A PhD Student in ML & NLP"
+description              : "East China Normal University"
 repository               : "ccloud0525/ccloud0525.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -23,7 +23,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Xingjian Wu"
   avatar           : "images/android-chrome-192x192.png"
-  bio              : "East China Normal University"
+  bio              : "吴行健"
   location         : "Shanghai, China"
   employer         :
   pubmed           :
