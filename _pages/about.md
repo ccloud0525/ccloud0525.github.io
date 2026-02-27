@@ -18,13 +18,16 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # 🏷 About Me
-{% include_relative includes/edu.md %}
+{% include_relative includes/about.md %}
 
 # 🔥 News
 {% include_relative includes/news.md %}
 
 # 📝 Publications 
 {% include_relative includes/pub.md %}
+
+# 🎓 Educations
+{% include_relative includes/edu.md %}
 
 # 🎖 Honors and Awards
 {% include_relative includes/honors.md %}

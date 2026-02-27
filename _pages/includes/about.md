@@ -1,0 +1,10 @@
+I am currently a 3rd year **PhD** student in East China Normal University, a member of the [Decision Intelligence Lab](https://decisionintelligence.github.io/index), advised by Prof. [Bin Yang](https://binyangdk.github.io/#Home). I earned my bachelor's degree (2019-2023) at Shanghai University. For more information, you may take a look at my [Google Scholar](https://scholar.google.com/citations?user=oiHsW2kAAAAJ) [![Google Scholar Citations](https://img.shields.io/endpoint?url=https://tiny-grass-731d.1793410861.workers.dev/&logo=google-scholar&style=flat&labelColor=f0f0f0&color=8fb9ef)](https://scholar.google.com/citations?user=oiHsW2kAAAAJ) and [GitHub](https://github.com/ccloud0525) [![GitHub Stars](https://img.shields.io/github/stars/ccloud0525?affiliations=OWNER%2CCOLLABORATOR&style=flat&logo=github&logoColor=000000&label=GitHub%20Stars&labelColor=f0f0f0&color=8fb9ef)](https://github.com/ccloud0525). If you have any questions, feel free to contact me via **WeChat** (ID: EmpyreanBrightMoon).
+
+## Research Interests
+My current research interests cover *Time Series Analysis*, *AutoML*, *Foundation Models*, and *Agentic Systems*. Here are some selected works:
+- *Time Series Analysis*: Focusing on expert models and representation learning ([CATCH](https://arxiv.org/pdf/2410.12261), [DUET](https://arxiv.org/pdf/2412.10859), [K<sup>2</sup>VAE](https://arxiv.org/pdf/2505.23017), [SRSNet](https://arxiv.org/pdf/2510.14510));
+- *AutoML*: Supporting fully automated neural architecture search ([AutoCTS++](https://link.springer.com/article/10.1007/s00778-024-00872-x), [FACTS](https://www.vldb.org/pvldb/vol18/p144-wu.pdf));
+- *Foundation Models*: Developing general-purpose Sequence Foundation Models ([Aurora](https://arxiv.org/pdf/2509.22295), [FLAME](https://arxiv.org/pdf/2512.14253), [Horai](https://arxiv.org/pdf/2602.05646));
+- *Agentic Systems*: Exploring the potential of agentic systems in real-world applications ([ST-EVO](https://arxiv.org/pdf/2602.14681), [TimeART](https://arxiv.org/pdf/2601.13653)).
+
+
