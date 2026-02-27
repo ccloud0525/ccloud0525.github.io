@@ -94,6 +94,10 @@
         font-size: 14px;
         cursor: pointer;
     }
+    .chat-input-bar button:disabled, .chat-input-bar input:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
 
     .bubble-user {
         background: #0070f3;
@@ -178,7 +182,6 @@
     }
 </style>
 
-<!-- 引入轻量 Markdown 解析库（无需本地部署，CDN 直接用） -->
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 <button id="chat-float-btn" onclick="toggleChat()">💬</button>
@@ -188,7 +191,7 @@
     <div id="chat-messages" class="chat-messages"></div>
     <div class="chat-input-bar">
         <input id="chat-input" placeholder="Input the question" autocomplete="off">
-        <button onclick="sendMessage()">Send</button>
+        <button onclick="sendMessage()" id="chat-send-btn">Send</button>
     </div>
 </div>
 
@@ -202,38 +205,35 @@
     const modal = document.getElementById("chat-modal");
     const messagesDom = document.getElementById("chat-messages");
     const chatInput = document.getElementById("chat-input");
+    const sendBtn = document.getElementById("chat-send-btn");
 
     function toggleChat() {
         modal.classList.toggle("active");
         renderMessages();
     }
 
-    // 【核心修改】添加 Markdown 解析函数
+    // 添加 Markdown 解析函数
     function renderMarkdown(text) {
-        // 用 marked 库解析 Markdown 为 HTML
         return marked.parse(text, {
             breaks: true, // 换行符转换成 <br>
             gfm: true // 支持 GitHub 风格的 Markdown
         });
     }
 
-    // 【修改渲染逻辑】AI 消息用 Markdown 渲染
+    // 渲染消息界面
     function renderMessages() {
         messagesDom.innerHTML = messages.map(m => {
             if (m.role === 'assistant') {
-                // AI 消息：渲染 Markdown
                 return `
                     <div class="bubble-ai">
                         <div class="markdown-content">${renderMarkdown(m.content)}</div>
                     </div>
                 `;
             } else if (m.role === 'user') {
-                // 用户消息：纯文本（避免 XSS）
                 return `
                     <div class="bubble-user">${escapeHtml(m.content)}</div>
                 `;
             } else {
-                // 错误消息：纯文本
                 return `
                     <div class="bubble-error">${m.content}</div>
                 `;
@@ -252,62 +252,103 @@
             .replace(/'/g, "&#039;");
     }
 
+    // 控制输入框状态，防止在生成中途重复提交
+    function setInputState(disabled) {
+        chatInput.disabled = disabled;
+        sendBtn.disabled = disabled;
+        if (!disabled) chatInput.focus();
+    }
+
     async function sendMessage() {
         const text = chatInput.value.trim();
         if (!text) return;
+
         chatInput.value = "";
+        setInputState(true); // 锁定输入框
 
         messages.push({ role: "user", content: text });
+
+        // 预先放置一个空的 AI 回复气泡，用于后续打字机追加
+        messages.push({ role: "assistant", content: "" });
+        const aiMessageIndex = messages.length - 1;
         renderMessages();
 
         try {
+            // 发送请求时，剔除掉最后那个空的 assistant 消息
+            const payloadMessages = messages.slice(0, -1);
+
             const res = await fetch(WORKER_URL, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ messages })
+                body: JSON.stringify({ messages: payloadMessages })
             });
 
-            const data = await res.json();
+            if (!res.ok) throw new Error(`HTTP Error ${res.status}`);
 
-            if (data.success) {
-                // AI 回答直接存原始 Markdown 文本，渲染时再解析
-                messages.push({ role: "assistant", content: data.answer });
-            } else {
-                messages.push({
-                    role: "error",
-                    content: `❌ Error: ${data.error || 'Unknown error'}`
-                });
+            // 核心修改：流式读取响应数据
+            const reader = res.body.getReader();
+            const decoder = new TextDecoder("utf-8");
+
+            while (true) {
+                const { done, value } = await reader.read();
+                if (done) break;
+
+                const chunk = decoder.decode(value, { stream: true });
+                const lines = chunk.split("\n").filter(line => line.trim() !== "");
+
+                for (const line of lines) {
+                    if (line.includes("[DONE]")) continue;
+
+                    if (line.startsWith("data:")) {
+                        try {
+                            const data = JSON.parse(line.slice(5));
+                            // 获取增量文本（兼容常见的 OpenAI 格式流）
+                            const contentStr = data.choices[0]?.delta?.content || "";
+                            if (contentStr) {
+                                messages[aiMessageIndex].content += contentStr;
+                                renderMessages(); // 每次有新字都重新渲染
+                            }
+                        } catch (e) {
+                            // 忽略单个数据块解析错误，流式传输中常有截断现象
+                        }
+                    }
+                }
             }
-            renderMessages();
 
         } catch (e) {
             console.error("Network error:", e);
-            messages.push({
+            messages[aiMessageIndex] = {
                 role: "error",
-                content: "❌ Service exception, please try again later"
-            });
+                content: "❌ Service exception, please try again later."
+            };
             renderMessages();
+        } finally {
+            setInputState(false); // 解锁输入框
         }
     }
 
-    // 回车事件处理（修复中文输入法问题）
+    // 处理回车发送与中文输入法兼容
+    let isComposing = false;
+    chatInput.addEventListener("compositionstart", () => isComposing = true);
+    chatInput.addEventListener("compositionend", (e) => {
+        isComposing = false;
+        // 有些浏览器在 compositionend 时会同时触发 Enter
+        if (e.data && e.key === "Enter" && !chatInput.disabled) {
+            sendMessage();
+        }
+    });
+
     chatInput.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" && !e.isComposing) {
+        if (e.key === "Enter" && !isComposing && !chatInput.disabled) {
             e.preventDefault();
             sendMessage();
         }
     });
 
-    chatInput.addEventListener("compositionend", (e) => {
-        if (e.data && e.key === "Enter") {
-            sendMessage();
-        }
-    });
-
-    // 可选：优化 marked 渲染配置（比如禁用 HTML 标签，防止 XSS）
+    // 优化 marked 渲染配置 (移除了已废弃的 sanitize 选项)
     marked.setOptions({
-        sanitize: true, // 禁用 HTML 标签，只渲染 Markdown 语法
-        mangle: false
+        mangle: false,
+        headerIds: false
     });
 </script>
 
