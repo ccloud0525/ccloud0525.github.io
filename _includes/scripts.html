@@ -28,9 +28,10 @@
         position: fixed;
         bottom: 90px;
         right: 24px;
-        width: 360px;
-        height: 520px;
-        max-height: 80vh;
+        width: 450px; /* 【优化】加宽对话框 */
+        height: 650px; /* 【优化】加高对话框 */
+        max-width: calc(100vw - 48px); /* 【优化】防止在手机小屏幕上溢出 */
+        max-height: 85vh; /* 【优化】适配不同屏幕高度 */
         background: rgba(255,255,255,0.7);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
@@ -54,7 +55,7 @@
     .chat-header {
         padding: 16px;
         font-weight: 600;
-        font-size: 15px;
+        font-size: 16px; /* 标题字号略微放大 */
         color: #111;
         border-bottom: 1px solid rgba(0,0,0,0.05);
         background: rgba(255,255,255,0.5);
@@ -62,7 +63,7 @@
 
     .chat-messages {
         flex: 1;
-        padding: 12px;
+        padding: 16px; /* 增加内边距让阅读更舒适 */
         overflow-y: auto;
         font-size: 14px;
         /* Markdown 渲染基础样式 */
@@ -104,17 +105,17 @@
         color: white;
         padding: 8px 12px;
         border-radius: 14px 14px 4px 14px;
-        margin: 6px 0;
-        max-width: 75%;
+        margin: 8px 0;
+        max-width: 85%; /* 【优化】让用户气泡也能舒展一点 */
         margin-left: auto;
     }
     .bubble-ai {
         background: rgba(0,0,0,0.06);
         color: #111;
-        padding: 12px 16px; /* 加大内边距，适配 Markdown */
+        padding: 12px 16px;
         border-radius: 14px 14px 14px 4px;
-        margin: 6px 0;
-        max-width: 75%;
+        margin: 8px 0;
+        max-width: 85%; /* 【优化】AI要输出长文，放宽最大宽度限制 */
         margin-right: auto;
     }
     .bubble-error {
@@ -122,8 +123,8 @@
         color: white;
         padding: 8px 12px;
         border-radius: 14px 14px 14px 4px;
-        margin: 6px 0;
-        max-width: 75%;
+        margin: 8px 0;
+        max-width: 85%;
         margin-right: auto;
     }
 
@@ -345,7 +346,7 @@
         }
     });
 
-    // 优化 marked 渲染配置 (移除了已废弃的 sanitize 选项)
+    // 优化 marked 渲染配置
     marked.setOptions({
         mangle: false,
         headerIds: false
