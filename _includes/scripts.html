@@ -28,10 +28,10 @@
         position: fixed;
         bottom: 90px;
         right: 24px;
-        width: 450px; /* 【优化】加宽对话框 */
-        height: 650px; /* 【优化】加高对话框 */
-        max-width: calc(100vw - 48px); /* 【优化】防止在手机小屏幕上溢出 */
-        max-height: 85vh; /* 【优化】适配不同屏幕高度 */
+        width: 450px;
+        height: 650px;
+        max-width: calc(100vw - 48px);
+        max-height: 85vh;
         background: rgba(255,255,255,0.7);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
@@ -55,7 +55,7 @@
     .chat-header {
         padding: 16px;
         font-weight: 600;
-        font-size: 16px; /* 标题字号略微放大 */
+        font-size: 16px;
         color: #111;
         border-bottom: 1px solid rgba(0,0,0,0.05);
         background: rgba(255,255,255,0.5);
@@ -63,10 +63,9 @@
 
     .chat-messages {
         flex: 1;
-        padding: 16px; /* 增加内边距让阅读更舒适 */
+        padding: 16px;
         overflow-y: auto;
         font-size: 14px;
-        /* Markdown 渲染基础样式 */
         line-height: 1.6;
     }
 
@@ -106,7 +105,7 @@
         padding: 8px 12px;
         border-radius: 14px 14px 4px 14px;
         margin: 8px 0;
-        max-width: 85%; /* 【优化】让用户气泡也能舒展一点 */
+        max-width: 85%;
         margin-left: auto;
     }
     .bubble-ai {
@@ -115,7 +114,7 @@
         padding: 12px 16px;
         border-radius: 14px 14px 14px 4px;
         margin: 8px 0;
-        max-width: 85%; /* 【优化】AI要输出长文，放宽最大宽度限制 */
+        max-width: 85%;
         margin-right: auto;
     }
     .bubble-error {
@@ -128,62 +127,28 @@
         margin-right: auto;
     }
 
-    /* ===== Markdown 渲染样式 ===== */
-    .markdown-content h1 {
-        font-size: 18px;
-        font-weight: 600;
-        margin: 8px 0;
-    }
-    .markdown-content h2 {
-        font-size: 16px;
-        font-weight: 600;
-        margin: 6px 0;
-    }
-    .markdown-content h3 {
-        font-size: 15px;
-        font-weight: 600;
-        margin: 4px 0;
-    }
-    .markdown-content strong {
-        font-weight: 600;
-        color: #0070f3;
-    }
-    .markdown-content em {
-        font-style: italic;
-    }
-    .markdown-content ul, .markdown-content ol {
-        padding-left: 20px;
-        margin: 4px 0;
-    }
-    .markdown-content li {
-        margin: 2px 0;
-    }
-    .markdown-content a {
-        color: #0070f3;
-        text-decoration: underline;
-        word-break: break-all; /* 长链接自动换行 */
-    }
-    .markdown-content code {
-        background: rgba(0,0,0,0.1);
-        padding: 1px 4px;
-        border-radius: 4px;
-        font-family: monospace;
-        font-size: 13px;
-    }
-    .markdown-content pre {
-        background: rgba(0,0,0,0.1);
-        padding: 8px;
-        border-radius: 8px;
-        overflow-x: auto;
-        margin: 6px 0;
-    }
-    .markdown-content pre code {
-        background: none;
-        padding: 0;
-    }
+    /* ===== Markdown & KaTeX 渲染样式 ===== */
+    .markdown-content h1 { font-size: 18px; font-weight: 600; margin: 8px 0; }
+    .markdown-content h2 { font-size: 16px; font-weight: 600; margin: 6px 0; }
+    .markdown-content h3 { font-size: 15px; font-weight: 600; margin: 4px 0; }
+    .markdown-content strong { font-weight: 600; color: #0070f3; }
+    .markdown-content em { font-style: italic; }
+    .markdown-content ul, .markdown-content ol { padding-left: 20px; margin: 4px 0; }
+    .markdown-content li { margin: 2px 0; }
+    .markdown-content a { color: #0070f3; text-decoration: underline; word-break: break-all; }
+    .markdown-content code { background: rgba(0,0,0,0.1); padding: 1px 4px; border-radius: 4px; font-family: monospace; font-size: 13px; }
+    .markdown-content pre { background: rgba(0,0,0,0.1); padding: 8px; border-radius: 8px; overflow-x: auto; margin: 6px 0; }
+    .markdown-content pre code { background: none; padding: 0; }
+
+    /* 防止长公式超出气泡引发横向滚动条乱跳 */
+    .katex-display { overflow-x: auto; overflow-y: hidden; padding: 5px 0; margin: 0.5em 0; }
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 
 <button id="chat-float-btn" onclick="toggleChat()">💬</button>
 
@@ -200,7 +165,7 @@
     const WORKER_URL = "https://square-mode-81a5.1793410861.workers.dev/";
 
     let messages = [
-        { role: "assistant", content: "Hello~ 👋 I am your blog AI assistant 🤖. You can ask me anything about this blog ✨." }
+        { role: "assistant", content: "Hello~ I am your blog AI assistant. You can ask me anything about the blog. I am deployed on Cloudflare's free service, so it may be a bit slow. Please forgive me." }
     ];
 
     const modal = document.getElementById("chat-modal");
@@ -213,16 +178,30 @@
         renderMessages();
     }
 
-    // 添加 Markdown 解析函数
+    // 带“数学公式保护罩”的 Markdown 解析
     function renderMarkdown(text) {
-        return marked.parse(text, {
-            breaks: true, // 换行符转换成 <br>
-            gfm: true // 支持 GitHub 风格的 Markdown
+        const mathBlocks = [];
+
+        // 1. 提取出所有的 LaTeX 公式，并用纯字母组成的占位符替换，防止被 marked.js 误伤
+        text = text.replace(/(\$\$[\s\S]*?\$\$|\$[\s\S]*?\$|\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\))/g, (match) => {
+            mathBlocks.push(match);
+            return `MATHPLACEHOLDER${mathBlocks.length - 1}END`;
         });
+
+        // 2. 解析 Markdown
+        let html = marked.parse(text, { breaks: true, gfm: true });
+
+        // 3. 把数学公式原封不动地放回 HTML 代码中
+        mathBlocks.forEach((block, index) => {
+            html = html.replace(`MATHPLACEHOLDER${index}END`, block);
+        });
+
+        return html;
     }
 
-    // 渲染消息界面
+    // 渲染消息界面并触发生态渲染
     function renderMessages() {
+        // 更新内部 HTML (这会把 Markdown 转成 HTML，公式保留为纯文本)
         messagesDom.innerHTML = messages.map(m => {
             if (m.role === 'assistant') {
                 return `
@@ -231,19 +210,29 @@
                     </div>
                 `;
             } else if (m.role === 'user') {
-                return `
-                    <div class="bubble-user">${escapeHtml(m.content)}</div>
-                `;
+                return `<div class="bubble-user">${escapeHtml(m.content)}</div>`;
             } else {
-                return `
-                    <div class="bubble-error">${m.content}</div>
-                `;
+                return `<div class="bubble-error">${m.content}</div>`;
             }
         }).join("");
+
         messagesDom.scrollTop = messagesDom.scrollHeight;
+
+        // 调用 KaTeX 渲染刚刚放进去的所有数学公式
+        if (window.renderMathInElement) {
+            renderMathInElement(messagesDom, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '\\[', right: '\\]', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false}
+                ],
+                throwOnError: false // 遇到语法错误时静默失败，避免整个应用崩溃
+            });
+        }
     }
 
-    // 安全处理：转义 HTML 特殊字符（防止 XSS）
+    // 安全转义 HTML 特殊字符
     function escapeHtml(text) {
         return text
             .replace(/&/g, "&amp;")
@@ -253,7 +242,7 @@
             .replace(/'/g, "&#039;");
     }
 
-    // 控制输入框状态，防止在生成中途重复提交
+    // 控制输入框防抖状态
     function setInputState(disabled) {
         chatInput.disabled = disabled;
         sendBtn.disabled = disabled;
@@ -265,17 +254,14 @@
         if (!text) return;
 
         chatInput.value = "";
-        setInputState(true); // 锁定输入框
+        setInputState(true);
 
         messages.push({ role: "user", content: text });
-
-        // 预先放置一个空的 AI 回复气泡，用于后续打字机追加
         messages.push({ role: "assistant", content: "" });
         const aiMessageIndex = messages.length - 1;
         renderMessages();
 
         try {
-            // 发送请求时，剔除掉最后那个空的 assistant 消息
             const payloadMessages = messages.slice(0, -1);
 
             const res = await fetch(WORKER_URL, {
@@ -286,7 +272,6 @@
 
             if (!res.ok) throw new Error(`HTTP Error ${res.status}`);
 
-            // 核心修改：流式读取响应数据
             const reader = res.body.getReader();
             const decoder = new TextDecoder("utf-8");
 
@@ -303,14 +288,13 @@
                     if (line.startsWith("data:")) {
                         try {
                             const data = JSON.parse(line.slice(5));
-                            // 获取增量文本（兼容常见的 OpenAI 格式流）
                             const contentStr = data.choices[0]?.delta?.content || "";
                             if (contentStr) {
                                 messages[aiMessageIndex].content += contentStr;
-                                renderMessages(); // 每次有新字都重新渲染
+                                renderMessages();
                             }
                         } catch (e) {
-                            // 忽略单个数据块解析错误，流式传输中常有截断现象
+                            // 忽略单一数据块解析错误
                         }
                     }
                 }
@@ -324,16 +308,15 @@
             };
             renderMessages();
         } finally {
-            setInputState(false); // 解锁输入框
+            setInputState(false);
         }
     }
 
-    // 处理回车发送与中文输入法兼容
+    // 中文输入法事件监听，防止在打字时误发送
     let isComposing = false;
     chatInput.addEventListener("compositionstart", () => isComposing = true);
     chatInput.addEventListener("compositionend", (e) => {
         isComposing = false;
-        // 有些浏览器在 compositionend 时会同时触发 Enter
         if (e.data && e.key === "Enter" && !chatInput.disabled) {
             sendMessage();
         }
@@ -346,11 +329,8 @@
         }
     });
 
-    // 优化 marked 渲染配置
-    marked.setOptions({
-        mangle: false,
-        headerIds: false
-    });
+    // Marked 配置
+    marked.setOptions({ mangle: false, headerIds: false });
 </script>
 
 {% include analytics.html %}
