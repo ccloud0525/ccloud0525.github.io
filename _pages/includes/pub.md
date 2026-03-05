@@ -7,12 +7,41 @@
 
 🧑‍💻 **Xingjian Wu**, Jianxin Jin, Wanghui Qiu, Peng Chen, Yang Shu, Bin Yang, Chenjuan Guo#
 
-🏛️ International Conference on Learning Representations **(ICLR)**, 2026. <font color="red">CORE A*</font>.
+🏛️ International Conference on Learning Representations **(ICLR)**, 2026. <font color="red">CCF A</font>.
 
 [[Paper]](https://arxiv.org/pdf/2509.22295) \| [[Project]](https://huggingface.co/DecisionIntelligence/Aurora) \| [[Github]](https://github.com/decisionintelligence/Aurora/)
 
 </div>
 </div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/pub/cora.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**CoRA: Boosting Time Series Foundation Models for Multivariate Forecasting through Correlation-Aware Adapter**](https://openreview.net/pdf?id=JRlNrcTllN)
+
+🧑‍💻 Hanyin Cheng, **Xingjian Wu**, Yang Shu, Zhongwen Rao, Lujia Pan, Bin Yang, Chenjuan Guo#
+
+🏛️ International Conference on Learning Representations **(ICLR)**, 2026. <font color="red">CCF A</font>.
+
+[[Paper]](https://openreview.net/pdf?id=JRlNrcTllN) \| [[Github]](https://github.com/decisionintelligence/CoRA/)
+
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/pub/gcgnet.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**GCGNet: Graph-Consistent Generative Network for Time Series Forecasting with Exogenous Variables**](https://openreview.net/pdf?id=EO5jwQ5NCw)
+
+🧑‍💻 Zhengyu Li, Xiangfei Qiu, Yuhan Zhu, **Xingjian Wu**, Jilin Hu, Chenjuan Guo, Bin Yang#
+
+🏛️ International Conference on Learning Representations **(ICLR)**, 2026. <font color="red">CCF A</font>.
+
+[[Paper]](https://openreview.net/pdf?id=EO5jwQ5NCw) \| [[Github]](https://github.com/decisionintelligence/GCGNet/)
+
+</div>
+</div>
+
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/pub/astgi.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -21,7 +50,7 @@
 
 🧑‍💻 Xvyuan Liu, Xiangfei Qiu, Hanyin Cheng, **Xingjian Wu**, Chenjuan Guo, Bin Yang, Jilin Hu#
 
-🏛️ International Conference on Learning Representations **(ICLR)**, 2026. <font color="red">CORE A*</font>.
+🏛️ International Conference on Learning Representations **(ICLR)**, 2026. <font color="red">CCF A</font>.
 
 [[Paper]](https://arxiv.org/pdf/2509.23313v1)
 
@@ -111,7 +140,7 @@
 
 🧑‍💻 **Xingjian Wu**, Xiangfei Qiu, Zhengyu Li, Yihang Wang, Jilin Hu, Chenjuan Guo, Hui Xiong, Bin Yang#
 
-🏛️ International Conference on Learning Representations **(ICLR)**, 2025. <font color="red">CORE A*</font>.
+🏛️ International Conference on Learning Representations **(ICLR)**, 2025. <font color="red">CCF A</font>.
 
 [[Paper]](https://arxiv.org/pdf/2410.12261) \| [[Poster]](./files/CATCH_POSTER_PREPRINT.pdf) \| [[Slides]](./files/CATCH_SLIDES.pdf) \| [[Project]](https://github.com/decisionintelligence/CATCH/)
 
