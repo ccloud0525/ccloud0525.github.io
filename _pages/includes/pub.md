@@ -31,13 +31,13 @@
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/pub/gcgnet.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[**GCGNet: Graph-Consistent Generative Network for Time Series Forecasting with Exogenous Variables**](https://openreview.net/pdf?id=EO5jwQ5NCw)
+[**GCGNet: Graph-Consistent Generative Network for Time Series Forecasting with Exogenous Variables**](https://arxiv.org/pdf/2603.08032)
 
 🧑‍💻 Zhengyu Li, Xiangfei Qiu, Yuhan Zhu, **Xingjian Wu**, Jilin Hu, Chenjuan Guo, Bin Yang#
 
 🏛️ International Conference on Learning Representations **(ICLR)**, 2026. <font color="red">CCF A</font>.
 
-[[Paper]](https://openreview.net/pdf?id=EO5jwQ5NCw) \| [[Github]](https://github.com/decisionintelligence/GCGNet/)
+[[Paper]](https://arxiv.org/pdf/2603.08032) \| [[Github]](https://github.com/decisionintelligence/GCGNet/)
 
 </div>
 </div>
