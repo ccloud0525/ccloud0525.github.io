@@ -9,7 +9,7 @@
 
 🏛️ International Conference on Learning Representations **(ICLR)**, 2026. <font color="red">CCF A</font>.
 
-[[Paper]](https://arxiv.org/pdf/2509.22295) \| [[Project]](https://huggingface.co/DecisionIntelligence/Aurora) \| [[Github]](https://github.com/decisionintelligence/Aurora/)
+[[Paper]](https://arxiv.org/pdf/2509.22295) \| [[Project]](https://huggingface.co/DecisionIntelligence/Aurora) \| [[Github]](https://github.com/decisionintelligence/Aurora/) \| [[Poster]](./files/Aurora_POSTER.pdf)
 
 </div>
 </div>
