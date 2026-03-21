@@ -274,6 +274,18 @@ arXiv preprint, 2025.
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/patra.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**PATRA: Pattern-Aware Alignment and Balanced Reasoning for Time Series Question Answering**](https://arxiv.org/pdf/2602.23161)
+
+🧑‍💻 Junkai Lu, Peng Chen, **Xingjian Wu**, Yang Shu, Chenjuan Guo, Christian S. Jensen, Bin Yang#
+
+arXiv preprint, 2026.
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/hermes.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
