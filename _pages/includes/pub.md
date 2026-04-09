@@ -156,6 +156,8 @@
 
 🏛️ IEEE International Conference on Data Engineering **(ICDE)**, 2025. <font color="red">CCF A</font>.
 
+🏆 <a href="https://resources.paperdigest.org/2026/03/most-influential-icde-papers-2026-03-version/"><font color="red">PaperDigest Most Influential Paper</font></a>
+
 [[Paper]](https://arxiv.org/pdf/2412.17603) \| [[Project]](https://github.com/decisionintelligence/TFB)
 
 </div>
