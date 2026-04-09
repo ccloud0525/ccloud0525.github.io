@@ -19,6 +19,7 @@
 </style>  
 <div class="scrollable-area">  
     <ul>
+        <li><em>2025.12</em>: ⭐️⭐️ Time Series Agentic System (<a href="https://arxiv.org/pdf/2412.17603">EasyTime</a>) was selected as one of the <a href="https://resources.paperdigest.org/2026/03/most-influential-icde-papers-2026-03-version/">most influential papers</a> by Paper Digest. </li>
         <li><em>2026.01</em>: 🥂🥂 Four of our papers are accepted by ICLR 2026! </li>
         <li><em>2025.12</em>: ⭐️⭐️ Time series model (<a href="https://arxiv.org/pdf/2412.10859">DUET</a>) was selected as one of the <a href="https://resources.paperdigest.org/2025/09/most-influential-kdd-papers-2025-09-version/">most influential papers</a> by Paper Digest. </li>    
         <li><em>2025.11</em>: 🎉🎉 Our paper "<a href="https://arxiv.org/pdf/2505.11250">Rethinking</a>  Irregular Time Series Forecasting: A Simple yet Effective Baseline" has been accepted as an Oral paper by AAAI 2026! </li>
