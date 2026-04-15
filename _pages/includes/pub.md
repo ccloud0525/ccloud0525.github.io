@@ -1,6 +1,14 @@
-## Accepted Papers
+<div class="publication-browser" data-publication-browser hidden>
+  <p class="publication-browser__title">Filter by topic</p>
+  <p class="publication-browser__hint">Default view shows all papers. Click a topic tag to jump straight to one theme.</p>
+  <div class="publication-browser__filters" data-publication-filters></div>
+  <p class="publication-browser__status" data-publication-filter-status></p>
+</div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/pub/aurora.png' alt="sym" width="100%"></div></div>
+<section class="publication-section" data-publication-section>
+<h2>Accepted Papers</h2>
+
+<div class='paper-box' data-tags='Forecasting|Foundation Models|Multimodal|Generative Modeling'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/pub/aurora.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Aurora: Towards Universal Generative Multimodal Time Series Forecasting**](https://arxiv.org/pdf/2509.22295)
@@ -14,7 +22,7 @@
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/pub/cora.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Foundation Models|Representation Learning'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/pub/cora.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**CoRA: Boosting Time Series Foundation Models for Multivariate Forecasting through Correlation-Aware Adapter**](https://openreview.net/pdf?id=JRlNrcTllN)
@@ -28,7 +36,7 @@
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/pub/gcgnet.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Exogenous Variables|Graph Learning'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/pub/gcgnet.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**GCGNet: Graph-Consistent Generative Network for Time Series Forecasting with Exogenous Variables**](https://arxiv.org/pdf/2603.08032)
@@ -43,7 +51,7 @@
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/pub/astgi.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Irregular Time Series|Graph Learning|Spatio-Temporal'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/pub/astgi.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**ASTGI: Adaptive Spatio-Temporal Graph Interactions for Irregular Multivariate Time Series Forecasting**](https://arxiv.org/pdf/2509.23313v1)
@@ -57,7 +65,7 @@
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAAI 2026 Oral</div><img src='images/pub/apn.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Irregular Time Series'><div class='paper-box-image'><div><div class="badge">AAAI 2026 Oral</div><img src='images/pub/apn.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Rethinking Irregular Time Series Forecasting: A Simple yet Effective Baseline**](https://arxiv.org/pdf/2505.11250)
@@ -73,7 +81,7 @@
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025 Spotlight</div><img src='images/pub/srsnet.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Representation Learning'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025 Spotlight</div><img src='images/pub/srsnet.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Enhancing Time Series Forecasting through Selective Representation Spaces: A Patch Perspective**](https://arxiv.org/pdf/2510.14510)
@@ -89,7 +97,7 @@
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div><img src='images/pub/dbloss.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div><img src='images/pub/dbloss.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Decomposition-based Loss Function for Time Series Forecasting**](https://arxiv.org/pdf/2510.23672v1)
@@ -103,7 +111,7 @@
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2025 Spotlight</div><img src='images/pub/k2vae.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Probabilistic Modeling|Generative Modeling'><div class='paper-box-image'><div><div class="badge">ICML 2025 Spotlight</div><img src='images/pub/k2vae.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**K<sup>2</sup>VAE: A Koopman-Kalman Enhanced Variational AutoEncoder for Probabilistic Time Series Forecasting**](https://arxiv.org/pdf/2505.23017)
@@ -119,7 +127,7 @@
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">PVLDB 2025</div><img src='images/pub/tab.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Anomaly Detection|Benchmarking'><div class='paper-box-image'><div><div class="badge">PVLDB 2025</div><img src='images/pub/tab.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**TAB: Unified Benchmarking of Time Series Anomaly Detection Methods**](http://arxiv.org/abs/2506.18046v1)
@@ -133,7 +141,7 @@
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2025</div><img src='images/pub/catch.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Anomaly Detection|Representation Learning'><div class='paper-box-image'><div><div class="badge">ICLR 2025</div><img src='images/pub/catch.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**CATCH: Channel-Aware Multivariate Time Series Anomaly Detection via Frequency Patching**](https://arxiv.org/pdf/2410.12261)
@@ -147,7 +155,7 @@
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICDE 2025</div><img src='images/pub/easytime.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Benchmarking'><div class='paper-box-image'><div><div class="badge">ICDE 2025</div><img src='images/pub/easytime.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**EasyTime: Time Series Forecasting Made Easy**](https://arxiv.org/pdf/2412.17603)
@@ -163,7 +171,7 @@
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">SIGKDD 2025</div><img src='images/pub/duet.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Representation Learning'><div class='paper-box-image'><div><div class="badge">SIGKDD 2025</div><img src='images/pub/duet.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**DUET: Dual Clustering Enhanced Multivariate Time Series Forecasting**](https://arxiv.org/pdf/2412.10859)
@@ -179,7 +187,7 @@
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">PVLDB 2025</div><img src='images/pub/facts.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|AutoML'><div class='paper-box-image'><div><div class="badge">PVLDB 2025</div><img src='images/pub/facts.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **[Fully Automated Correlated Time Series Forecasting in Minutes](https://www.vldb.org/pvldb/vol18/p144-wu.pdf)**
@@ -193,7 +201,7 @@
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">VLDBJ 2024</div><img src='images/pub/autocts++.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|AutoML'><div class='paper-box-image'><div><div class="badge">VLDBJ 2024</div><img src='images/pub/autocts++.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**AutoCTS++: Zero-shot Joint Neural Architecture and Hyperparameter Search for Correlated Time Series Forecasting**](https://link.springer.com/article/10.1007/s00778-024-00872-x)
@@ -207,7 +215,7 @@
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge"> PVLDB 2024 Best Paper</div><img src='images/pub/tfb.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Benchmarking'><div class='paper-box-image'><div><div class="badge"> PVLDB 2024 Best Paper</div><img src='images/pub/tfb.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**TFB: Towards Comprehensive and Fair Benchmarking of Time Series Forecasting Methods**](https://www.vldb.org/pvldb/vol17/p2363-hu.pdf)
@@ -223,9 +231,12 @@
 </div>
 </div>
 
-## Preprints
+</section>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/stevo.png' alt="sym" width="100%"></div></div>
+<section class="publication-section" data-publication-section>
+<h2>Preprints</h2>
+
+<div class='paper-box' data-tags='Spatio-Temporal|Generative Modeling'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/stevo.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**ST-EVO: Towards Generative Spatio-Temporal Evolution of Multi-Agent Communication Topologies**](https://arxiv.org/pdf/2602.14681)
@@ -238,7 +249,7 @@ arXiv preprint, 2026.
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/timeart.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Agentic Reasoning|Foundation Models'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/timeart.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**TimeART: Towards Agentic Time Series Reasoning via Tool-Agumentation**](https://arxiv.org/pdf/2601.13653)
@@ -251,7 +262,7 @@ arXiv preprint, 2026.
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/flame.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Representation Learning'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/flame.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**FLAME: Flow Enhanced Legendre Memory Models for General Time Series Forecasting**](https://arxiv.org/pdf/2512.14253)
@@ -264,7 +275,7 @@ arXiv preprint, 2025.
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/patchmoe.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Foundation Models|Representation Learning'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/patchmoe.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Task-Aware Mixture-of-Experts for Time Series Analysis**](https://arxiv.org/pdf/2509.22279)
@@ -276,7 +287,7 @@ arXiv preprint, 2025.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/patra.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Question Answering|Agentic Reasoning'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/patra.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**PATRA: Pattern-Aware Alignment and Balanced Reasoning for Time Series Question Answering**](https://arxiv.org/pdf/2602.23161)
@@ -288,7 +299,7 @@ arXiv preprint, 2026.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/hermes.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Financial Time Series|Graph Learning|Spatio-Temporal'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/hermes.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Multi-Scale Spatial-Temporal Hypergraph Network with Lead-Lag Structures for Stock Time Series Forecasting**](https://arxiv.org/pdf/2509.23668v1)
@@ -301,7 +312,7 @@ arXiv preprint, 2025.
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/seer.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Robustness'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/seer.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**SEER: Transformer-based Robust Time Series Forecasting via Automated Patch Enhancement and Replacement**](https://arxiv.org/pdf/2602.00589)
@@ -314,7 +325,7 @@ arXiv preprint, 2026.
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/tfmixer.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Irregular Time Series|Representation Learning'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/tfmixer.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Bridging Time and Frequency: A Joint Modeling Framework for Irregular Multivariate Time Series Forecasting**](https://arxiv.org/pdf/2602.00582)
@@ -326,7 +337,7 @@ arXiv preprint, 2026.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/dag.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Exogenous Variables'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/dag.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**DAG: A Dual Causal Network for Time Series Forecasting with Exogenous Variables**](https://arxiv.org/pdf/2509.14933)
@@ -339,7 +350,7 @@ arXiv preprint, 2025.
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/c4ts.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Survey'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/c4ts.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**A Comprehensive Survey of Deep Learning for Multivariate Time Series Forecasting: A Channel Strategy Perspective**](https://arxiv.org/pdf/2502.10721)
@@ -353,7 +364,7 @@ arXiv preprint, 2025.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/horai.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Multimodal|Foundation Models'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/horai.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Empowering Time Series Analysis with Large-Scale Multimodal Pretraining**](https://arxiv.org/pdf/2602.05646)
@@ -366,5 +377,7 @@ arXiv preprint, 2025.
 
 </div>
 </div>
+
+</section>
 
 **Equal* *Contribution*, *#* *Corresponding* *Author*. More working drafts / preprints under review will be released later ⌛️

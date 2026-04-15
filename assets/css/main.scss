@@ -107,3 +107,117 @@ h1:before, .anchor:before {
     background-color: #00369f;
     font-size: .8em;
 }
+
+.publication-browser {
+    margin: 1.5em 0 2em;
+    padding: 1.25em;
+    border: 1px solid #d9e5ff;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+    box-shadow: 0 10px 24px rgba(0, 54, 159, 0.06);
+}
+
+.publication-browser__title {
+    margin: 0;
+    color: #00369f;
+    font-size: 1.05em;
+    font-weight: 700;
+}
+
+.publication-browser__hint {
+    margin: .35em 0 1em;
+    color: #4f5f7d;
+    font-size: .92em;
+}
+
+.publication-browser__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .65em;
+}
+
+.publication-browser__status {
+    margin: 1em 0 0;
+    color: #5f6f8b;
+    font-size: .92em;
+}
+
+.publication-filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: .5em;
+    padding: .5em .82em;
+    border: 1px solid #c9d8fb;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #34507d;
+    font-size: .92em;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background-color .18s ease, color .18s ease;
+}
+
+.publication-filter-chip:hover {
+    transform: translateY(-1px);
+    border-color: #00369f;
+    box-shadow: 0 8px 18px rgba(0, 54, 159, 0.12);
+}
+
+.publication-filter-chip.is-active {
+    border-color: #00369f;
+    background: #00369f;
+    color: #ffffff;
+    box-shadow: 0 10px 22px rgba(0, 54, 159, 0.18);
+}
+
+.publication-filter-chip__count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    padding: 0 .35rem;
+    border-radius: 999px;
+    background: rgba(0, 54, 159, 0.08);
+    font-size: .82em;
+}
+
+.publication-filter-chip.is-active .publication-filter-chip__count {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.publication-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .55em;
+    margin-top: 1em;
+}
+
+.publication-tag {
+    border: 0;
+    border-radius: 999px;
+    padding: .38em .78em;
+    background: #edf4ff;
+    color: #00369f;
+    font-size: .82em;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color .18s ease, color .18s ease, transform .18s ease;
+}
+
+.publication-tag:hover {
+    background: #dce8ff;
+    transform: translateY(-1px);
+}
+
+.publication-tag.is-active {
+    background: #00369f;
+    color: #ffffff;
+}
+
+.paper-box[hidden],
+.publication-section[hidden] {
+    display: none !important;
+}
