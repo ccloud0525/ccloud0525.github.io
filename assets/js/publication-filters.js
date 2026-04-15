@@ -31,7 +31,7 @@
     var tagCounts = {};
     var topLevelButtons = [];
     var cardTagButtons = [];
-    var activeTag = null;
+    var selectedTags = [];
 
     cards.forEach(function(card) {
       var tags = parseTags(card.getAttribute("data-tags"));
@@ -57,7 +57,7 @@
         button.textContent = tag;
         button.setAttribute("data-publication-tag", tag);
         button.addEventListener("click", function() {
-          applyFilter(activeTag === tag ? null : tag);
+          toggleTag(tag);
         });
         tagRow.appendChild(button);
         cardTagButtons.push(button);
@@ -76,10 +76,10 @@
       button.setAttribute("data-filter-tag", tag || "");
       button.addEventListener("click", function() {
         if (!tag) {
-          applyFilter(null);
+          applyFilter([]);
           return;
         }
-        applyFilter(activeTag === tag ? null : tag);
+        toggleTag(tag);
       });
 
       labelNode.className = "publication-filter-chip__label";
@@ -97,12 +97,12 @@
     function updateButtons() {
       topLevelButtons.forEach(function(button) {
         var tag = button.getAttribute("data-filter-tag");
-        var isActive = activeTag ? tag === activeTag : tag === "";
+        var isActive = tag ? selectedTags.indexOf(tag) !== -1 : selectedTags.length === 0;
         button.classList.toggle("is-active", isActive);
       });
 
       cardTagButtons.forEach(function(button) {
-        button.classList.toggle("is-active", button.getAttribute("data-publication-tag") === activeTag);
+        button.classList.toggle("is-active", selectedTags.indexOf(button.getAttribute("data-publication-tag")) !== -1);
       });
     }
 
@@ -114,22 +114,37 @@
     }
 
     function updateStatus(visibleCount) {
-      if (!activeTag) {
+      if (!selectedTags.length) {
         statusNode.textContent = "Showing all " + cards.length + " papers.";
         return;
       }
 
       var noun = visibleCount === 1 ? "paper" : "papers";
-      statusNode.textContent = "Showing " + visibleCount + " " + noun + " tagged " + activeTag + ".";
+      statusNode.textContent = "Showing " + visibleCount + " " + noun + " matching " + selectedTags.join(" + ") + ".";
     }
 
-    function applyFilter(tag) {
+    function toggleTag(tag) {
+      var nextTags = selectedTags.slice();
+      var tagIndex = nextTags.indexOf(tag);
+
+      if (tagIndex === -1) {
+        nextTags.push(tag);
+      } else {
+        nextTags.splice(tagIndex, 1);
+      }
+
+      applyFilter(nextTags);
+    }
+
+    function applyFilter(nextTags) {
       var visibleCount = 0;
 
-      activeTag = tag;
+      selectedTags = nextTags.slice();
 
       cards.forEach(function(card) {
-        var matches = !activeTag || card.publicationTags.indexOf(activeTag) !== -1;
+        var matches = !selectedTags.length || selectedTags.every(function(tag) {
+          return card.publicationTags.indexOf(tag) !== -1;
+        });
         card.hidden = !matches;
         if (matches) {
           visibleCount += 1;
@@ -148,7 +163,7 @@
     });
 
     browser.hidden = false;
-    applyFilter(null);
+    applyFilter([]);
   }
 
   if (document.readyState === "loading") {

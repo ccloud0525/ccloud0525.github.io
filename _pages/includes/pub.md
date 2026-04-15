@@ -1,6 +1,6 @@
 <div class="publication-browser" data-publication-browser hidden>
   <p class="publication-browser__title">Filter by topic</p>
-  <p class="publication-browser__hint">Default view shows all papers. Click a topic tag to jump straight to one theme.</p>
+  <p class="publication-browser__hint">Default view shows all papers. Click one or more topic tags to narrow the list. Papers must match all selected tags.</p>
   <div class="publication-browser__filters" data-publication-filters></div>
   <p class="publication-browser__status" data-publication-filter-status></p>
 </div>
