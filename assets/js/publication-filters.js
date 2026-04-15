@@ -120,7 +120,7 @@
       }
 
       var noun = visibleCount === 1 ? "paper" : "papers";
-      statusNode.textContent = "Showing " + visibleCount + " " + noun + " matching " + selectedTags.join(" + ") + ".";
+      statusNode.textContent = "Showing " + visibleCount + " " + noun + " matching any of " + selectedTags.join(", ") + ".";
     }
 
     function toggleTag(tag) {
@@ -142,7 +142,7 @@
       selectedTags = nextTags.slice();
 
       cards.forEach(function(card) {
-        var matches = !selectedTags.length || selectedTags.every(function(tag) {
+        var matches = !selectedTags.length || selectedTags.some(function(tag) {
           return card.publicationTags.indexOf(tag) !== -1;
         });
         card.hidden = !matches;
