@@ -8,7 +8,7 @@
 <section class="publication-section" data-publication-section>
 <h2>Accepted Papers</h2>
 
-<div class='paper-box' data-tags='Forecasting|Foundation Models|Multimodal|CCF A|First/Co-first'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/pub/aurora.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Foundation Models|Generative Modeling|Multimodal|CCF A|First/Co-first'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/pub/aurora.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Aurora: Towards Universal Generative Multimodal Time Series Forecasting**](https://arxiv.org/pdf/2509.22295)
@@ -262,7 +262,7 @@ arXiv preprint, 2026.
 </div>
 
 
-<div class='paper-box' data-tags='Forecasting|Representation Learning|First/Co-first'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/flame.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Representation Learning|Generative Modeling|First/Co-first'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/flame.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**FLAME: Flow Enhanced Legendre Memory Models for General Time Series Forecasting**](https://arxiv.org/pdf/2512.14253)
