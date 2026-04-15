@@ -8,7 +8,7 @@
 <section class="publication-section" data-publication-section>
 <h2>Accepted Papers</h2>
 
-<div class='paper-box' data-tags='Forecasting|Foundation Models|Multimodal|CCF A'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/pub/aurora.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Foundation Models|Multimodal|CCF A|First/Co-first'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/pub/aurora.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Aurora: Towards Universal Generative Multimodal Time Series Forecasting**](https://arxiv.org/pdf/2509.22295)
@@ -65,7 +65,7 @@
 </div>
 </div>
 
-<div class='paper-box' data-tags='Forecasting|Irregular Time Series|CCF A|Reward Paper'><div class='paper-box-image'><div><div class="badge">AAAI 2026 Oral</div><img src='images/pub/apn.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Irregular Time Series|CCF A|Reward Paper|First/Co-first'><div class='paper-box-image'><div><div class="badge">AAAI 2026 Oral</div><img src='images/pub/apn.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Rethinking Irregular Time Series Forecasting: A Simple yet Effective Baseline**](https://arxiv.org/pdf/2505.11250)
@@ -81,7 +81,7 @@
 </div>
 </div>
 
-<div class='paper-box' data-tags='Forecasting|Representation Learning|CCF A|Reward Paper'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025 Spotlight</div><img src='images/pub/srsnet.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Representation Learning|CCF A|Reward Paper|First/Co-first'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025 Spotlight</div><img src='images/pub/srsnet.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Enhancing Time Series Forecasting through Selective Representation Spaces: A Patch Perspective**](https://arxiv.org/pdf/2510.14510)
@@ -111,7 +111,7 @@
 </div>
 </div>
 
-<div class='paper-box' data-tags='Forecasting|Generative Modeling|CCF A|Reward Paper'><div class='paper-box-image'><div><div class="badge">ICML 2025 Spotlight</div><img src='images/pub/k2vae.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Generative Modeling|CCF A|Reward Paper|First/Co-first'><div class='paper-box-image'><div><div class="badge">ICML 2025 Spotlight</div><img src='images/pub/k2vae.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**K<sup>2</sup>VAE: A Koopman-Kalman Enhanced Variational AutoEncoder for Probabilistic Time Series Forecasting**](https://arxiv.org/pdf/2505.23017)
@@ -141,7 +141,7 @@
 </div>
 </div>
 
-<div class='paper-box' data-tags='Anomaly Detection|Representation Learning|CCF A'><div class='paper-box-image'><div><div class="badge">ICLR 2025</div><img src='images/pub/catch.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Anomaly Detection|Representation Learning|CCF A|First/Co-first'><div class='paper-box-image'><div><div class="badge">ICLR 2025</div><img src='images/pub/catch.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**CATCH: Channel-Aware Multivariate Time Series Anomaly Detection via Frequency Patching**](https://arxiv.org/pdf/2410.12261)
@@ -155,7 +155,7 @@
 </div>
 </div>
 
-<div class='paper-box' data-tags='Forecasting|Benchmarking|Agentic System|CCF A|Reward Paper'><div class='paper-box-image'><div><div class="badge">ICDE 2025</div><img src='images/pub/easytime.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Benchmarking|Agentic System|CCF A|Reward Paper|First/Co-first'><div class='paper-box-image'><div><div class="badge">ICDE 2025</div><img src='images/pub/easytime.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**EasyTime: Time Series Forecasting Made Easy**](https://arxiv.org/pdf/2412.17603)
@@ -201,7 +201,7 @@
 </div>
 </div>
 
-<div class='paper-box' data-tags='Forecasting|AutoML|CCF A'><div class='paper-box-image'><div><div class="badge">VLDBJ 2024</div><img src='images/pub/autocts++.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|AutoML|CCF A|First/Co-first'><div class='paper-box-image'><div><div class="badge">VLDBJ 2024</div><img src='images/pub/autocts++.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**AutoCTS++: Zero-shot Joint Neural Architecture and Hyperparameter Search for Correlated Time Series Forecasting**](https://link.springer.com/article/10.1007/s00778-024-00872-x)
@@ -236,7 +236,7 @@
 <section class="publication-section" data-publication-section>
 <h2>Preprints</h2>
 
-<div class='paper-box' data-tags='Spatio-Temporal|Generative Modeling|Agentic System'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/stevo.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Spatio-Temporal|Generative Modeling|Agentic System|First/Co-first'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/stevo.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**ST-EVO: Towards Generative Spatio-Temporal Evolution of Multi-Agent Communication Topologies**](https://arxiv.org/pdf/2602.14681)
@@ -249,7 +249,7 @@ arXiv preprint, 2026.
 </div>
 
 
-<div class='paper-box' data-tags='Agentic System|Foundation Models'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/timeart.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Agentic System|Foundation Models|First/Co-first'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/timeart.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**TimeART: Towards Agentic Time Series Reasoning via Tool-Agumentation**](https://arxiv.org/pdf/2601.13653)
@@ -262,7 +262,7 @@ arXiv preprint, 2026.
 </div>
 
 
-<div class='paper-box' data-tags='Forecasting|Representation Learning'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/flame.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Forecasting|Representation Learning|First/Co-first'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/flame.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**FLAME: Flow Enhanced Legendre Memory Models for General Time Series Forecasting**](https://arxiv.org/pdf/2512.14253)
@@ -275,7 +275,7 @@ arXiv preprint, 2025.
 </div>
 
 
-<div class='paper-box' data-tags='Foundation Models|Representation Learning'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/patchmoe.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Foundation Models|Representation Learning|First/Co-first'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/patchmoe.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Task-Aware Mixture-of-Experts for Time Series Analysis**](https://arxiv.org/pdf/2509.22279)
@@ -287,7 +287,7 @@ arXiv preprint, 2025.
 </div>
 </div>
 
-<div class='paper-box' data-tags='Agentic System'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/patra.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Agentic System|Multimodal'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/patra.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**PATRA: Pattern-Aware Alignment and Balanced Reasoning for Time Series Question Answering**](https://arxiv.org/pdf/2602.23161)
