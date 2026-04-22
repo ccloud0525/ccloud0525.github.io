@@ -1,6 +1,6 @@
 <style>  
     .scrollable-area {  
-        max-height: 180px;  
+        max-height: 250px;  
         overflow-y: auto;  
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);  
         padding: 10px;  
