@@ -8,6 +8,76 @@
 <section class="publication-section" data-publication-section>
 <h2>Accepted Papers</h2>
 
+<div class='paper-box' data-tags='Agentic System|Multimodal|CCF A|First/Co-first'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/pub/patra.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**PATRA: Pattern-Aware Alignment and Balanced Reasoning for Time Series Question Answering**](https://arxiv.org/pdf/2602.23161)
+
+🧑‍💻 Junkai Lu\*, Peng Chen\*, **Xingjian Wu**\*, Yang Shu, Chenjuan Guo, Christian S. Jensen, Bin Yang#
+
+🏛️ International Conference on Machine Learning **(ICML)**, 2026. <font color="red">CCF A</font>.
+
+[[Paper]](https://arxiv.org/pdf/2602.23161)
+
+</div>
+</div>
+
+<div class='paper-box' data-tags='Forecasting|CCF A'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/pub/seer.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**SEER: Transformer-based Robust Time Series Forecasting via Automated Patch Enhancement and Replacement**](https://arxiv.org/pdf/2602.00589)
+
+🧑‍💻 Xiangfei Qiu, Xvyuan Liu, Tianen Shen, **Xingjian Wu**, Hanyin Cheng, Bin Yang, Jilin Hu#
+
+🏛️ International Conference on Machine Learning **(ICML)**, 2026. <font color="red">CCF A</font>.
+
+[[Paper]](https://arxiv.org/pdf/2602.00589)
+
+</div>
+</div>
+
+<div class='paper-box' data-tags='Forecasting|Irregular Time Series|Representation Learning|CCF A'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/pub/tfmixer.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Bridging Time and Frequency: A Joint Modeling Framework for Irregular Multivariate Time Series Forecasting**](https://arxiv.org/pdf/2602.00582)
+
+🧑‍💻 Xiangfei Qiu, Kangjia Yan, Xvyuan Liu, **Xingjian Wu**, Jilin Hu#
+
+🏛️ International Conference on Machine Learning **(ICML)**, 2026. <font color="red">CCF A</font>.
+
+[[Paper]](https://arxiv.org/pdf/2602.00582)
+
+</div>
+</div>
+
+<div class='paper-box' data-tags='Forecasting|CCF A'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/pub/dag.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**DAG: A Dual Causal Network for Time Series Forecasting with Exogenous Variables**](https://arxiv.org/pdf/2509.14933)
+
+🧑‍💻 Xiangfei Qiu, Yuhan Zhu, Zhengyu Li, Hanyin Cheng, **Xingjian Wu**, Chenjuan Guo, Bin Yang, Jilin Hu#
+
+🏛️ International Conference on Machine Learning **(ICML)**, 2026. <font color="red">CCF A</font>.
+
+[[Paper]](https://arxiv.org/pdf/2509.14933)
+
+</div>
+</div>
+
+<div class='paper-box' data-tags='Forecasting'><div class='paper-box-image'><div><div class="badge">IJCAI 2026</div><img src='images/pub/c4ts.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**A Comprehensive Survey of Deep Learning for Multivariate Time Series Forecasting: A Channel Strategy Perspective**](https://arxiv.org/pdf/2502.10721)
+
+🧑‍💻 Xiangfei Qiu, Hanyin Cheng, **Xingjian Wu**, Jilin Hu, Chenjuan Guo, Bin Yang
+
+🏛️ International Joint Conference on Artificial Intelligence **(IJCAI)**, 2026. <font color="red">CCF B</font>.
+
+[[Paper]](https://arxiv.org/pdf/2502.10721) \| [[Project]](https://github.com/decisionintelligence/CS4TS)
+
+</div>
+</div>
+
 <div class='paper-box' data-tags='Forecasting|Foundation Models|Generative Modeling|Multimodal|CCF A|First/Co-first'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/pub/aurora.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -287,18 +357,6 @@ arXiv preprint, 2025.
 </div>
 </div>
 
-<div class='paper-box' data-tags='Agentic System|Multimodal'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/patra.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[**PATRA: Pattern-Aware Alignment and Balanced Reasoning for Time Series Question Answering**](https://arxiv.org/pdf/2602.23161)
-
-🧑‍💻 Junkai Lu, Peng Chen, **Xingjian Wu**, Yang Shu, Chenjuan Guo, Christian S. Jensen, Bin Yang#
-
-arXiv preprint, 2026.
-
-</div>
-</div>
-
 <div class='paper-box' data-tags='Forecasting|Graph Learning|Spatio-Temporal'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/hermes.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -311,58 +369,6 @@ arXiv preprint, 2025.
 </div>
 </div>
 
-
-<div class='paper-box' data-tags='Forecasting'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/seer.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[**SEER: Transformer-based Robust Time Series Forecasting via Automated Patch Enhancement and Replacement**](https://arxiv.org/pdf/2602.00589)
-
-🧑‍💻 Xiangfei Qiu, Xvyuan Liu, Tianen Shen, **Xingjian Wu**, Hanyin Cheng, Bin Yang, Jilin Hu#
-
-arXiv preprint, 2026.
-
-</div>
-</div>
-
-
-<div class='paper-box' data-tags='Forecasting|Irregular Time Series|Representation Learning'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/tfmixer.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[**Bridging Time and Frequency: A Joint Modeling Framework for Irregular Multivariate Time Series Forecasting**](https://arxiv.org/pdf/2602.00582)
-
-🧑‍💻 Xiangfei Qiu, Kangjia Yan, Xvyuan Liu, **Xingjian Wu**, Jilin Hu#
-
-arXiv preprint, 2026.
-
-</div>
-</div>
-
-<div class='paper-box' data-tags='Forecasting'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/dag.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[**DAG: A Dual Causal Network for Time Series Forecasting with Exogenous Variables**](https://arxiv.org/pdf/2509.14933)
-
-🧑‍💻 Xiangfei Qiu, Yuhan Zhu, Zhengyu Li, Hanyin Cheng, **Xingjian Wu**, Chenjuan Guo, Bin Yang, Jilin Hu#
-
-arXiv preprint, 2025.
-
-</div>
-</div>
-
-
-<div class='paper-box' data-tags='Forecasting'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/c4ts.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[**A Comprehensive Survey of Deep Learning for Multivariate Time Series Forecasting: A Channel Strategy Perspective**](https://arxiv.org/pdf/2502.10721)
-
-🧑‍💻 Xiangfei Qiu, Hanyin Cheng, **Xingjian Wu**, Jilin Hu, Chenjuan Guo, Bin Yang
-
-arXiv preprint, 2025.
-
-[[Paper]](https://arxiv.org/pdf/2502.10721) \| [[Project]](https://github.com/decisionintelligence/CS4TS)
-
-</div>
-</div>
 
 <div class='paper-box' data-tags='Multimodal|Foundation Models'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/horai.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
