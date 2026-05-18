@@ -309,7 +309,7 @@
 <div class='paper-box' data-tags='Agentic System|First/Co-first'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/dmoa.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[**DMoA: Differentiable Mixture-of-Agents Incentivizes Swarm Intelligence of Large Language Models**](https://arxiv.org/pdf/2605.15706)
+[**Differentiable Mixture-of-Agents Incentivizes Swarm Intelligence of Large Language Models**](https://arxiv.org/pdf/2605.15706)
 
 🧑‍💻 **Xingjian Wu**, Junkai Lu, Siyu Yan, Xiangfei Qiu, Jilin Hu, Chenjuan Guo, Bin Yang#
 
