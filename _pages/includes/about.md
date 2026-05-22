@@ -5,6 +5,6 @@ My current research interests cover *Time Series Analysis*, *AutoML*, *Foundatio
 - *Time Series Analysis*: Focusing on expert models and representation learning ([CATCH](https://arxiv.org/pdf/2410.12261), [DUET](https://arxiv.org/pdf/2412.10859), [K<sup>2</sup>VAE](https://arxiv.org/pdf/2505.23017), [SRSNet](https://arxiv.org/pdf/2510.14510));
 - *AutoML*: Supporting fully automated neural architecture search ([AutoCTS++](https://link.springer.com/article/10.1007/s00778-024-00872-x), [FACTS](https://www.vldb.org/pvldb/vol18/p144-wu.pdf));
 - *Foundation Models*: Developing general-purpose Sequence Foundation Models ([Aurora](https://arxiv.org/pdf/2509.22295), [FLAME](https://arxiv.org/pdf/2512.14253), [Horai](https://arxiv.org/pdf/2602.05646), [CoRA](https://openreview.net/pdf?id=JRlNrcTllN));
-- *Agentic Systems*: Exploring the potential of agentic systems in real-world applications ([ST-EVO](https://arxiv.org/pdf/2602.14681), [TimeART](https://arxiv.org/pdf/2601.13653), [PATRA](https://arxiv.org/pdf/2602.23161)).
+- *Agentic Systems*: Exploring the potential of agentic systems in real-world applications ([DMoA](https://arxiv.org/pdf/2605.15706), [ST-EVO](https://arxiv.org/pdf/2602.14681), [TimeART](https://arxiv.org/pdf/2601.13653), [PATRA](https://arxiv.org/pdf/2602.23161)).
 
 
