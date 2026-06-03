@@ -17,7 +17,7 @@
 
 🏛️ International Conference on Machine Learning **(ICML)**, 2026. <font color="red">CCF A</font>.
 
-[[Paper]](https://arxiv.org/pdf/2602.23161)
+[[Paper]](https://arxiv.org/pdf/2602.23161) \| [[Github]](https://github.com/decisionintelligence/PATRA/)
 
 </div>
 </div>
@@ -31,7 +31,7 @@
 
 🏛️ International Conference on Machine Learning **(ICML)**, 2026. <font color="red">CCF A</font>.
 
-[[Paper]](https://arxiv.org/pdf/2602.00589)
+[[Paper]](https://arxiv.org/pdf/2602.00589) \| [[Github]](https://github.com/decisionintelligence/SEER/)
 
 </div>
 </div>
@@ -45,7 +45,7 @@
 
 🏛️ International Conference on Machine Learning **(ICML)**, 2026. <font color="red">CCF A</font>.
 
-[[Paper]](https://arxiv.org/pdf/2602.00582)
+[[Paper]](https://arxiv.org/pdf/2602.00582) \| [[Github]](https://github.com/decisionintelligence/TFMixer/)
 
 </div>
 </div>
@@ -59,7 +59,7 @@
 
 🏛️ International Conference on Machine Learning **(ICML)**, 2026. <font color="red">CCF A</font>.
 
-[[Paper]](https://arxiv.org/pdf/2509.14933)
+[[Paper]](https://arxiv.org/pdf/2509.14933) \| [[Github]](https://github.com/decisionintelligence/DAG/)
 
 </div>
 </div>
