@@ -24,6 +24,20 @@
 </div>
 
 
+<div class='paper-box' data-tags='Forecasting|CCF A'><div class='paper-box-image'><div><div class="badge">SIGKDD 2026</div><img src='images/pub/ccd.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**CCD: Capturing Cross-Correlations with Deformable Convolutional Networks for Multivariate Time Series Forecasting**](https://dl.acm.org/doi/pdf/10.1145/3770855.3817648)
+
+🧑‍💻 Hanyin Cheng, **Xingjian Wu**, Xiangfei Qiu, Yang Shu, Bin Yang, Chenjuan Guo#
+
+🏛️ ACM Knowledge Discovery and Data Mining **(SIGKDD)**, 2026. <font color="red">CCF A</font>.
+
+[[Paper]](https://dl.acm.org/doi/pdf/10.1145/3770855.3817648) \| [[Project]](https://github.com/decisionintelligence/CCD)
+
+</div>
+</div>
+
 <div class='paper-box' data-tags='Agentic System|Multimodal|CCF A|First/Co-first'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/pub/patra.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
