@@ -8,6 +8,19 @@
 <section class="publication-section" data-publication-section>
 <h2>Accepted Papers</h2>
 
+<div class='paper-box' data-tags='Spatio-Temporal|Generative Modeling|Agentic System|First/Co-first'><div class='paper-box-image'><div><div class="badge">EMNLP 2026</div><img src='images/pub/stevo.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**ST-EVO: Towards Generative Spatio-Temporal Evolution of Multi-Agent Communication Topologies**](https://arxiv.org/pdf/2602.14681)
+
+🧑‍💻 **Xingjian Wu**\*, Xvyuan Liu\*, Junkai Lu\*, Siyuan Wang, Xiangfei Qiu, Yang Shu, Jilin Hu, Chenjuan Guo, Bin Yang#
+
+EMNLP Main, 2026.
+
+</div>
+</div>
+
+
 <div class='paper-box' data-tags='Agentic System|Multimodal|CCF A|First/Co-first'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/pub/patra.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -319,20 +332,6 @@ arXiv preprint, 2026.
 
 </div>
 </div>
-
-
-<div class='paper-box' data-tags='Spatio-Temporal|Generative Modeling|Agentic System|First/Co-first'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/stevo.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[**ST-EVO: Towards Generative Spatio-Temporal Evolution of Multi-Agent Communication Topologies**](https://arxiv.org/pdf/2602.14681)
-
-🧑‍💻 **Xingjian Wu**, Xvyuan Liu, Junkai Lu, Siyuan Wang, Xiangfei Qiu, Yang Shu, Jilin Hu, Chenjuan Guo, Bin Yang#
-
-arXiv preprint, 2026.
-
-</div>
-</div>
-
 
 <div class='paper-box' data-tags='Agentic System|Foundation Models|First/Co-first'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/timeart.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
