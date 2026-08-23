@@ -15,7 +15,7 @@
 
 🧑‍💻 **Xingjian Wu**\*, Xvyuan Liu\*, Junkai Lu\*, Siyuan Wang, Xiangfei Qiu, Yang Shu, Jilin Hu, Chenjuan Guo, Bin Yang#
 
-🏛️ Conference on Empirical Methods in Natural Language Processing **(EMNLP)**, 2026. <font color="red">CCF B</font>.
+🏛️ Conference on Empirical Methods in Natural Language Processing **(EMNLP)**, 2026. <font color="red">CCF B, CORE A*</font>.
 
 [[Paper]](https://arxiv.org/pdf/2602.14681) \| [[Github]](https://github.com/decisionintelligence/ST-EVO/)
 
@@ -101,7 +101,7 @@
 
 🧑‍💻 Xiangfei Qiu, Hanyin Cheng, **Xingjian Wu**, Jilin Hu, Chenjuan Guo, Bin Yang
 
-🏛️ International Joint Conference on Artificial Intelligence **(IJCAI)**, 2026. <font color="red">CCF B</font>.
+🏛️ International Joint Conference on Artificial Intelligence **(IJCAI)**, 2026. <font color="red">CCF B, CORE A*</font>.
 
 [[Paper]](https://arxiv.org/pdf/2502.10721) \| [[Project]](https://github.com/decisionintelligence/CS4TS)
 
