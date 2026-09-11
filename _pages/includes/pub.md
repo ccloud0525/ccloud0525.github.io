@@ -8,7 +8,7 @@
 <section class="publication-section" data-publication-section>
 <h2>Accepted Papers</h2>
 
-<div class='paper-box' data-tags='Sequential Modeling|Generative Modeling|Agentic System|First/Co-first'><div class='paper-box-image'><div><div class="badge">EMNLP 2026 Main</div><img src='images/pub/stevo.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Generative Modeling|Agentic System|First/Co-first'><div class='paper-box-image'><div><div class="badge">EMNLP 2026 Main</div><img src='images/pub/stevo.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**ST-EVO: Towards Generative Spatio-Temporal Evolution of Multi-Agent Communication Topologies**](https://arxiv.org/pdf/2602.14681)
@@ -38,7 +38,7 @@
 </div>
 </div>
 
-<div class='paper-box' data-tags='Sequential Modeling|Agentic System|Multimodal|CCF A|First/Co-first'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/pub/patra.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Agentic System|Multimodal|CCF A|First/Co-first'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/pub/patra.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**PATRA: Pattern-Aware Alignment and Balanced Reasoning for Time Series Question Answering**](https://arxiv.org/pdf/2602.23161)
@@ -255,7 +255,7 @@
 </div>
 </div>
 
-<div class='paper-box' data-tags='Sequential Modeling|Benchmarking|Agentic System|CCF A|Reward Paper|First/Co-first'><div class='paper-box-image'><div><div class="badge">ICDE 2025</div><img src='images/pub/easytime.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Benchmarking|Agentic System|CCF A|Reward Paper|First/Co-first'><div class='paper-box-image'><div><div class="badge">ICDE 2025</div><img src='images/pub/easytime.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**EasyTime: Time Series Forecasting Made Easy**](https://arxiv.org/pdf/2412.17603)
@@ -350,7 +350,7 @@ arXiv preprint, 2026.
 </div>
 </div>
 
-<div class='paper-box' data-tags='Sequential Modeling|Agentic System|Foundation Models|First/Co-first'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/timeart.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Agentic System|Foundation Models|First/Co-first'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/timeart.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**TimeART: Towards Agentic Time Series Reasoning via Tool-Agumentation**](https://arxiv.org/pdf/2601.13653)

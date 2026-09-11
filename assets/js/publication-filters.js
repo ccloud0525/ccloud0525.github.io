@@ -1,4 +1,6 @@
 (function() {
+  var prioritizedTags = ["First/Co-first", "CCF A", "Reward Paper"];
+
   function parseTags(rawTags) {
     return (rawTags || "")
       .split("|")
@@ -10,6 +12,19 @@
 
   function sortTags(tagCounts) {
     return Object.keys(tagCounts).sort(function(left, right) {
+      var leftPriority = prioritizedTags.indexOf(left);
+      var rightPriority = prioritizedTags.indexOf(right);
+
+      if (leftPriority !== -1 || rightPriority !== -1) {
+        if (leftPriority === -1) {
+          return 1;
+        }
+        if (rightPriority === -1) {
+          return -1;
+        }
+        return leftPriority - rightPriority;
+      }
+
       if (tagCounts[right] !== tagCounts[left]) {
         return tagCounts[right] - tagCounts[left];
       }
