@@ -17,7 +17,7 @@
 
 🏛️ Conference on Neural Information Processing Systems **(NeurIPS)**, 2026. <font color="red">CCF A</font>.
 
-[[Paper]](https://arxiv.org/pdf/2512.14253)
+[[Paper]](https://arxiv.org/pdf/2512.14253) \| [[Project]](https://huggingface.co/DecisionIntelligence/FLAME) \| [[Github]](https://github.com/decisionintelligence/FLAME)
 
 </div>
 </div>
