@@ -19,6 +19,7 @@
 </style>  
 <div class="scrollable-area">  
     <ul>
+        <li><em>2026.09</em>: 🎉🎉 Three of our papers, <a href="https://arxiv.org/pdf/2512.14253">FLAME</a>, <a href="https://arxiv.org/pdf/2509.23668v1">Hermes</a>, and <a href="https://arxiv.org/pdf/2602.05646">Horai</a>, have been accepted by NeurIPS 2026! </li>
         <li><em>2026.08</em>: 🎈🎈 Our paper <a href="https://arxiv.org/pdf/2602.14681">ST-EVO</a> has been accepted by EMNLP 2026 Main Conference! </li>
         <li><em>2026.06</em>: 🏖️🏖️ Our paper <a href="https://dl.acm.org/doi/pdf/10.1145/3770855.3817648">CCD</a> has been accepted by SIGKDD 2026! </li>
         <li><em>2026.05</em>: 🥂🥂 Four of our papers, <a href="https://arxiv.org/pdf/2602.23161">PATRA</a>, <a href="https://arxiv.org/pdf/2602.00589">SEER</a>, <a href="https://arxiv.org/pdf/2602.00582">Bridging Time and Frequency</a>, and <a href="https://arxiv.org/pdf/2509.14933">DAG</a>, have been accepted by ICML 2026, and our survey paper <a href="https://arxiv.org/pdf/2502.10721">A Comprehensive Survey of Deep Learning for Multivariate Time Series Forecasting: A Channel Strategy Perspective</a> has been accepted by IJCAI 2026! </li>

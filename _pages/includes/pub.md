@@ -8,6 +8,48 @@
 <section class="publication-section" data-publication-section>
 <h2>Accepted Papers</h2>
 
+<div class='paper-box' data-tags='Sequential Modeling|Foundation Models|Representation Learning|Generative Modeling|CCF A|First/Co-first'><div class='paper-box-image'><div><div class="badge">NeurIPS 2026</div><img src='images/pub/flame.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**FLAME: Flow Enhanced Legendre Memory Models for General Time Series Forecasting**](https://arxiv.org/pdf/2512.14253)
+
+🧑‍💻 **Xingjian Wu**\*, Zhengyu Li\*, Hanyin Cheng\*, Xiangfei Qiu\*, Jilin Hu, Chenjuan Guo, Bin Yang#
+
+🏛️ Conference on Neural Information Processing Systems **(NeurIPS)**, 2026. <font color="red">CCF A</font>.
+
+[[Paper]](https://arxiv.org/pdf/2512.14253)
+
+</div>
+</div>
+
+<div class='paper-box' data-tags='Sequential Modeling|Graph Learning|CCF A'><div class='paper-box-image'><div><div class="badge">NeurIPS 2026</div><img src='images/pub/hermes.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Multi-Scale Spatial-Temporal Hypergraph Network with Lead-Lag Structures for Stock Time Series Forecasting**](https://arxiv.org/pdf/2509.23668v1)
+
+🧑‍💻 Xiangfei Qiu, Liu Yang, Hanyin Cheng, **Xingjian Wu**, Rongjia Wu, Zhigang Zhang, Ding Tu, Chenjuan Guo, Bin Yang, Christian S. Jensen, Jilin Hu#
+
+🏛️ Conference on Neural Information Processing Systems **(NeurIPS)**, 2026. <font color="red">CCF A</font>.
+
+[[Paper]](https://arxiv.org/pdf/2509.23668v1)
+
+</div>
+</div>
+
+<div class='paper-box' data-tags='Sequential Modeling|Multimodal|Foundation Models|CCF A'><div class='paper-box-image'><div><div class="badge">NeurIPS 2026</div><img src='images/pub/horai.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Empowering Time Series Analysis with Large-Scale Multimodal Pretraining**](https://arxiv.org/pdf/2602.05646)
+
+🧑‍💻 Peng Chen, Siyuan Wang, Shiyan Hu, **Xingjian Wu**, Yang Shu, Zhongwen Rao, Meng Wang, Yijie Li, Bin Yang, Chenjuan Guo#
+
+🏛️ Conference on Neural Information Processing Systems **(NeurIPS)**, 2026. <font color="red">CCF A</font>.
+
+[[Paper]](https://arxiv.org/pdf/2602.05646)
+
+</div>
+</div>
+
 <div class='paper-box' data-tags='Generative Modeling|Agentic System|First/Co-first'><div class='paper-box-image'><div><div class="badge">EMNLP 2026 Main</div><img src='images/pub/stevo.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -363,19 +405,6 @@ arXiv preprint, 2026.
 </div>
 
 
-<div class='paper-box' data-tags='Sequential Modeling|Foundation Models|Representation Learning|Generative Modeling|First/Co-first'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/flame.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[**FLAME: Flow Enhanced Legendre Memory Models for General Time Series Forecasting**](https://arxiv.org/pdf/2512.14253)
-
-🧑‍💻 **Xingjian Wu**, Hanyin Cheng, Xiangfei Qiu, Zhengyu Li, Jilin Hu, Chenjuan Guo, Bin Yang#
-
-arXiv preprint, 2025.
-
-</div>
-</div>
-
-
 <div class='paper-box' data-tags='Sequential Modeling|Foundation Models|Representation Learning|First/Co-first'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/patchmoe.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -384,33 +413,6 @@ arXiv preprint, 2025.
 🧑‍💻 **Xingjian Wu**, Zhengyu Li, Hanyin Cheng, Xiangfei Qiu, Jilin Hu, Chenjuan Guo, Bin Yang#
 
 arXiv preprint, 2025.
-
-</div>
-</div>
-
-<div class='paper-box' data-tags='Sequential Modeling|Graph Learning'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/hermes.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[**Multi-Scale Spatial-Temporal Hypergraph Network with Lead-Lag Structures for Stock Time Series Forecasting**](https://arxiv.org/pdf/2509.23668v1)
-
-🧑‍💻 Xiangfei Qiu, Liu Yang, Hanyin Cheng, **Xingjian Wu**, Rongjia Wu, Zhigang Zhang, Ding Tu, Chenjuan Guo, Bin Yang, Christian S. Jensen, Jilin Hu#
-
-arXiv preprint, 2025.
-
-</div>
-</div>
-
-
-<div class='paper-box' data-tags='Sequential Modeling|Multimodal|Foundation Models'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/horai.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[**Empowering Time Series Analysis with Large-Scale Multimodal Pretraining**](https://arxiv.org/pdf/2602.05646)
-
-🧑‍💻 Peng Chen, Siyuan Wang, Shiyan Hu, **Xingjian Wu**, Yang Shu, Zhongwen Rao, Meng Wang, Yijie Li, Bin Yang, Chenjuan Guo#
-
-arXiv preprint, 2025.
-
-[[Paper]](https://arxiv.org/pdf/2602.05646)
 
 </div>
 </div>
