@@ -463,6 +463,8 @@ arXiv preprint, 2026.
 
 arXiv preprint, 2026.
 
+[[Paper]](https://arxiv.org/pdf/2601.13653)
+
 </div>
 </div>
 
@@ -475,6 +477,8 @@ arXiv preprint, 2026.
 🧑‍💻 **Xingjian Wu**, Zhengyu Li, Hanyin Cheng, Xiangfei Qiu, Jilin Hu, Chenjuan Guo, Bin Yang#
 
 arXiv preprint, 2025.
+
+[[Paper]](https://arxiv.org/pdf/2509.22279)
 
 </div>
 </div>
