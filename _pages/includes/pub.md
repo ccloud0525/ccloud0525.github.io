@@ -411,6 +411,20 @@ arXiv preprint, 2026.
 </div>
 </div>
 
+<div class='paper-box' data-tags='Agentic System'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/mapd.png' alt="MAPD framework overview" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**From Proprietary to Open-Source: Bridging the Distribution Gap via Multi-Agent Protocol Distillation in Agentic Search**](https://arxiv.org/pdf/2607.24280)
+
+🧑‍💻 Junlin Liu\*#, Jiangwang Chen\*, Zixin Song\*, Shuaiyu Zhou\*, Chunji Lv, **Xingjian Wu**, Kailin Jiang, Jinyang Wu, Bohan Yu, Chenxi Zhou
+
+arXiv preprint, 2026.
+
+[[Paper]](https://arxiv.org/pdf/2607.24280) \| [[Github]](https://github.com/AaronLiu0702/MAPD)
+
+</div>
+</div>
+
 <div class='paper-box' data-tags='Agentic System|First/Co-first'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/dmoa.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 

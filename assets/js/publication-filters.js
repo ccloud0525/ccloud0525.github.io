@@ -139,12 +139,13 @@
 
         var visibleCards = list.querySelectorAll(".paper-box[data-tags]:not([hidden])");
         if (visibleCards.length > 3) {
-          // Cards vary in height; fit the first three matching papers exactly.
+          // Show at most three papers without letting the window exceed the viewport cap.
           var firstCard = visibleCards[0].getBoundingClientRect();
           var thirdCard = visibleCards[2].getBoundingClientRect();
-          list.style.maxHeight = Math.ceil(thirdCard.bottom - firstCard.top) + "px";
+          list.style.maxHeight = "min(75vh, " + Math.ceil(thirdCard.bottom - firstCard.top) + "px)";
         } else {
-          list.style.maxHeight = "none";
+          // Even one to three tall cards should scroll within the CSS height limit.
+          list.style.maxHeight = "";
         }
 
         if (resetScroll) {

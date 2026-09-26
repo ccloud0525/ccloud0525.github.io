@@ -40,6 +40,40 @@
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
 
+.internship-entry {
+    display: flex;
+    align-items: center;
+    gap: 1.25em;
+    margin: 1em 0;
+
+    p {
+        margin: 0;
+    }
+}
+
+.internship-logo {
+    flex: 0 0 120px;
+
+    img {
+        display: block;
+        width: 120px;
+        height: 40px;
+        object-fit: contain;
+    }
+}
+
+@media (max-width: 480px) {
+    .internship-entry {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .5em;
+    }
+
+    .internship-logo {
+        flex-basis: auto;
+    }
+}
+
 .paper-box {
     display: flex;
     justify-content: left;
@@ -110,7 +144,7 @@ h1:before, .anchor:before {
 
 .publication-list {
     position: relative;
-    max-height: 90rem;
+    max-height: 75vh;
     overflow-y: auto;
     scrollbar-gutter: stable;
     padding: 0 10px;
