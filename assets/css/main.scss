@@ -204,15 +204,15 @@ h1:before, .anchor:before {
 .publication-browser__filters {
     display: flex;
     flex-wrap: wrap;
-    gap: .45em;
+    gap: .4em;
 }
 
 .publication-filter-chip {
     display: inline-flex;
     align-items: center;
-    gap: .65em;
+    gap: .45em;
     min-height: 34px;
-    padding: .42em .7em;
+    padding: .42em .55em;
     border: 1px solid #dfe4e9;
     border-radius: 6px;
     background: #ffffff;
@@ -244,7 +244,7 @@ h1:before, .anchor:before {
 }
 
 .publication-filter-chip__count {
-    padding-left: .65em;
+    padding-left: .5em;
     border-left: 1px solid #e3e7eb;
     color: #637080;
     font-size: .85em;

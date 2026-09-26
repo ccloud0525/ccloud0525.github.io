@@ -11,6 +11,22 @@
 
 <div class="publication-list" data-publication-list role="region" aria-labelledby="accepted-papers" tabindex="0">
 
+<div class='paper-box' data-tags='Sequential Modeling|Benchmarking|AutoML|CCF A'>
+<div class='paper-box-text' markdown="1" style="max-width: 100%; padding-left: 0;">
+
+[**TFB-2: benchmarking and automated ensemble for time series forecasting**](https://rdcu.be/N2CBSicSmYDa)
+
+🧑‍💻 Zhengyu Li, **Xingjian Wu**, Xiangfei Qiu, Jilin Hu, Lekui Zhou, Chenjuan Guo, Aoying Zhou, Christian S. Jensen, Zhenli Sheng, Bin Yang
+
+🏛️ VLDB Journal **(VLDBJ)**, 2026. <font color="red">CCF A</font>.
+
+Extended version of [TFB (PVLDB 2024)](https://www.vldb.org/pvldb/vol17/p2363-hu.pdf).
+
+[[Paper]](https://rdcu.be/N2CBSicSmYDa)
+
+</div>
+</div>
+
 <div class='paper-box' data-tags='Sequential Modeling|Foundation Models|Representation Learning|Generative Modeling|CCF A|First/Co-first'><div class='paper-box-image'><div><div class="badge">NeurIPS 2026</div><img src='images/pub/flame.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 

@@ -25,6 +25,6 @@ My current research interests cover *Sequential Modeling*, *Foundation Models*, 
     <a class="internship-logo" href="https://longcat.ai/">
       <img src="images/longcat-icon.svg" alt="LongCat logo" width="40" height="40" loading="lazy">
     </a>
-    <p>At <strong>Meituan LongCat</strong> (2026.03 - 2026.08), I worked on <a href="https://longcat.chat/blog/longcat-2.0/">LongCat 2.0</a>, developing <a href="https://arxiv.org/pdf/2607.28037">ClawTrack</a> for trace-level agent evaluation and <a href="https://arxiv.org/pdf/2607.28026">CRPO</a> for long-horizon agent reinforcement learning.</p>
+    <p>At <strong>Meituan LongCat</strong> (2026.03 - 2026.08), I worked on <a href="https://longcat.chat/blog/longcat-2.0/">LongCat 2.0 (1.6T)</a>, developing <a href="https://arxiv.org/pdf/2607.28037">ClawTrack</a> for trace-level agent evaluation and <a href="https://arxiv.org/pdf/2607.28026">CRPO</a> for long-horizon agentic reinforcement learning.</p>
   </div>
 </div>
