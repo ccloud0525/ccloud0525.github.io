@@ -1,5 +1,5 @@
 (function() {
-  var prioritizedTags = ["First/Co-first", "CCF A", "Reward Paper"];
+  var prioritizedTags = ["First/Co-first", "CCF A", "Reward Paper", "Agentic System"];
 
   function parseTags(rawTags) {
     return (rawTags || "")
@@ -115,10 +115,13 @@
         var tag = button.getAttribute("data-filter-tag");
         var isActive = tag ? selectedTags.indexOf(tag) !== -1 : selectedTags.length === 0;
         button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
       });
 
       cardTagButtons.forEach(function(button) {
-        button.classList.toggle("is-active", selectedTags.indexOf(button.getAttribute("data-publication-tag")) !== -1);
+        var isActive = selectedTags.indexOf(button.getAttribute("data-publication-tag")) !== -1;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
       });
     }
 
@@ -167,12 +170,11 @@
 
     function updateStatus(visibleCount) {
       if (!selectedTags.length) {
-        statusNode.textContent = "Showing all " + cards.length + " papers.";
+        statusNode.textContent = "All " + cards.length + " papers";
         return;
       }
 
-      var noun = visibleCount === 1 ? "paper" : "papers";
-      statusNode.textContent = "Showing " + visibleCount + " " + noun + " matching any of " + selectedTags.join(", ") + ".";
+      statusNode.textContent = visibleCount + " of " + cards.length + " papers";
     }
 
     function toggleTag(tag) {

@@ -32,14 +32,5 @@ redirect_from:
 # 🎖 Honors and Awards
 {% include_relative includes/honors.md %}
 
-# 💬 Invited Talks
-{% include_relative includes/talks.md %}
-
-# 💻 Applications
-{% include_relative includes/apps.md %}
-
-# 📖 Services
+# 📖 Service
 {% include_relative includes/services.md %}
-
-# 💼 Attendance
-{% include_relative includes/attendance.md %}

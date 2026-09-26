@@ -1,8 +1,9 @@
 <div class="publication-browser" data-publication-browser hidden>
-  <p class="publication-browser__title">Filter by topic</p>
-  <p class="publication-browser__hint">Default view shows Agentic System papers. Click All Papers to view everything, or select topic tags to show papers matching any selected tag.</p>
-  <div class="publication-browser__filters" data-publication-filters></div>
-  <p class="publication-browser__status" data-publication-filter-status></p>
+  <div class="publication-browser__header">
+    <p class="publication-browser__title" id="publication-filter-title">Filter publications</p>
+    <p class="publication-browser__status" data-publication-filter-status role="status" aria-live="polite" aria-atomic="true"></p>
+  </div>
+  <div class="publication-browser__filters" data-publication-filters role="group" aria-labelledby="publication-filter-title"></div>
 </div>
 
 <section class="publication-section" data-publication-section>
@@ -397,7 +398,7 @@ arXiv preprint, 2026.
 </div>
 </div>
 
-<div class='paper-box' data-tags='Agentic System|First/Co-first'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/clawtrack.png' alt="ClawTrack evaluation overview" width="100%"></div></div>
+<div class='paper-box' data-tags='Agentic System|Benchmarking|First/Co-first'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/clawtrack.png' alt="ClawTrack evaluation overview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**ClawTrack: Towards Trace-Level Evaluation and Improvement of Real-World Autonomous Agents**](https://arxiv.org/pdf/2607.28037)

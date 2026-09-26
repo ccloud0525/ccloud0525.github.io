@@ -1,7 +1,10 @@
 - *2026.02* Proceedings Chair of [ST-FM Workshop](https://st-fm-26.github.io/STxFM-MDM2026/#) at [MDM26](https://mdm-2026.github.io/).
 - *2026.02* PC Member of International Conference on Machine Learning ([ICML 2026](http://icml.cc/)), (Main Track).
 - *2026.02* PC Member of International Joint Conference on Artificial Intelligence ([IJCAI 2026](https://2026.ijcai.org/)), (Main & Survey Track). **Gold Reviewer**.
+- *2025.12* The 45th Academic Salon of DASE, ECNU.
 - *2025.10* PC Member of International Conference on Learning Representations ([ICLR 2026](http://iclr.cc/)), (Main Track).
 - *2025.08* PC Member of Association for the Advancement of Artificial Intelligence ([AAAI 2026](https://aaai.org/conference/aaai/aaai-26/)), (Main Technical Track).
+- *2025.04* Conduct a popular science lecture on large language models for Shanghai No.1 Welfare Institute (a department - level unit).
+- *2025.03* Conduct a popular science lecture on large language models for Shanghai Art & Design Academy (a department - level unit).
 - *2025.02* PC Member of International Joint Conference on Artificial Intelligence ([IJCAI 2025](https://2025.ijcai.org/)), (Main & Survey Track).
 - *2024.12* PC Member of International Conference on Learning Representations ([ICLR 2025](http://iclr.cc/)), (Main Track).

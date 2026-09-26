@@ -15,11 +15,5 @@ main:
   - title: "Honors and Awards"
     url: "/#-honors-and-awards"
 
-  - title: "Invited Talks"
-    url: "/#-invited-talks"
-
-  - title: "Applications"
-    url: "/#-applications"
-
-  - title: "Services"
-    url: "/#-services"
+  - title: "Service"
+    url: "/#-service"

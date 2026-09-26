@@ -4,11 +4,10 @@ I am actively seeking research internships and Top Talent Internship opportuniti
 
 ## Research Interests
 
-My current research interests cover *Sequential Modeling*, *AutoML*, *Foundation Models*, and *Agentic Systems*. Here are some selected works:
+My current research interests cover *Sequential Modeling*, *Foundation Models*, and *Agentic Systems*. Here are some selected works:
 
 - *Agentic Systems*: Exploring the potential of agentic systems in real-world applications ([ST-EVO](https://arxiv.org/pdf/2602.14681), [DMoA](https://arxiv.org/pdf/2605.15706), [CRPO](https://arxiv.org/pdf/2607.28026), [ClawTrack](https://arxiv.org/pdf/2607.28037));
 - *Sequential Modeling*: Focusing on expert models and representation learning ([CATCH](https://arxiv.org/pdf/2410.12261), [DUET](https://arxiv.org/pdf/2412.10859), [K<sup>2</sup>VAE](https://arxiv.org/pdf/2505.23017), [SRSNet](https://arxiv.org/pdf/2510.14510));
-- *AutoML*: Supporting fully automated neural architecture search ([AutoCTS++](https://link.springer.com/article/10.1007/s00778-024-00872-x), [FACTS](https://www.vldb.org/pvldb/vol18/p144-wu.pdf));
 - *Foundation Models*: Developing general-purpose Sequence Foundation Models ([Aurora](https://arxiv.org/pdf/2509.22295), [FLAME](https://arxiv.org/pdf/2512.14253), [Horai](https://arxiv.org/pdf/2602.05646), [CoRA](https://openreview.net/pdf?id=JRlNrcTllN)).
 
 ## Internship
@@ -16,16 +15,16 @@ My current research interests cover *Sequential Modeling*, *AutoML*, *Foundation
 <div class="internship-list">
   <div class="internship-entry">
     <!-- Logo source: https://www.minimax.io/assets/logo/minimax-horizontal-brand-black.webp -->
-    <a class="internship-logo" href="https://www.minimax.io/">
+    <a class="internship-logo internship-logo--minimax" href="https://www.minimax.io/">
       <img src="images/minimax.webp" alt="MiniMax logo" width="120" height="40" loading="lazy">
     </a>
-    <p>At <strong>MiniMax</strong> (Aug 2026 - Present), I work on post-training computer-use agents for Office tasks through automated data generation, evaluation, and reinforcement learning.</p>
+    <p>At <strong>MiniMax</strong> (2026.08 - Present), I work on post-training computer-use agents for Office tasks through automated data generation, evaluation, and reinforcement learning.</p>
   </div>
   <div class="internship-entry">
     <!-- Logo source: https://s3.meituan.net/static-prod01/com.sankuai.friday.longcat.next2/assets/longcat_logo-X5K_hpNA.svg -->
     <a class="internship-logo" href="https://longcat.ai/">
       <img src="images/longcat.svg" alt="LongCat logo" width="120" height="40" loading="lazy">
     </a>
-    <p>At <strong>Meituan LongCat</strong> (Mar 2026 - Aug 2026), I developed <a href="https://arxiv.org/pdf/2607.28037">ClawTrack</a> for trace-level agent evaluation and <a href="https://arxiv.org/pdf/2607.28026">CRPO</a> for long-horizon agent reinforcement learning.</p>
+    <p>At <strong>Meituan LongCat</strong> (2026.03 - 2026.08), I worked on <a href="https://longcat.chat/blog/longcat-2.0/">LongCat 2.0</a>, developing <a href="https://arxiv.org/pdf/2607.28037">ClawTrack</a> for trace-level agent evaluation and <a href="https://arxiv.org/pdf/2607.28026">CRPO</a> for long-horizon agent reinforcement learning.</p>
   </div>
 </div>
