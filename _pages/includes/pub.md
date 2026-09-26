@@ -20,8 +20,6 @@
 
 🏛️ VLDB Journal **(VLDBJ)**, 2026. <font color="red">CCF A</font>.
 
-Extended version of [TFB (PVLDB 2024)](https://www.vldb.org/pvldb/vol17/p2363-hu.pdf).
-
 [[Paper]](https://rdcu.be/N2CBSicSmYDa)
 
 </div>

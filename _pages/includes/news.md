@@ -19,6 +19,7 @@
 </style>  
 <div class="scrollable-area">  
     <ul>
+        <li><em>2026.09</em>: 🎉🎉 Our paper <a href="https://rdcu.be/N2CBSicSmYDa">TFB-2</a> has been accepted by VLDBJ 2026! </li>
         <li><em>2026.09</em>: 🎉🎉 Three of our papers, <a href="https://arxiv.org/pdf/2512.14253">FLAME</a>, <a href="https://arxiv.org/pdf/2509.23668v1">Hermes</a>, and <a href="https://arxiv.org/pdf/2602.05646">Horai</a>, have been accepted by NeurIPS 2026! </li>
         <li><em>2026.08</em>: 🎈🎈 Our paper <a href="https://arxiv.org/pdf/2602.14681">ST-EVO</a> has been accepted by EMNLP 2026 Main Conference! </li>
         <li><em>2026.06</em>: 🏖️🏖️ Our paper <a href="https://dl.acm.org/doi/pdf/10.1145/3770855.3817648">CCD</a> has been accepted by SIGKDD 2026! </li>
