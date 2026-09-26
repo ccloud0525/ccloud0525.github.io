@@ -42,40 +42,36 @@
 
 .internship-entry {
     display: flex;
-    align-items: center;
-    gap: 1.25em;
+    align-items: flex-start;
+    gap: 1em;
     margin: 1em 0;
 
     p {
         margin: 0;
+        flex: 1;
+        min-width: 0;
     }
 }
 
 .internship-logo {
-    flex: 0 0 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
 
     img {
         display: block;
-        width: 120px;
+        width: 40px;
         height: 40px;
         object-fit: contain;
     }
 }
 
-.internship-logo--minimax img {
-    // Compensate for the logo asset's transparent padding to match LongCat's visible width.
-    transform: scale(1.22);
-}
-
 @media (max-width: 480px) {
     .internship-entry {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: .5em;
-    }
-
-    .internship-logo {
-        flex-basis: auto;
+        gap: .75em;
     }
 }
 
