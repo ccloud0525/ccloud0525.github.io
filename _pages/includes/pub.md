@@ -11,8 +11,8 @@
 
 <div class="publication-list" data-publication-list role="region" aria-labelledby="accepted-papers" tabindex="0">
 
-<div class='paper-box' data-tags='Sequential Modeling|Benchmarking|AutoML|CCF A'>
-<div class='paper-box-text' markdown="1" style="max-width: 100%; padding-left: 0;">
+<div class='paper-box' data-tags='Sequential Modeling|Benchmarking|AutoML|CCF A'><div class='paper-box-image'><div><div class="badge">VLDBJ 2026</div><img src='images/pub/tfb2.png' alt="TFB-2 framework: offline representation learning and ranker training, followed by online ensemble forecasting" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
 
 [**TFB-2: benchmarking and automated ensemble for time series forecasting**](https://rdcu.be/N2CBSicSmYDa)
 
