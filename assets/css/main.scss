@@ -108,6 +108,28 @@ h1:before, .anchor:before {
     font-size: .8em;
 }
 
+.publication-list {
+    position: relative;
+    max-height: 90rem;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+    padding: 0 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.publication-list:focus-visible {
+    outline: 2px solid #00369f;
+    outline-offset: 2px;
+}
+
+@media print {
+    .publication-list {
+        max-height: none !important;
+        overflow: visible;
+        box-shadow: none;
+    }
+}
+
 .publication-browser {
     margin: 1.5em 0 2em;
     padding: 1.25em;

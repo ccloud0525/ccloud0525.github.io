@@ -47,6 +47,7 @@
     var topLevelButtons = [];
     var cardTagButtons = [];
     var selectedTags = [];
+    var resizePending = false;
 
     cards.forEach(function(card) {
       var tags = parseTags(card.getAttribute("data-tags"));
@@ -126,6 +127,41 @@
         var visibleCards = section.querySelectorAll(".paper-box[data-tags]:not([hidden])").length;
         section.hidden = visibleCards === 0;
       });
+      updateScrollWindows(true);
+    }
+
+    function updateScrollWindows(resetScroll) {
+      sections.forEach(function(section) {
+        var list = section.querySelector("[data-publication-list]");
+        if (!list || section.hidden) {
+          return;
+        }
+
+        var visibleCards = list.querySelectorAll(".paper-box[data-tags]:not([hidden])");
+        if (visibleCards.length > 3) {
+          // Cards vary in height; fit the first three matching papers exactly.
+          var firstCard = visibleCards[0].getBoundingClientRect();
+          var thirdCard = visibleCards[2].getBoundingClientRect();
+          list.style.maxHeight = Math.ceil(thirdCard.bottom - firstCard.top) + "px";
+        } else {
+          list.style.maxHeight = "none";
+        }
+
+        if (resetScroll) {
+          list.scrollTop = 0;
+        }
+      });
+    }
+
+    function scheduleScrollWindowUpdate() {
+      if (resizePending) {
+        return;
+      }
+      resizePending = true;
+      window.requestAnimationFrame(function() {
+        resizePending = false;
+        updateScrollWindows(false);
+      });
     }
 
     function updateStatus(visibleCount) {
@@ -178,7 +214,18 @@
     });
 
     browser.hidden = false;
-    applyFilter([]);
+    applyFilter(["Agentic System"]);
+
+    // Recalculate when responsive layout, images, or fonts change card heights.
+    if (window.ResizeObserver) {
+      var resizeObserver = new ResizeObserver(scheduleScrollWindowUpdate);
+      cards.forEach(function(card) {
+        resizeObserver.observe(card);
+      });
+    } else {
+      window.addEventListener("resize", scheduleScrollWindowUpdate);
+      window.addEventListener("load", scheduleScrollWindowUpdate);
+    }
   }
 
   if (document.readyState === "loading") {

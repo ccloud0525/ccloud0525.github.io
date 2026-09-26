@@ -1,12 +1,14 @@
 <div class="publication-browser" data-publication-browser hidden>
   <p class="publication-browser__title">Filter by topic</p>
-  <p class="publication-browser__hint">Default view shows all papers. Click one or more topic tags to extend the list. Papers matching any selected tag will be shown.</p>
+  <p class="publication-browser__hint">Default view shows Agentic System papers. Click All Papers to view everything, or select topic tags to show papers matching any selected tag.</p>
   <div class="publication-browser__filters" data-publication-filters></div>
   <p class="publication-browser__status" data-publication-filter-status></p>
 </div>
 
 <section class="publication-section" data-publication-section>
-<h2>Accepted Papers</h2>
+<h2 id="accepted-papers">Accepted Papers</h2>
+
+<div class="publication-list" data-publication-list role="region" aria-labelledby="accepted-papers" tabindex="0">
 
 <div class='paper-box' data-tags='Sequential Modeling|Foundation Models|Representation Learning|Generative Modeling|CCF A|First/Co-first'><div class='paper-box-image'><div><div class="badge">NeurIPS 2026</div><img src='images/pub/flame.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -373,10 +375,41 @@
 </div>
 </div>
 
+</div>
 </section>
 
 <section class="publication-section" data-publication-section>
-<h2>Preprints</h2>
+<h2 id="preprints">Preprints</h2>
+
+<div class="publication-list" data-publication-list role="region" aria-labelledby="preprints" tabindex="0">
+
+<div class='paper-box' data-tags='Agentic System|First/Co-first'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/crpo.png' alt="CRPO algorithm pipeline" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Contrastive Reinforced Policy Optimization via Privileged Self-Distillation**](https://arxiv.org/pdf/2607.28026)
+
+🧑‍💻 **Xingjian Wu**\*, Junlin Liu\*, Xingchen Liu\*, Xuhang Zhu, Jianing Wang, Linsen Guo#, Xiaoyu Li, Xuezhi Cao, Xunliang Cai
+
+arXiv preprint, 2026.
+
+[[Paper]](https://arxiv.org/pdf/2607.28026)
+
+</div>
+</div>
+
+<div class='paper-box' data-tags='Agentic System|First/Co-first'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/clawtrack.png' alt="ClawTrack evaluation overview" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**ClawTrack: Towards Trace-Level Evaluation and Improvement of Real-World Autonomous Agents**](https://arxiv.org/pdf/2607.28037)
+
+🧑‍💻 **Xingjian Wu**\*, Xuhang Zhu\*, Xingchen Liu\*, Junlin Liu, Jianing Wang, Linsen Guo#, Xiaoyu Li, Xuezhi Cao, Xunliang Cai
+
+arXiv preprint, 2026.
+
+[[Paper]](https://arxiv.org/pdf/2607.28037)
+
+</div>
+</div>
 
 <div class='paper-box' data-tags='Agentic System|First/Co-first'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/dmoa.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -417,6 +450,7 @@ arXiv preprint, 2025.
 </div>
 </div>
 
+</div>
 </section>
 
 **Equal* *Contribution*, *#* *Corresponding* *Author*. More working drafts / preprints under review will be released later ⌛️
