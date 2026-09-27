@@ -1,5 +1,5 @@
 (function() {
-  var prioritizedTags = ["First/Co-first", "CCF A", "Reward Paper", "Agentic System"];
+  var prioritizedTags = ["First/Co-first", "CCF A", "Reward Paper", "LLMs and Agents"];
 
   function parseTags(rawTags) {
     return (rawTags || "")
@@ -217,7 +217,7 @@
     });
 
     browser.hidden = false;
-    applyFilter(["Agentic System"]);
+    applyFilter(["LLMs and Agents"]);
 
     // Recalculate when responsive layout, images, or fonts change card heights.
     if (window.ResizeObserver) {
