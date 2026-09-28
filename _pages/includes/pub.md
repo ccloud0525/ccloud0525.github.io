@@ -398,6 +398,20 @@
 
 <div class="publication-list" data-publication-list role="region" aria-labelledby="preprints" tabindex="0">
 
+<div class='paper-box' data-tags='Sequential Modeling|Foundation Models|First/Co-first'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/aurora-x.png' alt="Aurora-X architecture with Time-Group MoE blocks, pattern-guided experts, and an implicit quantile head" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Aurora-X: Built for Extreme Time Series Forecasting**](https://arxiv.org/pdf/2609.31038)
+
+🧑‍💻 **Xingjian Wu**, Chenjuan Guo#, Xiangfei Qiu, Zhigang Hu, Hanyin Cheng, Peng Chen, Yang Shu, Jilin Hu, Bin Yang
+
+arXiv preprint, 2026.
+
+[[Paper]](https://arxiv.org/pdf/2609.31038)
+
+</div>
+</div>
+
 <div class='paper-box' data-tags='LLMs and Agents|First/Co-first'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/pub/crpo.png' alt="CRPO algorithm pipeline" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
