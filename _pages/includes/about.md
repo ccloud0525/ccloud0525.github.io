@@ -8,7 +8,7 @@ My current research interests cover *Sequential Modeling*, *Foundation Models*, 
 
 - *LLMs and Agents*: Exploring the potential of large language models and agents in real-world applications ([ST-EVO](https://arxiv.org/pdf/2602.14681), [DMoA](https://arxiv.org/pdf/2605.15706), [CRPO](https://arxiv.org/pdf/2607.28026), [ClawTrack](https://arxiv.org/pdf/2607.28037));
 - *Sequential Modeling*: Focusing on expert models and representation learning ([CATCH](https://arxiv.org/pdf/2410.12261), [DUET](https://arxiv.org/pdf/2412.10859), [K<sup>2</sup>VAE](https://arxiv.org/pdf/2505.23017), [SRSNet](https://arxiv.org/pdf/2510.14510));
-- *Foundation Models*: Developing general-purpose Sequence Foundation Models ([Aurora](https://arxiv.org/pdf/2509.22295), [FLAME](https://arxiv.org/pdf/2512.14253), [Horai](https://arxiv.org/pdf/2602.05646), [CoRA](https://openreview.net/pdf?id=JRlNrcTllN)).
+- *Foundation Models*: Developing general-purpose Sequence Foundation Models ([Aurora](https://arxiv.org/pdf/2509.22295), [FLAME](https://arxiv.org/pdf/2512.14253), [Horai](https://arxiv.org/pdf/2602.05646), [Aurora-X](https://arxiv.org/pdf/2609.31038)).
 
 ## Internship (LLM Foundation Model)
 
