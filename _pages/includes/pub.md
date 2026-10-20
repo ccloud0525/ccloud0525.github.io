@@ -67,7 +67,7 @@
 </div>
 </div>
 
-<div class='paper-box' data-tags='Generative Modeling|LLMs and Agents|First/Co-first'><div class='paper-box-image'><div><div class="badge">EMNLP 2026 Main</div><img src='images/pub/stevo.png' alt="sym" width="100%"></div></div>
+<div class='paper-box' data-tags='Generative Modeling|LLMs and Agents|First/Co-first'><div class='paper-box-image'><div><div class="badge">EMNLP 2026 Oral</div><img src='images/pub/stevo.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**ST-EVO: Towards Generative Spatio-Temporal Evolution of Multi-Agent Communication Topologies**](https://arxiv.org/pdf/2602.14681)
