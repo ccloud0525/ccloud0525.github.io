@@ -18,7 +18,7 @@ My current research interests cover *Sequential Modeling*, *Foundation Models*, 
     <a class="internship-logo" href="https://www.minimax.io/">
       <img src="images/minimax-icon.svg" alt="MiniMax logo" width="40" height="40" loading="lazy">
     </a>
-    <p>At <strong>MiniMax</strong> (2026.08 - Present), I work on post-training computer-use agents for Office tasks through automated data generation, evaluation, and reinforcement learning.</p>
+    <p>At <strong>MiniMax</strong> (2026.08 - Present), I work on post-training <a href="https://www.minimax.io/blog/minimax-m31f">MiniMax-M3.1-Flash</a> for Office tasks through automated data generation, evaluation, and reinforcement learning.</p>
   </div>
   <div class="internship-entry">
     <!-- Icon source: https://s3plus.meituan.net/aigc-media-resources/longcat/yeqian-logo.svg -->
