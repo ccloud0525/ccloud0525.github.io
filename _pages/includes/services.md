@@ -1,3 +1,6 @@
+- *2026.11* PC Member of the Web Conference ([WWW 2027](https://www2027.thewebconf.org/)), (Main Track).
+- *2026.10* PC Member of ACL Rolling Review ([ARR 2027]).
+- *2026.09* PC Member of International Conference on Learning Representations ([ICLR 2027](http://iclr.cc/)), (Main Track).
 - *2026.02* Proceedings Chair of [ST-FM Workshop](https://st-fm-26.github.io/STxFM-MDM2026/#) at [MDM26](https://mdm-2026.github.io/).
 - *2026.02* PC Member of International Conference on Machine Learning ([ICML 2026](http://icml.cc/)), (Main Track).
 - *2026.02* PC Member of International Joint Conference on Artificial Intelligence ([IJCAI 2026](https://2026.ijcai.org/)), (Main & Survey Track). **Gold Reviewer**.
